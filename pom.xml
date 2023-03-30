@@ -4,42 +4,27 @@
 	<parent>
 		<groupId>it.pagopa.pn</groupId>
 		<artifactId>pn-parent</artifactId>
-		<version>1.0.0</version>
+		<version>2.0.0-SNAPSHOT</version>
 		<relativePath />
 	</parent>
-	<artifactId>pn-template-ms-be</artifactId>
+
+	<artifactId>pn-radd-bff</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
-	<name>pn-template-ms-be</name>
-	<description>A template for a PN Backend Microservice</description>
+	<name>pn-radd-bff</name>
+	<description>RADD BFF microservice</description>
+
 	<scm>
 		<connection>${git.conn}</connection>
 		<developerConnection>${git.devConn}</developerConnection>
 		<url>${git.url}</url>
 	  <tag>HEAD</tag>
-  </scm>
-	<properties>
-		<java.version>11</java.version>
-		<awspring.version>2.3.2</awspring.version>
-	</properties>
-
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>io.awspring.cloud</groupId>
-				<artifactId>spring-cloud-aws-dependencies</artifactId>
-				<version>${awspring.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
+  	</scm>
 
 	<dependencies>
-
 		<dependency>
 			<groupId>it.pagopa.pn</groupId>
 			<artifactId>pn-commons</artifactId>
-			<version>1.0.0</version>
+			<version>2.0.0-SNAPSHOT</version>
 		</dependency>
 
 		<dependency>
@@ -47,7 +32,6 @@
 			<artifactId>swagger-annotations</artifactId>
 			<version>1.6.5</version>
 		</dependency>
-
 
 		<dependency>
 			<groupId>org.projectlombok</groupId>
@@ -65,13 +49,11 @@
 			<artifactId>reactor-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-
 	</dependencies>
 
 	<build>
@@ -86,7 +68,7 @@
 				<configuration>
 					<excludes>
 						<exclude>**/generated/**</exclude>
-						<exclude>**it/pagopa/pn/template/rest/v1/**</exclude>
+						<exclude>**it/pagopa/pn/radd/bff/rest/v1/**</exclude>
 					</excludes>
 				</configuration>
 			</plugin>
@@ -96,7 +78,7 @@
 				<version>5.4.0</version>
 				<executions>					
 					<execution>
-						<id>generate-mandate-server</id>
+						<id>generate-radd-bff-server</id>
 						<goals>
 							<goal>generate</goal>
 						</goals>
@@ -109,19 +91,19 @@
 							<generateApiTests>false</generateApiTests>
 							<generateModelTests>false</generateModelTests>
 							<configOptions>
-							<dateLibrary>java11</dateLibrary>
-							<delegatePattern>true</delegatePattern>
-							<interfaceOnly>true</interfaceOnly>
-							<annotationLibrary>none</annotationLibrary>
-							<documentationProvider>source</documentationProvider>
-							<openApiNullable>false</openApiNullable>
-							<reactive>true</reactive>
-							<skipDefaultInterface>false</skipDefaultInterface>
-							<useTags>true</useTags>
-							<basePackage>${project.groupId}.template.rest.v1</basePackage>
-							<modelPackage>${project.groupId}.template.rest.v1.dto</modelPackage>
-							<apiPackage>${project.groupId}.template.rest.v1.api</apiPackage>
-							<configPackage>${project.groupId}.template.rest.v1.config</configPackage>
+								<dateLibrary>java11</dateLibrary>
+								<delegatePattern>true</delegatePattern>
+								<interfaceOnly>true</interfaceOnly>
+								<annotationLibrary>none</annotationLibrary>
+								<documentationProvider>source</documentationProvider>
+								<openApiNullable>false</openApiNullable>
+								<reactive>true</reactive>
+								<skipDefaultInterface>false</skipDefaultInterface>
+								<useTags>true</useTags>
+								<basePackage>${project.groupId}.radd.bff.rest.v1</basePackage>
+								<modelPackage>${project.groupId}.radd.bff.rest.v1.dto</modelPackage>
+								<apiPackage>${project.groupId}.radd.bff.rest.v1.api</apiPackage>
+								<configPackage>${project.groupId}.radd.bff.rest.v1.config</configPackage>
 							</configOptions>				
 						</configuration>
 					</execution>

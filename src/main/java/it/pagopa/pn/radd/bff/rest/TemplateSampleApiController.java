@@ -1,6 +1,6 @@
-package it.pagopa.pn.template.rest;
+package it.pagopa.pn.radd.bff.rest;
 
-import it.pagopa.pn.template.rest.v1.api.TemplateSampleApi;
+import it.pagopa.pn.radd.bff.rest.v1.api.TemplateSampleApi;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,14 +17,10 @@ public class TemplateSampleApiController implements TemplateSampleApi {
 
     @Override
     public Mono<ResponseEntity<Map<String, List<String>>>> getHttpHeadersMap(ServerWebExchange exchange) {
-
-
-        return Mono.fromSupplier(() ->{
+        return Mono.fromSupplier(() -> {
             log.debug("Start getHttpHeadersMap");
-            Map<String, List<String>> headers = new HashMap<>();
-            exchange.getRequest().getHeaders().forEach((k, v) -> headers.put(k, v));
+            Map<String, List<String>> headers = new HashMap<>(exchange.getRequest().getHeaders());
             return ResponseEntity.ok(headers);
         });
-
     }
 }
