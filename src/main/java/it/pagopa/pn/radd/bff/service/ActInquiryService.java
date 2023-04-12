@@ -12,11 +12,10 @@ import reactor.core.publisher.Mono;
 public class ActInquiryService {
 
     private final PnRaddFsuClient pnRaddFsuClient;
-
     private final ActInquiryConverter actInquiryConverter;
 
     public Mono<ActInquiryResponse> actInquiry(String uid, String recipientTaxId, String recipientType, String qrCode) {
-            return pnRaddFsuClient.actInquiry(uid, recipientTaxId, recipientType, qrCode)
-                    .map(actInquiryConverter::actInquiryDtoToResponse);
+        return pnRaddFsuClient.actInquiry(uid, recipientTaxId, recipientType, qrCode)
+                .map(actInquiryConverter::actInquiryDtoToResponse);
     }
 }

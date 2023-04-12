@@ -13,7 +13,6 @@ import reactor.core.publisher.Mono;
 public class DocumentUploadService {
 
     private final PnRaddFsuClient pnRaddFsuClient;
-
     private final DocumentUploadConverter documentUploadConverter;
 
     public Mono<DocumentUploadResponse> documentUpload(String uid, Mono<DocumentUploadRequest> documentUploadRequest) {
