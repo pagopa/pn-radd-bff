@@ -16,9 +16,28 @@ public class ActInquiryController implements ActDocumentInquiryApi {
 
     private final ActInquiryService actInquiryService;
 
-
+    /**
+     * GET /radd/act/inquiry
+     * API utilizzata per la verifica della presenza a sistema di atti e attestazioni.
+     *
+     * @param uid Identificativo del client giustapposizione dei campi frazionario-pdl-timestamp (required)
+     * @param recipientTaxId Codice Fiscale Destinatario (required)
+     * @param recipientType Sigla, Persona fisica o giuridica (required)
+     * @param qrCode Qr Code presente sull&#39;avviso di Avvenuta ricezione (required)
+     * @return OK (status code 200)
+     *         or Bad Request (status code 400)
+     *         or Unauthorized (status code 401)
+     *         or Forbidden (status code 403)
+     *         or Method not allowed (status code 405)
+     *         or Internal Server Error (status code 500)
+     */
     @Override
-    public Mono<ResponseEntity<ActInquiryResponse>> actInquiry(String uid, String recipientTaxId, String recipientType, String qrCode, final ServerWebExchange exchange) {
-        return actInquiryService.actInquiry(uid, recipientTaxId, recipientType, qrCode).map(m -> ResponseEntity.status(HttpStatus.OK).body(m));
+    public Mono<ResponseEntity<ActInquiryResponse>> actInquiry(String uid,
+                                                               String recipientTaxId,
+                                                               String recipientType,
+                                                               String qrCode,
+                                                               final ServerWebExchange exchange) {
+        return actInquiryService.actInquiry(uid, recipientTaxId, recipientType, qrCode)
+                .map(m -> ResponseEntity.status(HttpStatus.OK).body(m));
     }
 }

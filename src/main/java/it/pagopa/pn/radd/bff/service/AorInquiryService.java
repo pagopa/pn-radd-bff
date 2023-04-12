@@ -4,12 +4,13 @@ import it.pagopa.pn.radd.bff.client.PnRaddFsuClient;
 import it.pagopa.pn.radd.bff.converter.AorInquiryConverter;
 import it.pagopa.pn.radd.bff.rest.v1.dto.AORInquiryResponse;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 
-@Component
+@Service
 @RequiredArgsConstructor
 public class AorInquiryService {
+
     private final PnRaddFsuClient pnRaddFsuClient;
     private final AorInquiryConverter aorInquiryConverter;
 

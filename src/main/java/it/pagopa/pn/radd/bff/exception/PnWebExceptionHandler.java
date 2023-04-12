@@ -57,7 +57,7 @@ public class PnWebExceptionHandler implements ErrorWebExceptionHandler {
         DataBufferFactory bufferFactory = serverWebExchange.getResponse().bufferFactory();
         try {
             RaddBffProblem problem;
-            if (throwable instanceof PnRaddBFFException exception) {
+            if (throwable instanceof PnRaddBffException exception) {
                 if (exception.getStatusCode().equals(HttpStatus.UNAUTHORIZED)) {
                     problem = convertToNationalRegistriesProblem(exceptionHelper.handleException(throwable));
                 } else {
@@ -98,7 +98,7 @@ public class PnWebExceptionHandler implements ErrorWebExceptionHandler {
         return raddBffProblem;
     }
 
-    private RaddBffProblem createProblem(PnRaddBFFException exception) {
+    private RaddBffProblem createProblem(PnRaddBffException exception) {
         RaddBffProblem problemDef = new RaddBffProblem();
         problemDef.setStatus(exception.getStatusCode().value());
         problemDef.setTitle(exception.getStatusText());

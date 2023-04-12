@@ -20,15 +20,16 @@ import java.io.IOException;
 import java.nio.channels.Channels;
 import java.nio.charset.StandardCharsets;
 
-@Component
 @Slf4j
+@Component
 public class RequestResponseLoggingFilter implements WebFilter {
 
     @Override
     public @NotNull Mono<Void> filter(ServerWebExchange exchange, WebFilterChain chain) {
-        ServerHttpRequest httpRequest = exchange.getRequest();
+        final ServerHttpRequest httpRequest = exchange.getRequest();
         final String httpUrl = httpRequest.getURI().toString();
-        Long startTime = System.currentTimeMillis();
+
+        final Long startTime = System.currentTimeMillis();
 
         ServerHttpRequestDecorator loggingServerHttpRequestDecorator = new ServerHttpRequestDecorator(exchange.getRequest()) {
             String requestBody = "";

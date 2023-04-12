@@ -6,12 +6,12 @@ import org.springframework.web.reactive.function.client.WebClientResponseExcepti
 
 import java.nio.charset.Charset;
 
-public class PnRaddBFFException extends WebClientResponseException {
+public class PnRaddBffException extends WebClientResponseException {
 
     @Getter
     private final Class<?> className;
 
-    public PnRaddBFFException(String message, int statusCode, String statusText, HttpHeaders headers, byte[] responseBody, Charset charset, Class<?> className) {
+    public PnRaddBffException(String message, int statusCode, String statusText, HttpHeaders headers, byte[] responseBody, Charset charset, Class<?> className) {
         super(message, statusCode, statusText, headers, responseBody, charset);
         this.className = className;
     }

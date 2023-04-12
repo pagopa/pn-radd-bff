@@ -4,10 +4,10 @@ import it.pagopa.pn.radd.bff.client.PnRaddFsuClient;
 import it.pagopa.pn.radd.bff.converter.ActInquiryConverter;
 import it.pagopa.pn.radd.bff.rest.v1.dto.ActInquiryResponse;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 
-@Component
+@Service
 @RequiredArgsConstructor
 public class ActInquiryService {
 

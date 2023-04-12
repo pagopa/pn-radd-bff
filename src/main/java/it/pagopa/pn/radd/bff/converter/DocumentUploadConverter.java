@@ -1,35 +1,37 @@
 package it.pagopa.pn.radd.bff.converter;
 
 import it.pagopa.pn.radd.bff.rest.v1.dto.*;
-import it.pagopa.pn.radd_bff.microservice.client.generated.radd.fsu.v1.dto.DocumentUploadRequestDto;
-import it.pagopa.pn.radd_bff.microservice.client.generated.radd.fsu.v1.dto.DocumentUploadResponseDto;
+import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.DocumentUploadRequestDto;
+import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.DocumentUploadResponseDto;
 import org.springframework.stereotype.Component;
 
 @Component
 public class DocumentUploadConverter {
 
+    public DocumentUploadRequestDto documentUploadRequestToDto(DocumentUploadRequest request) {
+        DocumentUploadRequestDto dto = new DocumentUploadRequestDto();
 
-    public DocumentUploadRequestDto documentUploadRequestToDto(DocumentUploadRequest documentUploadRequest) {
-        DocumentUploadRequestDto documentUploadRequestDto = new DocumentUploadRequestDto();
+        dto.setBundleId(request.getBundleId());
+        dto.setChecksum(request.getChecksum());
+        dto.setContentType(request.getContentType());
 
-        documentUploadRequestDto.setBundleId(documentUploadRequest.getBundleId());
-        documentUploadRequestDto.setChecksum(documentUploadRequest.getChecksum());
-        documentUploadRequestDto.setContentType(documentUploadRequest.getContentType());
-
-        return documentUploadRequestDto;
+        return dto;
     }
 
-    public DocumentUploadResponse documentUploadDtoToResponse(DocumentUploadResponseDto documentUploadResponseDto) {
-        DocumentUploadResponse documentUploadResponse = new DocumentUploadResponse();
-
+    public DocumentUploadResponse documentUploadDtoToResponse(DocumentUploadResponseDto dto) {
         ResponseStatus responseStatus = new ResponseStatus();
-        responseStatus.setCode(ResponseStatus.CodeEnum.fromValue(documentUploadResponseDto.getStatus().getCode().getValue()));
-        responseStatus.setMessage(documentUploadResponseDto.getStatus().getMessage());
+        if (dto.getStatus() != null) {
+            if (dto.getStatus().getCode() != null) {
+                responseStatus.setCode(ResponseStatus.CodeEnum.fromValue(dto.getStatus().getCode().getValue()));
+            }
+            responseStatus.setMessage(dto.getStatus().getMessage());
+        }
 
-        documentUploadResponse.setStatus(responseStatus);
-        documentUploadResponse.setSecret(documentUploadResponseDto.getSecret());
-        documentUploadResponse.setUrl(documentUploadResponseDto.getUrl());
-        documentUploadResponseDto.setFileKey(documentUploadResponseDto.getFileKey());
-        return documentUploadResponse;
+        DocumentUploadResponse response = new DocumentUploadResponse();
+        response.setStatus(responseStatus);
+        response.setSecret(dto.getSecret());
+        response.setUrl(dto.getUrl());
+        response.setFileKey(dto.getFileKey());
+        return response;
     }
 }

@@ -2,21 +2,24 @@ package it.pagopa.pn.radd.bff.converter;
 
 import it.pagopa.pn.radd.bff.rest.v1.dto.ActInquiryResponse;
 import it.pagopa.pn.radd.bff.rest.v1.dto.ActInquiryResponseStatus;
-import it.pagopa.pn.radd_bff.microservice.client.generated.radd.fsu.v1.dto.ActInquiryResponseDto;
+import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.ActInquiryResponseDto;
 import org.springframework.stereotype.Component;
 
 @Component
 public class ActInquiryConverter {
 
-    public ActInquiryResponse actInquiryDtoToResponse(ActInquiryResponseDto actInquiryResponseDto) {
-        ActInquiryResponse actInquiryResponse = new ActInquiryResponse();
+    public ActInquiryResponse actInquiryDtoToResponse(ActInquiryResponseDto dto) {
+        ActInquiryResponseStatus responseStatus = new ActInquiryResponseStatus();
+        if (dto.getStatus() != null) {
+            if (dto.getStatus().getCode() != null) {
+                responseStatus.setCode(ActInquiryResponseStatus.CodeEnum.fromValue(dto.getStatus().getCode().getValue()));
+            }
+            responseStatus.setMessage(dto.getStatus().getMessage());
+        }
 
-        ActInquiryResponseStatus actInquiryResponseStatus = new ActInquiryResponseStatus();
-        actInquiryResponseStatus.setCode(ActInquiryResponseStatus.CodeEnum.fromValue(actInquiryResponseDto.getStatus().getCode().getValue()));
-        actInquiryResponseStatus.setMessage(actInquiryResponseDto.getStatus().getMessage());
-
-        actInquiryResponse.setStatus(actInquiryResponseStatus);
-        actInquiryResponse.setResult(actInquiryResponseDto.getResult());
-        return actInquiryResponse;
+        ActInquiryResponse response = new ActInquiryResponse();
+        response.setStatus(responseStatus);
+        response.setResult(dto.getResult());
+        return response;
     }
 }
