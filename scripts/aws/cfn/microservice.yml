@@ -169,7 +169,7 @@ Resources:
         ContainerImageURI: !Sub '${ContainerImageUri}'
         ContainerEnvEntry1: !Sub 'AWS_REGIONCODE=${AWS::Region}'
         ContainerEnvEntry2: !Sub 'PN_RADD_BFF_CLIENT_PN_RADD_FSU_BASEPATH=http://${ApplicationLoadBalancerDomain}:8080'
-        MappedPaths: '/radd/*'
+        MappedPaths: '/radd-web/*'
         ECSClusterName: !Ref ECSClusterName
         Subnets: !Ref SubnetsIds
         VpcId: !Ref VpcId
