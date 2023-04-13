@@ -2,6 +2,7 @@ package it.pagopa.pn.radd.bff.client;
 
 import it.pagopa.pn.commons.pnclients.CommonBaseClient;
 import it.pagopa.pn.radd.bff.config.PnRaddBffConfig;
+import it.pagopa.pn.radd.bff.exception.PnRaddFsuException;
 import it.pagopa.pn.radd.bff.log.ResponseExchangeFilter;
 import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.ApiClient;
 import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.api.*;
@@ -10,9 +11,12 @@ import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.ActInquiryRespon
 import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.DocumentUploadRequestDto;
 import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.DocumentUploadResponseDto;
 import org.springframework.stereotype.Component;
+import org.springframework.web.reactive.function.client.WebClientResponseException;
 import reactor.core.publisher.Mono;
 
 import javax.annotation.PostConstruct;
+
+import static it.pagopa.pn.radd.bff.exception.PnRaddBffExceptionCodes.*;
 
 @Component
 public class PnRaddFsuClient extends CommonBaseClient {
@@ -50,14 +54,24 @@ public class PnRaddFsuClient extends CommonBaseClient {
     }
 
     public Mono<ActInquiryResponseDto> actInquiry(String uid, String recipientTaxId, String recipientType, String qrCode) {
-        return actDocumentInquiryApi.actInquiry(uid, recipientTaxId, recipientType, qrCode);
+        return actDocumentInquiryApi.actInquiry(uid, recipientTaxId, recipientType, qrCode)
+                .onErrorMap(WebClientResponseException.class, e -> new PnRaddFsuException(e.getMessage(),
+                        ERROR_CODE_ACT_INQUIRY, ERROR_MESSAGE_ACT_INQUIRY, e.getStatusCode().value(), e.getStatusText(), e));
     }
 
     public Mono<AORInquiryResponseDto> aorInquiry(String uid, String recipientTaxId, String recipientType) {
-        return aorDocumentInquiryApi.aorInquiry(uid, recipientTaxId, recipientType);
+        return aorDocumentInquiryApi.aorInquiry(uid, recipientTaxId, recipientType)
+                .doOnError(WebClientResponseException.class, e -> {
+                    throw new PnRaddFsuException(e.getMessage(), ERROR_CODE_AOR_INQUIRY, ERROR_MESSAGE_ACT_INQUIRY,
+                            e.getStatusCode().value(), e.getStatusText(), e);
+                });
     }
 
     public Mono<DocumentUploadResponseDto> documentUpload(String uid, DocumentUploadRequestDto documentUploadRequestDto) {
-        return documentUploadApi.documentUpload(uid, documentUploadRequestDto);
+        return documentUploadApi.documentUpload(uid, documentUploadRequestDto)
+                .doOnError(WebClientResponseException.class, e -> {
+                    throw new PnRaddFsuException(e.getMessage(), ERROR_CODE_DOCUMENT_UPLOAD, ERROR_MESSAGE_DOCUMENT_UPLOAD,
+                            e.getStatusCode().value(), e.getStatusText(), e);
+                });
     }
 }

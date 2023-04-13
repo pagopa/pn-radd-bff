@@ -1,18 +1,13 @@
 package it.pagopa.pn.radd.bff.exception;
 
-import lombok.Getter;
-import org.springframework.http.HttpHeaders;
-import org.springframework.web.reactive.function.client.WebClientResponseException;
+import it.pagopa.pn.commons.exceptions.PnRuntimeException;
+import org.springframework.lang.NonNull;
+import org.springframework.lang.Nullable;
 
-import java.nio.charset.Charset;
+public class PnRaddBffException extends PnRuntimeException {
 
-public class PnRaddBffException extends WebClientResponseException {
-
-    @Getter
-    private final Class<?> className;
-
-    public PnRaddBffException(String message, int statusCode, String statusText, HttpHeaders headers, byte[] responseBody, Charset charset, Class<?> className) {
-        super(message, statusCode, statusText, headers, responseBody, charset);
-        this.className = className;
+    public PnRaddBffException(@NonNull String message, @NonNull String description, int status,
+                              @NonNull String errorCode, @Nullable String element, @Nullable String detail) {
+        super(message, description, status, errorCode, element, detail);
     }
 }
