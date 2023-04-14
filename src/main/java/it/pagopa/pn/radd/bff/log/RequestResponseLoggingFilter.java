@@ -3,6 +3,7 @@ package it.pagopa.pn.radd.bff.log;
 import lombok.extern.slf4j.Slf4j;
 import org.jetbrains.annotations.NotNull;
 import org.reactivestreams.Publisher;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.buffer.DataBuffer;
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.http.server.reactive.ServerHttpRequestDecorator;
@@ -24,10 +25,21 @@ import java.nio.charset.StandardCharsets;
 @Component
 public class RequestResponseLoggingFilter implements WebFilter {
 
+    private final String healthCheckPath;
+
+    public RequestResponseLoggingFilter(@Value("${pn.radd.bff.health-check.path}") String healthCheckPath) {
+        this.healthCheckPath = healthCheckPath;
+    }
+
     @Override
-    public @NotNull Mono<Void> filter(ServerWebExchange exchange, WebFilterChain chain) {
+    public @NotNull Mono<Void> filter(ServerWebExchange exchange, @NotNull WebFilterChain chain) {
         final ServerHttpRequest httpRequest = exchange.getRequest();
         final String httpUrl = httpRequest.getURI().toString();
+
+        if (httpRequest.getPath().toString().equals(healthCheckPath)) {
+            log.trace("skip log request/response for HealthCheck path");
+            return chain.filter(exchange);
+        }
 
         final Long startTime = System.currentTimeMillis();
 
