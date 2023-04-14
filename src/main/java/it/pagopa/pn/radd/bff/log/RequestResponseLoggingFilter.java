@@ -3,6 +3,7 @@ package it.pagopa.pn.radd.bff.log;
 import it.pagopa.pn.radd.bff.utils.MaskDataUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.jetbrains.annotations.NotNull;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.stereotype.Component;
@@ -15,26 +16,32 @@ import reactor.core.publisher.Mono;
 @Component
 public class RequestResponseLoggingFilter implements WebFilter {
 
+    static final String LOG_REQUEST = "Request HTTP {} to {}";
+    static final String LOG_REQUEST_BODY = "Request HTTP {} to {} - body: {}";
+    static final String LOG_RESPONSE = "Response from {} - body: {} - timelapse: {}ms";
+
     @Override
-    public @NotNull Mono<Void> filter(ServerWebExchange exchange, WebFilterChain chain) {
+    public @NotNull Mono<Void> filter(ServerWebExchange exchange, @NotNull WebFilterChain chain) {
         final ServerHttpRequest httpRequest = exchange.getRequest();
 
         final HttpMethod httpMethod = httpRequest.getMethod();
-        final String httpUrl = MaskDataUtils.maskInfo(httpRequest.getURI().toString());
+        final String maskedURI = MaskDataUtils.maskInfo(httpRequest.getURI().toString());
 
         long startTime = System.currentTimeMillis();
 
-        RaddWebExchangeDecorator webExchangeDecorator = new RaddWebExchangeDecorator(exchange);
+        RaddWebExchangeDecorator webExchangeDecorator = new RaddWebExchangeDecorator(exchange, maskedURI);
+
+        HttpHeaders headers = webExchangeDecorator.getRequest().getHeaders();
+        if (headers.getContentLength() <= 0) {
+            // if the request does not include a body, then I run the log here,
+            // but if the body is present the request is logged by the RequestDecorator
+            log.info(LOG_REQUEST, httpMethod, maskedURI);
+        }
+
         return chain.filter(webExchangeDecorator)
-                .doOnSuccess(s -> {
+                .doOnTerminate(() -> {
                     var elapsed = System.currentTimeMillis() - startTime;
-                    log.info("Request HTTP {} to {} - body: {}", httpMethod, httpUrl, webExchangeDecorator.getRequest().getCapturedBody());
-                    log.info("Response from {} - body: {} - timelapse: {}ms", httpUrl, webExchangeDecorator.getResponse().getCapturedBody(), elapsed);
-                })
-                .doOnError(e -> {
-                    var elapsed = System.currentTimeMillis() - startTime;
-                    log.info("Request HTTP {} to {} - body: {}", httpMethod, httpUrl, webExchangeDecorator.getRequest().getCapturedBody());
-                    log.info("Response from {} - body: {} - timelapse: {}ms", httpUrl, webExchangeDecorator.getResponse().getCapturedBody(), elapsed);
+                    log.info(LOG_RESPONSE, maskedURI, webExchangeDecorator.getResponse().getCapturedBody(), elapsed);
                 });
     }
 

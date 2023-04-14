@@ -55,23 +55,20 @@ public class PnRaddFsuClient extends CommonBaseClient {
 
     public Mono<ActInquiryResponseDto> actInquiry(String uid, String recipientTaxId, String recipientType, String qrCode) {
         return actDocumentInquiryApi.actInquiry(uid, recipientTaxId, recipientType, qrCode)
-                .onErrorMap(WebClientResponseException.class, e -> new PnRaddFsuException(e.getMessage(),
-                        ERROR_CODE_ACT_INQUIRY, ERROR_MESSAGE_ACT_INQUIRY, e.getStatusCode().value(), e.getStatusText(), e));
+                .onErrorMap(WebClientResponseException.class, e -> wrap(ERROR_CODE_ACT_INQUIRY, ERROR_MESSAGE_ACT_INQUIRY, e));
     }
 
     public Mono<AORInquiryResponseDto> aorInquiry(String uid, String recipientTaxId, String recipientType) {
         return aorDocumentInquiryApi.aorInquiry(uid, recipientTaxId, recipientType)
-                .doOnError(WebClientResponseException.class, e -> {
-                    throw new PnRaddFsuException(e.getMessage(), ERROR_CODE_AOR_INQUIRY, ERROR_MESSAGE_ACT_INQUIRY,
-                            e.getStatusCode().value(), e.getStatusText(), e);
-                });
+                .onErrorMap(WebClientResponseException.class, e -> wrap(ERROR_CODE_AOR_INQUIRY, ERROR_MESSAGE_AOR_INQUIRY, e));
     }
 
     public Mono<DocumentUploadResponseDto> documentUpload(String uid, DocumentUploadRequestDto documentUploadRequestDto) {
         return documentUploadApi.documentUpload(uid, documentUploadRequestDto)
-                .doOnError(WebClientResponseException.class, e -> {
-                    throw new PnRaddFsuException(e.getMessage(), ERROR_CODE_DOCUMENT_UPLOAD, ERROR_MESSAGE_DOCUMENT_UPLOAD,
-                            e.getStatusCode().value(), e.getStatusText(), e);
-                });
+                .onErrorMap(WebClientResponseException.class, e -> wrap(ERROR_CODE_DOCUMENT_UPLOAD, ERROR_MESSAGE_DOCUMENT_UPLOAD, e));
+    }
+
+    private PnRaddFsuException wrap(String code, String message, WebClientResponseException e) {
+        return new PnRaddFsuException(e.getMessage(), code, message, e.getStatusCode().value(), e.getStatusText(), e);
     }
 }

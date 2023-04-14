@@ -1,5 +1,6 @@
 package it.pagopa.pn.radd.bff.log;
 
+import lombok.extern.slf4j.Slf4j;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.core.io.buffer.DataBuffer;
 import org.springframework.http.server.reactive.ServerHttpRequest;
@@ -9,19 +10,25 @@ import reactor.core.scheduler.Schedulers;
 
 import java.nio.charset.StandardCharsets;
 
+import static it.pagopa.pn.radd.bff.log.RequestResponseLoggingFilter.LOG_REQUEST_BODY;
+
+@Slf4j
 public class RaddRequestDecorator extends ServerHttpRequestDecorator {
 
     private final StringBuilder body = new StringBuilder();
+    private final String maskedURI;
 
-    public RaddRequestDecorator(ServerHttpRequest delegate) {
+    public RaddRequestDecorator(ServerHttpRequest delegate, String maskedURI) {
         super(delegate);
+        this.maskedURI = maskedURI;
     }
 
     @Override
     public @NotNull Flux<DataBuffer> getBody() {
         return super.getBody()
                 .publishOn(Schedulers.boundedElastic())
-                .doOnNext(this::capture);
+                .doOnNext(this::capture)
+                .doOnComplete(() -> log.info(LOG_REQUEST_BODY, getMethod(), maskedURI, getCapturedBody()));
     }
 
     public String getCapturedBody() {

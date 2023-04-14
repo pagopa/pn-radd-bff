@@ -9,9 +9,9 @@ public class RaddWebExchangeDecorator extends ServerWebExchangeDecorator {
     private final RaddRequestDecorator requestDecorator;
     private final RaddResponseDecorator responseDecorator;
 
-    public RaddWebExchangeDecorator(ServerWebExchange exchange) {
+    public RaddWebExchangeDecorator(ServerWebExchange exchange, String maskedURI) {
         super(exchange);
-        requestDecorator = new RaddRequestDecorator(exchange.getRequest());
+        requestDecorator = new RaddRequestDecorator(exchange.getRequest(), maskedURI);
         responseDecorator = new RaddResponseDecorator(exchange.getResponse());
     }
 
