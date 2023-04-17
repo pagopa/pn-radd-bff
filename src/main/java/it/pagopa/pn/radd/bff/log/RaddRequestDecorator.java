@@ -10,7 +10,7 @@ import reactor.core.scheduler.Schedulers;
 
 import java.nio.charset.StandardCharsets;
 
-import static it.pagopa.pn.radd.bff.log.RequestResponseLoggingFilter.LOG_REQUEST_BODY;
+import static it.pagopa.pn.radd.bff.log.RaddRequestResponseLoggingFilter.LOG_REQUEST_BODY;
 
 @Slf4j
 public class RaddRequestDecorator extends ServerHttpRequestDecorator {

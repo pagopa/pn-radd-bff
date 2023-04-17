@@ -14,11 +14,13 @@ import reactor.core.publisher.Mono;
 
 @Slf4j
 @Component
-public class RequestResponseLoggingFilter implements WebFilter {
+public class RaddRequestResponseLoggingFilter implements WebFilter {
 
     static final String LOG_REQUEST = "Request HTTP {} to {}";
     static final String LOG_REQUEST_BODY = "Request HTTP {} to {} - body: {}";
-    static final String LOG_RESPONSE = "Response from {} - body: {} - timelapse: {}ms";
+
+    static final String LOG_RESPONSE_OK = "Response from {} {} - body: {} - timelapse: {}ms";
+    static final String LOG_RESPONSE_KO = "Response {} from {} {} - body: {}";
 
     @Override
     public @NotNull Mono<Void> filter(ServerWebExchange exchange, @NotNull WebFilterChain chain) {
@@ -40,9 +42,9 @@ public class RequestResponseLoggingFilter implements WebFilter {
 
         return chain.filter(webExchangeDecorator)
                 .doOnTerminate(() -> {
+                    var body = webExchangeDecorator.getResponse().getCapturedBody();
                     var elapsed = System.currentTimeMillis() - startTime;
-                    log.info(LOG_RESPONSE, maskedURI, webExchangeDecorator.getResponse().getCapturedBody(), elapsed);
+                    log.info(LOG_RESPONSE_OK, httpMethod, maskedURI, body, elapsed);
                 });
     }
-
 }
