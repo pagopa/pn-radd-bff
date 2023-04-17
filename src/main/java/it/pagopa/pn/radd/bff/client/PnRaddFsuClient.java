@@ -7,17 +7,11 @@ import it.pagopa.pn.radd.bff.log.ResponseExchangeFilter;
 import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.ApiClient;
 import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.api.*;
 import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.*;
-import org.springframework.http.client.reactive.ReactorClientHttpConnector;
 import org.springframework.stereotype.Component;
-import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.reactive.function.client.WebClientResponseException;
 import reactor.core.publisher.Mono;
-import reactor.netty.http.client.HttpClient;
-import reactor.netty.resources.ConnectionProvider;
-import reactor.netty.transport.ProxyProvider;
 
 import java.nio.charset.Charset;
-import java.time.Duration;
 
 @Component
 public class PnRaddFsuClient extends CommonBaseClient {
@@ -26,11 +20,6 @@ public class PnRaddFsuClient extends CommonBaseClient {
 
     private ActDocumentInquiryApi actDocumentInquiryApi;
     private ActTransactionManagementApi actTransactionManagementApi;
-
-    private AorDocumentInquiryApi aorDocumentInquiryApi;
-    private AorTransactionManagementApi aorTransactionManagementApi;
-
-    private NotificationInquiryApi notificationInquiryApi;
 
     private final PnRaddBffConfig pnRaddBffConfig;
     private final ResponseExchangeFilter responseExchangeFilter;
@@ -41,35 +30,13 @@ public class PnRaddFsuClient extends CommonBaseClient {
         init();
     }
 
-    private void init() {
-        String baseUrl = pnRaddBffConfig.getClientPnRaddFsuBasepath();
-        ConnectionProvider connectionProvider = ConnectionProvider.builder("fixed")
-                .maxConnections(100)
-                .pendingAcquireMaxCount(100)
-                .pendingAcquireTimeout(Duration.ofMillis(100))
-                .maxIdleTime(Duration.ofMillis(100))
-                .build();
-        HttpClient httpClient = HttpClient.create(connectionProvider)
-                .proxy(spec -> spec.type(ProxyProvider.Proxy.SOCKS5)
-                        .host("localhost") .port(5001)
-                        .connectTimeoutMillis(20_000));
-
-        WebClient.Builder webClientBuilder = WebClient.builder()
-                .baseUrl(baseUrl)
-                .codecs(c -> c.defaultCodecs().enableLoggingRequestDetails(true))
-                .filters(exchangeFilterFunctions -> exchangeFilterFunctions.add(responseExchangeFilter))
-                .clientConnector(new ReactorClientHttpConnector(httpClient));
-
-        ApiClient apiClient = new ApiClient(webClientBuilder
-                .filters(f -> f.add(responseExchangeFilter)).build());
-
+    public void init() {
+        ApiClient apiClient = new ApiClient(super.initWebClient(ApiClient.buildWebClientBuilder()
+                .filters(f -> f.add(responseExchangeFilter))));
         apiClient.setBasePath(pnRaddBffConfig.getClientPnRaddFsuBasepath());
         this.documentUploadApi = new DocumentUploadApi(apiClient);
         this.actDocumentInquiryApi = new ActDocumentInquiryApi(apiClient);
         this.actTransactionManagementApi = new ActTransactionManagementApi(apiClient);
-        this.aorDocumentInquiryApi = new AorDocumentInquiryApi(apiClient);
-        this.aorTransactionManagementApi = new AorTransactionManagementApi(apiClient);
-        this.notificationInquiryApi = new NotificationInquiryApi(apiClient);
     }
 
     public Mono<ActInquiryResponseDto> actInquiry(String uid, String recipientTaxId, String recipientType, String qrCode) {
