@@ -3,6 +3,7 @@ package it.pagopa.pn.radd.bff.log;
 import it.pagopa.pn.radd.bff.utils.MaskDataUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.jetbrains.annotations.NotNull;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.server.reactive.ServerHttpRequest;
@@ -22,9 +23,20 @@ public class RaddRequestResponseLoggingFilter implements WebFilter {
     static final String LOG_RESPONSE_OK = "Response from {} {} - body: {} - timelapse: {}ms";
     static final String LOG_RESPONSE_KO = "Response {} from {} {} - body: {}";
 
+    private final String healthCheckPath;
+
+    public RaddRequestResponseLoggingFilter(@Value("${pn.radd.bff.health-check.path}") String healthCheckPath) {
+        this.healthCheckPath = healthCheckPath;
+    }
+
     @Override
     public @NotNull Mono<Void> filter(ServerWebExchange exchange, @NotNull WebFilterChain chain) {
         final ServerHttpRequest httpRequest = exchange.getRequest();
+
+        if (httpRequest.getPath().toString().equals(healthCheckPath)) {
+            log.trace("skip log request/response for HealthCheck path");
+            return chain.filter(exchange);
+        }
 
         final HttpMethod httpMethod = httpRequest.getMethod();
         final String maskedURI = MaskDataUtils.maskInfo(httpRequest.getURI().toString());
