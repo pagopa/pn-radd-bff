@@ -19,18 +19,18 @@ public class TransactionManagementConverter {
         return abortTransactionRequestDto;
     }
 
-    public AbortTransactionResponse abortTransactionDtoToResponse(AbortTransactionResponseDto abortTransactionResponseDto) {
-        AbortTransactionResponse abortTransactionResponse = new AbortTransactionResponse();
+    public AbortTransactionResponse abortTransactionDtoToResponse(AbortTransactionResponseDto dto) {
+        TransactionResponseStatus responseStatus = new TransactionResponseStatus();
+        if (dto.getStatus() != null) {
+            if (dto.getStatus().getCode() != null) {
+                responseStatus.setCode(TransactionResponseStatus.CodeEnum.fromValue(dto.getStatus().getCode().getValue()));
+            }
+            responseStatus.setMessage(dto.getStatus().getMessage());
+        }
 
-        TransactionResponseStatus transactionResponseStatus = new TransactionResponseStatus();
-        TransactionResponseStatusDto transactionResponseStatusDto = abortTransactionResponseDto.getStatus();
-
-        transactionResponseStatus.setCode(TransactionResponseStatus.CodeEnum.fromValue(transactionResponseStatusDto.getCode().getValue()));
-        transactionResponseStatus.setMessage(transactionResponseStatusDto.getMessage());
-
-        abortTransactionResponse.setStatus(transactionResponseStatus);
-
-        return abortTransactionResponse;
+        AbortTransactionResponse response = new AbortTransactionResponse();
+        response.setStatus(responseStatus);
+        return response;
     }
 
     public CompleteTransactionRequestDto completeTransactionRequestToDto(CompleteTransactionRequest completeTransactionRequest) {
@@ -42,32 +42,33 @@ public class TransactionManagementConverter {
         return completeTransactionRequestDto;
     }
 
-    public CompleteTransactionResponse completeTransactionDtoToResponse(CompleteTransactionResponseDto completeTransactionResponseDto) {
-        CompleteTransactionResponse completeTransactionResponse = new CompleteTransactionResponse();
+    public CompleteTransactionResponse completeTransactionDtoToResponse(CompleteTransactionResponseDto dto) {
+        TransactionResponseStatus responseStatus = new TransactionResponseStatus();
 
-        TransactionResponseStatus transactionResponseStatus = new TransactionResponseStatus();
-        TransactionResponseStatusDto transactionResponseStatusDto = completeTransactionResponseDto.getStatus();
+        if (dto.getStatus() != null) {
+            if (dto.getStatus().getCode() != null) {
+                responseStatus.setCode(TransactionResponseStatus.CodeEnum.fromValue(dto.getStatus().getCode().getValue()));
+            }
+            responseStatus.setMessage(dto.getStatus().getMessage());
+        }
 
-        transactionResponseStatus.setCode(TransactionResponseStatus.CodeEnum.fromValue(transactionResponseStatusDto.getCode().getValue()));
-        transactionResponseStatus.setMessage(transactionResponseStatusDto.getMessage());
-
-        completeTransactionResponse.setStatus(transactionResponseStatus);
-
-        return completeTransactionResponse;
+        CompleteTransactionResponse response = new CompleteTransactionResponse();
+        response.setStatus(responseStatus);
+        return response;
     }
 
-    public StartTransactionResponse startTransactionDtoToResponse(StartTransactionResponseDto startTransactionResponseDto) {
-        StartTransactionResponse startTransactionResponse = new StartTransactionResponse();
+    public StartTransactionResponse startTransactionDtoToResponse(StartTransactionResponseDto dto) {
+        StartTransactionResponseStatus responseStatus = new StartTransactionResponseStatus();
+        if (dto.getStatus() != null) {
+            if (dto.getStatus().getCode() != null) {
+                responseStatus.setCode(StartTransactionResponseStatus.CodeEnum.fromValue(dto.getStatus().getCode().getValue()));
+            }
+            responseStatus.setMessage(dto.getStatus().getMessage());
+        }
 
-        StartTransactionResponseStatus startTransactionResponseStatus = new StartTransactionResponseStatus();
-        StartTransactionResponseStatusDto startTransactionResponseStatusDto = startTransactionResponseDto.getStatus();
-
-        startTransactionResponseStatus.setCode(StartTransactionResponseStatus.CodeEnum.fromValue(startTransactionResponseStatusDto.getCode().getValue()));
-        startTransactionResponseStatus.setMessage(startTransactionResponseStatusDto.getMessage());
-
-        startTransactionResponse.setStatus(startTransactionResponseStatus);
-
-        return startTransactionResponse;
+        StartTransactionResponse response = new StartTransactionResponse();
+        response.setStatus(responseStatus);
+        return response;
     }
 
     public ActStartTransactionRequestDto actStartTransactionRequestToDto(ActStartTransactionRequest actStartTransactionRequest) {
@@ -79,9 +80,13 @@ public class TransactionManagementConverter {
         actStartTransactionRequestDto.setQrCode(actStartTransactionRequest.getQrCode());
         actStartTransactionRequestDto.setVersionToken(actStartTransactionRequest.getVersionToken());
         actStartTransactionRequestDto.setRecipientTaxId(actStartTransactionRequest.getRecipientTaxId());
-        actStartTransactionRequestDto.setRecipientType(ActStartTransactionRequestDto.RecipientTypeEnum.fromValue(actStartTransactionRequest.getRecipientType().getValue()));
+        if (actStartTransactionRequest.getRecipientType() != null) {
+            actStartTransactionRequestDto.setRecipientType(ActStartTransactionRequestDto.RecipientTypeEnum.fromValue(actStartTransactionRequest.getRecipientType().getValue()));
+        }
         actStartTransactionRequestDto.setOperationId(actStartTransactionRequest.getOperationId());
-        actStartTransactionRequestDto.setOperationDate(actStartTransactionRequest.getOperationDate().toInstant().atOffset(ZoneOffset.UTC));
+        if (actStartTransactionRequest.getOperationDate() != null) {
+            actStartTransactionRequestDto.setOperationDate(actStartTransactionRequest.getOperationDate().toInstant().atOffset(ZoneOffset.UTC));
+        }
 
         return actStartTransactionRequestDto;
     }
@@ -93,10 +98,14 @@ public class TransactionManagementConverter {
         aorStartTransactionRequestDto.setFileKey(aorStartTransactionRequest.getFileKey());
         aorStartTransactionRequestDto.setDelegateTaxId(aorStartTransactionRequest.getDelegateTaxId());
         aorStartTransactionRequestDto.setVersionToken(aorStartTransactionRequest.getVersionToken());
-        aorStartTransactionRequestDto.setRecipientType(AorStartTransactionRequestDto.RecipientTypeEnum.fromValue(aorStartTransactionRequest.getRecipientType().getValue()));
+        if (aorStartTransactionRequest.getRecipientType() != null) {
+            aorStartTransactionRequestDto.setRecipientType(AorStartTransactionRequestDto.RecipientTypeEnum.fromValue(aorStartTransactionRequest.getRecipientType().getValue()));
+        }
         aorStartTransactionRequestDto.setRecipientTaxId(aorStartTransactionRequest.getRecipientTaxId());
         aorStartTransactionRequestDto.setOperationId(aorStartTransactionRequest.getOperationId());
-        aorStartTransactionRequestDto.setOperationDate(aorStartTransactionRequest.getOperationDate().toInstant().atOffset(ZoneOffset.UTC));
+        if (aorStartTransactionRequest.getOperationDate() != null) {
+            aorStartTransactionRequestDto.setOperationDate(aorStartTransactionRequest.getOperationDate().toInstant().atOffset(ZoneOffset.UTC));
+        }
 
         return aorStartTransactionRequestDto;
     }
