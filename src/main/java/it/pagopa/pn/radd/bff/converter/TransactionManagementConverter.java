@@ -85,4 +85,19 @@ public class TransactionManagementConverter {
 
         return actStartTransactionRequestDto;
     }
+
+    public AorStartTransactionRequestDto aorStartTransactionRequestToDto(AorStartTransactionRequest aorStartTransactionRequest) {
+        AorStartTransactionRequestDto aorStartTransactionRequestDto = new AorStartTransactionRequestDto();
+
+        aorStartTransactionRequestDto.setChecksum(aorStartTransactionRequest.getChecksum());
+        aorStartTransactionRequestDto.setFileKey(aorStartTransactionRequest.getFileKey());
+        aorStartTransactionRequestDto.setDelegateTaxId(aorStartTransactionRequest.getDelegateTaxId());
+        aorStartTransactionRequestDto.setVersionToken(aorStartTransactionRequest.getVersionToken());
+        aorStartTransactionRequestDto.setRecipientType(AorStartTransactionRequestDto.RecipientTypeEnum.fromValue(aorStartTransactionRequest.getRecipientType().getValue()));
+        aorStartTransactionRequestDto.setRecipientTaxId(aorStartTransactionRequest.getRecipientTaxId());
+        aorStartTransactionRequestDto.setOperationId(aorStartTransactionRequest.getOperationId());
+        aorStartTransactionRequestDto.setOperationDate(aorStartTransactionRequest.getOperationDate().toInstant().atOffset(ZoneOffset.UTC));
+
+        return aorStartTransactionRequestDto;
+    }
 }
