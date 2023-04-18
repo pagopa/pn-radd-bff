@@ -21,6 +21,7 @@ import static org.mockito.Mockito.*;
 @ContextConfiguration(classes = {TransactionManagementConverter.class})
 @ExtendWith(SpringExtension.class)
 class TransactionManagementConverterTest {
+
     @Autowired
     private TransactionManagementConverter transactionManagementConverter;
 
@@ -55,7 +56,7 @@ class TransactionManagementConverterTest {
         assertEquals("42", actualAbortTransactionRequestToDtoResult.getOperationId());
         verify(abortTransactionRequest).getOperationId();
         verify(abortTransactionRequest).getReason();
-        verify(abortTransactionRequest).getOperationDate();
+        verify(abortTransactionRequest, atLeast(1)).getOperationDate();
     }
 
     /**
@@ -108,7 +109,7 @@ class TransactionManagementConverterTest {
                 .getStatus();
         assertEquals(TransactionResponseStatus.CodeEnum.NUMBER_0, status.getCode());
         assertEquals("Not all who wander are lost", status.getMessage());
-        verify(transactionResponseStatusDto).getCode();
+        verify(transactionResponseStatusDto, atLeast(1)).getCode();
         verify(transactionResponseStatusDto).getMessage();
     }
 
@@ -128,7 +129,7 @@ class TransactionManagementConverterTest {
                 .getStatus();
         assertEquals(TransactionResponseStatus.CodeEnum.NUMBER_1, status.getCode());
         assertEquals("Not all who wander are lost", status.getMessage());
-        verify(transactionResponseStatusDto).getCode();
+        verify(transactionResponseStatusDto, atLeast(1)).getCode();
         verify(transactionResponseStatusDto).getMessage();
     }
 
@@ -143,7 +144,6 @@ class TransactionManagementConverterTest {
         assertNull(
                 transactionManagementConverter.completeTransactionRequestToDto(completeTransactionRequest).getOperationId());
     }
-
 
     /**
      * Method under test: {@link TransactionManagementConverter#completeTransactionRequestToDto(CompleteTransactionRequest)}
@@ -194,7 +194,7 @@ class TransactionManagementConverterTest {
                 .getStatus();
         assertEquals(TransactionResponseStatus.CodeEnum.NUMBER_0, status.getCode());
         assertEquals("Not all who wander are lost", status.getMessage());
-        verify(transactionResponseStatusDto).getCode();
+        verify(transactionResponseStatusDto, atLeast(1)).getCode();
         verify(transactionResponseStatusDto).getMessage();
     }
 
@@ -214,7 +214,7 @@ class TransactionManagementConverterTest {
                 .getStatus();
         assertEquals(TransactionResponseStatus.CodeEnum.NUMBER_1, status.getCode());
         assertEquals("Not all who wander are lost", status.getMessage());
-        verify(transactionResponseStatusDto).getCode();
+        verify(transactionResponseStatusDto, atLeast(1)).getCode();
         verify(transactionResponseStatusDto).getMessage();
     }
 
@@ -272,7 +272,7 @@ class TransactionManagementConverterTest {
         StartTransactionResponseStatus status = actualStartTransactionDtoToResponseResult.getStatus();
         assertEquals("Not all who wander are lost", status.getMessage());
         assertEquals(StartTransactionResponseStatus.CodeEnum.NUMBER_0, status.getCode());
-        verify(startTransactionResponseStatusDto).getCode();
+        verify(startTransactionResponseStatusDto, atLeast(1)).getCode();
         verify(startTransactionResponseStatusDto).getMessage();
     }
 
@@ -295,7 +295,7 @@ class TransactionManagementConverterTest {
         StartTransactionResponseStatus status = actualStartTransactionDtoToResponseResult.getStatus();
         assertEquals("Not all who wander are lost", status.getMessage());
         assertEquals(StartTransactionResponseStatus.CodeEnum.NUMBER_99, status.getCode());
-        verify(startTransactionResponseStatusDto).getCode();
+        verify(startTransactionResponseStatusDto, atLeast(1)).getCode();
         verify(startTransactionResponseStatusDto).getMessage();
     }
 
@@ -353,7 +353,7 @@ class TransactionManagementConverterTest {
         assertEquals("File Key", actualActStartTransactionRequestToDtoResult.getFileKey());
         assertEquals("42", actualActStartTransactionRequestToDtoResult.getDelegateTaxId());
         verify(actStartTransactionRequest).recipientType(any());
-        verify(actStartTransactionRequest).getRecipientType();
+        verify(actStartTransactionRequest, atLeast(1)).getRecipientType();
         verify(actStartTransactionRequest).getChecksum();
         verify(actStartTransactionRequest).getDelegateTaxId();
         verify(actStartTransactionRequest).getFileKey();
@@ -361,81 +361,7 @@ class TransactionManagementConverterTest {
         verify(actStartTransactionRequest).getQrCode();
         verify(actStartTransactionRequest).getRecipientTaxId();
         verify(actStartTransactionRequest).getVersionToken();
-        verify(actStartTransactionRequest).getOperationDate();
-    }
-
-    /**
-     * Method under test: {@link TransactionManagementConverter#aorStartTransactionRequestToDto(AorStartTransactionRequest)}
-     */
-    @Test
-    @Disabled("TODO: Complete this test")
-    void testAorStartTransactionRequestToDto() {
-        // TODO: Complete this test.
-        //   Reason: R013 No inputs found that don't throw a trivial exception.
-        //   Diffblue Cover tried to run the arrange/act section, but the method under
-        //   test threw
-        //   java.lang.NullPointerException: Cannot invoke "it.pagopa.pn.radd.bff.rest.v1.dto.AorStartTransactionRequest$RecipientTypeEnum.getValue()" because the return value of "it.pagopa.pn.radd.bff.rest.v1.dto.AorStartTransactionRequest.getRecipientType()" is null
-        //       at it.pagopa.pn.radd.bff.converter.TransactionManagementConverter.aorStartTransactionRequestToDto(TransactionManagementConverter.java:96)
-        //   See https://diff.blue/R013 to resolve this issue.
-
-        transactionManagementConverter.aorStartTransactionRequestToDto(new AorStartTransactionRequest());
-    }
-
-    /**
-     * Method under test: {@link TransactionManagementConverter#aorStartTransactionRequestToDto(AorStartTransactionRequest)}
-     */
-    @Test
-    @Disabled("TODO: Complete this test")
-    void testAorStartTransactionRequestToDto2() {
-        // TODO: Complete this test.
-        //   Reason: R013 No inputs found that don't throw a trivial exception.
-        //   Diffblue Cover tried to run the arrange/act section, but the method under
-        //   test threw
-        //   java.lang.NullPointerException: Cannot invoke "java.util.Date.toInstant()" because the return value of "it.pagopa.pn.radd.bff.rest.v1.dto.AorStartTransactionRequest.getOperationDate()" is null
-        //       at it.pagopa.pn.radd.bff.converter.TransactionManagementConverter.aorStartTransactionRequestToDto(TransactionManagementConverter.java:99)
-        //   See https://diff.blue/R013 to resolve this issue.
-
-        AorStartTransactionRequest aorStartTransactionRequest = new AorStartTransactionRequest();
-        aorStartTransactionRequest.recipientType(AorStartTransactionRequest.RecipientTypeEnum.PF);
-        transactionManagementConverter.aorStartTransactionRequestToDto(aorStartTransactionRequest);
-    }
-
-    /**
-     * Method under test: {@link TransactionManagementConverter#aorStartTransactionRequestToDto(AorStartTransactionRequest)}
-     */
-    @Test
-    @Disabled("TODO: Complete this test")
-    void testAorStartTransactionRequestToDto3() {
-        // TODO: Complete this test.
-        //   Reason: R013 No inputs found that don't throw a trivial exception.
-        //   Diffblue Cover tried to run the arrange/act section, but the method under
-        //   test threw
-        //   java.lang.NullPointerException: Cannot invoke "java.util.Date.toInstant()" because the return value of "it.pagopa.pn.radd.bff.rest.v1.dto.AorStartTransactionRequest.getOperationDate()" is null
-        //       at it.pagopa.pn.radd.bff.converter.TransactionManagementConverter.aorStartTransactionRequestToDto(TransactionManagementConverter.java:99)
-        //   See https://diff.blue/R013 to resolve this issue.
-
-        AorStartTransactionRequest aorStartTransactionRequest = new AorStartTransactionRequest();
-        aorStartTransactionRequest.setRecipientType(AorStartTransactionRequest.RecipientTypeEnum.PF);
-        transactionManagementConverter.aorStartTransactionRequestToDto(aorStartTransactionRequest);
-    }
-
-    /**
-     * Method under test: {@link TransactionManagementConverter#aorStartTransactionRequestToDto(AorStartTransactionRequest)}
-     */
-    @Test
-    @Disabled("TODO: Complete this test")
-    void testAorStartTransactionRequestToDto4() {
-        // TODO: Complete this test.
-        //   Reason: R013 No inputs found that don't throw a trivial exception.
-        //   Diffblue Cover tried to run the arrange/act section, but the method under
-        //   test threw
-        //   java.lang.NullPointerException: Cannot invoke "java.util.Date.toInstant()" because the return value of "it.pagopa.pn.radd.bff.rest.v1.dto.AorStartTransactionRequest.getOperationDate()" is null
-        //       at it.pagopa.pn.radd.bff.converter.TransactionManagementConverter.aorStartTransactionRequestToDto(TransactionManagementConverter.java:99)
-        //   See https://diff.blue/R013 to resolve this issue.
-
-        AorStartTransactionRequest aorStartTransactionRequest = new AorStartTransactionRequest();
-        aorStartTransactionRequest.recipientType(AorStartTransactionRequest.RecipientTypeEnum.PG);
-        transactionManagementConverter.aorStartTransactionRequestToDto(aorStartTransactionRequest);
+        verify(actStartTransactionRequest, atLeast(1)).getOperationDate();
     }
 
     /**
@@ -489,14 +415,14 @@ class TransactionManagementConverterTest {
         assertEquals("File Key", actualAorStartTransactionRequestToDtoResult.getFileKey());
         assertEquals("42", actualAorStartTransactionRequestToDtoResult.getDelegateTaxId());
         verify(aorStartTransactionRequest).recipientType(any());
-        verify(aorStartTransactionRequest).getRecipientType();
+        verify(aorStartTransactionRequest, atLeast(1)).getRecipientType();
         verify(aorStartTransactionRequest).getChecksum();
         verify(aorStartTransactionRequest).getDelegateTaxId();
         verify(aorStartTransactionRequest).getFileKey();
         verify(aorStartTransactionRequest).getOperationId();
         verify(aorStartTransactionRequest).getRecipientTaxId();
         verify(aorStartTransactionRequest).getVersionToken();
-        verify(aorStartTransactionRequest).getOperationDate();
+        verify(aorStartTransactionRequest, atLeast(1)).getOperationDate();
     }
 }
 

@@ -18,10 +18,10 @@ public class DocumentUploadController implements DocumentUploadApi {
     private final DocumentUploadService documentUploadService;
 
     /**
-     * POST /radd/documents/upload
+     * POST /radd-web/documents/upload
      * API utilizzata per la richiesta della presigned URL utilizzata per il caricamento della scansione dei documenti presentati a sportello dal cliente.
      *
-     * @param uid Identificativo del client giustapposizione dei campi frazionario-pdl-timestamp (required)
+     * @param xPagopaPnUid User Identifier (required)
      * @param documentUploadRequest  (required)
      * @return OK (status code 200)
      *         or Bad Request (status code 400)
@@ -31,10 +31,10 @@ public class DocumentUploadController implements DocumentUploadApi {
      *         or Internal Server Error (status code 500)
      */
     @Override
-    public Mono<ResponseEntity<DocumentUploadResponse>> documentUpload(String uid,
+    public Mono<ResponseEntity<DocumentUploadResponse>> documentUpload(String xPagopaPnUid,
                                                                        Mono<DocumentUploadRequest> documentUploadRequest,
                                                                        final ServerWebExchange exchange) {
-        return documentUploadService.documentUpload(uid, documentUploadRequest)
+        return documentUploadService.documentUpload(xPagopaPnUid, documentUploadRequest)
                 .map(m -> ResponseEntity.status(HttpStatus.OK).body(m));
     }
 }
