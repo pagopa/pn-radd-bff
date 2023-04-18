@@ -21,7 +21,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.reactive.function.client.WebClientResponseException;
 import org.springframework.web.server.ServerWebExchange;
-import reactor.core.Exceptions;
 import reactor.core.publisher.Mono;
 import reactor.util.annotation.NonNull;
 
@@ -58,15 +57,9 @@ public class PnWebExceptionHandler implements ErrorWebExceptionHandler {
         try {
             RaddBffProblem problem;
             if (throwable instanceof PnRaddBffException exception) {
-                if (exception.getStatusCode().equals(HttpStatus.UNAUTHORIZED)) {
-                    problem = convertToNationalRegistriesProblem(exceptionHelper.handleException(throwable));
-                } else {
-                    problem = createProblem(exception);
-                }
-            } else if (Exceptions.isRetryExhausted(throwable) && throwable.getCause() instanceof WebClientResponseException.ServiceUnavailable exception) {
                 problem = createProblem(exception);
             } else {
-                problem = convertToNationalRegistriesProblem(exceptionHelper.handleException(throwable));
+                problem = convertToRaddBFFProblem(exceptionHelper.handleException(throwable));
             }
 
             if (problem.getStatus() >= 500) {
@@ -89,7 +82,7 @@ public class PnWebExceptionHandler implements ErrorWebExceptionHandler {
         return serverWebExchange.getResponse().writeWith(Mono.just(dataBuffer));
     }
 
-    private RaddBffProblem convertToNationalRegistriesProblem(Problem handleException) {
+    private RaddBffProblem convertToRaddBFFProblem(Problem handleException) {
         RaddBffProblem raddBffProblem = new RaddBffProblem();
         raddBffProblem.setDetail(handleException.getDetail());
         raddBffProblem.setTitle(handleException.getTitle());
