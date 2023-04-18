@@ -13,7 +13,7 @@ public class HealthCheckApiController implements HealthCheckApi {
 
     @Override
     public Mono<ResponseEntity<String>> status(ServerWebExchange exchange) {
-        log.debug("Start status");
+        log.trace("HealthCheck - status");
         return Mono.just(ResponseEntity.ok("OK"));
     }
 }

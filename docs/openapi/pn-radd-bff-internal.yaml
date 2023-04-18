@@ -39,9 +39,9 @@ paths:
                 example: OK
         '500':
           description: Internal Server Error
-  /radd/act/inquiry:
+  /radd-web/act/inquiry:
     parameters:
-      - $ref: '#/components/parameters/uid'                                     # NO EXTERNAL
+      - $ref: 'remote-refs.yaml#/components/parameters/uidAuthFleet'          # NO EXTERNAL
       - $ref: '#/components/parameters/recipientTaxId'
       - $ref: '#/components/parameters/recipientType'
       - $ref: '#/components/parameters/qrCode'
@@ -68,9 +68,9 @@ paths:
         500:
           $ref: '#/components/responses/InternalError'
 
-  /radd/aor/inquiry:
+  /radd-web/aor/inquiry:
     parameters:
-      - $ref: '#/components/parameters/uid'                                     # NO EXTERNAL
+      - $ref: 'remote-refs.yaml#/components/parameters/uidAuthFleet'          # NO EXTERNAL
       - $ref: '#/components/parameters/recipientTaxId'
       - $ref: '#/components/parameters/recipientType'
     get:
@@ -96,14 +96,14 @@ paths:
         500:
           $ref: '#/components/responses/InternalError'
 
-  /radd/documents/upload:
+  /radd-web/documents/upload:
     post:
       tags:
         - documentUpload
       description: API utilizzata per la richiesta della presigned URL utilizzata per il caricamento della scansione dei documenti presentati a sportello dal cliente.
       operationId: documentUpload
       parameters:
-        - $ref: '#/components/parameters/uid'                                   # NO EXTERNAL
+        - $ref: 'remote-refs.yaml#/components/parameters/uidAuthFleet'          # NO EXTERNAL
       requestBody:
         content:
           application/json:
@@ -128,9 +128,9 @@ paths:
         500:
           $ref: '#/components/responses/InternalError'
 
-  /radd/act/transaction/start:
+  /radd-web/act/transaction/start:
     parameters:
-      - $ref: '#/components/parameters/uid'                                     # NO EXTERNAL
+      - $ref: 'remote-refs.yaml#/components/parameters/uidAuthFleet'          # NO EXTERNAL
     post:
       tags:
         - actTransactionManagement
@@ -160,9 +160,9 @@ paths:
         500:
           $ref: '#/components/responses/InternalError'
 
-  /radd/act/transaction/complete:
+  /radd-web/act/transaction/complete:
     parameters:
-      - $ref: '#/components/parameters/uid'                                     # NO EXTERNAL
+      - $ref: 'remote-refs.yaml#/components/parameters/uidAuthFleet'          # NO EXTERNAL
     post:
       tags:
         - actTransactionManagement
@@ -191,9 +191,9 @@ paths:
           $ref: '#/components/responses/NotAllowed'
         500:
           $ref: '#/components/responses/InternalError'
-  /radd/act/transaction/abort:
+  /radd-web/act/transaction/abort:
     parameters:
-      - $ref: '#/components/parameters/uid'                                     # NO EXTERNAL
+      - $ref: 'remote-refs.yaml#/components/parameters/uidAuthFleet'          # NO EXTERNAL
     post:
       tags:
         - actTransactionManagement
@@ -222,9 +222,9 @@ paths:
           $ref: '#/components/responses/NotAllowed'
         500:
           $ref: '#/components/responses/InternalError'
-  /radd/aor/transaction/start:
+  /radd-web/aor/transaction/start:
     parameters:
-      - $ref: '#/components/parameters/uid'                                     # NO EXTERNAL
+      - $ref: 'remote-refs.yaml#/components/parameters/uidAuthFleet'          # NO EXTERNAL
     post:
       tags:
         - aorTransactionManagement
@@ -253,9 +253,9 @@ paths:
           $ref: '#/components/responses/NotAllowed'
         500:
           $ref: '#/components/responses/InternalError'
-  /radd/aor/transaction/complete:
+  /radd-web/aor/transaction/complete:
     parameters:
-      - $ref: '#/components/parameters/uid'                                     # NO EXTERNAL
+      - $ref: 'remote-refs.yaml#/components/parameters/uidAuthFleet'          # NO EXTERNAL
     post:
       tags:
         - aorTransactionManagement
@@ -285,9 +285,9 @@ paths:
         500:
           $ref: '#/components/responses/InternalError'
 
-  /radd/aor/transaction/abort:
+  /radd-web/aor/transaction/abort:
     parameters:
-      - $ref: '#/components/parameters/uid'                                     # NO EXTERNAL
+      - $ref: 'remote-refs.yaml#/components/parameters/uidAuthFleet'          # NO EXTERNAL
     post:
       tags:
         - aorTransactionManagement
@@ -316,7 +316,7 @@ paths:
           $ref: '#/components/responses/NotAllowed'
         500:
           $ref: '#/components/responses/InternalError'
-  /radd/act/operations/by-id/{operationId}:
+  /radd-web/act/operations/by-id/{operationId}:
     parameters:
       - $ref: '#/components/parameters/operationId'
     get:
@@ -343,7 +343,7 @@ paths:
           $ref: '#/components/responses/NotAllowed'
         500:
           $ref: '#/components/responses/InternalError'
-  /radd/aor/operations/by-id/{operationId}:
+  /radd-web/aor/operations/by-id/{operationId}:
     parameters:
       - $ref: '#/components/parameters/operationId'
     get:
@@ -371,7 +371,7 @@ paths:
         500:
           $ref: '#/components/responses/InternalError'
 
-  /radd/act/operations/by-iun/{iun}:
+  /radd-web/act/operations/by-iun/{iun}:
     parameters:
       - $ref: '#/components/parameters/iun'
     get:
@@ -398,7 +398,7 @@ paths:
           $ref: '#/components/responses/NotAllowed'
         500:
           $ref: '#/components/responses/InternalError'
-  /radd/aor/operations/by-iun/{iun}:
+  /radd-web/aor/operations/by-iun/{iun}:
     parameters:
       - $ref: '#/components/parameters/iun'
     get:
@@ -425,7 +425,7 @@ paths:
           $ref: '#/components/responses/NotAllowed'
         500:
           $ref: '#/components/responses/InternalError'
-  /radd/act/operations/by-internalId/{taxId}:
+  /radd-web/act/operations/by-internalId/{taxId}:
     parameters:
       - $ref: '#/components/parameters/taxId'
     post:
@@ -457,7 +457,7 @@ paths:
           $ref: '#/components/responses/NotAllowed'
         500:
           $ref: '#/components/responses/InternalError'
-  /radd/aor/operations/by-internalId/{taxId}:
+  /radd-web/aor/operations/by-internalId/{taxId}:
     parameters:
       - $ref: '#/components/parameters/taxId'
     post:

@@ -91,6 +91,11 @@ Parameters:
     Type: Number
     Default: 2
 
+  HealthCheckEndpoint:
+    Description: Path endpoint di health check
+    Type: String
+    Default: '/status'
+
   # Instance parameters
   # 256 (.25 vCPU) - Available memory values: 0.5GB, 1GB, 2GB
   # 512 (.5 vCPU) - Available memory values: 1GB, 2GB, 3GB, 4GB
@@ -158,6 +163,7 @@ Resources:
         HealthCheckInterval: !Ref HealthCheckInterval
         HealthyThresholdCount: !Ref HealthyThresholdCount
         UnhealthyThresholdCount: !Ref UnhealthyThresholdCount
+        HealthCheckPath: !Ref HealthCheckEndpoint
         AutoscalingStrategy: REST-API
         AutoscalingThreshold: !Ref AutoscalingThreshold
         AutoscalingCheckPeriod: !Ref AutoscalingCheckPeriod
@@ -168,8 +174,9 @@ Resources:
         AlarmSNSTopicArn: !Ref AlarmSNSTopicArn
         ContainerImageURI: !Sub '${ContainerImageUri}'
         ContainerEnvEntry1: !Sub 'AWS_REGIONCODE=${AWS::Region}'
-        ContainerEnvEntry2: !Sub 'PN_RADD_BFF_CLIENT_PN_RADD_FSU_BASEPATH=http://${ApplicationLoadBalancerDomain}:8080'
-        MappedPaths: '/radd/*'
+        ContainerEnvEntry2: !Sub 'PN_RADD_BFF_HEALTH_CHECK_PATH=${HealthCheckEndpoint}'
+        ContainerEnvEntry3: !Sub 'PN_RADD_BFF_CLIENT_PN_RADD_FSU_BASEPATH=http://${ApplicationLoadBalancerDomain}:8080'
+        MappedPaths: '/radd-web/*'
         ECSClusterName: !Ref ECSClusterName
         Subnets: !Ref SubnetsIds
         VpcId: !Ref VpcId
@@ -188,7 +195,7 @@ Resources:
         IntendedUsage: WEB
         DnsName: !Ref WebApiDnsName
         ProjectName: !Ref ProjectName
-        ServiceApiPath: 'radd'
+        ServiceApiPath: 'radd-web'
         NetworkLoadBalancerLink: !Ref NetworkLoadBalancerLink
         ApplicationLoadBalancerDomain: !Ref ApplicationLoadBalancerDomain
         AlarmSNSTopicArn: !Ref AlarmSNSTopicArn
