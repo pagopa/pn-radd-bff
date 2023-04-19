@@ -1,10 +1,5 @@
 package it.pagopa.pn.radd.bff.rest;
 
-import static org.mockito.Mockito.atLeast;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
-
 import it.pagopa.pn.radd.bff.log.RaddResponseDecorator;
 import it.pagopa.pn.radd.bff.log.RaddWebExchangeDecorator;
 import org.junit.jupiter.api.Disabled;
@@ -19,11 +14,12 @@ import org.springframework.mock.http.server.reactive.MockServerHttpResponse;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.web.server.ServerWebExchange;
-import org.springframework.web.server.WebSession;
 import org.springframework.web.server.adapter.DefaultServerWebExchange;
 import org.springframework.web.server.i18n.AcceptHeaderLocaleContextResolver;
 import org.springframework.web.server.session.WebSessionManager;
 import reactor.core.publisher.Mono;
+
+import static org.mockito.Mockito.*;
 
 @ContextConfiguration(classes = {HealthCheckApiController.class})
 @ExtendWith(SpringExtension.class)

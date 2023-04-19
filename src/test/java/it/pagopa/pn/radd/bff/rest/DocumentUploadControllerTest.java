@@ -1,14 +1,9 @@
 package it.pagopa.pn.radd.bff.rest;
 
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
-
 import it.pagopa.pn.radd.bff.log.RaddRequestDecorator;
 import it.pagopa.pn.radd.bff.log.RaddResponseDecorator;
 import it.pagopa.pn.radd.bff.log.RaddWebExchangeDecorator;
 import it.pagopa.pn.radd.bff.rest.v1.dto.DocumentUploadRequest;
-import it.pagopa.pn.radd.bff.rest.v1.dto.DocumentUploadResponse;
 import it.pagopa.pn.radd.bff.service.DocumentUploadService;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -24,6 +19,8 @@ import org.springframework.web.server.ServerWebExchange;
 import org.springframework.web.server.adapter.DefaultServerWebExchange;
 import reactor.core.publisher.Mono;
 import reactor.core.scheduler.Scheduler;
+
+import static org.mockito.Mockito.*;
 
 @ContextConfiguration(classes = {DocumentUploadController.class})
 @ExtendWith(SpringExtension.class)

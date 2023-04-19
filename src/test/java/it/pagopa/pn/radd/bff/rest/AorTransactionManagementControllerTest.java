@@ -1,18 +1,11 @@
 package it.pagopa.pn.radd.bff.rest;
 
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
-
 import it.pagopa.pn.radd.bff.log.RaddRequestDecorator;
 import it.pagopa.pn.radd.bff.log.RaddResponseDecorator;
 import it.pagopa.pn.radd.bff.log.RaddWebExchangeDecorator;
 import it.pagopa.pn.radd.bff.rest.v1.dto.AbortTransactionRequest;
-import it.pagopa.pn.radd.bff.rest.v1.dto.AbortTransactionResponse;
 import it.pagopa.pn.radd.bff.rest.v1.dto.AorStartTransactionRequest;
 import it.pagopa.pn.radd.bff.rest.v1.dto.CompleteTransactionRequest;
-import it.pagopa.pn.radd.bff.rest.v1.dto.CompleteTransactionResponse;
-import it.pagopa.pn.radd.bff.rest.v1.dto.StartTransactionResponse;
 import it.pagopa.pn.radd.bff.service.AorTransactionManagementService;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -28,6 +21,8 @@ import org.springframework.web.server.ServerWebExchange;
 import org.springframework.web.server.adapter.DefaultServerWebExchange;
 import reactor.core.publisher.Mono;
 import reactor.core.scheduler.Scheduler;
+
+import static org.mockito.Mockito.*;
 
 @ContextConfiguration(classes = {AorTransactionManagementController.class})
 @ExtendWith(SpringExtension.class)
