@@ -4,15 +4,20 @@ import it.pagopa.pn.radd.bff.rest.v1.api.AorTransactionManagementApi;
 import it.pagopa.pn.radd.bff.rest.v1.dto.*;
 import it.pagopa.pn.radd.bff.service.AorTransactionManagementService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
+import reactor.core.scheduler.Scheduler;
 
 @RestController
 @RequiredArgsConstructor
 public class AorTransactionManagementController implements AorTransactionManagementApi {
+
+    @Qualifier("raddBffScheduler")
+    private final Scheduler scheduler;
 
     private final AorTransactionManagementService aorTransactionManagementService;
 
@@ -34,7 +39,8 @@ public class AorTransactionManagementController implements AorTransactionManagem
                                                                               Mono<AbortTransactionRequest> abortTransactionRequest,
                                                                               final ServerWebExchange exchange) {
         return aorTransactionManagementService.abortAorTransaction(xPagopaPnUid, abortTransactionRequest)
-                .map(m -> ResponseEntity.status(HttpStatus.OK).body(m));
+                .map(m -> ResponseEntity.status(HttpStatus.OK).body(m))
+                .publishOn(scheduler);
     }
 
     /**
@@ -55,7 +61,8 @@ public class AorTransactionManagementController implements AorTransactionManagem
                                                                                     Mono<CompleteTransactionRequest> completeTransactionRequest,
                                                                                     final ServerWebExchange exchange) {
         return aorTransactionManagementService.completeAorTransaction(xPagopaPnUid, completeTransactionRequest)
-                .map(m -> ResponseEntity.status(HttpStatus.OK).body(m));
+                .map(m -> ResponseEntity.status(HttpStatus.OK).body(m))
+                .publishOn(scheduler);
     }
 
     /**
@@ -76,6 +83,7 @@ public class AorTransactionManagementController implements AorTransactionManagem
                                                                                Mono<AorStartTransactionRequest> aorStartTransactionRequest,
                                                                                final ServerWebExchange exchange) {
         return aorTransactionManagementService.startAorTransaction(xPagopaPnUid, aorStartTransactionRequest)
-                .map(m -> ResponseEntity.status(HttpStatus.OK).body(m));
+                .map(m -> ResponseEntity.status(HttpStatus.OK).body(m))
+                .publishOn(scheduler);
     }
 }
