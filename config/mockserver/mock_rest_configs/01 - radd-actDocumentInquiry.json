@@ -1,0 +1,387 @@
+[
+  {
+    "httpRequest": {
+      "method": "GET",
+      "path": "/radd-private/api/v1/act/inquiry",
+      "headers": {
+        "uid": [
+          "uid"
+        ]
+      },
+      "queryStringParameters": {
+        "recipientTaxId": [
+          "GNIGNI80A01H501R"
+        ],
+        "recipientType": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^(PF|PG)$"
+            }
+          }
+        ],
+        "qrCode": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9]$"
+            }
+          }
+        ]
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "body": {
+        "type": "JSON",
+        "json": {
+          "result": true,
+          "status": {
+            "code": 0,
+            "message": "OK"
+          }
+        }
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "GET",
+      "path": "/radd-private/api/v1/act/inquiry",
+      "headers": {
+        "uid": [
+          "uid"
+        ]
+      },
+      "queryStringParameters": {
+        "recipientTaxId": [
+          "LNALNI80A01H501T"
+        ],
+        "recipientType": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^(PF|PG)$"
+            }
+          }
+        ],
+        "qrCode": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9]$"
+            }
+          }
+        ]
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "body": {
+        "type": "JSON",
+        "json": {
+          "result": true,
+          "status": {
+            "code": 1,
+            "message": "QrCode/CF non valido/i"
+          }
+        }
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "GET",
+      "path": "/radd-private/api/v1/act/inquiry",
+      "headers": {
+        "uid": [
+          "uid"
+        ]
+      },
+      "queryStringParameters": {
+        "recipientTaxId": [
+          "PPPPLT80A01H501V"
+        ],
+        "recipientType": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^(PF|PG)$"
+            }
+          }
+        ],
+        "qrCode": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9]$"
+            }
+          }
+        ]
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "body": {
+        "type": "JSON",
+        "json": {
+          "result": true,
+          "status": {
+            "code": 2,
+            "message": "Documenti non più disponibili"
+          }
+        }
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "GET",
+      "path": "/radd-private/api/v1/act/inquiry",
+      "headers": {
+        "uid": [
+          "uid"
+        ]
+      },
+      "queryStringParameters": {
+        "recipientTaxId": [
+          "TSTGNN80A01F839X"
+        ],
+        "recipientType": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^(PF|PG)$"
+            }
+          }
+        ],
+        "qrCode": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9]$"
+            }
+          }
+        ]
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "body": {
+        "type": "JSON",
+        "json": {
+          "result": true,
+          "status": {
+            "code": 3,
+            "message": "Stampa già eseguita"
+          }
+        }
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "GET",
+      "path": "/radd-private/api/v1/act/inquiry",
+      "headers": {
+        "uid": [
+          "uid"
+        ]
+      },
+      "queryStringParameters": {
+        "recipientTaxId": [
+          "PLOMRC01P30L736Y"
+        ],
+        "recipientType": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^(PF|PG)$"
+            }
+          }
+        ],
+        "qrCode": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9]$"
+            }
+          }
+        ]
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "body": {
+        "type": "JSON",
+        "json": {
+          "result": true,
+          "status": {
+            "code": 99,
+            "message": "KO"
+          }
+        }
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "GET",
+      "path": "/radd-private/api/v1/act/inquiry",
+      "headers": {
+        "uid": [
+          "uid"
+        ]
+      },
+      "queryStringParameters": {
+        "recipientTaxId": [
+          "FNIFNA80A01H501G"
+        ],
+        "recipientType": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^(PF|PG)$"
+            }
+          }
+        ],
+        "qrCode": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9]$"
+            }
+          }
+        ]
+      }
+    },
+    "httpResponseTemplate": {
+      "templateType": "VELOCITY",
+      "template": "{\"statusCode\":400,\"body\":{\"timestamp\":\"$date.iso\",\"status\":\"400\",\"error\":\"Bad Request\",\"path\":\"/radd-private/api/v1/act/inquiry\",\"requestId\": \"e2e7fdb9-4\"}}"
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "GET",
+      "path": "/radd-private/api/v1/act/inquiry",
+      "queryStringParameters": {
+        "recipientTaxId": [
+          "GNIGNI80A01H501R"
+        ],
+        "recipientType": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^(PF|PG)$"
+            }
+          }
+        ],
+        "qrCode": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9]$"
+            }
+          }
+        ]
+      }
+    },
+    "httpResponseTemplate": {
+      "templateType": "VELOCITY",
+      "template": "{\"statusCode\":401,\"body\":{\"timestamp\":\"$date.iso\",\"status\":\"401\",\"error\":\"Unauthorized\",\"path\":\"/radd-private/api/v1/act/inquiry\",\"requestId\": \"e2e7fdb9-4\"}}"
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST|DELETE|HEAD",
+      "path": "/radd-private/api/v1/act/inquiry",
+      "queryStringParameters": {
+        "recipientTaxId": [
+          "FRMTTR76M06B715E"
+        ],
+        "recipientType": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^(PF|PG)$"
+            }
+          }
+        ],
+        "qrCode": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9]$"
+            }
+          }
+        ]
+      }
+    },
+    "httpResponseTemplate": {
+      "templateType": "VELOCITY",
+      "template": "{\"statusCode\":405,\"body\":{\"timestamp\":\"$date.iso\",\"status\":\"405\",\"error\":\"Method Not Allowed\",\"path\":\"/radd-private/api/v1/act/inquiry\",\"requestId\": \"e2e7fdb9-4\"}}"
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "GET",
+      "path": "/radd-private/api/v1/act/inquiry",
+      "queryStringParameters": {
+        "recipientTaxId": [
+          "CIACIA80A01H501X"
+        ],
+        "recipientType": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^(PF|PG)$"
+            }
+          }
+        ],
+        "qrCode": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9]$"
+            }
+          }
+        ]
+      }
+    },
+    "httpResponseTemplate": {
+      "templateType": "VELOCITY",
+      "template": "{\"statusCode\":500,\"body\":{\"timestamp\":\"$date.iso\",\"status\":\"500\",\"error\":\"Internal Server Error\",\"path\":\"/radd-private/api/v1/act/inquiry\",\"requestId\": \"e2e7fdb9-4\"}}"
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "GET",
+      "path": "/radd-private/api/v1/act/inquiry",
+      "queryStringParameters": {
+        "recipientTaxId": [
+          "RFNNTR76M06B715E"
+        ],
+        "recipientType": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^(PF|PG)$"
+            }
+          }
+        ],
+        "qrCode": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9]$"
+            }
+          }
+        ]
+      }
+    },
+    "httpResponseTemplate": {
+      "templateType": "VELOCITY",
+      "template": "{\"statusCode\":403,\"body\":{\"timestamp\":\"$date.iso\",\"status\":\"403\",\"error\":\"Forbidden\",\"path\":\"/radd-private/api/v1/act/inquiry\",\"requestId\": \"e2e7fdb9-4\"}}"
+    }
+  }
+]

@@ -1,0 +1,203 @@
+[
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/radd-private/api/v1/documents/upload",
+      "headers": {
+        "Content-Type": [
+          "application/json"
+        ],
+        "uid": [
+          "uid"
+        ]
+      },
+      "body": {
+        "type": "JSON",
+        "json": {
+          "bundleId": "TBD",
+          "contentType": "application/gzip",
+          "checksum": "708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560"
+        }
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "body": {
+        "type": "JSON",
+        "json": {
+          "url": "https://presignedurldemo.s3.eu-west-2.amazonaws.com/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJJWZ7B6WCRGMKFGQ%2F20180210%2Feu-west-2%2Fs3%2Faws4_request&X-Amz-Date=20180210T171315Z&X-Amz-Expires=1800&X-Amz-Signature=12b74b0788aa036bc7c3d03b3f20c61f1f91cc9ad8873e3314255dc479a25351&X-Amz-SignedHeaders=host",
+          "fileKey": "PN_RADD_FSU",
+          "secret": "alow22ddw",
+          "status": {
+            "code": 0,
+            "message": "OK"
+          }
+        }
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/radd-private/api/v1/documents/upload",
+      "headers": {
+        "Content-Type": [
+          "application/json"
+        ],
+        "uid": [
+          "uid"
+        ]
+      },
+      "body": {
+        "type": "JSON",
+        "json": {
+          "bundleId": "TBD",
+          "contentType": "application/gzip",
+          "checksum": "259D8BCEFFA054E79AB740847D6B8FAF1C92067E1F27CBEBCAD2C07D9B962A34"
+        }
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "body": {
+        "type": "JSON",
+        "json": {
+          "url": "https://presignedurldemo.s3.eu-west-2.amazonaws.com/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJJWZ7B6WCRGMKFGQ%2F20180210%2Feu-west-2%2Fs3%2Faws4_request&X-Amz-Date=20180210T171315Z&X-Amz-Expires=1800&X-Amz-Signature=12b74b0788aa036bc7c3d03b3f20c61f1f91cc9ad8873e3314255dc479a25351&X-Amz-SignedHeaders=host",
+          "fileKey": "PN_RADD_FSU",
+          "secret": "alow22ddw",
+          "status": {
+            "code": 99,
+            "message": "KO"
+          }
+        }
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/radd-private/api/v1/documents/upload",
+      "headers": {
+        "Content-Type": [
+          "application/json"
+        ]
+      },
+      "body": {
+        "type": "JSON",
+        "json": {
+          "bundleId": "TBD",
+          "contentType": "application/gzip",
+          "checksum": "708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560"
+        }
+      }
+    },
+    "httpResponseTemplate": {
+      "templateType": "VELOCITY",
+      "template": "{\"statusCode\":401,\"body\":{\"timestamp\":\"$date.iso\",\"status\":\"401\",\"error\":\"Unauthorized\",\"path\":\"/radd-private/api/v1/documents/upload\",\"requestId\": \"e2e7fdb9-4\"}}"
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/radd-private/api/v1/documents/upload",
+      "headers": {
+        "Content-Type": [
+          "application/json"
+        ],
+        "uid": [
+          "uid"
+        ]
+      },
+      "body": {
+        "type": "JSON",
+        "json": {
+          "bundleId": "TBD",
+          "contentType": "application/gzip",
+          "checksum": "A932E7C87F471C1EE7A5E17F0EC746F628CF0D94F06CA5E12AF5D8173C3F694B"
+        }
+      }
+    },
+    "httpResponseTemplate": {
+      "templateType": "VELOCITY",
+      "template": "{\"statusCode\":400,\"body\":{\"timestamp\":\"$date.iso\",\"status\":\"400\",\"error\":\"Bad Request\",\"path\":\"/radd-private/api/v1/documents/upload\",\"requestId\": \"e2e7fdb9-4\"}}"
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "GET|DELETE|HEAD",
+      "path": "/radd-private/api/v1/documents/upload",
+      "headers": {
+        "Content-Type": [
+          "application/json"
+        ],
+        "uid": [
+          "uid"
+        ]
+      },
+      "body": {
+        "type": "JSON",
+        "json": {
+          "bundleId": "TBD",
+          "contentType": "application/gzip",
+          "checksum": "F61FC75C4D4B3A4A4D4E273F08A6E8C299372DFD873A814ED6B92159D7A9F9F1"
+        }
+      }
+    },
+    "httpResponseTemplate": {
+      "templateType": "VELOCITY",
+      "template": "{\"statusCode\":405,\"body\":{\"timestamp\":\"$date.iso\",\"status\":\"405\",\"error\":\"Method Not Allowed\",\"path\":\"/radd-private/api/v1/documents/upload\",\"requestId\": \"e2e7fdb9-4\"}}"
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/radd-private/api/v1/documents/upload",
+      "headers": {
+        "Content-Type": [
+          "application/json"
+        ],
+        "uid": [
+          "uid"
+        ]
+      },
+      "body": {
+        "type": "JSON",
+        "json": {
+          "bundleId": "TBD",
+          "contentType": "application/gzip",
+          "checksum": "C6F02E6D8FBB89A2516F20D44729E6821E0D6E997C2D187E6D0C03353D8721D8"
+        }
+      }
+    },
+    "httpResponseTemplate": {
+      "templateType": "VELOCITY",
+      "template": "{\"statusCode\":500,\"body\":{\"timestamp\":\"$date.iso\",\"status\":\"500\",\"error\":\"Internal Server Error\",\"path\":\"/radd-private/api/v1/documents/upload\",\"requestId\": \"e2e7fdb9-4\"}}"
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/radd-private/api/v1/documents/upload",
+      "headers": {
+        "Content-Type": [
+          "application/json"
+        ],
+        "uid": [
+          "uid"
+        ]
+      },
+      "body": {
+        "type": "JSON",
+        "json": {
+          "bundleId": "TBD",
+          "contentType": "application/gzip",
+          "checksum": "L122E7C87F471C1EE7A5E17F0EC746F628CF0D94F06CA5E12AF5D8173C3F694B"
+        }
+      }
+    },
+    "httpResponseTemplate": {
+      "templateType": "VELOCITY",
+      "template": "{\"statusCode\":403,\"body\":{\"timestamp\":\"$date.iso\",\"status\":\"403\",\"error\":\"Forbidden\",\"path\":\"/radd-private/api/v1/documents/upload\",\"requestId\": \"e2e7fdb9-4\"}}"
+    }
+  }
+]
