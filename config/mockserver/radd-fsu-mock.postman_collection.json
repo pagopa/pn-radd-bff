@@ -1,0 +1,4585 @@
+{
+	"info": {
+		"_postman_id": "ae1ec7b6-f845-4493-bfbf-5cc03a1604e3",
+		"name": "radd-fsu-mock",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26143046"
+	},
+	"item": [
+		{
+			"name": "actDocumentInquiry",
+			"item": [
+				{
+					"name": "RADD - 200 OK",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:1080/radd-private/api/v1/act/inquiry?recipientTaxId=GNIGNI80A01H501R&recipientType=PF&qrCode=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1080",
+							"path": [
+								"radd-private",
+								"api",
+								"v1",
+								"act",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "GNIGNI80A01H501R"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								},
+								{
+									"key": "qrCode",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RADD - 200 qrCode/CF non validi",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:1080/radd-private/api/v1/act/inquiry?recipientTaxId=LNALNI80A01H501T&recipientType=PF&qrCode=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1080",
+							"path": [
+								"radd-private",
+								"api",
+								"v1",
+								"act",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "LNALNI80A01H501T"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								},
+								{
+									"key": "qrCode",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RADD - 200 Documenti non più disponibili",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:1080/radd-private/api/v1/act/inquiry?recipientTaxId=PPPPLT80A01H501V&recipientType=PG&qrCode=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1080",
+							"path": [
+								"radd-private",
+								"api",
+								"v1",
+								"act",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "PPPPLT80A01H501V"
+								},
+								{
+									"key": "recipientType",
+									"value": "PG"
+								},
+								{
+									"key": "qrCode",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RADD - 200 Stampa già eseguita",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:1080/radd-private/api/v1/act/inquiry?recipientTaxId=TSTGNN80A01F839X&recipientType=PF&qrCode=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1080",
+							"path": [
+								"radd-private",
+								"api",
+								"v1",
+								"act",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "TSTGNN80A01F839X"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								},
+								{
+									"key": "qrCode",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RADD - 200 KO",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:1080/radd-private/api/v1/act/inquiry?recipientTaxId=PLOMRC01P30L736Y&recipientType=PF&qrCode=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1080",
+							"path": [
+								"radd-private",
+								"api",
+								"v1",
+								"act",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "PLOMRC01P30L736Y"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								},
+								{
+									"key": "qrCode",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RADD - 400",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:1080/radd-private/api/v1/act/inquiry?recipientTaxId=FNIFNA80A01H501G&recipientType=PG&qrCode=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1080",
+							"path": [
+								"radd-private",
+								"api",
+								"v1",
+								"act",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "FNIFNA80A01H501G"
+								},
+								{
+									"key": "recipientType",
+									"value": "PG"
+								},
+								{
+									"key": "qrCode",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RADD - 401",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "uid",
+								"value": "uid",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:1080/radd-private/api/v1/act/inquiry?recipientTaxId=GNIGNI80A01H501R&recipientType=PF&qrCode=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1080",
+							"path": [
+								"radd-private",
+								"api",
+								"v1",
+								"act",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "GNIGNI80A01H501R"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								},
+								{
+									"key": "qrCode",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RADD - 403",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "uid",
+								"value": "uid",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:1080/radd-private/api/v1/act/inquiry?recipientTaxId=RFNNTR76M06B715E&recipientType=PF&qrCode=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1080",
+							"path": [
+								"radd-private",
+								"api",
+								"v1",
+								"act",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "RFNNTR76M06B715E"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								},
+								{
+									"key": "qrCode",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RADD - 405",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:1080/radd-private/api/v1/act/inquiry?recipientTaxId=FRMTTR76M06B715E&recipientType=PF&qrCode=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1080",
+							"path": [
+								"radd-private",
+								"api",
+								"v1",
+								"act",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "FRMTTR76M06B715E"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								},
+								{
+									"key": "qrCode",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RADD - 500",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1080/radd-private/api/v1/act/inquiry?recipientTaxId=CIACIA80A01H501X&recipientType=PF&qrCode=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1080",
+							"path": [
+								"radd-private",
+								"api",
+								"v1",
+								"act",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "CIACIA80A01H501X"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								},
+								{
+									"key": "qrCode",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "aorDocumentInquiry",
+			"item": [
+				{
+					"name": "RADD - 200 OK",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:1080/radd-private/api/v1/aor/inquiry?recipientTaxId=GNIGNI80A01H501R&recipientType=PF",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1080",
+							"path": [
+								"radd-private",
+								"api",
+								"v1",
+								"aor",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "GNIGNI80A01H501R"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RADD - 200 KO",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:1080/radd-private/api/v1/aor/inquiry?recipientTaxId=PLOMRC01P30L736Y&recipientType=PF",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1080",
+							"path": [
+								"radd-private",
+								"api",
+								"v1",
+								"aor",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "PLOMRC01P30L736Y"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RADD - 400",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:1080/radd-private/api/v1/aor/inquiry?recipientTaxId=FNIFNA80A01H501G&recipientType=PG",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1080",
+							"path": [
+								"radd-private",
+								"api",
+								"v1",
+								"aor",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "FNIFNA80A01H501G"
+								},
+								{
+									"key": "recipientType",
+									"value": "PG"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RADD - 403",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:1080/radd-private/api/v1/aor/inquiry?recipientTaxId=RFNNTR76M06B715E&recipientType=PG",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1080",
+							"path": [
+								"radd-private",
+								"api",
+								"v1",
+								"aor",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "RFNNTR76M06B715E"
+								},
+								{
+									"key": "recipientType",
+									"value": "PG"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RADD - 401",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "uid",
+								"value": "uid",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:1080/radd-private/api/v1/aor/inquiry?recipientTaxId=GNIGNI80A01H501R&recipientType=PF",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1080",
+							"path": [
+								"radd-private",
+								"api",
+								"v1",
+								"aor",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "GNIGNI80A01H501R"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RADD - 405",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:1080/radd-private/api/v1/aor/inquiry?recipientTaxId=FRMTTR76M06B715E&recipientType=PF",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1080",
+							"path": [
+								"radd-private",
+								"api",
+								"v1",
+								"aor",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "FRMTTR76M06B715E"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RADD - 500",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1080/radd-private/api/v1/aor/inquiry?recipientTaxId=CIACIA80A01H501X&recipientType=PF",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1080",
+							"path": [
+								"radd-private",
+								"api",
+								"v1",
+								"aor",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "CIACIA80A01H501X"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "documentUpload",
+			"item": [
+				{
+					"name": "RADD - 200 OK",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bundleId\": \"TBD\",\r\n    \"contentType\": \"application/gzip\",\r\n    \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1080/radd-private/api/v1/documents/upload",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1080",
+							"path": [
+								"radd-private",
+								"api",
+								"v1",
+								"documents",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RADD - 200 KO",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bundleId\": \"TBD\",\r\n    \"contentType\": \"application/gzip\",\r\n    \"checksum\": \"259D8BCEFFA054E79AB740847D6B8FAF1C92067E1F27CBEBCAD2C07D9B962A34\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1080/radd-private/api/v1/documents/upload",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1080",
+							"path": [
+								"radd-private",
+								"api",
+								"v1",
+								"documents",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RADD - 400",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bundleId\": \"TBD\",\r\n    \"contentType\": \"application/gzip\",\r\n    \"checksum\": \"A932E7C87F471C1EE7A5E17F0EC746F628CF0D94F06CA5E12AF5D8173C3F694B\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1080/radd-private/api/v1/documents/upload",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1080",
+							"path": [
+								"radd-private",
+								"api",
+								"v1",
+								"documents",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RADD - 403",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bundleId\": \"TBD\",\r\n    \"contentType\": \"application/gzip\",\r\n    \"checksum\": \"L122E7C87F471C1EE7A5E17F0EC746F628CF0D94F06CA5E12AF5D8173C3F694B\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1080/radd-private/api/v1/documents/upload",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1080",
+							"path": [
+								"radd-private",
+								"api",
+								"v1",
+								"documents",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RADD - 401",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bundleId\": \"TBD\",\r\n    \"contentType\": \"application/gzip\",\r\n    \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1080/radd-private/api/v1/documents/upload",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1080",
+							"path": [
+								"radd-private",
+								"api",
+								"v1",
+								"documents",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RADD - 405",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bundleId\": \"TBD\",\r\n    \"contentType\": \"application/gzip\",\r\n    \"checksum\": \"F61FC75C4D4B3A4A4D4E273F08A6E8C299372DFD873A814ED6B92159D7A9F9F1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1080/radd-private/api/v1/documents/upload",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1080",
+							"path": [
+								"radd-private",
+								"api",
+								"v1",
+								"documents",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RADD - 500",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bundleId\": \"TBD\",\r\n    \"contentType\": \"application/gzip\",\r\n    \"checksum\": \"C6F02E6D8FBB89A2516F20D44729E6821E0D6E997C2D187E6D0C03353D8721D8\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1080/radd-private/api/v1/documents/upload",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1080",
+							"path": [
+								"radd-private",
+								"api",
+								"v1",
+								"documents",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "actTransactionManagement",
+			"item": [
+				{
+					"name": "startTransaction",
+					"item": [
+						{
+							"name": "RADD - 200 OK",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"string\",\r\n          \"recipientTaxId\": \"GNIGNI80A01H501R\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo=\",\r\n          \"qrCode\": \"string\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/start",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 200 KO",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"string\",\r\n          \"recipientTaxId\": \"PLOMRC01P30L736Y\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo=\",\r\n          \"qrCode\": \"string\"\r\n        }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/start",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 200 NotReady",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"string\",\r\n          \"recipientTaxId\": \"TSTGNN80A01F839X\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo=\",\r\n          \"qrCode\": \"string\"\r\n        }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/start",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 401",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"string\",\r\n          \"recipientTaxId\": \"GNIGNI80A01H501R\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo=\",\r\n          \"qrCode\": \"string\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/start",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 403",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"string\",\r\n          \"recipientTaxId\": \"RFNNTR76M06B715E\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo=\",\r\n          \"qrCode\": \"string\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/start",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 400",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"string\",\r\n          \"recipientTaxId\": \"FNIFNA80A01H501G\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo=\",\r\n          \"qrCode\": \"string\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/start",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 405",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"string\",\r\n          \"recipientTaxId\": \"FRMTTR76M06B715E\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo=\",\r\n          \"qrCode\": \"string\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/start",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 500",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"string\",\r\n          \"recipientTaxId\": \"CIACIA80A01H501X\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo=\",\r\n          \"qrCode\": \"string\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/start",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "completeTransaction",
+					"item": [
+						{
+							"name": "RADD - 200 OK",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"2bb5c29e0cf411ed861d0242ac120002\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/complete",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"transaction",
+										"complete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 200 KO",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"67d8a1f225f24c13a05e00a0d8a8aaba\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/complete",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"transaction",
+										"complete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 200 Transazione inesistente",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"78c1f2769c8e4ba084a62e778a143d67\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/complete",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"transaction",
+										"complete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 200 Transazione già completata",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"e40474dc17f14e309ce2a33e62d3d174\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/complete",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"transaction",
+										"complete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 401",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"2bb5c29e0cf411ed861d0242ac120002\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/complete",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"transaction",
+										"complete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 400",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"2c12e95533d0444991e8f18bb232a44b\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/complete",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"transaction",
+										"complete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 403",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"25550da94bc24a52a839628d9f9c37d8\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/complete",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"transaction",
+										"complete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 405",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"12550da94bc24a52a839628d9f9c37d8\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/complete",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"transaction",
+										"complete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 500",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"9415a0b4c4fc4d4f9a5bc5e5f5aefb47\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/complete",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"transaction",
+										"complete"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "abortTransaction",
+					"item": [
+						{
+							"name": "RADD - 200 OK",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"2bb5c29e0cf411ed861d0242ac120002\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/abort",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"transaction",
+										"abort"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 200 KO",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"67d8a1f225f24c13a05e00a0d8a8aaba\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/abort",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"transaction",
+										"abort"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 200 Transazione inesistente",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"78c1f2769c8e4ba084a62e778a143d67\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/abort",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"transaction",
+										"abort"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 200 Transazione già completata",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"e40474dc17f14e309ce2a33e62d3d174\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/abort",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"transaction",
+										"abort"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 401",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"2bb5c29e0cf411ed861d0242ac120002\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/abort",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"transaction",
+										"abort"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 400",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"2c12e95533d0444991e8f18bb232a44b\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/abort",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"transaction",
+										"abort"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 403",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"25550da94bc24a52a839628d9f9c37d8\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/abort",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"transaction",
+										"abort"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 405",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"12550da94bc24a52a839628d9f9c37d8\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/abort",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"transaction",
+										"abort"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 500",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"9415a0b4c4fc4d4f9a5bc5e5f5aefb47\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/abort",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"transaction",
+										"abort"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "aorTransactionManagement",
+			"item": [
+				{
+					"name": "startTransaction",
+					"item": [
+						{
+							"name": "RADD - 200 OK",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"string\",\r\n          \"recipientTaxId\": \"GNIGNI80A01H501R\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo=\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/start",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 200 KO",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"string\",\r\n          \"recipientTaxId\": \"PLOMRC01P30L736Y\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo=\"\r\n        }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/start",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 200 NotReady",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"string\",\r\n          \"recipientTaxId\": \"TSTGNN80A01F839X\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo=\"\r\n        }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/start",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 401",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"string\",\r\n          \"recipientTaxId\": \"GNIGNI80A01H501R\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo=\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/start",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 400",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"string\",\r\n          \"recipientTaxId\": \"FNIFNA80A01H501G\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo=\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/start",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 403",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"string\",\r\n          \"recipientTaxId\": \"RFNNTR76M06B715E\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo=\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/start",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 405",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"string\",\r\n          \"recipientTaxId\": \"FRMTTR76M06B715E\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo=\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/start",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 500",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"string\",\r\n          \"recipientTaxId\": \"CIACIA80A01H501X\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo=\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/start",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "completeTransaction",
+					"item": [
+						{
+							"name": "RADD - 200 OK",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"2bb5c29e0cf411ed861d0242ac120002\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/complete",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"transaction",
+										"complete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 200 KO",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"67d8a1f225f24c13a05e00a0d8a8aaba\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/complete",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"transaction",
+										"complete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 200 Transazione inesistente",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"78c1f2769c8e4ba084a62e778a143d67\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/complete",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"transaction",
+										"complete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 200 Transazione già completata",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"e40474dc17f14e309ce2a33e62d3d174\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/complete",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"transaction",
+										"complete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 401",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"2bb5c29e0cf411ed861d0242ac120002\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/complete",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"transaction",
+										"complete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 400",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"2c12e95533d0444991e8f18bb232a44b\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/complete",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"transaction",
+										"complete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 403",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"25550da94bc24a52a839628d9f9c37d8\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/complete",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"transaction",
+										"complete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 405",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"12550da94bc24a52a839628d9f9c37d8\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/complete",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"transaction",
+										"complete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 500",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"9415a0b4c4fc4d4f9a5bc5e5f5aefb47\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/complete",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"transaction",
+										"complete"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "abortTransaction",
+					"item": [
+						{
+							"name": "RADD - 200 OK",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"2bb5c29e0cf411ed861d0242ac120002\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/abort",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"transaction",
+										"abort"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 200 KO",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"67d8a1f225f24c13a05e00a0d8a8aaba\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/abort",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"transaction",
+										"abort"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 200 Transazione inesistente",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"78c1f2769c8e4ba084a62e778a143d67\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/abort",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"transaction",
+										"abort"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 200 Transazione già completata",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"e40474dc17f14e309ce2a33e62d3d174\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/abort",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"transaction",
+										"abort"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 401",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"2bb5c29e0cf411ed861d0242ac120002\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/abort",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"transaction",
+										"abort"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 400",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"2c12e95533d0444991e8f18bb232a44b\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/abort",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"transaction",
+										"abort"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 403",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"25550da94bc24a52a839628d9f9c37d8\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/abort",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"transaction",
+										"abort"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 405",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"12550da94bc24a52a839628d9f9c37d8\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/abort",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"transaction",
+										"abort"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 500",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"9415a0b4c4fc4d4f9a5bc5e5f5aefb47\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/abort",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"transaction",
+										"abort"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "notificationInquiry",
+			"item": [
+				{
+					"name": "operationAct",
+					"item": [
+						{
+							"name": "RADD - 200 OK",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/operations/by-id/2bb5c29e0cf411ed861d0242ac120002",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"operations",
+										"by-id",
+										"2bb5c29e0cf411ed861d0242ac120002"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 200 KO",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/operations/by-id/67d8a1f225f24c13a05e00a0d8a8aaba",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"operations",
+										"by-id",
+										"67d8a1f225f24c13a05e00a0d8a8aaba"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 200 Nessun elemento associato",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/operations/by-id/78c1f2769c8e4ba084a62e778a143d67",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"operations",
+										"by-id",
+										"78c1f2769c8e4ba084a62e778a143d67"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 401",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/operations/by-id/76d9a1f225f24c24a05e00a0d9a9aaba",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"operations",
+										"by-id",
+										"76d9a1f225f24c24a05e00a0d9a9aaba"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 400",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/operations/by-id/2c12e95533d0444991e8f18bb232a44b",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"operations",
+										"by-id",
+										"2c12e95533d0444991e8f18bb232a44b"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 403",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/operations/by-id/4926a0b4c4fc4d4f9a5bc5e5f5aefb47",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"operations",
+										"by-id",
+										"4926a0b4c4fc4d4f9a5bc5e5f5aefb47"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 404",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/operations/by-id/95150da94bc24a52a839628d9f9c37d8",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"operations",
+										"by-id",
+										"95150da94bc24a52a839628d9f9c37d8"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 405",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/operations/by-id/67d8a1f225f24c13a05e00a0d8a8aaba",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"operations",
+										"by-id",
+										"67d8a1f225f24c13a05e00a0d8a8aaba"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 500",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/operations/by-id/9415a0b4c4fc4d4f9a5bc5e5f5aefb47",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"operations",
+										"by-id",
+										"9415a0b4c4fc4d4f9a5bc5e5f5aefb47"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "operationAor",
+					"item": [
+						{
+							"name": "RADD - 200 OK",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/operations/by-id/2bb5c29e0cf411ed861d0242ac120002",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"operations",
+										"by-id",
+										"2bb5c29e0cf411ed861d0242ac120002"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 200 KO",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/operations/by-id/67d8a1f225f24c13a05e00a0d8a8aaba",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"operations",
+										"by-id",
+										"67d8a1f225f24c13a05e00a0d8a8aaba"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 200 Nessun elemento associato",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/operations/by-id/78c1f2769c8e4ba084a62e778a143d67",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"operations",
+										"by-id",
+										"78c1f2769c8e4ba084a62e778a143d67"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 401",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/operations/by-id/76d9a1f225f24c24a05e00a0d9a9aaba",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"operations",
+										"by-id",
+										"76d9a1f225f24c24a05e00a0d9a9aaba"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 400",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/operations/by-id/2c12e95533d0444991e8f18bb232a44b",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"operations",
+										"by-id",
+										"2c12e95533d0444991e8f18bb232a44b"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 403",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/operations/by-id/4926a0b4c4fc4d4f9a5bc5e5f5aefb47",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"operations",
+										"by-id",
+										"4926a0b4c4fc4d4f9a5bc5e5f5aefb47"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 404",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/operations/by-id/95150da94bc24a52a839628d9f9c37d8",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"operations",
+										"by-id",
+										"95150da94bc24a52a839628d9f9c37d8"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 405",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/operations/by-id/67d8a1f225f24c13a05e00a0d8a8aaba",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"operations",
+										"by-id",
+										"67d8a1f225f24c13a05e00a0d8a8aaba"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 500",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/operations/by-id/9415a0b4c4fc4d4f9a5bc5e5f5aefb47",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"operations",
+										"by-id",
+										"9415a0b4c4fc4d4f9a5bc5e5f5aefb47"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "operationsAct",
+					"item": [
+						{
+							"name": "RADD - 200 OK",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/operations/by-iun/LJLH-GNTJ-DVXR-202209-J-1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"operations",
+										"by-iun",
+										"LJLH-GNTJ-DVXR-202209-J-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 200 KO",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/operations/by-iun/LXNR-QPMS-OGTW-202209-K-1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"operations",
+										"by-iun",
+										"LXNR-QPMS-OGTW-202209-K-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 200 Nessun elemento associato",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/operations/by-iun/BVMK-NSRI-HFOL-202209-N-1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"operations",
+										"by-iun",
+										"BVMK-NSRI-HFOL-202209-N-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 401",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/operations/by-iun/GKMK-SPNV-BFYT-202209-F-1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"operations",
+										"by-iun",
+										"GKMK-SPNV-BFYT-202209-F-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 400",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/operations/by-iun/RJLM-QGXC-HPZD-202209-G-1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"operations",
+										"by-iun",
+										"RJLM-QGXC-HPZD-202209-G-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 403",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/operations/by-iun/4FZEB-JKRA-COGW-202209-I-1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"operations",
+										"by-iun",
+										"4FZEB-JKRA-COGW-202209-I-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 404",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/operations/by-iun/JTXA-EQYU-CRZG-202209-O-1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"operations",
+										"by-iun",
+										"JTXA-EQYU-CRZG-202209-O-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 405",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/operations/by-iun/NXPT-VWUD-LAIY-202209-H-1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"operations",
+										"by-iun",
+										"NXPT-VWUD-LAIY-202209-H-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 500",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/operations/by-iun/MTIS-UYFH-DPVC-202209-J-1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"operations",
+										"by-iun",
+										"MTIS-UYFH-DPVC-202209-J-1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "operationsAor",
+					"item": [
+						{
+							"name": "RADD - 200 OK",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/operations/by-iun/LJLH-GNTJ-DVXR-202209-J-1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"operations",
+										"by-iun",
+										"LJLH-GNTJ-DVXR-202209-J-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 200 KO",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/operations/by-iun/LXNR-QPMS-OGTW-202209-K-1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"operations",
+										"by-iun",
+										"LXNR-QPMS-OGTW-202209-K-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 200 Nessun elemento associato",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/operations/by-iun/BVMK-NSRI-HFOL-202209-N-1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"operations",
+										"by-iun",
+										"BVMK-NSRI-HFOL-202209-N-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 401",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/operations/by-iun/GKMK-SPNV-BFYT-202209-F-1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"operations",
+										"by-iun",
+										"GKMK-SPNV-BFYT-202209-F-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 400",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/operations/by-iun/RJLM-QGXC-HPZD-202209-G-1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"operations",
+										"by-iun",
+										"RJLM-QGXC-HPZD-202209-G-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 403",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/operations/by-iun/4FZEB-JKRA-COGW-202209-I-1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"operations",
+										"by-iun",
+										"4FZEB-JKRA-COGW-202209-I-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 404",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/operations/by-iun/JTXA-EQYU-CRZG-202209-O-1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"operations",
+										"by-iun",
+										"JTXA-EQYU-CRZG-202209-O-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 405",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/operations/by-iun/NXPT-VWUD-LAIY-202209-H-1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"operations",
+										"by-iun",
+										"NXPT-VWUD-LAIY-202209-H-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 500",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/operations/by-iun/MTIS-UYFH-DPVC-202209-J-1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"operations",
+										"by-iun",
+										"MTIS-UYFH-DPVC-202209-J-1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "operationsActDetails",
+					"item": [
+						{
+							"name": "RADD - 200 OK",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/operations/by-internalId/PF-4fc75df3-0913-407e-bdaa-e50329708b7d",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"operations",
+										"by-internalId",
+										"PF-4fc75df3-0913-407e-bdaa-e50329708b7d"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 200 KO",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/operations/by-internalId/PF-d0556f95-6de8-4a92-aa2e-5479f6a1d6d7",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"operations",
+										"by-internalId",
+										"PF-d0556f95-6de8-4a92-aa2e-5479f6a1d6d7"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 200 Nessun Elemento Associato",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/operations/by-internalId/PF-e6c22e6b-1276-44a6-a50a-5c0e4639425d",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"operations",
+										"by-internalId",
+										"PF-e6c22e6b-1276-44a6-a50a-5c0e4639425d"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 400",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/operations/by-internalId/PF-1f994c71-e5d5-4e5c-a9a9-23ebad4d30d2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"operations",
+										"by-internalId",
+										"PF-1f994c71-e5d5-4e5c-a9a9-23ebad4d30d2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 401",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/operations/by-internalId/PF-06c64ca7-8b20-4b7f-9b6a-11f91315b89c",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"operations",
+										"by-internalId",
+										"PF-06c64ca7-8b20-4b7f-9b6a-11f91315b89c"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 403",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/operations/by-internalId/PF-5c584ee7-09e8-4027-b1f9-c19a9a8e79b1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"operations",
+										"by-internalId",
+										"PF-5c584ee7-09e8-4027-b1f9-c19a9a8e79b1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 404",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/operations/by-internalId/PG-81a2f2dc-5109-4659-b9a8-8e52ce89a03a",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"operations",
+										"by-internalId",
+										"PG-81a2f2dc-5109-4659-b9a8-8e52ce89a03a"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 404 Copy",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/operations/by-internalId/PG-4fa4e3a8-19f2-46e3-ba81-9f1aebbc44ec",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"operations",
+										"by-internalId",
+										"PG-4fa4e3a8-19f2-46e3-ba81-9f1aebbc44ec"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 500",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/operations/by-internalId/PF-a5068d34-2677-4bfa-b0b9-945f0d37d7c5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"operations",
+										"by-internalId",
+										"PF-a5068d34-2677-4bfa-b0b9-945f0d37d7c5"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "operationsAorDetails",
+					"item": [
+						{
+							"name": "RADD - 200 OK",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/operations/by-internalId/PF-4fc75df3-0913-407e-bdaa-e50329708b7d",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"operations",
+										"by-internalId",
+										"PF-4fc75df3-0913-407e-bdaa-e50329708b7d"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 200 KO",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/operations/by-internalId/PF-d0556f95-6de8-4a92-aa2e-5479f6a1d6d7",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"operations",
+										"by-internalId",
+										"PF-d0556f95-6de8-4a92-aa2e-5479f6a1d6d7"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 200 Nessun Elemento Associato",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/operations/by-internalId/PF-e6c22e6b-1276-44a6-a50a-5c0e4639425d",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"operations",
+										"by-internalId",
+										"PF-e6c22e6b-1276-44a6-a50a-5c0e4639425d"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 400",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/operations/by-internalId/PF-1f994c71-e5d5-4e5c-a9a9-23ebad4d30d2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"operations",
+										"by-internalId",
+										"PF-1f994c71-e5d5-4e5c-a9a9-23ebad4d30d2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 401",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/operations/by-internalId/PF-06c64ca7-8b20-4b7f-9b6a-11f91315b89c",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"operations",
+										"by-internalId",
+										"PF-06c64ca7-8b20-4b7f-9b6a-11f91315b89c"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 403",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/operations/by-internalId/PF-5c584ee7-09e8-4027-b1f9-c19a9a8e79b1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"operations",
+										"by-internalId",
+										"PF-5c584ee7-09e8-4027-b1f9-c19a9a8e79b1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 405",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/operations/by-internalId/PG-4fa4e3a8-19f2-46e3-ba81-9f1aebbc44ec",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"operations",
+										"by-internalId",
+										"PG-4fa4e3a8-19f2-46e3-ba81-9f1aebbc44ec"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 404",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/operations/by-internalId/PG-81a2f2dc-5109-4659-b9a8-8e52ce89a03a",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"operations",
+										"by-internalId",
+										"PG-81a2f2dc-5109-4659-b9a8-8e52ce89a03a"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "RADD - 500",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/operations/by-internalId/PF-a5068d34-2677-4bfa-b0b9-945f0d37d7c5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"operations",
+										"by-internalId",
+										"PF-a5068d34-2677-4bfa-b0b9-945f0d37d7c5"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
