@@ -1,8 +1,5 @@
 package it.pagopa.pn.radd.bff.log;
 
-import java.nio.charset.Charset;
-
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
@@ -16,23 +13,16 @@ import org.springframework.http.HttpStatus;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.web.reactive.function.client.ClientRequest;
-import org.springframework.web.reactive.function.client.ClientResponse;
-import org.springframework.web.reactive.function.client.ExchangeFunction;
 import org.springframework.web.reactive.function.client.UnknownHttpStatusCodeException;
 import org.springframework.web.reactive.function.client.WebClientResponseException;
 
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Paths;
 
-import org.springframework.web.reactive.function.client.support.ClientResponseWrapper;
-
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.*;
-import static org.mockito.Mockito.atLeast;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
 
 @ContextConfiguration(classes = {ResponseExchangeFilter.class})
 @ExtendWith(SpringExtension.class)
@@ -153,14 +143,14 @@ class ResponseExchangeFilterTest {
     @Test
     void testLogRequestBody4() {
         DefaultDataBuffer delegate = mock(DefaultDataBuffer.class);
-        when(delegate.toString(Mockito.<Charset>any())).thenReturn("String");
+        when(delegate.toString(Mockito.any())).thenReturn("String");
         DataBufferWrapper dataBuffer = new DataBufferWrapper(
                 new DataBufferWrapper(new DataBufferWrapper(new DataBufferWrapper(delegate))));
         ClientRequest request = mock(ClientRequest.class);
         when(request.url()).thenReturn(Paths.get(System.getProperty("java.io.tmpdir"), "test.txt").toUri());
         when(request.method()).thenReturn(HttpMethod.GET);
         responseExchangeFilter.logRequestBody(dataBuffer, request);
-        verify(delegate).toString(Mockito.<Charset>any());
+        verify(delegate).toString(Mockito.any());
         verify(request).url();
         verify(request).method();
     }
@@ -171,7 +161,7 @@ class ResponseExchangeFilterTest {
     @Test
     void testLogRequestBody5() {
         DefaultDataBuffer delegate = mock(DefaultDataBuffer.class);
-        when(delegate.toString(Mockito.<Charset>any())).thenReturn("String");
+        when(delegate.toString(Mockito.any())).thenReturn("String");
         DataBufferWrapper dataBuffer = new DataBufferWrapper(
                 new DataBufferWrapper(new DataBufferWrapper(new DataBufferWrapper(delegate))));
         ClientRequest request = mock(ClientRequest.class);

@@ -1,11 +1,7 @@
 package it.pagopa.pn.radd.bff.rest;
 
-import it.pagopa.pn.radd.bff.log.RaddRequestDecorator;
-import it.pagopa.pn.radd.bff.log.RaddResponseDecorator;
-import it.pagopa.pn.radd.bff.log.RaddWebExchangeDecorator;
 import it.pagopa.pn.radd.bff.rest.v1.dto.*;
 import it.pagopa.pn.radd.bff.service.ActTransactionManagementService;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
@@ -13,17 +9,15 @@ import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.ResponseEntity;
-import org.springframework.http.server.reactive.ServerHttpRequestDecorator;
-import org.springframework.mock.http.server.reactive.MockServerHttpResponse;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.web.server.ServerWebExchange;
-import org.springframework.web.server.adapter.DefaultServerWebExchange;
 import reactor.core.publisher.Mono;
 import reactor.core.scheduler.Scheduler;
 import reactor.test.StepVerifier;
 
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 @ContextConfiguration(classes = {ActTransactionManagementController.class})
 @ExtendWith(SpringExtension.class)
@@ -44,8 +38,8 @@ class ActTransactionManagementControllerTest {
      */
     @Test
     void testAbortActTransaction3() {
-        when(actTransactionManagementService.abortActTransaction(Mockito.<String>any(),
-                Mockito.<Mono<AbortTransactionRequest>>any())).thenReturn(mock(Mono.class));
+        when(actTransactionManagementService.abortActTransaction(Mockito.any(),
+                Mockito.any())).thenReturn(mock(Mono.class));
         Mono<AbortTransactionRequest> abortTransactionRequest = mock(Mono.class);
 
         AbortTransactionResponse abortTransactionResponse = mock(AbortTransactionResponse.class);
@@ -59,8 +53,8 @@ class ActTransactionManagementControllerTest {
      */
     @Test
     void testCompleteActTransaction3() {
-        when(actTransactionManagementService.completeActTransaction(Mockito.<String>any(),
-                Mockito.<Mono<CompleteTransactionRequest>>any())).thenReturn(mock(Mono.class));
+        when(actTransactionManagementService.completeActTransaction(Mockito.any(),
+                Mockito.any())).thenReturn(mock(Mono.class));
         Mono<CompleteTransactionRequest> completeTransactionRequest = mock(Mono.class);
         CompleteTransactionResponse completeTransactionResponse = mock(CompleteTransactionResponse.class);
 
@@ -73,8 +67,8 @@ class ActTransactionManagementControllerTest {
      */
     @Test
     void testStartActTransaction3() {
-        when(actTransactionManagementService.startActTransaction(Mockito.<String>any(),
-                Mockito.<Mono<ActStartTransactionRequest>>any())).thenReturn(mock(Mono.class));
+        when(actTransactionManagementService.startActTransaction(Mockito.any(),
+                Mockito.any())).thenReturn(mock(Mono.class));
         Mono<ActStartTransactionRequest> actStartTransactionRequest = mock(Mono.class);
         StartTransactionResponse startTransactionResponse = mock(StartTransactionResponse.class);
 
