@@ -9,11 +9,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.web.bind.support.WebExchangeBindException;
+import org.springframework.web.server.ResponseStatusException;
 
+import javax.validation.ConstraintViolationException;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.mockito.Mockito.mock;
 
 @ContextConfiguration(classes = {PnRaddBffExceptionHelper.class, String.class})
 @ExtendWith(SpringExtension.class)
@@ -77,6 +81,56 @@ class PnRaddBffExceptionHelperTest {
         assertNull(getResult.getElement());
         assertEquals("none", getResult.getDetail());
         assertEquals("PN_GENERIC_ERROR", getResult.getCode());
+    }
+
+    @Test
+    void testHandleException5() {
+        ConstraintViolationException constraintViolationException = mock(ConstraintViolationException.class);
+        Problem actualHandleExceptionResult = pnRaddBffExceptionHelper
+                .handleException(constraintViolationException);
+        assertEquals("See logs for details in ", actualHandleExceptionResult.getDetail());
+        assertEquals("GENERIC_ERROR", actualHandleExceptionResult.getType());
+        assertEquals("Handled error", actualHandleExceptionResult.getTitle());
+        assertEquals(400, actualHandleExceptionResult.getStatus().intValue());
+        List<ProblemError> errors = actualHandleExceptionResult.getErrors();
+        assertEquals(1, errors.size());
+        ProblemError getResult = errors.get(0);
+        assertNull(getResult.getElement());
+        assertEquals("none", getResult.getDetail());
+        assertEquals("PN_GENERIC_ERROR", getResult.getCode());
+    }
+    @Test
+    void testHandleException6() {
+        WebExchangeBindException webExchangeBindException = mock(WebExchangeBindException.class);
+        Problem actualHandleExceptionResult = pnRaddBffExceptionHelper
+                .handleException(webExchangeBindException);
+        assertEquals("See logs for details in ", actualHandleExceptionResult.getDetail());
+        assertEquals("GENERIC_ERROR", actualHandleExceptionResult.getType());
+        assertEquals("Handled error", actualHandleExceptionResult.getTitle());
+        assertEquals(400, actualHandleExceptionResult.getStatus().intValue());
+        List<ProblemError> errors = actualHandleExceptionResult.getErrors();
+        assertEquals(1, errors.size());
+        ProblemError getResult = errors.get(0);
+        assertNull(getResult.getElement());
+        assertEquals("none", getResult.getDetail());
+        assertEquals("PN_GENERIC_ERROR", getResult.getCode());
+    }
+
+    @Test
+    void testHandleException7() {
+        ResponseStatusException responseStatusException = mock(ResponseStatusException.class);
+        Problem actualHandleExceptionResult = pnRaddBffExceptionHelper
+                .handleException(responseStatusException);
+        assertEquals("See logs for details in ", actualHandleExceptionResult.getDetail());
+        assertEquals("GENERIC_ERROR", actualHandleExceptionResult.getType());
+        assertEquals("Handled error", actualHandleExceptionResult.getTitle());
+        assertEquals(100, actualHandleExceptionResult.getStatus().intValue());
+        List<ProblemError> errors = actualHandleExceptionResult.getErrors();
+        assertEquals(1, errors.size());
+        ProblemError getResult = errors.get(0);
+        assertNull(getResult.getElement());
+        assertEquals("none", getResult.getDetail());
+        assertEquals("PN_WEB_GENERIC_ERROR", getResult.getCode());
     }
 }
 
