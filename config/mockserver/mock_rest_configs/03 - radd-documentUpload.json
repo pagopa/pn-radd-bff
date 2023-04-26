@@ -8,14 +8,19 @@
           "application/json"
         ],
         "uid": [
-          "uid"
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
         ]
       },
       "body": {
         "type": "JSON",
         "json": {
-          "bundleId": "TBD",
-          "contentType": "application/gzip",
+          "bundleId": "${json-unit.regex}(^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$)",
+          "contentType": "application/zip",
           "checksum": "708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560"
         }
       }
@@ -25,7 +30,7 @@
       "body": {
         "type": "JSON",
         "json": {
-          "url": "https://presignedurldemo.s3.eu-west-2.amazonaws.com/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJJWZ7B6WCRGMKFGQ%2F20180210%2Feu-west-2%2Fs3%2Faws4_request&X-Amz-Date=20180210T171315Z&X-Amz-Expires=1800&X-Amz-Signature=12b74b0788aa036bc7c3d03b3f20c61f1f91cc9ad8873e3314255dc479a25351&X-Amz-SignedHeaders=host",
+          "url": "https://presignedurldemo.s3.eu-west-2.amazonaws.com/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=XXXXXXXXXXXXXXXXXXXX%2F20180210%2Feu-west-2%2Fs3%2Faws4_request&X-Amz-Date=20180210T171315Z&X-Amz-Expires=1800&X-Amz-Signature=12b74b0788aa036bc7c3d03b3f20c61f1f91cc9ad8873e3314255dc479a25351&X-Amz-SignedHeaders=host",
           "fileKey": "PN_RADD_FSU",
           "secret": "alow22ddw",
           "status": {
@@ -45,14 +50,19 @@
           "application/json"
         ],
         "uid": [
-          "uid"
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
         ]
       },
       "body": {
         "type": "JSON",
         "json": {
-          "bundleId": "TBD",
-          "contentType": "application/gzip",
+          "bundleId": "${json-unit.regex}(^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$)",
+          "contentType": "application/zip",
           "checksum": "259D8BCEFFA054E79AB740847D6B8FAF1C92067E1F27CBEBCAD2C07D9B962A34"
         }
       }
@@ -62,7 +72,7 @@
       "body": {
         "type": "JSON",
         "json": {
-          "url": "https://presignedurldemo.s3.eu-west-2.amazonaws.com/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJJWZ7B6WCRGMKFGQ%2F20180210%2Feu-west-2%2Fs3%2Faws4_request&X-Amz-Date=20180210T171315Z&X-Amz-Expires=1800&X-Amz-Signature=12b74b0788aa036bc7c3d03b3f20c61f1f91cc9ad8873e3314255dc479a25351&X-Amz-SignedHeaders=host",
+          "url": "https://presignedurldemo.s3.eu-west-2.amazonaws.com/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=XXXXXXXXXXXXXXXXXXXX%2F20180210%2Feu-west-2%2Fs3%2Faws4_request&X-Amz-Date=20180210T171315Z&X-Amz-Expires=1800&X-Amz-Signature=12b74b0788aa036bc7c3d03b3f20c61f1f91cc9ad8873e3314255dc479a25351&X-Amz-SignedHeaders=host",
           "fileKey": "PN_RADD_FSU",
           "secret": "alow22ddw",
           "status": {
@@ -85,8 +95,8 @@
       "body": {
         "type": "JSON",
         "json": {
-          "bundleId": "TBD",
-          "contentType": "application/gzip",
+          "bundleId": "${json-unit.regex}(^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$)",
+          "contentType": "application/zip",
           "checksum": "708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560"
         }
       }
@@ -105,14 +115,19 @@
           "application/json"
         ],
         "uid": [
-          "uid"
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
         ]
       },
       "body": {
         "type": "JSON",
         "json": {
-          "bundleId": "TBD",
-          "contentType": "application/gzip",
+          "bundleId": "${json-unit.regex}(^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$)",
+          "contentType": "application/zip",
           "checksum": "A932E7C87F471C1EE7A5E17F0EC746F628CF0D94F06CA5E12AF5D8173C3F694B"
         }
       }
@@ -131,14 +146,19 @@
           "application/json"
         ],
         "uid": [
-          "uid"
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
         ]
       },
       "body": {
         "type": "JSON",
         "json": {
-          "bundleId": "TBD",
-          "contentType": "application/gzip",
+          "bundleId": "${json-unit.regex}(^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$)",
+          "contentType": "application/zip",
           "checksum": "F61FC75C4D4B3A4A4D4E273F08A6E8C299372DFD873A814ED6B92159D7A9F9F1"
         }
       }
@@ -157,14 +177,19 @@
           "application/json"
         ],
         "uid": [
-          "uid"
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
         ]
       },
       "body": {
         "type": "JSON",
         "json": {
-          "bundleId": "TBD",
-          "contentType": "application/gzip",
+          "bundleId": "${json-unit.regex}(^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$)",
+          "contentType": "application/zip",
           "checksum": "C6F02E6D8FBB89A2516F20D44729E6821E0D6E997C2D187E6D0C03353D8721D8"
         }
       }
@@ -183,14 +208,19 @@
           "application/json"
         ],
         "uid": [
-          "uid"
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
         ]
       },
       "body": {
         "type": "JSON",
         "json": {
-          "bundleId": "TBD",
-          "contentType": "application/gzip",
+          "bundleId": "${json-unit.regex}(^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$)",
+          "contentType": "application/zip",
           "checksum": "L122E7C87F471C1EE7A5E17F0EC746F628CF0D94F06CA5E12AF5D8173C3F694B"
         }
       }

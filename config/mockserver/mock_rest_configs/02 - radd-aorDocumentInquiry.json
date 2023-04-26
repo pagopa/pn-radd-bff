@@ -5,7 +5,12 @@
       "path": "/radd-private/api/v1/aor/inquiry",
       "headers": {
         "uid": [
-          "uid"
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9a-zA-Z]*$"
+            }
+          }
         ]
       },
       "queryStringParameters": {
@@ -42,7 +47,12 @@
       "path": "/radd-private/api/v1/aor/inquiry",
       "headers": {
         "uid": [
-          "uid"
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9a-zA-Z]*$"
+            }
+          }
         ]
       },
       "queryStringParameters": {
@@ -79,7 +89,12 @@
       "path": "/radd-private/api/v1/aor/inquiry",
       "headers": {
         "uid": [
-          "uid"
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9a-zA-Z]*$"
+            }
+          }
         ]
       },
       "queryStringParameters": {

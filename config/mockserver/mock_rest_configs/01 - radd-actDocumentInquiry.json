@@ -5,7 +5,12 @@
       "path": "/radd-private/api/v1/act/inquiry",
       "headers": {
         "uid": [
-          "uid"
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
         ]
       },
       "queryStringParameters": {
@@ -24,7 +29,7 @@
           {
             "schema": {
               "type": "string",
-              "pattern": "^[0-9]$"
+              "pattern": "^[0-9a-zA-Z]*$"
             }
           }
         ]
@@ -50,7 +55,12 @@
       "path": "/radd-private/api/v1/act/inquiry",
       "headers": {
         "uid": [
-          "uid"
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
         ]
       },
       "queryStringParameters": {
@@ -69,7 +79,7 @@
           {
             "schema": {
               "type": "string",
-              "pattern": "^[0-9]$"
+              "pattern": "^[0-9a-zA-Z]*$"
             }
           }
         ]
@@ -95,7 +105,12 @@
       "path": "/radd-private/api/v1/act/inquiry",
       "headers": {
         "uid": [
-          "uid"
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
         ]
       },
       "queryStringParameters": {
@@ -114,7 +129,7 @@
           {
             "schema": {
               "type": "string",
-              "pattern": "^[0-9]$"
+              "pattern": "^[0-9a-zA-Z]*$"
             }
           }
         ]
@@ -140,7 +155,12 @@
       "path": "/radd-private/api/v1/act/inquiry",
       "headers": {
         "uid": [
-          "uid"
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
         ]
       },
       "queryStringParameters": {
@@ -159,7 +179,7 @@
           {
             "schema": {
               "type": "string",
-              "pattern": "^[0-9]$"
+              "pattern": "^[0-9a-zA-Z]*$"
             }
           }
         ]
@@ -185,7 +205,12 @@
       "path": "/radd-private/api/v1/act/inquiry",
       "headers": {
         "uid": [
-          "uid"
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
         ]
       },
       "queryStringParameters": {
@@ -204,7 +229,7 @@
           {
             "schema": {
               "type": "string",
-              "pattern": "^[0-9]$"
+              "pattern": "^[0-9a-zA-Z]*$"
             }
           }
         ]
@@ -230,7 +255,12 @@
       "path": "/radd-private/api/v1/act/inquiry",
       "headers": {
         "uid": [
-          "uid"
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
         ]
       },
       "queryStringParameters": {
@@ -249,7 +279,7 @@
           {
             "schema": {
               "type": "string",
-              "pattern": "^[0-9]$"
+              "pattern": "^[0-9a-zA-Z]*$"
             }
           }
         ]
@@ -280,7 +310,7 @@
           {
             "schema": {
               "type": "string",
-              "pattern": "^[0-9]$"
+              "pattern": "^[0-9a-zA-Z]*$"
             }
           }
         ]
@@ -311,7 +341,7 @@
           {
             "schema": {
               "type": "string",
-              "pattern": "^[0-9]$"
+              "pattern": "^[0-9a-zA-Z]*$"
             }
           }
         ]
@@ -342,7 +372,7 @@
           {
             "schema": {
               "type": "string",
-              "pattern": "^[0-9]$"
+              "pattern": "^[0-9a-zA-Z]*$"
             }
           }
         ]
@@ -373,7 +403,7 @@
           {
             "schema": {
               "type": "string",
-              "pattern": "^[0-9]$"
+              "pattern": "^[0-9a-zA-Z]*$"
             }
           }
         ]

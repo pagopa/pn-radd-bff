@@ -8,7 +8,12 @@
           "application/json"
         ],
         "uid": [
-          "uid"
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
         ]
       },
       "body": {
@@ -51,7 +56,12 @@
           "application/json"
         ],
         "uid": [
-          "uid"
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
         ]
       },
       "body": {
@@ -94,7 +104,12 @@
           "application/json"
         ],
         "uid": [
-          "uid"
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
         ]
       },
       "body": {
@@ -165,7 +180,12 @@
           "application/json"
         ],
         "uid": [
-          "uid"
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
         ]
       },
       "body": {
@@ -196,7 +216,12 @@
           "application/json"
         ],
         "uid": [
-          "uid"
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
         ]
       },
       "body": {
@@ -227,7 +252,12 @@
           "application/json"
         ],
         "uid": [
-          "uid"
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
         ]
       },
       "body": {
@@ -258,7 +288,12 @@
           "application/json"
         ],
         "uid": [
-          "uid"
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
         ]
       },
       "body": {
@@ -289,7 +324,12 @@
           "application/json"
         ],
         "uid": [
-          "uid"
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
         ]
       },
       "body": {
@@ -322,7 +362,12 @@
           "application/json"
         ],
         "uid": [
-          "uid"
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
         ]
       },
       "body": {
@@ -355,7 +400,12 @@
           "application/json"
         ],
         "uid": [
-          "uid"
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
         ]
       },
       "body": {
@@ -388,7 +438,12 @@
           "application/json"
         ],
         "uid": [
-          "uid"
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
         ]
       },
       "body": {
@@ -531,7 +586,12 @@
           "application/json"
         ],
         "uid": [
-          "uid"
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
         ]
       },
       "body": {
@@ -565,7 +625,12 @@
           "application/json"
         ],
         "uid": [
-          "uid"
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
         ]
       },
       "body": {
@@ -599,7 +664,12 @@
           "application/json"
         ],
         "uid": [
-          "uid"
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
         ]
       },
       "body": {
@@ -633,7 +703,12 @@
           "application/json"
         ],
         "uid": [
-          "uid"
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
         ]
       },
       "body": {
