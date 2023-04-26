@@ -1,0 +1,776 @@
+[
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/radd-private/api/v1/aor/transaction/start",
+      "headers": {
+        "Content-Type": [
+          "application/json"
+        ],
+        "uid": [
+          "uid"
+        ]
+      },
+      "body": {
+        "type": "JSON",
+        "json": {
+          "versionToken": "string",
+          "fileKey": "string",
+          "operationId": "string",
+          "recipientTaxId": "GNIGNI80A01H501R",
+          "recipientType": "PF",
+          "delegateTaxId": "RFRGRZ66E21H751B",
+          "operationDate": "2023-04-19T11:44:28Z",
+          "checksum": "YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo="
+        }
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "body": {
+        "type": "JSON",
+        "json": {
+          "urlList": [
+            "string"
+          ],
+          "status": {
+            "code": 0,
+            "message": "OK",
+            "retryAfter": 670
+          }
+        }
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/radd-private/api/v1/aor/transaction/start",
+      "headers": {
+        "Content-Type": [
+          "application/json"
+        ],
+        "uid": [
+          "uid"
+        ]
+      },
+      "body": {
+        "type": "JSON",
+        "json": {
+          "versionToken": "string",
+          "fileKey": "string",
+          "operationId": "string",
+          "recipientTaxId": "PLOMRC01P30L736Y",
+          "recipientType": "PF",
+          "delegateTaxId": "RFRGRZ66E21H751B",
+          "operationDate": "2023-04-19T11:44:28Z",
+          "checksum": "YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo="
+        }
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "body": {
+        "type": "JSON",
+        "json": {
+          "urlList": [
+            "string"
+          ],
+          "status": {
+            "code": 99,
+            "message": "KO",
+            "retryAfter": 670
+          }
+        }
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/radd-private/api/v1/aor/transaction/start",
+      "headers": {
+        "Content-Type": [
+          "application/json"
+        ],
+        "uid": [
+          "uid"
+        ]
+      },
+      "body": {
+        "type": "JSON",
+        "json": {
+          "versionToken": "string",
+          "fileKey": "string",
+          "operationId": "string",
+          "recipientTaxId": "TSTGNN80A01F839X",
+          "recipientType": "PF",
+          "delegateTaxId": "RFRGRZ66E21H751B",
+          "operationDate": "2023-04-19T11:44:28Z",
+          "checksum": "YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo="
+        }
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "body": {
+        "type": "JSON",
+        "json": {
+          "urlList": [
+            "string"
+          ],
+          "status": {
+            "code": 2,
+            "message": "Not Ready",
+            "retryAfter": 670
+          }
+        }
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/radd-private/api/v1/aor/transaction/start",
+      "headers": {
+        "Content-Type": [
+          "application/json"
+        ]
+      },
+      "body": {
+        "type": "JSON",
+        "json": {
+          "versionToken": "string",
+          "fileKey": "string",
+          "operationId": "string",
+          "recipientTaxId": "GNIGNI80A01H501R",
+          "recipientType": "PF",
+          "delegateTaxId": "RFRGRZ66E21H751B",
+          "operationDate": "2023-04-19T11:44:28Z",
+          "checksum": "YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo="
+        }
+      }
+    },
+    "httpResponseTemplate": {
+      "templateType": "VELOCITY",
+      "template": "{\"statusCode\":401,\"body\":{\"timestamp\":\"$date.iso\",\"status\":\"401\",\"error\":\"Unauthorized\",\"path\":\"/radd-private/api/v1/aor/transaction/start\",\"requestId\": \"e2e7fdb9-4\"}}"
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/radd-private/api/v1/aor/transaction/start",
+      "headers": {
+        "Content-Type": [
+          "application/json"
+        ],
+        "uid": [
+          "uid"
+        ]
+      },
+      "body": {
+        "type": "JSON",
+        "json": {
+          "versionToken": "string",
+          "fileKey": "string",
+          "operationId": "string",
+          "recipientTaxId": "FNIFNA80A01H501G",
+          "recipientType": "PF",
+          "delegateTaxId": "RFRGRZ66E21H751B",
+          "operationDate": "2023-04-19T11:44:28Z",
+          "checksum": "YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo="
+        }
+      }
+    },
+    "httpResponseTemplate": {
+      "templateType": "VELOCITY",
+      "template": "{\"statusCode\":400,\"body\":{\"timestamp\":\"$date.iso\",\"status\":\"400\",\"error\":\"Bad Request\",\"path\":\"/radd-private/api/v1/aor/transaction/start\",\"requestId\": \"e2e7fdb9-4\"}}"
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "GET|DELETE|HEAD",
+      "path": "/radd-private/api/v1/aor/transaction/start",
+      "headers": {
+        "Content-Type": [
+          "application/json"
+        ],
+        "uid": [
+          "uid"
+        ]
+      },
+      "body": {
+        "type": "JSON",
+        "json": {
+          "versionToken": "string",
+          "fileKey": "string",
+          "operationId": "string",
+          "recipientTaxId": "FRMTTR76M06B715E",
+          "recipientType": "PF",
+          "delegateTaxId": "RFRGRZ66E21H751B",
+          "operationDate": "2023-04-19T11:44:28Z",
+          "checksum": "YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo="
+        }
+      }
+    },
+    "httpResponseTemplate": {
+      "templateType": "VELOCITY",
+      "template": "{\"statusCode\":405,\"body\":{\"timestamp\":\"$date.iso\",\"status\":\"405\",\"error\":\"Method Not Allowed\",\"path\":\"/radd-private/api/v1/aor/transaction/start\",\"requestId\": \"e2e7fdb9-4\"}}"
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/radd-private/api/v1/aor/transaction/start",
+      "headers": {
+        "Content-Type": [
+          "application/json"
+        ],
+        "uid": [
+          "uid"
+        ]
+      },
+      "body": {
+        "type": "JSON",
+        "json": {
+          "versionToken": "string",
+          "fileKey": "string",
+          "operationId": "string",
+          "recipientTaxId": "CIACIA80A01H501X",
+          "recipientType": "PF",
+          "delegateTaxId": "RFRGRZ66E21H751B",
+          "operationDate": "2023-04-19T11:44:28Z",
+          "checksum": "YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo="
+        }
+      }
+    },
+    "httpResponseTemplate": {
+      "templateType": "VELOCITY",
+      "template": "{\"statusCode\":500,\"body\":{\"timestamp\":\"$date.iso\",\"status\":\"500\",\"error\":\"Internal Server Error\",\"path\":\"/radd-private/api/v1/aor/transaction/start\",\"requestId\": \"e2e7fdb9-4\"}}"
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/radd-private/api/v1/aor/transaction/start",
+      "headers": {
+        "Content-Type": [
+          "application/json"
+        ],
+        "uid": [
+          "uid"
+        ]
+      },
+      "body": {
+        "type": "JSON",
+        "json": {
+          "versionToken": "string",
+          "fileKey": "string",
+          "operationId": "string",
+          "recipientTaxId": "RFNNTR76M06B715E",
+          "recipientType": "PF",
+          "delegateTaxId": "RFRGRZ66E21H751B",
+          "operationDate": "2023-04-19T11:44:28Z",
+          "checksum": "YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo="
+        }
+      }
+    },
+    "httpResponseTemplate": {
+      "templateType": "VELOCITY",
+      "template": "{\"statusCode\":403,\"body\":{\"timestamp\":\"$date.iso\",\"status\":\"403\",\"error\":\"Forbidden\",\"path\":\"/radd-private/api/v1/aor/transaction/start\",\"requestId\": \"e2e7fdb9-4\"}}"
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/radd-private/api/v1/aor/transaction/complete",
+      "headers": {
+        "Content-Type": [
+          "application/json"
+        ],
+        "uid": [
+          "uid"
+        ]
+      },
+      "body": {
+        "type": "JSON",
+        "json": {
+          "operationId": "2bb5c29e0cf411ed861d0242ac120002",
+          "operationDate": "2022-06-21T11:44:28Z"
+        }
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "body": {
+        "type": "JSON",
+        "json": {
+          "status": {
+            "code": 0,
+            "message": "OK"
+          }
+        }
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/radd-private/api/v1/aor/transaction/complete",
+      "headers": {
+        "Content-Type": [
+          "application/json"
+        ],
+        "uid": [
+          "uid"
+        ]
+      },
+      "body": {
+        "type": "JSON",
+        "json": {
+          "operationId": "67d8a1f225f24c13a05e00a0d8a8aaba",
+          "operationDate": "2022-06-21T11:44:28Z"
+        }
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "body": {
+        "type": "JSON",
+        "json": {
+          "status": {
+            "code": 99,
+            "message": "OK"
+          }
+        }
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/radd-private/api/v1/aor/transaction/complete",
+      "headers": {
+        "Content-Type": [
+          "application/json"
+        ],
+        "uid": [
+          "uid"
+        ]
+      },
+      "body": {
+        "type": "JSON",
+        "json": {
+          "operationId": "78c1f2769c8e4ba084a62e778a143d67",
+          "operationDate": "2022-06-21T11:44:28Z"
+        }
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "body": {
+        "type": "JSON",
+        "json": {
+          "status": {
+            "code": 1,
+            "message": "Transazione inesistente"
+          }
+        }
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/radd-private/api/v1/aor/transaction/complete",
+      "headers": {
+        "Content-Type": [
+          "application/json"
+        ],
+        "uid": [
+          "uid"
+        ]
+      },
+      "body": {
+        "type": "JSON",
+        "json": {
+          "operationId": "e40474dc17f14e309ce2a33e62d3d174",
+          "operationDate": "2022-06-21T11:44:28Z"
+        }
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "body": {
+        "type": "JSON",
+        "json": {
+          "status": {
+            "code": 2,
+            "message": "Transazione già completata"
+          }
+        }
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/radd-private/api/v1/aor/transaction/complete",
+      "headers": {
+        "Content-Type": [
+          "application/json"
+        ]
+      },
+      "body": {
+        "type": "JSON",
+        "json": {
+          "operationId": "2bb5c29e0cf411ed861d0242ac120002",
+          "operationDate": "2022-06-21T11:44:28Z"
+        }
+      }
+    },
+    "httpResponseTemplate": {
+      "templateType": "VELOCITY",
+      "template": "{\"statusCode\":401,\"body\":{\"timestamp\":\"$date.iso\",\"status\":\"401\",\"error\":\"Unauthorized\",\"path\":\"/radd-private/api/v1/aor/transaction/complete\",\"requestId\": \"e2e7fdb9-4\"}}"
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/radd-private/api/v1/aor/transaction/complete",
+      "headers": {
+        "Content-Type": [
+          "application/json"
+        ]
+      },
+      "body": {
+        "type": "JSON",
+        "json": {
+          "operationId": "2c12e95533d0444991e8f18bb232a44b",
+          "operationDate": "2022-06-21T11:44:28Z"
+        }
+      }
+    },
+    "httpResponseTemplate": {
+      "templateType": "VELOCITY",
+      "template": "{\"statusCode\":400,\"body\":{\"timestamp\":\"$date.iso\",\"status\":\"400\",\"error\":\"Bad Request\",\"path\":\"/radd-private/api/v1/aor/transaction/complete\",\"requestId\": \"e2e7fdb9-4\"}}"
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "GET|DELETE|HEAD",
+      "path": "/radd-private/api/v1/aor/transaction/complete",
+      "headers": {
+        "Content-Type": [
+          "application/json"
+        ]
+      },
+      "body": {
+        "type": "JSON",
+        "json": {
+          "operationId": "12550da94bc24a52a839628d9f9c37d8",
+          "operationDate": "2022-06-21T11:44:28Z"
+        }
+      }
+    },
+    "httpResponseTemplate": {
+      "templateType": "VELOCITY",
+      "template": "{\"statusCode\":405,\"body\":{\"timestamp\":\"$date.iso\",\"status\":\"405\",\"error\":\"Method Not Allowed\",\"path\":\"/radd-private/api/v1/aor/transaction/complete\",\"requestId\": \"e2e7fdb9-4\"}}"
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/radd-private/api/v1/aor/transaction/complete",
+      "headers": {
+        "Content-Type": [
+          "application/json"
+        ]
+      },
+      "body": {
+        "type": "JSON",
+        "json": {
+          "operationId": "9415a0b4c4fc4d4f9a5bc5e5f5aefb47",
+          "operationDate": "2022-06-21T11:44:28Z"
+        }
+      }
+    },
+    "httpResponseTemplate": {
+      "templateType": "VELOCITY",
+      "template": "{\"statusCode\":500,\"body\":{\"timestamp\":\"$date.iso\",\"status\":\"500\",\"error\":\"Internal Server Error\",\"path\":\"/radd-private/api/v1/aor/transaction/complete\",\"requestId\": \"e2e7fdb9-4\"}}"
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/radd-private/api/v1/aor/transaction/complete",
+      "headers": {
+        "Content-Type": [
+          "application/json"
+        ]
+      },
+      "body": {
+        "type": "JSON",
+        "json": {
+          "operationId": "25550da94bc24a52a839628d9f9c37d8",
+          "operationDate": "2022-06-21T11:44:28Z"
+        }
+      }
+    },
+    "httpResponseTemplate": {
+      "templateType": "VELOCITY",
+      "template": "{\"statusCode\":403,\"body\":{\"timestamp\":\"$date.iso\",\"status\":\"403\",\"error\":\"Forbidden\",\"path\":\"/radd-private/api/v1/aor/transaction/complete\",\"requestId\": \"e2e7fdb9-4\"}}"
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/radd-private/api/v1/aor/transaction/abort",
+      "headers": {
+        "Content-Type": [
+          "application/json"
+        ],
+        "uid": [
+          "uid"
+        ]
+      },
+      "body": {
+        "type": "JSON",
+        "json": {
+          "operationId": "2bb5c29e0cf411ed861d0242ac120002",
+          "reason": "abort",
+          "operationDate": "2022-06-21T11:44:28Z"
+        }
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "body": {
+        "type": "JSON",
+        "json": {
+          "status": {
+            "code": 0,
+            "message": "OK"
+          }
+        }
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/radd-private/api/v1/aor/transaction/abort",
+      "headers": {
+        "Content-Type": [
+          "application/json"
+        ],
+        "uid": [
+          "uid"
+        ]
+      },
+      "body": {
+        "type": "JSON",
+        "json": {
+          "operationId": "67d8a1f225f24c13a05e00a0d8a8aaba",
+          "reason": "abort",
+          "operationDate": "2022-06-21T11:44:28Z"
+        }
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "body": {
+        "type": "JSON",
+        "json": {
+          "status": {
+            "code": 99,
+            "message": "OK"
+          }
+        }
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/radd-private/api/v1/aor/transaction/abort",
+      "headers": {
+        "Content-Type": [
+          "application/json"
+        ],
+        "uid": [
+          "uid"
+        ]
+      },
+      "body": {
+        "type": "JSON",
+        "json": {
+          "operationId": "78c1f2769c8e4ba084a62e778a143d67",
+          "reason": "abort",
+          "operationDate": "2022-06-21T11:44:28Z"
+        }
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "body": {
+        "type": "JSON",
+        "json": {
+          "status": {
+            "code": 1,
+            "message": "Transazione inesistente"
+          }
+        }
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/radd-private/api/v1/aor/transaction/abort",
+      "headers": {
+        "Content-Type": [
+          "application/json"
+        ],
+        "uid": [
+          "uid"
+        ]
+      },
+      "body": {
+        "type": "JSON",
+        "json": {
+          "operationId": "e40474dc17f14e309ce2a33e62d3d174",
+          "reason": "abort",
+          "operationDate": "2022-06-21T11:44:28Z"
+        }
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "body": {
+        "type": "JSON",
+        "json": {
+          "status": {
+            "code": 2,
+            "message": "Transazione già completata"
+          }
+        }
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/radd-private/api/v1/aor/transaction/abort",
+      "headers": {
+        "Content-Type": [
+          "application/json"
+        ]
+      },
+      "body": {
+        "type": "JSON",
+        "json": {
+          "operationId": "2bb5c29e0cf411ed861d0242ac120002",
+          "reason": "abort",
+          "operationDate": "2022-06-21T11:44:28Z"
+        }
+      }
+    },
+    "httpResponseTemplate": {
+      "templateType": "VELOCITY",
+      "template": "{\"statusCode\":401,\"body\":{\"timestamp\":\"$date.iso\",\"status\":\"401\",\"error\":\"Unauthorized\",\"path\":\"/radd-private/api/v1/aor/transaction/abort\",\"requestId\": \"e2e7fdb9-4\"}}"
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/radd-private/api/v1/aor/transaction/abort",
+      "headers": {
+        "Content-Type": [
+          "application/json"
+        ]
+      },
+      "body": {
+        "type": "JSON",
+        "json": {
+          "operationId": "2c12e95533d0444991e8f18bb232a44b",
+          "reason": "abort",
+          "operationDate": "2022-06-21T11:44:28Z"
+        }
+      }
+    },
+    "httpResponseTemplate": {
+      "templateType": "VELOCITY",
+      "template": "{\"statusCode\":400,\"body\":{\"timestamp\":\"$date.iso\",\"status\":\"400\",\"error\":\"Bad Request\",\"path\":\"/radd-private/aor/v1/act/transaction/abort\",\"requestId\": \"e2e7fdb9-4\"}}"
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "GET|DELETE|HEAD",
+      "path": "/radd-private/api/v1/aor/transaction/abort",
+      "headers": {
+        "Content-Type": [
+          "application/json"
+        ]
+      },
+      "body": {
+        "type": "JSON",
+        "json": {
+          "operationId": "12550da94bc24a52a839628d9f9c37d8",
+          "reason": "abort",
+          "operationDate": "2022-06-21T11:44:28Z"
+        }
+      }
+    },
+    "httpResponseTemplate": {
+      "templateType": "VELOCITY",
+      "template": "{\"statusCode\":405,\"body\":{\"timestamp\":\"$date.iso\",\"status\":\"405\",\"error\":\"Method Not Allowed\",\"path\":\"/radd-private/api/v1/aor/transaction/abort\",\"requestId\": \"e2e7fdb9-4\"}}"
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/radd-private/api/v1/aor/transaction/abort",
+      "headers": {
+        "Content-Type": [
+          "application/json"
+        ]
+      },
+      "body": {
+        "type": "JSON",
+        "json": {
+          "operationId": "9415a0b4c4fc4d4f9a5bc5e5f5aefb47",
+          "reason": "abort",
+          "operationDate": "2022-06-21T11:44:28Z"
+        }
+      }
+    },
+    "httpResponseTemplate": {
+      "templateType": "VELOCITY",
+      "template": "{\"statusCode\":500,\"body\":{\"timestamp\":\"$date.iso\",\"status\":\"500\",\"error\":\"Internal Server Error\",\"path\":\"/radd-private/api/v1/aor/transaction/abort\",\"requestId\": \"e2e7fdb9-4\"}}"
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/radd-private/api/v1/aor/transaction/abort",
+      "headers": {
+        "Content-Type": [
+          "application/json"
+        ]
+      },
+      "body": {
+        "type": "JSON",
+        "json": {
+          "operationId": "25550da94bc24a52a839628d9f9c37d8",
+          "reason": "abort",
+          "operationDate": "2022-06-21T11:44:28Z"
+        }
+      }
+    },
+    "httpResponseTemplate": {
+      "templateType": "VELOCITY",
+      "template": "{\"statusCode\":403,\"body\":{\"timestamp\":\"$date.iso\",\"status\":\"403\",\"error\":\"Forbidden\",\"path\":\"/radd-private/api/v1/aor/transaction/abort\",\"requestId\": \"e2e7fdb9-4\"}}"
+    }
+  }
+]
