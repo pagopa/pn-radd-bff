@@ -16,13 +16,13 @@ import static it.pagopa.pn.radd.bff.exception.PnRaddBffExceptionCodes.*;
 @Component
 public class PnRaddFsuClient extends CommonBaseClient {
 
-    private DocumentUploadApi documentUploadApi;
+    private final DocumentUploadApi documentUploadApi;
 
-    private ActDocumentInquiryApi actDocumentInquiryApi;
-    private ActTransactionManagementApi actTransactionManagementApi;
+    private final ActDocumentInquiryApi actDocumentInquiryApi;
+    private final ActTransactionManagementApi actTransactionManagementApi;
 
-    private AorDocumentInquiryApi aorDocumentInquiryApi;
-    private AorTransactionManagementApi aorTransactionManagementApi;
+    private final AorDocumentInquiryApi aorDocumentInquiryApi;
+    private final AorTransactionManagementApi aorTransactionManagementApi;
 
     private final PnRaddBffConfig pnRaddBffConfig;
     private final ResponseExchangeFilter responseExchangeFilter;
@@ -30,18 +30,19 @@ public class PnRaddFsuClient extends CommonBaseClient {
     public PnRaddFsuClient(PnRaddBffConfig pnRaddBffConfig, ResponseExchangeFilter responseExchangeFilter) {
         this.pnRaddBffConfig = pnRaddBffConfig;
         this.responseExchangeFilter = responseExchangeFilter;
-        init();
-    }
-
-    private void init() {
-        ApiClient apiClient = new ApiClient(super.initWebClient(ApiClient.buildWebClientBuilder()
-                .filters(f -> f.add(responseExchangeFilter))));
-        apiClient.setBasePath(pnRaddBffConfig.getClientPnRaddFsuBasepath());
+        ApiClient apiClient = init();
         this.documentUploadApi = new DocumentUploadApi(apiClient);
         this.actDocumentInquiryApi = new ActDocumentInquiryApi(apiClient);
         this.actTransactionManagementApi = new ActTransactionManagementApi(apiClient);
         this.aorDocumentInquiryApi = new AorDocumentInquiryApi(apiClient);
         this.aorTransactionManagementApi = new AorTransactionManagementApi(apiClient);
+    }
+
+    private ApiClient init() {
+        ApiClient apiClient = new ApiClient(super.initWebClient(ApiClient.buildWebClientBuilder()
+                .filters(f -> f.add(responseExchangeFilter))));
+        apiClient.setBasePath(pnRaddBffConfig.getClientPnRaddFsuBasepath());
+        return apiClient;
     }
 
     public Mono<ActInquiryResponseDto> actInquiry(String uid, String recipientTaxId, String recipientType, String qrCode) {
