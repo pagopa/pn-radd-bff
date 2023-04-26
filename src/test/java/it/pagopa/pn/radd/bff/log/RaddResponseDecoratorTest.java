@@ -1,15 +1,5 @@
 package it.pagopa.pn.radd.bff.log;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
-import static org.junit.jupiter.api.Assertions.assertSame;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
-
-import java.util.function.Function;
-
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.reactivestreams.Publisher;
@@ -19,6 +9,11 @@ import org.springframework.http.server.reactive.HttpHeadResponseDecorator;
 import org.springframework.http.server.reactive.ServerHttpResponse;
 import org.springframework.http.server.reactive.ServerHttpResponseDecorator;
 import org.springframework.mock.http.server.reactive.MockServerHttpResponse;
+
+import java.util.function.Function;
+
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
 
 class RaddResponseDecoratorTest {
     /**
@@ -44,28 +39,6 @@ class RaddResponseDecoratorTest {
         (new RaddResponseDecorator(new RaddResponseDecorator(new RaddResponseDecorator(
                 new RaddResponseDecorator(new RaddResponseDecorator(new MockServerHttpResponse()))))))
                 .writeWith(mock(Publisher.class));
-    }
-
-    /**
-     * Method under test: {@link RaddResponseDecorator#writeWith(Publisher)}
-     */
-    @Test
-    @Disabled("TODO: Complete this test")
-    void testWriteWith2() {
-        // TODO: Complete this test.
-        //   Reason: R013 No inputs found that don't throw a trivial exception.
-        //   Diffblue Cover tried to run the arrange/act section, but the method under
-        //   test threw
-        //   java.lang.NullPointerException
-        //       at java.util.Objects.requireNonNull(Objects.java:208)
-        //       at reactor.core.publisher.FluxSource.<init>(FluxSource.java:48)
-        //       at reactor.core.publisher.Flux.wrap(Flux.java:10802)
-        //       at reactor.core.publisher.Flux.from(Flux.java:1090)
-        //       at it.pagopa.pn.radd.bff.log.RaddResponseDecorator.writeWith(RaddResponseDecorator.java:24)
-        //   See https://diff.blue/R013 to resolve this issue.
-
-        (new RaddResponseDecorator(new RaddResponseDecorator(
-                new RaddResponseDecorator(new RaddResponseDecorator(new MockServerHttpResponse()))))).writeWith(null);
     }
 
     /**

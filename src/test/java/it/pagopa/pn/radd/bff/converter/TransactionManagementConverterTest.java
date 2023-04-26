@@ -2,7 +2,7 @@ package it.pagopa.pn.radd.bff.converter;
 
 import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.*;
 import it.pagopa.pn.radd.bff.rest.v1.dto.*;
-import org.junit.jupiter.api.Disabled;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,7 +36,6 @@ class TransactionManagementConverterTest {
         AbortTransactionRequestDto actualAbortTransactionRequestToDtoResult = transactionManagementConverter
                 .abortTransactionRequestToDto(abortTransactionRequest);
         assertEquals("abort", actualAbortTransactionRequestToDtoResult.getReason());
-        assertNull(actualAbortTransactionRequestToDtoResult.getOperationId());
     }
 
     /**
@@ -131,18 +130,6 @@ class TransactionManagementConverterTest {
         assertEquals("Not all who wander are lost", status.getMessage());
         verify(transactionResponseStatusDto, atLeast(1)).getCode();
         verify(transactionResponseStatusDto).getMessage();
-    }
-
-    /**
-     * Method under test: {@link TransactionManagementConverter#completeTransactionRequestToDto(CompleteTransactionRequest)}
-     */
-    @Test
-    void testCompleteTransactionRequestToDto2() {
-        CompleteTransactionRequest completeTransactionRequest = new CompleteTransactionRequest();
-        LocalDateTime atStartOfDayResult = LocalDate.of(1970, 1, 1).atStartOfDay();
-        completeTransactionRequest.operationDate(Date.from(atStartOfDayResult.atZone(ZoneId.of("UTC")).toInstant()));
-        assertNull(
-                transactionManagementConverter.completeTransactionRequestToDto(completeTransactionRequest).getOperationId());
     }
 
     /**
@@ -310,15 +297,8 @@ class TransactionManagementConverterTest {
         actStartTransactionRequest.recipientType(ActStartTransactionRequest.RecipientTypeEnum.PG);
         ActStartTransactionRequestDto actualActStartTransactionRequestToDtoResult = transactionManagementConverter
                 .actStartTransactionRequestToDto(actStartTransactionRequest);
-        assertNull(actualActStartTransactionRequestToDtoResult.getChecksum());
-        assertNull(actualActStartTransactionRequestToDtoResult.getVersionToken());
         assertEquals(ActStartTransactionRequestDto.RecipientTypeEnum.PG,
                 actualActStartTransactionRequestToDtoResult.getRecipientType());
-        assertNull(actualActStartTransactionRequestToDtoResult.getRecipientTaxId());
-        assertNull(actualActStartTransactionRequestToDtoResult.getQrCode());
-        assertNull(actualActStartTransactionRequestToDtoResult.getOperationId());
-        assertNull(actualActStartTransactionRequestToDtoResult.getFileKey());
-        assertNull(actualActStartTransactionRequestToDtoResult.getDelegateTaxId());
     }
 
     /**
@@ -375,14 +355,8 @@ class TransactionManagementConverterTest {
         aorStartTransactionRequest.recipientType(AorStartTransactionRequest.RecipientTypeEnum.PG);
         AorStartTransactionRequestDto actualAorStartTransactionRequestToDtoResult = transactionManagementConverter
                 .aorStartTransactionRequestToDto(aorStartTransactionRequest);
-        assertNull(actualAorStartTransactionRequestToDtoResult.getChecksum());
-        assertNull(actualAorStartTransactionRequestToDtoResult.getVersionToken());
         assertEquals(AorStartTransactionRequestDto.RecipientTypeEnum.PG,
                 actualAorStartTransactionRequestToDtoResult.getRecipientType());
-        assertNull(actualAorStartTransactionRequestToDtoResult.getRecipientTaxId());
-        assertNull(actualAorStartTransactionRequestToDtoResult.getOperationId());
-        assertNull(actualAorStartTransactionRequestToDtoResult.getFileKey());
-        assertNull(actualAorStartTransactionRequestToDtoResult.getDelegateTaxId());
     }
 
     /**

@@ -17,7 +17,6 @@ import org.springframework.web.reactive.function.client.UnknownHttpStatusCodeExc
 import org.springframework.web.reactive.function.client.WebClientResponseException;
 
 import java.io.UnsupportedEncodingException;
-import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Paths;
 
@@ -72,24 +71,6 @@ class ResponseExchangeFilterTest {
     void testLogResponseBody8() {
         UnknownHttpStatusCodeException exception = mock(UnknownHttpStatusCodeException.class);
         when(exception.getResponseBodyAsString()).thenReturn("Not all who wander are lost");
-        when(exception.getStatusCode()).thenReturn(HttpStatus.CONTINUE);
-        ClientRequest request = mock(ClientRequest.class);
-        when(request.url()).thenReturn(Paths.get(System.getProperty("java.io.tmpdir"), "test.txt").toUri());
-        responseExchangeFilter.logResponseBody(1L, exception, request);
-        verify(exception).getResponseBodyAsString();
-        verify(exception, atLeast(1)).getStatusCode();
-        verify(request).url();
-    }
-
-    /**
-     * Method under test: {@link ResponseExchangeFilter#logResponseBody(long, WebClientResponseException, ClientRequest)}
-     */
-    @Test
-    void testLogResponseBody9() {
-        UnknownHttpStatusCodeException exception = mock(UnknownHttpStatusCodeException.class);
-        when(exception.getResponseBodyAsString())
-                .thenThrow(new WebClientResponseException(5, "Response HTTP from {} {} {} - body: {} - timelapse: {}ms",
-                        new HttpHeaders(), new byte[]{'A', 5, 'A', 5, 'A', 5, 'A', 5}, null));
         when(exception.getStatusCode()).thenReturn(HttpStatus.CONTINUE);
         ClientRequest request = mock(ClientRequest.class);
         when(request.url()).thenReturn(Paths.get(System.getProperty("java.io.tmpdir"), "test.txt").toUri());

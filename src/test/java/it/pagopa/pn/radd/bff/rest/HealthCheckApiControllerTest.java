@@ -2,7 +2,6 @@ package it.pagopa.pn.radd.bff.rest;
 
 import it.pagopa.pn.radd.bff.log.RaddResponseDecorator;
 import it.pagopa.pn.radd.bff.log.RaddWebExchangeDecorator;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
@@ -28,32 +27,12 @@ class HealthCheckApiControllerTest {
      * Method under test: {@link HealthCheckApiController#status(ServerWebExchange)}
      */
     @Test
-    @Disabled("TODO: Complete this test")
-    void testStatus() {
-        // TODO: Complete this test.
-        //   Reason: R013 No inputs found that don't throw a trivial exception.
-        //   Diffblue Cover tried to run the arrange/act section, but the method under
-        //   test threw
-        //   java.lang.IllegalArgumentException: ServerWebExchange 'delegate' is required.
-        //       at it.pagopa.pn.radd.bff.log.RaddWebExchangeDecorator.<init>(RaddWebExchangeDecorator.java:13)
-        //   See https://diff.blue/R013 to resolve this issue.
-
-        healthCheckApiController.status(new RaddWebExchangeDecorator(
-                new RaddWebExchangeDecorator(
-                        new RaddWebExchangeDecorator(new RaddWebExchangeDecorator(null, "Masked URI"), "Masked URI"), "Masked URI"),
-                "Masked URI"));
-    }
-
-    /**
-     * Method under test: {@link HealthCheckApiController#status(ServerWebExchange)}
-     */
-    @Test
     void testStatus2() {
         ServerHttpRequestDecorator request = mock(ServerHttpRequestDecorator.class);
         when(request.getHeaders()).thenReturn(new HttpHeaders());
         when(request.getId()).thenReturn("https://example.org/example");
         WebSessionManager sessionManager = mock(WebSessionManager.class);
-        when(sessionManager.getSession(Mockito.<ServerWebExchange>any())).thenReturn(mock(Mono.class));
+        when(sessionManager.getSession(Mockito.any())).thenReturn(mock(Mono.class));
         RaddResponseDecorator response = new RaddResponseDecorator(new RaddResponseDecorator(
                 new RaddResponseDecorator(new RaddResponseDecorator(new MockServerHttpResponse()))));
         DefaultServerCodecConfigurer codecConfigurer = new DefaultServerCodecConfigurer();
@@ -63,7 +42,7 @@ class HealthCheckApiControllerTest {
                 "Masked URI"), "Masked URI"));
         verify(request).getId();
         verify(request, atLeast(1)).getHeaders();
-        verify(sessionManager).getSession(Mockito.<ServerWebExchange>any());
+        verify(sessionManager).getSession(Mockito.any());
     }
 
     @Autowired

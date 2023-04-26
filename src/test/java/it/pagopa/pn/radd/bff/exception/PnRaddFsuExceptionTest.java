@@ -108,7 +108,7 @@ class PnRaddFsuExceptionTest {
      */
     @Test
     void testConstructor5() {
-        PnRaddFsuException actualPnRaddFsuException = new PnRaddFsuException("An error occurred", "Code", null, 2,
+        PnRaddFsuException actualPnRaddFsuException = new PnRaddFsuException("An error occurred", "Code", "detail", 2,
                 "Status Text", new Throwable());
 
         assertEquals(100, actualPnRaddFsuException.getStatus());
@@ -122,7 +122,7 @@ class PnRaddFsuExceptionTest {
         assertEquals("GENERIC_ERROR", problem.getType());
         ProblemError getResult = errors.get(0);
         assertNull(getResult.getElement());
-        assertEquals("none", getResult.getDetail());
+        assertEquals("detail", getResult.getDetail());
         assertEquals("Code", getResult.getCode());
     }
 
@@ -132,7 +132,7 @@ class PnRaddFsuExceptionTest {
     @Test
     void testConstructor6() {
         PnRaddFsuException actualPnRaddFsuException = new PnRaddFsuException("An error occurred", "Code", "Detail", 2,
-                null, new Throwable());
+                "Internal Server Error", new Throwable());
 
         assertEquals(100, actualPnRaddFsuException.getStatus());
         Problem problem = actualPnRaddFsuException.getProblem();
