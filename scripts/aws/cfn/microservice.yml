@@ -177,8 +177,9 @@ Resources:
         AlarmSNSTopicArn: !Ref AlarmSNSTopicArn
         ContainerImageURI: !Sub '${ContainerImageUri}'
         ContainerEnvEntry1: !Sub 'AWS_REGIONCODE=${AWS::Region}'
-        ContainerEnvEntry2: !Sub 'PN_RADD_BFF_HEALTH_CHECK_PATH=${HealthCheckEndpoint}'
-        ContainerEnvEntry3: !Sub 'PN_RADD_BFF_CLIENT_PN_RADD_FSU_BASEPATH=http://${ApplicationLoadBalancerDomain}:8080'
+        ContainerEnvEntry2: !Sub 'CORS_ALLOWED_DOMAINS=${CorsAllowedDomains}'
+        ContainerEnvEntry3: !Sub 'PN_RADD_BFF_HEALTH_CHECK_PATH=${HealthCheckEndpoint}'
+        ContainerEnvEntry4: !Sub 'PN_RADD_BFF_CLIENT_PN_RADD_FSU_BASEPATH=http://${ApplicationLoadBalancerDomain}:8080'
         MappedPaths: '/radd-web/*'
         ECSClusterName: !Ref ECSClusterName
         Subnets: !Ref SubnetsIds
