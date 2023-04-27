@@ -65,6 +65,606 @@
       },
       "queryStringParameters": {
         "recipientTaxId": [
+          "VIAVIA90A01H501X"
+        ],
+        "recipientType": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^(PF|PG)$"
+            }
+          }
+        ],
+        "qrCode": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9a-zA-Z]*$"
+            }
+          }
+        ]
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "body": {
+        "type": "JSON",
+        "json": {
+          "result": true,
+          "status": {
+            "code": 0,
+            "message": "OK"
+          }
+        }
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "GET",
+      "path": "/radd-private/api/v1/act/inquiry",
+      "headers": {
+        "uid": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
+        ]
+      },
+      "queryStringParameters": {
+        "recipientTaxId": [
+          "PLOMRC01P30L736Y"
+        ],
+        "recipientType": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^(PF|PG)$"
+            }
+          }
+        ],
+        "qrCode": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9a-zA-Z]*$"
+            }
+          }
+        ]
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "body": {
+        "type": "JSON",
+        "json": {
+          "result": true,
+          "status": {
+            "code": 0,
+            "message": "OK"
+          }
+        }
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "GET",
+      "path": "/radd-private/api/v1/act/inquiry",
+      "headers": {
+        "uid": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
+        ]
+      },
+      "queryStringParameters": {
+        "recipientTaxId": [
+          "VTOMRC01P30L736Y"
+        ],
+        "recipientType": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^(PF|PG)$"
+            }
+          }
+        ],
+        "qrCode": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9a-zA-Z]*$"
+            }
+          }
+        ]
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "body": {
+        "type": "JSON",
+        "json": {
+          "result": true,
+          "status": {
+            "code": 0,
+            "message": "OK"
+          }
+        }
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "GET",
+      "path": "/radd-private/api/v1/act/inquiry",
+      "headers": {
+        "uid": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
+        ]
+      },
+      "queryStringParameters": {
+        "recipientTaxId": [
+          "LBOMRC01P30L736Y"
+        ],
+        "recipientType": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^(PF|PG)$"
+            }
+          }
+        ],
+        "qrCode": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9a-zA-Z]*$"
+            }
+          }
+        ]
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "body": {
+        "type": "JSON",
+        "json": {
+          "result": true,
+          "status": {
+            "code": 0,
+            "message": "OK"
+          }
+        }
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "GET",
+      "path": "/radd-private/api/v1/act/inquiry",
+      "headers": {
+        "uid": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
+        ]
+      },
+      "queryStringParameters": {
+        "recipientTaxId": [
+          "AEDMRC01P30L736Y"
+        ],
+        "recipientType": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^(PF|PG)$"
+            }
+          }
+        ],
+        "qrCode": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9a-zA-Z]*$"
+            }
+          }
+        ]
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "body": {
+        "type": "JSON",
+        "json": {
+          "result": true,
+          "status": {
+            "code": 0,
+            "message": "OK"
+          }
+        }
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "GET",
+      "path": "/radd-private/api/v1/act/inquiry",
+      "headers": {
+        "uid": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
+        ]
+      },
+      "queryStringParameters": {
+        "recipientTaxId": [
+          "MADMRC01P30L736Y"
+        ],
+        "recipientType": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^(PF|PG)$"
+            }
+          }
+        ],
+        "qrCode": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9a-zA-Z]*$"
+            }
+          }
+        ]
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "body": {
+        "type": "JSON",
+        "json": {
+          "result": true,
+          "status": {
+            "code": 0,
+            "message": "OK"
+          }
+        }
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "GET",
+      "path": "/radd-private/api/v1/act/inquiry",
+      "headers": {
+        "uid": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
+        ]
+      },
+      "queryStringParameters": {
+        "recipientTaxId": [
+          "ZZAMRC01P30L736Y"
+        ],
+        "recipientType": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^(PF|PG)$"
+            }
+          }
+        ],
+        "qrCode": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9a-zA-Z]*$"
+            }
+          }
+        ]
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "body": {
+        "type": "JSON",
+        "json": {
+          "result": true,
+          "status": {
+            "code": 0,
+            "message": "OK"
+          }
+        }
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "GET",
+      "path": "/radd-private/api/v1/act/inquiry",
+      "headers": {
+        "uid": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
+        ]
+      },
+      "queryStringParameters": {
+        "recipientTaxId": [
+          "GTAMRC01P30L736Y"
+        ],
+        "recipientType": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^(PF|PG)$"
+            }
+          }
+        ],
+        "qrCode": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9a-zA-Z]*$"
+            }
+          }
+        ]
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "body": {
+        "type": "JSON",
+        "json": {
+          "result": true,
+          "status": {
+            "code": 0,
+            "message": "OK"
+          }
+        }
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "GET",
+      "path": "/radd-private/api/v1/act/inquiry",
+      "headers": {
+        "uid": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
+        ]
+      },
+      "queryStringParameters": {
+        "recipientTaxId": [
+          "ZTLMRC01P30L736Y"
+        ],
+        "recipientType": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^(PF|PG)$"
+            }
+          }
+        ],
+        "qrCode": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9a-zA-Z]*$"
+            }
+          }
+        ]
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "body": {
+        "type": "JSON",
+        "json": {
+          "result": true,
+          "status": {
+            "code": 0,
+            "message": "OK"
+          }
+        }
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "GET",
+      "path": "/radd-private/api/v1/act/inquiry",
+      "headers": {
+        "uid": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
+        ]
+      },
+      "queryStringParameters": {
+        "recipientTaxId": [
+          "DAMMRC01P30L736Y"
+        ],
+        "recipientType": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^(PF|PG)$"
+            }
+          }
+        ],
+        "qrCode": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9a-zA-Z]*$"
+            }
+          }
+        ]
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "body": {
+        "type": "JSON",
+        "json": {
+          "result": true,
+          "status": {
+            "code": 0,
+            "message": "OK"
+          }
+        }
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "GET",
+      "path": "/radd-private/api/v1/act/inquiry",
+      "headers": {
+        "uid": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
+        ]
+      },
+      "queryStringParameters": {
+        "recipientTaxId": [
+          "RADMRC01P30L736Y"
+        ],
+        "recipientType": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^(PF|PG)$"
+            }
+          }
+        ],
+        "qrCode": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9a-zA-Z]*$"
+            }
+          }
+        ]
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "body": {
+        "type": "JSON",
+        "json": {
+          "result": true,
+          "status": {
+            "code": 0,
+            "message": "OK"
+          }
+        }
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "GET",
+      "path": "/radd-private/api/v1/act/inquiry",
+      "headers": {
+        "uid": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
+        ]
+      },
+      "queryStringParameters": {
+        "recipientTaxId": [
+          "TSTGNN80A01F839X"
+        ],
+        "recipientType": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^(PF|PG)$"
+            }
+          }
+        ],
+        "qrCode": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9a-zA-Z]*$"
+            }
+          }
+        ]
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "body": {
+        "type": "JSON",
+        "json": {
+          "result": true,
+          "status": {
+            "code": 0,
+            "message": "OK"
+          }
+        }
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "GET",
+      "path": "/radd-private/api/v1/act/inquiry",
+      "headers": {
+        "uid": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
+        ]
+      },
+      "queryStringParameters": {
+        "recipientTaxId": [
           "LNALNI80A01H501T"
         ],
         "recipientType": [
@@ -165,7 +765,7 @@
       },
       "queryStringParameters": {
         "recipientTaxId": [
-          "TSTGNN80A01F839X"
+          "BSTGNN80A01F839X"
         ],
         "recipientType": [
           {
@@ -215,7 +815,7 @@
       },
       "queryStringParameters": {
         "recipientTaxId": [
-          "PLOMRC01P30L736Y"
+          "BLOMRC01P30L736Y"
         ],
         "recipientType": [
           {
