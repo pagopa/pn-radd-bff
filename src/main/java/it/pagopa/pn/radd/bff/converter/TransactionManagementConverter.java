@@ -63,6 +63,11 @@ public class TransactionManagementConverter {
             if (dto.getStatus().getCode() != null) {
                 responseStatus.setCode(StartTransactionResponseStatus.CodeEnum.fromValue(dto.getStatus().getCode().getValue()));
             }
+
+            if(dto.getStatus().getRetryAfter() != null) {
+                responseStatus.setRetryAfter(dto.getStatus().getRetryAfter());
+            }
+
             responseStatus.setMessage(dto.getStatus().getMessage());
         }
 
