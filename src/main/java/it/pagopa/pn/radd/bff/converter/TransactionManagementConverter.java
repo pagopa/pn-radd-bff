@@ -67,6 +67,9 @@ public class TransactionManagementConverter {
         }
 
         StartTransactionResponse response = new StartTransactionResponse();
+        if(dto.getUrlList() != null) {
+            response.setUrlList(dto.getUrlList());
+        }
         response.setStatus(responseStatus);
         return response;
     }

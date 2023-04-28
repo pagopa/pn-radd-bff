@@ -24,7 +24,7 @@
           "operationId": "string",
           "recipientTaxId": "GNIGNI80A01H501R",
           "recipientType": "PF",
-          "delegateTaxId": "RFRGRZ66E21H751B",
+          "delegateTaxId": "${json-unit.regex}(^.*$)",
           "operationDate": "2023-04-19T11:44:28Z",
           "checksum": "YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo="
         }
@@ -36,12 +36,13 @@
         "type": "JSON",
         "json": {
           "urlList": [
-            "string"
+            "http://web.pagopa.dev.it/notifiche/act/act1.pdf",
+            "http://web.pagopa.dev.it/notifiche/act/act2.pdf"
           ],
           "status": {
             "code": 0,
             "message": "OK",
-            "retryAfter": 670
+            "retryAfter": 0
           }
         }
       }
@@ -72,7 +73,7 @@
           "operationId": "string",
           "recipientTaxId": "PLOMRC01P30L736Y",
           "recipientType": "PF",
-          "delegateTaxId": "RFRGRZ66E21H751B",
+          "delegateTaxId": "${json-unit.regex}(^.*$)",
           "operationDate": "2023-04-19T11:44:28Z",
           "checksum": "YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo="
         }
@@ -89,7 +90,7 @@
           "status": {
             "code": 99,
             "message": "KO",
-            "retryAfter": 670
+            "retryAfter": 0
           }
         }
       }
@@ -120,7 +121,7 @@
           "operationId": "string",
           "recipientTaxId": "TSTGNN80A01F839X",
           "recipientType": "PF",
-          "delegateTaxId": "RFRGRZ66E21H751B",
+          "delegateTaxId": "${json-unit.regex}(^.*$)",
           "operationDate": "2023-04-19T11:44:28Z",
           "checksum": "YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo="
         }
@@ -131,9 +132,7 @@
       "body": {
         "type": "JSON",
         "json": {
-          "urlList": [
-            "string"
-          ],
+          "urlList": [],
           "status": {
             "code": 2,
             "message": "Not Ready",
@@ -160,7 +159,7 @@
           "operationId": "string",
           "recipientTaxId": "GNIGNI80A01H501R",
           "recipientType": "PF",
-          "delegateTaxId": "RFRGRZ66E21H751B",
+          "delegateTaxId": "${json-unit.regex}(^.*$)",
           "operationDate": "2023-04-19T11:44:28Z",
           "checksum": "YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo="
         }
@@ -196,7 +195,7 @@
           "operationId": "string",
           "recipientTaxId": "FNIFNA80A01H501G",
           "recipientType": "PF",
-          "delegateTaxId": "RFRGRZ66E21H751B",
+          "delegateTaxId": "${json-unit.regex}(^.*$)",
           "operationDate": "2023-04-19T11:44:28Z",
           "checksum": "YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo="
         }
@@ -232,7 +231,7 @@
           "operationId": "string",
           "recipientTaxId": "FRMTTR76M06B715E",
           "recipientType": "PF",
-          "delegateTaxId": "RFRGRZ66E21H751B",
+          "delegateTaxId": "${json-unit.regex}(^.*$)",
           "operationDate": "2023-04-19T11:44:28Z",
           "checksum": "YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo="
         }
@@ -268,7 +267,7 @@
           "operationId": "string",
           "recipientTaxId": "CIACIA80A01H501X",
           "recipientType": "PF",
-          "delegateTaxId": "RFRGRZ66E21H751B",
+          "delegateTaxId": "${json-unit.regex}(^.*$)",
           "operationDate": "2023-04-19T11:44:28Z",
           "checksum": "YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo="
         }
@@ -304,7 +303,7 @@
           "operationId": "string",
           "recipientTaxId": "RFNNTR76M06B715E",
           "recipientType": "PF",
-          "delegateTaxId": "RFRGRZ66E21H751B",
+          "delegateTaxId": "${json-unit.regex}(^.*$)",
           "operationDate": "2023-04-19T11:44:28Z",
           "checksum": "YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo="
         }
@@ -336,7 +335,7 @@
         "type": "JSON",
         "json": {
           "operationId": "2bb5c29e0cf411ed861d0242ac120002",
-          "operationDate": "2022-06-21T11:44:28Z"
+          "operationDate": "${json-unit.regex}((\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z)))"
         }
       }
     },
@@ -374,7 +373,7 @@
         "type": "JSON",
         "json": {
           "operationId": "67d8a1f225f24c13a05e00a0d8a8aaba",
-          "operationDate": "2022-06-21T11:44:28Z"
+          "operationDate": "${json-unit.regex}((\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z)))"
         }
       }
     },
@@ -412,7 +411,7 @@
         "type": "JSON",
         "json": {
           "operationId": "78c1f2769c8e4ba084a62e778a143d67",
-          "operationDate": "2022-06-21T11:44:28Z"
+          "operationDate": "${json-unit.regex}((\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z)))"
         }
       }
     },
@@ -450,7 +449,7 @@
         "type": "JSON",
         "json": {
           "operationId": "e40474dc17f14e309ce2a33e62d3d174",
-          "operationDate": "2022-06-21T11:44:28Z"
+          "operationDate": "${json-unit.regex}((\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z)))"
         }
       }
     },
@@ -480,7 +479,7 @@
         "type": "JSON",
         "json": {
           "operationId": "2bb5c29e0cf411ed861d0242ac120002",
-          "operationDate": "2022-06-21T11:44:28Z"
+          "operationDate": "${json-unit.regex}((\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z)))"
         }
       }
     },
@@ -502,7 +501,7 @@
         "type": "JSON",
         "json": {
           "operationId": "2c12e95533d0444991e8f18bb232a44b",
-          "operationDate": "2022-06-21T11:44:28Z"
+          "operationDate": "${json-unit.regex}((\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z)))"
         }
       }
     },
@@ -524,7 +523,7 @@
         "type": "JSON",
         "json": {
           "operationId": "12550da94bc24a52a839628d9f9c37d8",
-          "operationDate": "2022-06-21T11:44:28Z"
+          "operationDate": "${json-unit.regex}((\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z)))"
         }
       }
     },
@@ -546,7 +545,7 @@
         "type": "JSON",
         "json": {
           "operationId": "9415a0b4c4fc4d4f9a5bc5e5f5aefb47",
-          "operationDate": "2022-06-21T11:44:28Z"
+          "operationDate": "${json-unit.regex}((\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z)))"
         }
       }
     },
@@ -568,7 +567,7 @@
         "type": "JSON",
         "json": {
           "operationId": "25550da94bc24a52a839628d9f9c37d8",
-          "operationDate": "2022-06-21T11:44:28Z"
+          "operationDate": "${json-unit.regex}((\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z)))"
         }
       }
     },
@@ -599,7 +598,7 @@
         "json": {
           "operationId": "2bb5c29e0cf411ed861d0242ac120002",
           "reason": "abort",
-          "operationDate": "2022-06-21T11:44:28Z"
+          "operationDate": "${json-unit.regex}((\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z)))"
         }
       }
     },
@@ -638,7 +637,7 @@
         "json": {
           "operationId": "67d8a1f225f24c13a05e00a0d8a8aaba",
           "reason": "abort",
-          "operationDate": "2022-06-21T11:44:28Z"
+          "operationDate": "${json-unit.regex}((\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z)))"
         }
       }
     },
@@ -677,7 +676,7 @@
         "json": {
           "operationId": "78c1f2769c8e4ba084a62e778a143d67",
           "reason": "abort",
-          "operationDate": "2022-06-21T11:44:28Z"
+          "operationDate": "${json-unit.regex}((\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z)))"
         }
       }
     },
@@ -716,7 +715,7 @@
         "json": {
           "operationId": "e40474dc17f14e309ce2a33e62d3d174",
           "reason": "abort",
-          "operationDate": "2022-06-21T11:44:28Z"
+          "operationDate": "${json-unit.regex}((\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z)))"
         }
       }
     },
@@ -747,7 +746,7 @@
         "json": {
           "operationId": "2bb5c29e0cf411ed861d0242ac120002",
           "reason": "abort",
-          "operationDate": "2022-06-21T11:44:28Z"
+          "operationDate": "${json-unit.regex}((\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z)))"
         }
       }
     },
@@ -770,7 +769,7 @@
         "json": {
           "operationId": "2c12e95533d0444991e8f18bb232a44b",
           "reason": "abort",
-          "operationDate": "2022-06-21T11:44:28Z"
+          "operationDate": "${json-unit.regex}((\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z)))"
         }
       }
     },
@@ -793,7 +792,7 @@
         "json": {
           "operationId": "12550da94bc24a52a839628d9f9c37d8",
           "reason": "abort",
-          "operationDate": "2022-06-21T11:44:28Z"
+          "operationDate": "${json-unit.regex}((\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z)))"
         }
       }
     },
@@ -816,7 +815,7 @@
         "json": {
           "operationId": "9415a0b4c4fc4d4f9a5bc5e5f5aefb47",
           "reason": "abort",
-          "operationDate": "2022-06-21T11:44:28Z"
+          "operationDate": "${json-unit.regex}((\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z)))"
         }
       }
     },
@@ -839,7 +838,7 @@
         "json": {
           "operationId": "25550da94bc24a52a839628d9f9c37d8",
           "reason": "abort",
-          "operationDate": "2022-06-21T11:44:28Z"
+          "operationDate": "${json-unit.regex}((\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z)))"
         }
       }
     },
