@@ -51,15 +51,28 @@ Path: `/radd-private/api/v1/aor/inquiry`
 
 Use cases:
 
-| recipientTaxId   | Status Code | Valido |
-|------------------|-------------|--------|
-| GNIGNI80A01H501R | 401         |        |
-| FNIFNA80A01H501G | 400         |        |
-| FRMTTR76M06B715E | 405         |        |
-| RFNNTR76M06B715E | 403         |        |
-| CIACIA80A01H501X | 500         |        |
-| GNIGNI80A01H501R | 200         | OK     |
-| PLOMRC01P30L736Y | 200         | KO     |
+| recipientTaxId   | Status Code | Valido                                              |
+|------------------|-------------|-----------------------------------------------------|
+| GNIGNI80A01H501R | 401         |                                                     |
+| FNIFNA80A01H501G | 400         |                                                     |
+| FRMTTR76M06B715E | 405         |                                                     |
+| RFNNTR76M06B715E | 403         |                                                     |
+| CIACIA80A01H501X | 500         |                                                     |
+| GNIGNI80A01H501R | 200         | OK                                                  |
+| PLOMRC01P30L736Y | 200         | KO                                                  |
+| VIAVIA90A01H501X | 200         | OK (startTransaction 500)                           |
+| PLOMRC01P30L736Y | 200         | OK (startTransaction KO)                            |
+| TSTGNN80A01F839X | 200         | OK (startTransaction Not Ready)                     |
+| VTOMRC01P30L736Y | 200         | OK (completeTransaction KO)                         |
+| LBOMRC01P30L736Y | 200         | OK (completeTransaction Transazione Inesistente)    |
+| AEDMRC01P30L736Y | 200         | OK (completeTransaction Transazione Già Completata) |
+| MADMRC01P30L736Y | 200         | OK (completeTransaction 500)                        |
+| ZZAMRC01P30L736Y | 200         | OK (abortTransaction OK)                            |
+| GTAMRC01P30L736Y | 200         | OK (abortTransaction KO)                            |
+| ZTLMRC01P30L736Y | 200         | OK (abortTransaction Transazione Inesistente)       |
+| DAMMRC01P30L736Y | 200         | OK (abortTransaction Transazione Già Completata)    |
+| RADMRC01P30L736Y | 200         | OK (abortTransaction 500)                           |
+
 
 ### documentUpload
 
@@ -147,16 +160,24 @@ Path: `/radd-private/api/v1/aor/transaction/start`
 
 Use cases:
 
-| recipientTaxId   | Status Code | Valido   |
-|------------------|-------------|----------|
-| GNIGNI80A01H501R | 401         |          |
-| FNIFNA80A01H501G | 400         |          |
-| FRMTTR76M06B715E | 405         |          |
-| RFNNTR76M06B715E | 403         |          |
-| CIACIA80A01H501X | 500         |          |
-| GNIGNI80A01H501R | 200         | OK       |
-| PLOMRC01P30L736Y | 200         | KO       |
-| TSTGNN80A01F839X | 200         | NotReady |
+| recipientTaxId   | Status Code | Valido                                              |
+|------------------|-------------|-----------------------------------------------------|
+| GNIGNI80A01H501R | 401         |                                                     |
+| FNIFNA80A01H501G | 400         |                                                     |
+| FRMTTR76M06B715E | 405         |                                                     |
+| RFNNTR76M06B715E | 403         |                                                     |
+| CIACIA80A01H501X | 500         |                                                     |
+| GNIGNI80A01H501R | 200         | OK                                                  |
+| VTOMRC01P30L736Y | 200         | OK (completeTransaction KO)                         |
+| LBOMRC01P30L736Y | 200         | OK (completeTransaction Transazione Inesistente)    |
+| AEDMRC01P30L736Y | 200         | OK (completeTransaction Transazione Già Completata) |
+| MADMRC01P30L736Y | 200         | OK (completeTransaction 500)                        |
+| GTAMRC01P30L736Y | 200         | OK (abortTransaction KO)                            |
+| ZTLMRC01P30L736Y | 200         | OK (abortTransaction Transazione Inesistente)       |
+| DAMMRC01P30L736Y | 200         | OK (abortTransaction Transazione Già Completata)    |
+| RADMRC01P30L736Y | 200         | OK (abortTransaction 500)                           |
+| PLOMRC01P30L736Y | 200         | KO                                                  |
+| TSTGNN80A01F839X | 200         | NotReady                                            |
 
 ### completeTransaction
 
