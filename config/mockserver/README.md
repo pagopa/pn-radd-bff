@@ -215,6 +215,7 @@ Use cases:
 | 8ed1024e-e511-11ed-b5ea-0242ac120002 | 200         | Transazione inesistente    |
 | 8ed10442-e511-11ed-b5ea-0242ac120002 | 200         | Transazione già completata |
 
+
 ## notificationInquiry
 ### operationAct
 
