@@ -65,6 +65,56 @@
       },
       "queryStringParameters": {
         "recipientTaxId": [
+          "RSSSRG80A01F839I"
+        ],
+        "recipientType": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^(PF|PG)$"
+            }
+          }
+        ],
+        "qrCode": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9a-zA-Z]*$"
+            }
+          }
+        ]
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "body": {
+        "type": "JSON",
+        "json": {
+          "result": true,
+          "status": {
+            "code": 3,
+            "message": "Stampa già eseguita"
+          }
+        }
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "GET",
+      "path": "/radd-private/api/v1/act/inquiry",
+      "headers": {
+        "uid": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
+        ]
+      },
+      "queryStringParameters": {
+        "recipientTaxId": [
           "VIAVIA90A01H501X"
         ],
         "recipientType": [

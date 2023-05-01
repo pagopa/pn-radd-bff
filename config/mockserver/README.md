@@ -28,6 +28,7 @@ Use cases:
 | RFNNTR76M06B715E | 403         |                                                     |
 | CIACIA80A01H501X | 500         |                                                     |
 | GNIGNI80A01H501R | 200         | OK                                                  |
+| RSSSRG80A01F839I | 200         | Stampa già eseguita                                 |
 | VIAVIA90A01H501X | 200         | OK (startTransaction 500)                           |
 | PLOMRC01P30L736Y | 200         | OK (startTransaction KO)                            |
 | TSTGNN80A01F839X | 200         | OK (startTransaction Not Ready)                     |
