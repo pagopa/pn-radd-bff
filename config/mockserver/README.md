@@ -20,18 +20,31 @@ Path: `/radd-private/api/v1/act/inquiry`
 
 Use cases:
 
-| recipientTaxId   | Status Code | Valido                        |
-|------------------|-------------|-------------------------------|
-| GNIGNI80A01H501R | 401         |                               |
-| FNIFNA80A01H501G | 400         |                               |
-| FRMTTR76M06B715E | 405         |                               |
-| RFNNTR76M06B715E | 403         |                               |
-| CIACIA80A01H501X | 500         |                               |
-| GNIGNI80A01H501R | 200         | OK                            |
-| LNALNI80A01H501T | 200         | QrCode/CF non valido/i        |
- | PPPPLT80A01H501V | 200         | Documenti non più disponibili | 
-| TSTGNN80A01F839X | 200         | Stampa già eseguita           |
-| PLOMRC01P30L736Y | 200         | KO                            |
+| recipientTaxId   | Status Code | Valido                                              |
+|------------------|-------------|-----------------------------------------------------|
+| GNIGNI80A01H501R | 401         |                                                     |
+| FNIFNA80A01H501G | 400         |                                                     |
+| FRMTTR76M06B715E | 405         |                                                     |
+| RFNNTR76M06B715E | 403         |                                                     |
+| CIACIA80A01H501X | 500         |                                                     |
+| GNIGNI80A01H501R | 200         | OK                                                  |
+| RSSSRG80A01F839I | 200         | Stampa già eseguita                                 |
+| VIAVIA90A01H501X | 200         | OK (startTransaction 500)                           |
+| PLOMRC01P30L736Y | 200         | OK (startTransaction KO)                            |
+| TSTGNN80A01F839X | 200         | OK (startTransaction Not Ready)                     |
+| VTOMRC01P30L736Y | 200         | OK (completeTransaction KO)                         |
+| LBOMRC01P30L736Y | 200         | OK (completeTransaction Transazione Inesistente)    |
+| AEDMRC01P30L736Y | 200         | OK (completeTransaction Transazione Già Completata) |
+| MADMRC01P30L736Y | 200         | OK (completeTransaction 500)                        |
+| ZZAMRC01P30L736Y | 200         | OK (abortTransaction OK)                            |
+| GTAMRC01P30L736Y | 200         | OK (abortTransaction KO)                            |
+| ZTLMRC01P30L736Y | 200         | OK (abortTransaction Transazione Inesistente)       |
+| DAMMRC01P30L736Y | 200         | OK (abortTransaction Transazione Già Completata)    |
+| RADMRC01P30L736Y | 200         | OK (abortTransaction 500)                           |
+| LNALNI80A01H501T | 200         | QrCode/CF non valido/i                              |
+ | PPPPLT80A01H501V | 200         | Documenti non più disponibili                       | 
+| BSTGNN80A01F839X | 200         | Stampa già eseguita                                 |
+| BLOMRC01P30L736Y | 200         | KO                                                  |
 
 ### aorDocumentInquiry
 
@@ -39,15 +52,28 @@ Path: `/radd-private/api/v1/aor/inquiry`
 
 Use cases:
 
-| recipientTaxId   | Status Code | Valido |
-|------------------|-------------|--------|
-| GNIGNI80A01H501R | 401         |        |
-| FNIFNA80A01H501G | 400         |        |
-| FRMTTR76M06B715E | 405         |        |
-| RFNNTR76M06B715E | 403         |        |
-| CIACIA80A01H501X | 500         |        |
-| GNIGNI80A01H501R | 200         | OK     |
-| PLOMRC01P30L736Y | 200         | KO     |
+| recipientTaxId   | Status Code | Valido                                              |
+|------------------|-------------|-----------------------------------------------------|
+| GNIGNI80A01H501R | 401         |                                                     |
+| FNIFNA80A01H501G | 400         |                                                     |
+| FRMTTR76M06B715E | 405         |                                                     |
+| RFNNTR76M06B715E | 403         |                                                     |
+| CIACIA80A01H501X | 500         |                                                     |
+| GNIGNI80A01H501R | 200         | OK                                                  |
+| PLOMRC01P30L736Y | 200         | KO                                                  |
+| VIAVIA90A01H501X | 200         | OK (startTransaction 500)                           |
+| PLOMRC01P30L736Y | 200         | OK (startTransaction KO)                            |
+| TSTGNN80A01F839X | 200         | OK (startTransaction Not Ready)                     |
+| VTOMRC01P30L736Y | 200         | OK (completeTransaction KO)                         |
+| LBOMRC01P30L736Y | 200         | OK (completeTransaction Transazione Inesistente)    |
+| AEDMRC01P30L736Y | 200         | OK (completeTransaction Transazione Già Completata) |
+| MADMRC01P30L736Y | 200         | OK (completeTransaction 500)                        |
+| ZZAMRC01P30L736Y | 200         | OK (abortTransaction OK)                            |
+| GTAMRC01P30L736Y | 200         | OK (abortTransaction KO)                            |
+| ZTLMRC01P30L736Y | 200         | OK (abortTransaction Transazione Inesistente)       |
+| DAMMRC01P30L736Y | 200         | OK (abortTransaction Transazione Già Completata)    |
+| RADMRC01P30L736Y | 200         | OK (abortTransaction 500)                           |
+
 
 ### documentUpload
 
@@ -73,16 +99,24 @@ Path: `/radd-private/api/v1/act/transaction/start`
 
 Use cases:
 
-| recipientTaxId   | Status Code | Valido   |
-|------------------|-------------|----------|
-| GNIGNI80A01H501R | 401         |          |
-| FNIFNA80A01H501G | 400         |          |
-| FRMTTR76M06B715E | 405         |          |
-| RFNNTR76M06B715E | 403         |          |
-| CIACIA80A01H501X | 500         |          |
-| GNIGNI80A01H501R | 200         | OK       |
-| PLOMRC01P30L736Y | 200         | KO       |
-| TSTGNN80A01F839X | 200         | NotReady |
+| recipientTaxId   | Status Code | Valido                                              |
+|------------------|-------------|-----------------------------------------------------|
+| GNIGNI80A01H501R | 401         |                                                     |
+| FNIFNA80A01H501G | 400         |                                                     |
+| FRMTTR76M06B715E | 405         |                                                     |
+| RFNNTR76M06B715E | 403         |                                                     |
+| VIAVIA80A01H501X | 500         |                                                     |
+| GNIGNI80A01H501R | 200         | OK                                                  |
+| VTOMRC01P30L736Y | 200         | OK (completeTransaction KO)                         |
+| LBOMRC01P30L736Y | 200         | OK (completeTransaction Transazione Inesistente)    |
+| AEDMRC01P30L736Y | 200         | OK (completeTransaction Transazione Già Completata) |
+| MADMRC01P30L736Y | 200         | OK (completeTransaction 500)                        |
+| GTAMRC01P30L736Y | 200         | OK (abortTransaction KO)                            |
+| ZTLMRC01P30L736Y | 200         | OK (abortTransaction Transazione Inesistente)       |
+| DAMMRC01P30L736Y | 200         | OK (abortTransaction Transazione Già Completata)    |
+| RADMRC01P30L736Y | 200         | OK (abortTransaction 500)                           |
+| PLOMRC01P30L736Y | 200         | KO                                                  |
+| TSTGNN80A01F839X | 200         | NotReady                                            |
 
 ### completeTransaction
 
@@ -90,17 +124,17 @@ Path: `/radd-private/api/v1/act/transaction/complete`
 
 Use cases:
 
-| operationId                      | Status Code | Valido                     |
-|----------------------------------|-------------|----------------------------|
-| 2bb5c29e0cf411ed861d0242ac120002 | 401         |                            |
-| 2c12e95533d0444991e8f18bb232a44b | 400         |                            |
-| 12550da94bc24a52a839628d9f9c37d8 | 405         |                            |
-| 25550da94bc24a52a839628d9f9c37d8 | 403         |                            |
-| 9415a0b4c4fc4d4f9a5bc5e5f5aefb47 | 500         |                            |
-| 2bb5c29e0cf411ed861d0242ac120002 | 200         | OK                         |
-| 67d8a1f225f24c13a05e00a0d8a8aaba | 200         | KO                         |
-| 78c1f2769c8e4ba084a62e778a143d67 | 200         | Transazione inesistente    |
-| e40474dc17f14e309ce2a33e62d3d174 | 200         | Transazione già completata |
+| operationId                          | Status Code | Valido                     |
+|--------------------------------------|-------------|----------------------------|
+| 9795ea34-e4e9-11ed-b5ea-0242ac120002 | 401         |                            |
+| c447c68d-6d22-4c95-9f2b-f53f8d9392ee | 400         |                            |
+| 76e3d28f-70e4-4d2b-b4f1-cad4c4f20a0e | 405         |                            |
+| f59f05e6-9d88-4c7d-9bb3-75c9828f9995 | 403         |                            |
+| 70d5f0c2-0c5c-4745-b5a5-5b0fb15d694d | 500         |                            |
+| 9795ea34-e4e9-11ed-b5ea-0242ac120002 | 200         | OK                         |
+| 4d4c70e7-8a69-4a60-b2e2-0a36b8d17bc5 | 200         | KO                         |
+| 9da7a31a-c29c-4760-91b8-7d2f59d27734 | 200         | Transazione inesistente    |
+| 6ee9f7d9-6b3e-431a-a39f-70f098b66002 | 200         | Transazione già completata |
 
 ### abortTransaction
 
@@ -108,17 +142,17 @@ Path: `/radd-private/api/v1/act/transaction/abort`
 
 Use cases:
 
-| operationId                      | Status Code | Valido                     |
-|----------------------------------|-------------|----------------------------|
-| 2bb5c29e0cf411ed861d0242ac120002 | 401         |                            |
-| 2c12e95533d0444991e8f18bb232a44b | 400         |                            |
-| 12550da94bc24a52a839628d9f9c37d8 | 405         |                            |
-| 25550da94bc24a52a839628d9f9c37d8 | 403         |                            |
-| 9415a0b4c4fc4d4f9a5bc5e5f5aefb47 | 500         |                            |
-| 2bb5c29e0cf411ed861d0242ac120002 | 200         | OK                         |
-| 67d8a1f225f24c13a05e00a0d8a8aaba | 200         | KO                         |
-| 78c1f2769c8e4ba084a62e778a143d67 | 200         | Transazione inesistente    |
-| e40474dc17f14e309ce2a33e62d3d174 | 200         | Transazione già completata |
+| operationId                          | Status Code | Valido                     |
+|--------------------------------------|-------------|----------------------------|
+| 8ed10708-e511-11ed-b5ea-0242ac120002 | 401         |                            |
+| 8ed10ae6-e511-11ed-b5ea-0242ac120002 | 400         |                            |
+| 8ed109c4-e511-11ed-b5ea-0242ac120002 | 405         |                            |
+| 8ed1083e-e511-11ed-b5ea-0242ac120002 | 403         |                            |
+| 8ed105dc-e511-11ed-b5ea-0242ac120002 | 500         |                            |
+| 8ed10708-e511-11ed-b5ea-0242ac120002 | 200         | OK                         |
+| 8ed0f8da-e511-11ed-b5ea-0242ac120002 | 200         | KO                         |
+| 8ed1024e-e511-11ed-b5ea-0242ac120002 | 200         | Transazione inesistente    |
+| 8ed10442-e511-11ed-b5ea-0242ac120002 | 200         | Transazione già completata |
 
 ## aorTransactionManagement
 ### startTransaction
@@ -127,16 +161,24 @@ Path: `/radd-private/api/v1/aor/transaction/start`
 
 Use cases:
 
-| recipientTaxId   | Status Code | Valido   |
-|------------------|-------------|----------|
-| GNIGNI80A01H501R | 401         |          |
-| FNIFNA80A01H501G | 400         |          |
-| FRMTTR76M06B715E | 405         |          |
-| RFNNTR76M06B715E | 403         |          |
-| CIACIA80A01H501X | 500         |          |
-| GNIGNI80A01H501R | 200         | OK       |
-| PLOMRC01P30L736Y | 200         | KO       |
-| TSTGNN80A01F839X | 200         | NotReady |
+| recipientTaxId   | Status Code | Valido                                              |
+|------------------|-------------|-----------------------------------------------------|
+| GNIGNI80A01H501R | 401         |                                                     |
+| FNIFNA80A01H501G | 400         |                                                     |
+| FRMTTR76M06B715E | 405         |                                                     |
+| RFNNTR76M06B715E | 403         |                                                     |
+| CIACIA80A01H501X | 500         |                                                     |
+| GNIGNI80A01H501R | 200         | OK                                                  |
+| VTOMRC01P30L736Y | 200         | OK (completeTransaction KO)                         |
+| LBOMRC01P30L736Y | 200         | OK (completeTransaction Transazione Inesistente)    |
+| AEDMRC01P30L736Y | 200         | OK (completeTransaction Transazione Già Completata) |
+| MADMRC01P30L736Y | 200         | OK (completeTransaction 500)                        |
+| GTAMRC01P30L736Y | 200         | OK (abortTransaction KO)                            |
+| ZTLMRC01P30L736Y | 200         | OK (abortTransaction Transazione Inesistente)       |
+| DAMMRC01P30L736Y | 200         | OK (abortTransaction Transazione Già Completata)    |
+| RADMRC01P30L736Y | 200         | OK (abortTransaction 500)                           |
+| PLOMRC01P30L736Y | 200         | KO                                                  |
+| TSTGNN80A01F839X | 200         | NotReady                                            |
 
 ### completeTransaction
 
@@ -144,17 +186,17 @@ Path: `/radd-private/api/v1/aor/transaction/complete`
 
 Use cases:
 
-| operationId                      | Status Code | Valido                     |
-|----------------------------------|-------------|----------------------------|
-| 2bb5c29e0cf411ed861d0242ac120002 | 401         |                            |
-| 2c12e95533d0444991e8f18bb232a44b | 400         |                            |
-| 12550da94bc24a52a839628d9f9c37d8 | 405         |                            |
-| 25550da94bc24a52a839628d9f9c37d8 | 403         |                            |
-| 9415a0b4c4fc4d4f9a5bc5e5f5aefb47 | 500         |                            |
-| 2bb5c29e0cf411ed861d0242ac120002 | 200         | OK                         |
-| 67d8a1f225f24c13a05e00a0d8a8aaba | 200         | KO                         |
-| 78c1f2769c8e4ba084a62e778a143d67 | 200         | Transazione inesistente    |
-| e40474dc17f14e309ce2a33e62d3d174 | 200         | Transazione già completata |
+| operationId                          | Status Code | Valido                     |
+|--------------------------------------|-------------|----------------------------|
+| 9795ea34-e4e9-11ed-b5ea-0242ac120002 | 401         |                            |
+| c447c68d-6d22-4c95-9f2b-f53f8d9392ee | 400         |                            |
+| 76e3d28f-70e4-4d2b-b4f1-cad4c4f20a0e | 405         |                            |
+| f59f05e6-9d88-4c7d-9bb3-75c9828f9995 | 403         |                            |
+| 70d5f0c2-0c5c-4745-b5a5-5b0fb15d694d | 500         |                            |
+| 9795ea34-e4e9-11ed-b5ea-0242ac120002 | 200         | OK                         |
+| 4d4c70e7-8a69-4a60-b2e2-0a36b8d17bc5 | 200         | KO                         |
+| 9da7a31a-c29c-4760-91b8-7d2f59d27734 | 200         | Transazione inesistente    |
+| 6ee9f7d9-6b3e-431a-a39f-70f098b66002 | 200         | Transazione già completata |
 
 ### abortTransaction
 
@@ -162,17 +204,18 @@ Path: `/radd-private/api/v1/aor/transaction/abort`
 
 Use cases:
 
-| operationId                      | Status Code | Valido                     |
-|----------------------------------|-------------|----------------------------|
-| 2bb5c29e0cf411ed861d0242ac120002 | 401         |                            |
-| 2c12e95533d0444991e8f18bb232a44b | 400         |                            |
-| 12550da94bc24a52a839628d9f9c37d8 | 405         |                            |
-| 25550da94bc24a52a839628d9f9c37d8 | 403         |                            |
-| 9415a0b4c4fc4d4f9a5bc5e5f5aefb47 | 500         |                            |
-| 2bb5c29e0cf411ed861d0242ac120002 | 200         | OK                         |
-| 67d8a1f225f24c13a05e00a0d8a8aaba | 200         | KO                         |
-| 78c1f2769c8e4ba084a62e778a143d67 | 200         | Transazione inesistente    |
-| e40474dc17f14e309ce2a33e62d3d174 | 200         | Transazione già completata |
+| operationId                          | Status Code | Valido                     |
+|--------------------------------------|-------------|----------------------------|
+| 8ed10708-e511-11ed-b5ea-0242ac120002 | 401         |                            |
+| 8ed10ae6-e511-11ed-b5ea-0242ac120002 | 400         |                            |
+| 8ed109c4-e511-11ed-b5ea-0242ac120002 | 405         |                            |
+| 8ed1083e-e511-11ed-b5ea-0242ac120002 | 403         |                            |
+| 8ed105dc-e511-11ed-b5ea-0242ac120002 | 500         |                            |
+| 8ed10708-e511-11ed-b5ea-0242ac120002 | 200         | OK                         |
+| 8ed0f8da-e511-11ed-b5ea-0242ac120002 | 200         | KO                         |
+| 8ed1024e-e511-11ed-b5ea-0242ac120002 | 200         | Transazione inesistente    |
+| 8ed10442-e511-11ed-b5ea-0242ac120002 | 200         | Transazione già completata |
+
 
 ## notificationInquiry
 ### operationAct

@@ -10,7 +10,7 @@
 			"name": "actDocumentInquiry",
 			"item": [
 				{
-					"name": "RADD - 200 OK",
+					"name": "200 OK",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -53,7 +53,593 @@
 					"response": []
 				},
 				{
-					"name": "RADD - 200 qrCode/CF non validi",
+					"name": "200 OK (startTransaction 500)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:1080/radd-private/api/v1/act/inquiry?recipientTaxId=VIAVIA90A01H501X&recipientType=PF&qrCode=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1080",
+							"path": [
+								"radd-private",
+								"api",
+								"v1",
+								"act",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "VIAVIA90A01H501X"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								},
+								{
+									"key": "qrCode",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 OK (startTransaction KO)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:1080/radd-private/api/v1/act/inquiry?recipientTaxId=PLOMRC01P30L736Y&recipientType=PF&qrCode=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1080",
+							"path": [
+								"radd-private",
+								"api",
+								"v1",
+								"act",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "PLOMRC01P30L736Y"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								},
+								{
+									"key": "qrCode",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 OK (startTransaction Not Ready)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:1080/radd-private/api/v1/act/inquiry?recipientTaxId=TSTGNN80A01F839X&recipientType=PF&qrCode=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1080",
+							"path": [
+								"radd-private",
+								"api",
+								"v1",
+								"act",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "TSTGNN80A01F839X"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								},
+								{
+									"key": "qrCode",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 OK (completeTransaction KO)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:1080/radd-private/api/v1/act/inquiry?recipientTaxId=VTOMRC01P30L736Y&recipientType=PF&qrCode=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1080",
+							"path": [
+								"radd-private",
+								"api",
+								"v1",
+								"act",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "VTOMRC01P30L736Y"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								},
+								{
+									"key": "qrCode",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 OK (completeTransaction transazione inesistente)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:1080/radd-private/api/v1/act/inquiry?recipientTaxId=LBOMRC01P30L736Y&recipientType=PF&qrCode=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1080",
+							"path": [
+								"radd-private",
+								"api",
+								"v1",
+								"act",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "LBOMRC01P30L736Y"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								},
+								{
+									"key": "qrCode",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 OK (completeTransaction transazione già completata)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:1080/radd-private/api/v1/act/inquiry?recipientTaxId=AEDMRC01P30L736Y&recipientType=PF&qrCode=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1080",
+							"path": [
+								"radd-private",
+								"api",
+								"v1",
+								"act",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "AEDMRC01P30L736Y"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								},
+								{
+									"key": "qrCode",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 OK (completeTransaction 500)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:1080/radd-private/api/v1/act/inquiry?recipientTaxId=MADMRC01P30L736Y&recipientType=PF&qrCode=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1080",
+							"path": [
+								"radd-private",
+								"api",
+								"v1",
+								"act",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "MADMRC01P30L736Y"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								},
+								{
+									"key": "qrCode",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 OK (abortTransaction OK)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:1080/radd-private/api/v1/act/inquiry?recipientTaxId=ZZAMRC01P30L736Y&recipientType=PF&qrCode=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1080",
+							"path": [
+								"radd-private",
+								"api",
+								"v1",
+								"act",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "ZZAMRC01P30L736Y"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								},
+								{
+									"key": "qrCode",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 OK (abortTransaction KO)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:1080/radd-private/api/v1/act/inquiry?recipientTaxId=GTAMRC01P30L736Y&recipientType=PF&qrCode=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1080",
+							"path": [
+								"radd-private",
+								"api",
+								"v1",
+								"act",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "GTAMRC01P30L736Y"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								},
+								{
+									"key": "qrCode",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 OK (abortTransaction transazione inesistente)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:1080/radd-private/api/v1/act/inquiry?recipientTaxId=ZTLMRC01P30L736Y&recipientType=PF&qrCode=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1080",
+							"path": [
+								"radd-private",
+								"api",
+								"v1",
+								"act",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "ZTLMRC01P30L736Y"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								},
+								{
+									"key": "qrCode",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 OK (abortTransaction transazione già completata)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:1080/radd-private/api/v1/act/inquiry?recipientTaxId=DAMMRC01P30L736Y&recipientType=PF&qrCode=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1080",
+							"path": [
+								"radd-private",
+								"api",
+								"v1",
+								"act",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "DAMMRC01P30L736Y"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								},
+								{
+									"key": "qrCode",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 OK (abortTransaction 500)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:1080/radd-private/api/v1/act/inquiry?recipientTaxId=RADMRC01P30L736Y&recipientType=PF&qrCode=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1080",
+							"path": [
+								"radd-private",
+								"api",
+								"v1",
+								"act",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "RADMRC01P30L736Y"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								},
+								{
+									"key": "qrCode",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 qrCode/CF non validi",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -96,7 +682,7 @@
 					"response": []
 				},
 				{
-					"name": "RADD - 200 Documenti non più disponibili",
+					"name": "200 Documenti non più disponibili",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -139,7 +725,7 @@
 					"response": []
 				},
 				{
-					"name": "RADD - 200 Stampa già eseguita",
+					"name": "200 Stampa già eseguita",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -150,7 +736,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:1080/radd-private/api/v1/act/inquiry?recipientTaxId=TSTGNN80A01F839X&recipientType=PF&qrCode=1",
+							"raw": "http://localhost:1080/radd-private/api/v1/act/inquiry?recipientTaxId=BSTGNN80A01F839X&recipientType=PF&qrCode=1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -166,7 +752,7 @@
 							"query": [
 								{
 									"key": "recipientTaxId",
-									"value": "TSTGNN80A01F839X"
+									"value": "BSTGNN80A01F839X"
 								},
 								{
 									"key": "recipientType",
@@ -182,7 +768,7 @@
 					"response": []
 				},
 				{
-					"name": "RADD - 200 KO",
+					"name": "200 KO",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -193,7 +779,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:1080/radd-private/api/v1/act/inquiry?recipientTaxId=PLOMRC01P30L736Y&recipientType=PF&qrCode=1",
+							"raw": "http://localhost:1080/radd-private/api/v1/act/inquiry?recipientTaxId=BLOMRC01P30L736Y&recipientType=PF&qrCode=1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -209,7 +795,7 @@
 							"query": [
 								{
 									"key": "recipientTaxId",
-									"value": "PLOMRC01P30L736Y"
+									"value": "BLOMRC01P30L736Y"
 								},
 								{
 									"key": "recipientType",
@@ -225,7 +811,7 @@
 					"response": []
 				},
 				{
-					"name": "RADD - 400",
+					"name": "400",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -268,7 +854,7 @@
 					"response": []
 				},
 				{
-					"name": "RADD - 401",
+					"name": "401",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -312,7 +898,7 @@
 					"response": []
 				},
 				{
-					"name": "RADD - 403",
+					"name": "403",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -356,7 +942,7 @@
 					"response": []
 				},
 				{
-					"name": "RADD - 405",
+					"name": "405",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -399,7 +985,7 @@
 					"response": []
 				},
 				{
-					"name": "RADD - 500",
+					"name": "500",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -441,7 +1027,7 @@
 			"name": "aorDocumentInquiry",
 			"item": [
 				{
-					"name": "RADD - 200 OK",
+					"name": "200 OK",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -480,7 +1066,545 @@
 					"response": []
 				},
 				{
-					"name": "RADD - 200 KO",
+					"name": "200 OK (startTransaction 500)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:1080/radd-private/api/v1/aor/inquiry?recipientTaxId=VIAVIA90A01H501X&recipientType=PF",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1080",
+							"path": [
+								"radd-private",
+								"api",
+								"v1",
+								"aor",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "VIAVIA90A01H501X"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 OK (startTransaction KO)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:1080/radd-private/api/v1/aor/inquiry?recipientTaxId=PLOMRC01P30L736Y&recipientType=PF",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1080",
+							"path": [
+								"radd-private",
+								"api",
+								"v1",
+								"aor",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "PLOMRC01P30L736Y"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 OK (startTransaction Not Ready)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:1080/radd-private/api/v1/aor/inquiry?recipientTaxId=TSTGNN80A01F839X&recipientType=PF",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1080",
+							"path": [
+								"radd-private",
+								"api",
+								"v1",
+								"aor",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "TSTGNN80A01F839X"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 OK (completeTransaction KO)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:1080/radd-private/api/v1/aor/inquiry?recipientTaxId=VTOMRC01P30L736Y&recipientType=PF",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1080",
+							"path": [
+								"radd-private",
+								"api",
+								"v1",
+								"aor",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "VTOMRC01P30L736Y"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 OK (completeTransaction transazione inesistente)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:1080/radd-private/api/v1/aor/inquiry?recipientTaxId=LBOMRC01P30L736Y&recipientType=PF",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1080",
+							"path": [
+								"radd-private",
+								"api",
+								"v1",
+								"aor",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "LBOMRC01P30L736Y"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 OK (completeTransaction transazione già completata)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:1080/radd-private/api/v1/aor/inquiry?recipientTaxId=AEDMRC01P30L736Y&recipientType=PF",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1080",
+							"path": [
+								"radd-private",
+								"api",
+								"v1",
+								"aor",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "AEDMRC01P30L736Y"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 OK (completeTransaction 500)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:1080/radd-private/api/v1/aor/inquiry?recipientTaxId=MADMRC01P30L736Y&recipientType=PF",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1080",
+							"path": [
+								"radd-private",
+								"api",
+								"v1",
+								"aor",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "MADMRC01P30L736Y"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 OK (abortTransaction OK)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:1080/radd-private/api/v1/aor/inquiry?recipientTaxId=ZZAMRC01P30L736Y&recipientType=PF",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1080",
+							"path": [
+								"radd-private",
+								"api",
+								"v1",
+								"aor",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "ZZAMRC01P30L736Y"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 OK (abortTransaction KO)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:1080/radd-private/api/v1/aor/inquiry?recipientTaxId=GTAMRC01P30L736Y&recipientType=PF",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1080",
+							"path": [
+								"radd-private",
+								"api",
+								"v1",
+								"aor",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "GTAMRC01P30L736Y"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 OK (abortTransaction transazione inesistente)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:1080/radd-private/api/v1/aor/inquiry?recipientTaxId=ZTLMRC01P30L736Y&recipientType=PF",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1080",
+							"path": [
+								"radd-private",
+								"api",
+								"v1",
+								"aor",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "ZTLMRC01P30L736Y"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 OK (abortTransaction transazione già completata)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:1080/radd-private/api/v1/aor/inquiry?recipientTaxId=DAMMRC01P30L736Y&recipientType=PF",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1080",
+							"path": [
+								"radd-private",
+								"api",
+								"v1",
+								"aor",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "DAMMRC01P30L736Y"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 OK (abortTransaction 500)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:1080/radd-private/api/v1/aor/inquiry?recipientTaxId=RADMRC01P30L736Y&recipientType=PF",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1080",
+							"path": [
+								"radd-private",
+								"api",
+								"v1",
+								"aor",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "RADMRC01P30L736Y"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 KO",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -519,7 +1643,7 @@
 					"response": []
 				},
 				{
-					"name": "RADD - 400",
+					"name": "400",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -558,7 +1682,7 @@
 					"response": []
 				},
 				{
-					"name": "RADD - 403",
+					"name": "403",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -597,7 +1721,7 @@
 					"response": []
 				},
 				{
-					"name": "RADD - 401",
+					"name": "401",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -637,7 +1761,7 @@
 					"response": []
 				},
 				{
-					"name": "RADD - 405",
+					"name": "405",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -676,7 +1800,7 @@
 					"response": []
 				},
 				{
-					"name": "RADD - 500",
+					"name": "500",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -714,7 +1838,7 @@
 			"name": "documentUpload",
 			"item": [
 				{
-					"name": "RADD - 200 OK",
+					"name": "200 OK",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -726,7 +1850,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"bundleId\": \"TBD\",\r\n    \"contentType\": \"application/gzip\",\r\n    \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\"\r\n}",
+							"raw": "{\r\n    \"bundleId\": \"5c5b6d77-1c5a-497e-9f97-1a60c6a04b05\",\r\n    \"contentType\": \"application/zip\",\r\n    \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -752,7 +1876,7 @@
 					"response": []
 				},
 				{
-					"name": "RADD - 200 KO",
+					"name": "200 KO",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -764,7 +1888,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"bundleId\": \"TBD\",\r\n    \"contentType\": \"application/gzip\",\r\n    \"checksum\": \"259D8BCEFFA054E79AB740847D6B8FAF1C92067E1F27CBEBCAD2C07D9B962A34\"\r\n}",
+							"raw": "{\r\n    \"bundleId\": \"5c5b6d77-1c5a-497e-9f97-1a60c6a04b05\",\r\n    \"contentType\": \"application/zip\",\r\n    \"checksum\": \"259D8BCEFFA054E79AB740847D6B8FAF1C92067E1F27CBEBCAD2C07D9B962A34\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -790,7 +1914,7 @@
 					"response": []
 				},
 				{
-					"name": "RADD - 400",
+					"name": "400",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -802,7 +1926,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"bundleId\": \"TBD\",\r\n    \"contentType\": \"application/gzip\",\r\n    \"checksum\": \"A932E7C87F471C1EE7A5E17F0EC746F628CF0D94F06CA5E12AF5D8173C3F694B\"\r\n}",
+							"raw": "{\r\n    \"bundleId\": \"5c5b6d77-1c5a-497e-9f97-1a60c6a04b05\",\r\n    \"contentType\": \"application/zip\",\r\n    \"checksum\": \"A932E7C87F471C1EE7A5E17F0EC746F628CF0D94F06CA5E12AF5D8173C3F694B\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -828,7 +1952,7 @@
 					"response": []
 				},
 				{
-					"name": "RADD - 403",
+					"name": "403",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -840,7 +1964,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"bundleId\": \"TBD\",\r\n    \"contentType\": \"application/gzip\",\r\n    \"checksum\": \"L122E7C87F471C1EE7A5E17F0EC746F628CF0D94F06CA5E12AF5D8173C3F694B\"\r\n}",
+							"raw": "{\r\n    \"bundleId\": \"5c5b6d77-1c5a-497e-9f97-1a60c6a04b05\",\r\n    \"contentType\": \"application/zip\",\r\n    \"checksum\": \"L122E7C87F471C1EE7A5E17F0EC746F628CF0D94F06CA5E12AF5D8173C3F694B\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -866,13 +1990,13 @@
 					"response": []
 				},
 				{
-					"name": "RADD - 401",
+					"name": "401",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"bundleId\": \"TBD\",\r\n    \"contentType\": \"application/gzip\",\r\n    \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\"\r\n}",
+							"raw": "{\r\n    \"bundleId\": \"5c5b6d77-1c5a-497e-9f97-1a60c6a04b05\",\r\n    \"contentType\": \"application/zip\",\r\n    \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -898,7 +2022,7 @@
 					"response": []
 				},
 				{
-					"name": "RADD - 405",
+					"name": "405",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -913,7 +2037,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"bundleId\": \"TBD\",\r\n    \"contentType\": \"application/gzip\",\r\n    \"checksum\": \"F61FC75C4D4B3A4A4D4E273F08A6E8C299372DFD873A814ED6B92159D7A9F9F1\"\r\n}",
+							"raw": "{\r\n    \"bundleId\": \"5c5b6d77-1c5a-497e-9f97-1a60c6a04b05\",\r\n    \"contentType\": \"application/zip\",\r\n    \"checksum\": \"F61FC75C4D4B3A4A4D4E273F08A6E8C299372DFD873A814ED6B92159D7A9F9F1\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -939,7 +2063,7 @@
 					"response": []
 				},
 				{
-					"name": "RADD - 500",
+					"name": "500",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -951,7 +2075,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"bundleId\": \"TBD\",\r\n    \"contentType\": \"application/gzip\",\r\n    \"checksum\": \"C6F02E6D8FBB89A2516F20D44729E6821E0D6E997C2D187E6D0C03353D8721D8\"\r\n}",
+							"raw": "{\r\n    \"bundleId\": \"5c5b6d77-1c5a-497e-9f97-1a60c6a04b05\",\r\n    \"contentType\": \"application/zip\",\r\n    \"checksum\": \"C6F02E6D8FBB89A2516F20D44729E6821E0D6E997C2D187E6D0C03353D8721D8\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -985,7 +2109,7 @@
 					"name": "startTransaction",
 					"item": [
 						{
-							"name": "RADD - 200 OK",
+							"name": "200 OK",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -997,7 +2121,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"string\",\r\n          \"recipientTaxId\": \"GNIGNI80A01H501R\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo=\",\r\n          \"qrCode\": \"string\"\r\n}",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"9795ea34-e4e9-11ed-b5ea-0242ac120002\",\r\n          \"recipientTaxId\": \"GNIGNI80A01H501R\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\",\r\n          \"qrCode\": \"1a\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1024,7 +2148,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 200 KO",
+							"name": "200 OK (completeTransaction KO)",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -1036,7 +2160,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"string\",\r\n          \"recipientTaxId\": \"PLOMRC01P30L736Y\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo=\",\r\n          \"qrCode\": \"string\"\r\n        }",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"4d4c70e7-8a69-4a60-b2e2-0a36b8d17bc5\",\r\n          \"recipientTaxId\": \"VTOMRC01P30L736Y\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\",\r\n          \"qrCode\": \"1a\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1063,7 +2187,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 200 NotReady",
+							"name": "200 OK (completeTransaction transazione inesistente)",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -1075,7 +2199,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"string\",\r\n          \"recipientTaxId\": \"TSTGNN80A01F839X\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo=\",\r\n          \"qrCode\": \"string\"\r\n        }",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"9da7a31a-c29c-4760-91b8-7d2f59d27734\",\r\n          \"recipientTaxId\": \"LBOMRC01P30L736Y\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\",\r\n          \"qrCode\": \"1a\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1102,13 +2226,403 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 401",
+							"name": "200 OK (completeTransaction transazione già completata)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"6ee9f7d9-6b3e-431a-a39f-70f098b66002\",\r\n          \"recipientTaxId\": \"AEDMRC01P30L736Y\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\",\r\n          \"qrCode\": \"1a\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/start",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 OK (completeTransaction 500)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"70d5f0c2-0c5c-4745-b5a5-5b0fb15d694d\",\r\n          \"recipientTaxId\": \"MADMRC01P30L736Y\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\",\r\n          \"qrCode\": \"1a\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/start",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 OK (abortTransaction OK)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"8ed10708-e511-11ed-b5ea-0242ac120002\",\r\n          \"recipientTaxId\": \"ZZAMRC01P30L736Y\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\",\r\n          \"qrCode\": \"1a\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/start",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 OK (abortTransaction KO)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"8ed0f8da-e511-11ed-b5ea-0242ac120002\",\r\n          \"recipientTaxId\": \"GTAMRC01P30L736Y\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\",\r\n          \"qrCode\": \"1a\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/start",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 OK (abortTransaction transazione inesistente)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"8ed1024e-e511-11ed-b5ea-0242ac120002\",\r\n          \"recipientTaxId\": \"ZTLMRC01P30L736Y\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\",\r\n          \"qrCode\": \"1a\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/start",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 OK (abortTransaction transazione già completata)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"8ed10442-e511-11ed-b5ea-0242ac120002\",\r\n          \"recipientTaxId\": \"DAMMRC01P30L736Y\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\",\r\n          \"qrCode\": \"1a\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/start",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 OK (abortTransaction 500)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"8ed105dc-e511-11ed-b5ea-0242ac120002\",\r\n          \"recipientTaxId\": \"RADMRC01P30L736Y\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\",\r\n          \"qrCode\": \"1a\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/start",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 KO",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"bfcbb315-0e0b-444a-8798-3e3e54d639c1\",\r\n          \"recipientTaxId\": \"PLOMRC01P30L736Y\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\",\r\n          \"qrCode\": \"2b\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/start",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 NotReady",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"a2204380-e4f5-11ed-b5ea-0242ac120002\",\r\n          \"recipientTaxId\": \"TSTGNN80A01F839X\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\",\r\n          \"qrCode\": \"1a\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/start",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "400",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"e8eafbf7-05d1-4c92-89b8-28b3d3d3f537\",\r\n          \"recipientTaxId\": \"FNIFNA80A01H501G\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\",\r\n          \"qrCode\": \"4e\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/start",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "401",
 							"request": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"string\",\r\n          \"recipientTaxId\": \"GNIGNI80A01H501R\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo=\",\r\n          \"qrCode\": \"string\"\r\n}",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"9795ea34-e4e9-11ed-b5ea-0242ac120002\",\r\n          \"recipientTaxId\": \"GNIGNI80A01H501R\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\",\r\n          \"qrCode\": \"1a\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1135,7 +2649,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 403",
+							"name": "403",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -1147,7 +2661,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"string\",\r\n          \"recipientTaxId\": \"RFNNTR76M06B715E\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo=\",\r\n          \"qrCode\": \"string\"\r\n}",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"16f4b4c4-4d06-4e0e-b2a9-b9b1149de7c4\",\r\n          \"recipientTaxId\": \"RFNNTR76M06B715E\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\",\r\n          \"qrCode\": \"4e\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1174,46 +2688,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 400",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "uid",
-										"value": "uid",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"string\",\r\n          \"recipientTaxId\": \"FNIFNA80A01H501G\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo=\",\r\n          \"qrCode\": \"string\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/start",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "1080",
-									"path": [
-										"radd-private",
-										"api",
-										"v1",
-										"act",
-										"transaction",
-										"start"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "RADD - 405",
+							"name": "405",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -1228,7 +2703,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"string\",\r\n          \"recipientTaxId\": \"FRMTTR76M06B715E\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo=\",\r\n          \"qrCode\": \"string\"\r\n}",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"2f08e4f4-8934-4b8a-8ec3-c3eb7e3a4c4d\",\r\n          \"recipientTaxId\": \"FRMTTR76M06B715E\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\",\r\n          \"qrCode\": \"4e\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1255,7 +2730,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 500",
+							"name": "500",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -1267,7 +2742,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"string\",\r\n          \"recipientTaxId\": \"CIACIA80A01H501X\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo=\",\r\n          \"qrCode\": \"string\"\r\n}",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"9795ea34-e4e9-11ed-b5ea-0242ac120002\",\r\n          \"recipientTaxId\": \"VIAVIA90A01H501X\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\",\r\n          \"qrCode\": \"1a\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1299,7 +2774,7 @@
 					"name": "completeTransaction",
 					"item": [
 						{
-							"name": "RADD - 200 OK",
+							"name": "200 OK",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -1311,7 +2786,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"operationId\": \"2bb5c29e0cf411ed861d0242ac120002\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"raw": "{\r\n          \"operationId\": \"9795ea34-e4e9-11ed-b5ea-0242ac120002\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1338,7 +2813,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 200 KO",
+							"name": "200 KO",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -1350,7 +2825,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"operationId\": \"67d8a1f225f24c13a05e00a0d8a8aaba\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"raw": "{\r\n          \"operationId\": \"4d4c70e7-8a69-4a60-b2e2-0a36b8d17bc5\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1377,7 +2852,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 200 Transazione inesistente",
+							"name": "200 Transazione inesistente",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -1389,7 +2864,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"operationId\": \"78c1f2769c8e4ba084a62e778a143d67\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"raw": "{\r\n          \"operationId\": \"9da7a31a-c29c-4760-91b8-7d2f59d27734\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1416,7 +2891,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 200 Transazione già completata",
+							"name": "200 Transazione già completata",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -1428,7 +2903,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"operationId\": \"e40474dc17f14e309ce2a33e62d3d174\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"raw": "{\r\n          \"operationId\": \"6ee9f7d9-6b3e-431a-a39f-70f098b66002\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1455,13 +2930,52 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 401",
+							"name": "400",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"c447c68d-6d22-4c95-9f2b-f53f8d9392ee\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/complete",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"transaction",
+										"complete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "401",
 							"request": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"operationId\": \"2bb5c29e0cf411ed861d0242ac120002\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"raw": "{\r\n          \"operationId\": \"9795ea34-e4e9-11ed-b5ea-0242ac120002\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1488,7 +3002,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 400",
+							"name": "403",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -1500,7 +3014,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"operationId\": \"2c12e95533d0444991e8f18bb232a44b\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"raw": "{\r\n          \"operationId\": \"f59f05e6-9d88-4c7d-9bb3-75c9828f9995\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1527,46 +3041,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 403",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "uid",
-										"value": "uid",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n          \"operationId\": \"25550da94bc24a52a839628d9f9c37d8\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/complete",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "1080",
-									"path": [
-										"radd-private",
-										"api",
-										"v1",
-										"act",
-										"transaction",
-										"complete"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "RADD - 405",
+							"name": "405",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -1581,7 +3056,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"operationId\": \"12550da94bc24a52a839628d9f9c37d8\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"raw": "{\r\n          \"operationId\": \"76e3d28f-70e4-4d2b-b4f1-cad4c4f20a0e\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1608,7 +3083,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 500",
+							"name": "500",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -1620,7 +3095,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"operationId\": \"9415a0b4c4fc4d4f9a5bc5e5f5aefb47\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"raw": "{\r\n          \"operationId\": \"70d5f0c2-0c5c-4745-b5a5-5b0fb15d694d\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1652,7 +3127,7 @@
 					"name": "abortTransaction",
 					"item": [
 						{
-							"name": "RADD - 200 OK",
+							"name": "200 OK",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -1664,7 +3139,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"operationId\": \"2bb5c29e0cf411ed861d0242ac120002\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"raw": "{\r\n          \"operationId\": \"8ed10708-e511-11ed-b5ea-0242ac120002\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1691,7 +3166,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 200 KO",
+							"name": "200 KO",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -1703,7 +3178,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"operationId\": \"67d8a1f225f24c13a05e00a0d8a8aaba\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"raw": "{\r\n          \"operationId\": \"8ed0f8da-e511-11ed-b5ea-0242ac120002\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1730,7 +3205,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 200 Transazione inesistente",
+							"name": "200 Transazione inesistente",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -1742,7 +3217,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"operationId\": \"78c1f2769c8e4ba084a62e778a143d67\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"raw": "{\r\n          \"operationId\": \"8ed1024e-e511-11ed-b5ea-0242ac120002\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1769,7 +3244,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 200 Transazione già completata",
+							"name": "200 Transazione già completata",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -1781,7 +3256,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"operationId\": \"e40474dc17f14e309ce2a33e62d3d174\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"raw": "{\r\n          \"operationId\": \"8ed10442-e511-11ed-b5ea-0242ac120002\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1808,13 +3283,52 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 401",
+							"name": "400",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"8ed10ae6-e511-11ed-b5ea-0242ac120002\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/abort",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"act",
+										"transaction",
+										"abort"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "401",
 							"request": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"operationId\": \"2bb5c29e0cf411ed861d0242ac120002\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"raw": "{\r\n          \"operationId\": \"8ed10708-e511-11ed-b5ea-0242ac120002\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1841,7 +3355,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 400",
+							"name": "403",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -1853,7 +3367,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"operationId\": \"2c12e95533d0444991e8f18bb232a44b\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"raw": "{\r\n          \"operationId\": \"8ed1083e-e511-11ed-b5ea-0242ac120002\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1880,46 +3394,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 403",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "uid",
-										"value": "uid",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n          \"operationId\": \"25550da94bc24a52a839628d9f9c37d8\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/abort",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "1080",
-									"path": [
-										"radd-private",
-										"api",
-										"v1",
-										"act",
-										"transaction",
-										"abort"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "RADD - 405",
+							"name": "405",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -1934,7 +3409,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"operationId\": \"12550da94bc24a52a839628d9f9c37d8\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"raw": "{\r\n          \"operationId\": \"8ed109c4-e511-11ed-b5ea-0242ac120002\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1961,7 +3436,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 500",
+							"name": "500",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -1973,7 +3448,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"operationId\": \"9415a0b4c4fc4d4f9a5bc5e5f5aefb47\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"raw": "{\r\n          \"operationId\": \"8ed105dc-e511-11ed-b5ea-0242ac120002\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2010,7 +3485,7 @@
 					"name": "startTransaction",
 					"item": [
 						{
-							"name": "RADD - 200 OK",
+							"name": "200 OK",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -2022,7 +3497,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"string\",\r\n          \"recipientTaxId\": \"GNIGNI80A01H501R\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo=\"\r\n}",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"9795ea34-e4e9-11ed-b5ea-0242ac120002\",\r\n          \"recipientTaxId\": \"GNIGNI80A01H501R\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2049,7 +3524,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 200 KO",
+							"name": "200 OK (completeTransaction KO)",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -2061,7 +3536,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"string\",\r\n          \"recipientTaxId\": \"PLOMRC01P30L736Y\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo=\"\r\n        }",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"4d4c70e7-8a69-4a60-b2e2-0a36b8d17bc5\",\r\n          \"recipientTaxId\": \"VTOMRC01P30L736Y\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2088,7 +3563,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 200 NotReady",
+							"name": "200 OK (completeTransaction transazione inesistente)",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -2100,7 +3575,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"string\",\r\n          \"recipientTaxId\": \"TSTGNN80A01F839X\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo=\"\r\n        }",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"9da7a31a-c29c-4760-91b8-7d2f59d27734\",\r\n          \"recipientTaxId\": \"LBOMRC01P30L736Y\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2127,13 +3602,403 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 401",
+							"name": "200 OK (completeTransaction transazione già completata)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"6ee9f7d9-6b3e-431a-a39f-70f098b66002\",\r\n          \"recipientTaxId\": \"AEDMRC01P30L736Y\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/start",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 OK (completeTransaction 500)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"70d5f0c2-0c5c-4745-b5a5-5b0fb15d694d\",\r\n          \"recipientTaxId\": \"MADMRC01P30L736Y\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/start",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 OK (abortTransaction OK)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"8ed10708-e511-11ed-b5ea-0242ac120002\",\r\n          \"recipientTaxId\": \"ZZAMRC01P30L736Y\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/start",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 OK (abortTransaction KO)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"8ed0f8da-e511-11ed-b5ea-0242ac120002\",\r\n          \"recipientTaxId\": \"GTAMRC01P30L736Y\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/start",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 OK (abortTransaction transazione inesistente)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"8ed1024e-e511-11ed-b5ea-0242ac120002\",\r\n          \"recipientTaxId\": \"ZTLMRC01P30L736Y\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/start",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 OK (abortTransaction transazione già completata)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"8ed10442-e511-11ed-b5ea-0242ac120002\",\r\n          \"recipientTaxId\": \"DAMMRC01P30L736Y\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/start",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 OK (abortTransaction 500)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"8ed105dc-e511-11ed-b5ea-0242ac120002\",\r\n          \"recipientTaxId\": \"RADMRC01P30L736Y\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/start",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 KO",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n         \t \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"bfcbb315-0e0b-444a-8798-3e3e54d639c1\",\r\n          \"recipientTaxId\": \"PLOMRC01P30L736Y\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/start",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 NotReady",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"a2204380-e4f5-11ed-b5ea-0242ac120002\",\r\n          \"recipientTaxId\": \"TSTGNN80A01F839X\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/start",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "400",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"e8eafbf7-05d1-4c92-89b8-28b3d3d3f537\",\r\n          \"recipientTaxId\": \"FNIFNA80A01H501G\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/start",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1080",
+									"path": [
+										"radd-private",
+										"api",
+										"v1",
+										"aor",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "401",
 							"request": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"string\",\r\n          \"recipientTaxId\": \"GNIGNI80A01H501R\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo=\"\r\n}",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"9795ea34-e4e9-11ed-b5ea-0242ac120002\",\r\n          \"recipientTaxId\": \"GNIGNI80A01H501R\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2160,7 +4025,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 400",
+							"name": "403",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -2172,7 +4037,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"string\",\r\n          \"recipientTaxId\": \"FNIFNA80A01H501G\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo=\"\r\n}",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"16f4b4c4-4d06-4e0e-b2a9-b9b1149de7c4\",\r\n          \"recipientTaxId\": \"RFNNTR76M06B715E\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2199,46 +4064,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 403",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "uid",
-										"value": "uid",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"string\",\r\n          \"recipientTaxId\": \"RFNNTR76M06B715E\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo=\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/start",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "1080",
-									"path": [
-										"radd-private",
-										"api",
-										"v1",
-										"aor",
-										"transaction",
-										"start"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "RADD - 405",
+							"name": "405",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -2253,7 +4079,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"string\",\r\n          \"recipientTaxId\": \"FRMTTR76M06B715E\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo=\"\r\n}",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"2f08e4f4-8934-4b8a-8ec3-c3eb7e3a4c4d\",\r\n          \"recipientTaxId\": \"FRMTTR76M06B715E\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2280,7 +4106,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 500",
+							"name": "500",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -2292,7 +4118,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"string\",\r\n          \"recipientTaxId\": \"CIACIA80A01H501X\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo=\"\r\n}",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"9795ea34-e4e9-11ed-b5ea-0242ac120002\",\r\n          \"recipientTaxId\": \"CIACIA80A01H501X\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2324,7 +4150,7 @@
 					"name": "completeTransaction",
 					"item": [
 						{
-							"name": "RADD - 200 OK",
+							"name": "200 OK",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -2336,7 +4162,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"operationId\": \"2bb5c29e0cf411ed861d0242ac120002\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"raw": "{\r\n          \"operationId\": \"9795ea34-e4e9-11ed-b5ea-0242ac120002\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2363,7 +4189,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 200 KO",
+							"name": "200 KO",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -2375,7 +4201,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"operationId\": \"67d8a1f225f24c13a05e00a0d8a8aaba\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"raw": "{\r\n          \"operationId\": \"4d4c70e7-8a69-4a60-b2e2-0a36b8d17bc5\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2402,7 +4228,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 200 Transazione inesistente",
+							"name": "200 Transazione inesistente",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -2414,7 +4240,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"operationId\": \"78c1f2769c8e4ba084a62e778a143d67\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"raw": "{\r\n          \"operationId\": \"9da7a31a-c29c-4760-91b8-7d2f59d27734\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2441,7 +4267,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 200 Transazione già completata",
+							"name": "200 Transazione già completata",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -2453,7 +4279,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"operationId\": \"e40474dc17f14e309ce2a33e62d3d174\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"raw": "{\r\n          \"operationId\": \"6ee9f7d9-6b3e-431a-a39f-70f098b66002\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2480,13 +4306,13 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 401",
+							"name": "401",
 							"request": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"operationId\": \"2bb5c29e0cf411ed861d0242ac120002\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"raw": "{\r\n          \"operationId\": \"9795ea34-e4e9-11ed-b5ea-0242ac120002\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2513,7 +4339,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 400",
+							"name": "400",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -2525,7 +4351,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"operationId\": \"2c12e95533d0444991e8f18bb232a44b\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"raw": "{\r\n          \"operationId\": \"c447c68d-6d22-4c95-9f2b-f53f8d9392ee\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2552,7 +4378,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 403",
+							"name": "403",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -2564,7 +4390,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"operationId\": \"25550da94bc24a52a839628d9f9c37d8\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"raw": "{\r\n          \"operationId\": \"f59f05e6-9d88-4c7d-9bb3-75c9828f9995\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2591,7 +4417,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 405",
+							"name": "405",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -2606,7 +4432,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"operationId\": \"12550da94bc24a52a839628d9f9c37d8\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"raw": "{\r\n          \"operationId\": \"76e3d28f-70e4-4d2b-b4f1-cad4c4f20a0e\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2633,7 +4459,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 500",
+							"name": "500",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -2645,7 +4471,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"operationId\": \"9415a0b4c4fc4d4f9a5bc5e5f5aefb47\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"raw": "{\r\n          \"operationId\": \"70d5f0c2-0c5c-4745-b5a5-5b0fb15d694d\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2677,7 +4503,7 @@
 					"name": "abortTransaction",
 					"item": [
 						{
-							"name": "RADD - 200 OK",
+							"name": "200 OK",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -2689,7 +4515,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"operationId\": \"2bb5c29e0cf411ed861d0242ac120002\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"raw": "{\r\n          \"operationId\": \"8ed10708-e511-11ed-b5ea-0242ac120002\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2716,7 +4542,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 200 KO",
+							"name": "200 KO",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -2728,7 +4554,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"operationId\": \"67d8a1f225f24c13a05e00a0d8a8aaba\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"raw": "{\r\n          \"operationId\": \"8ed0f8da-e511-11ed-b5ea-0242ac120002\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2755,7 +4581,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 200 Transazione inesistente",
+							"name": "200 Transazione inesistente",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -2767,7 +4593,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"operationId\": \"78c1f2769c8e4ba084a62e778a143d67\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"raw": "{\r\n          \"operationId\": \"8ed1024e-e511-11ed-b5ea-0242ac120002\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2794,7 +4620,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 200 Transazione già completata",
+							"name": "200 Transazione già completata",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -2806,7 +4632,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"operationId\": \"e40474dc17f14e309ce2a33e62d3d174\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"raw": "{\r\n          \"operationId\": \"8ed10442-e511-11ed-b5ea-0242ac120002\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2833,13 +4659,13 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 401",
+							"name": "401",
 							"request": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"operationId\": \"2bb5c29e0cf411ed861d0242ac120002\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"raw": "{\r\n          \"operationId\": \"8ed10708-e511-11ed-b5ea-0242ac120002\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2866,7 +4692,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 400",
+							"name": "400",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -2878,7 +4704,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"operationId\": \"2c12e95533d0444991e8f18bb232a44b\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"raw": "{\r\n          \"operationId\": \"8ed10ae6-e511-11ed-b5ea-0242ac120002\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2905,7 +4731,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 403",
+							"name": "403",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -2917,7 +4743,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"operationId\": \"25550da94bc24a52a839628d9f9c37d8\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"raw": "{\r\n          \"operationId\": \"8ed1083e-e511-11ed-b5ea-0242ac120002\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2944,7 +4770,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 405",
+							"name": "405",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -2959,7 +4785,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"operationId\": \"12550da94bc24a52a839628d9f9c37d8\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"raw": "{\r\n          \"operationId\": \"8ed109c4-e511-11ed-b5ea-0242ac120002\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2986,7 +4812,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 500",
+							"name": "500",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -2998,7 +4824,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"operationId\": \"9415a0b4c4fc4d4f9a5bc5e5f5aefb47\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"raw": "{\r\n          \"operationId\": \"8ed105dc-e511-11ed-b5ea-0242ac120002\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -3035,7 +4861,7 @@
 					"name": "operationAct",
 					"item": [
 						{
-							"name": "RADD - 200 OK",
+							"name": "200 OK",
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -3060,7 +4886,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 200 KO",
+							"name": "200 KO",
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -3085,7 +4911,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 200 Nessun elemento associato",
+							"name": "200 Nessun elemento associato",
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -3110,7 +4936,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 401",
+							"name": "401",
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -3135,7 +4961,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 400",
+							"name": "400",
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -3160,7 +4986,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 403",
+							"name": "403",
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -3185,7 +5011,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 404",
+							"name": "404",
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -3210,7 +5036,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 405",
+							"name": "405",
 							"request": {
 								"method": "POST",
 								"header": [],
@@ -3235,7 +5061,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 500",
+							"name": "500",
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -3265,7 +5091,7 @@
 					"name": "operationAor",
 					"item": [
 						{
-							"name": "RADD - 200 OK",
+							"name": "200 OK",
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -3290,7 +5116,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 200 KO",
+							"name": "200 KO",
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -3315,7 +5141,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 200 Nessun elemento associato",
+							"name": "200 Nessun elemento associato",
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -3340,7 +5166,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 401",
+							"name": "401",
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -3365,7 +5191,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 400",
+							"name": "400",
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -3390,7 +5216,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 403",
+							"name": "403",
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -3415,7 +5241,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 404",
+							"name": "404",
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -3440,7 +5266,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 405",
+							"name": "405",
 							"request": {
 								"method": "POST",
 								"header": [],
@@ -3465,7 +5291,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 500",
+							"name": "500",
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -3495,7 +5321,7 @@
 					"name": "operationsAct",
 					"item": [
 						{
-							"name": "RADD - 200 OK",
+							"name": "200 OK",
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -3520,7 +5346,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 200 KO",
+							"name": "200 KO",
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -3545,7 +5371,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 200 Nessun elemento associato",
+							"name": "200 Nessun elemento associato",
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -3570,7 +5396,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 401",
+							"name": "401",
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -3595,7 +5421,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 400",
+							"name": "400",
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -3620,7 +5446,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 403",
+							"name": "403",
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -3645,7 +5471,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 404",
+							"name": "404",
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -3670,7 +5496,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 405",
+							"name": "405",
 							"request": {
 								"method": "POST",
 								"header": [],
@@ -3695,7 +5521,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 500",
+							"name": "500",
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -3725,7 +5551,7 @@
 					"name": "operationsAor",
 					"item": [
 						{
-							"name": "RADD - 200 OK",
+							"name": "200 OK",
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -3750,7 +5576,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 200 KO",
+							"name": "200 KO",
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -3775,7 +5601,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 200 Nessun elemento associato",
+							"name": "200 Nessun elemento associato",
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -3800,7 +5626,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 401",
+							"name": "401",
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -3825,7 +5651,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 400",
+							"name": "400",
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -3850,7 +5676,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 403",
+							"name": "403",
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -3875,7 +5701,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 404",
+							"name": "404",
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -3900,7 +5726,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 405",
+							"name": "405",
 							"request": {
 								"method": "POST",
 								"header": [],
@@ -3925,7 +5751,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 500",
+							"name": "500",
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -3955,7 +5781,7 @@
 					"name": "operationsActDetails",
 					"item": [
 						{
-							"name": "RADD - 200 OK",
+							"name": "200 OK",
 							"request": {
 								"method": "POST",
 								"header": [],
@@ -3989,7 +5815,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 200 KO",
+							"name": "200 KO",
 							"request": {
 								"method": "POST",
 								"header": [],
@@ -4023,7 +5849,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 200 Nessun Elemento Associato",
+							"name": "200 Nessun Elemento Associato",
 							"request": {
 								"method": "POST",
 								"header": [],
@@ -4057,7 +5883,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 400",
+							"name": "400",
 							"request": {
 								"method": "POST",
 								"header": [],
@@ -4091,7 +5917,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 401",
+							"name": "401",
 							"request": {
 								"method": "POST",
 								"header": [],
@@ -4125,7 +5951,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 403",
+							"name": "403",
 							"request": {
 								"method": "POST",
 								"header": [],
@@ -4159,7 +5985,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 404",
+							"name": "404",
 							"request": {
 								"method": "POST",
 								"header": [],
@@ -4193,7 +6019,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 404 Copy",
+							"name": "405",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -4230,7 +6056,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 500",
+							"name": "500",
 							"request": {
 								"method": "POST",
 								"header": [],
@@ -4269,7 +6095,7 @@
 					"name": "operationsAorDetails",
 					"item": [
 						{
-							"name": "RADD - 200 OK",
+							"name": "200 OK",
 							"request": {
 								"method": "POST",
 								"header": [],
@@ -4303,7 +6129,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 200 KO",
+							"name": "200 KO",
 							"request": {
 								"method": "POST",
 								"header": [],
@@ -4337,7 +6163,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 200 Nessun Elemento Associato",
+							"name": "200 Nessun Elemento Associato",
 							"request": {
 								"method": "POST",
 								"header": [],
@@ -4371,7 +6197,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 400",
+							"name": "400",
 							"request": {
 								"method": "POST",
 								"header": [],
@@ -4405,7 +6231,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 401",
+							"name": "401",
 							"request": {
 								"method": "POST",
 								"header": [],
@@ -4439,7 +6265,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 403",
+							"name": "403",
 							"request": {
 								"method": "POST",
 								"header": [],
@@ -4473,7 +6299,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 405",
+							"name": "405",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -4510,7 +6336,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 404",
+							"name": "404",
 							"request": {
 								"method": "POST",
 								"header": [],
@@ -4544,7 +6370,7 @@
 							"response": []
 						},
 						{
-							"name": "RADD - 500",
+							"name": "500",
 							"request": {
 								"method": "POST",
 								"header": [],

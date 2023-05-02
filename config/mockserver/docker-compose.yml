@@ -9,11 +9,10 @@ services:
       - MOCKSERVER_ENABLE_CORS_FOR_API="true"
       - MOCKSERVER_ENABLE_CORS_FOR_ALL_RESPONSES="true"
     volumes:
-      - "./config/mockserver/mock_rest_configs"
+      - ./mock_rest_configs:/config
     networks:
       - develop-network
 
 networks:
   develop-network:
     driver: bridge
-
