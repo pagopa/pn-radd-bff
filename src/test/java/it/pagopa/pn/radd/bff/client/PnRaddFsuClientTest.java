@@ -29,6 +29,8 @@ class PnRaddFsuClientTest {
     @Mock
     private ActTransactionManagementApi actTransactionManagementApi;
     @Mock
+    private NotificationInquiryApi notificationInquiryApi;
+    @Mock
     private AorDocumentInquiryApi aorDocumentInquiryApi;
 
     @Mock

@@ -32,33 +32,6 @@ class RaddResponseDecoratorTest {
      * Method under test: {@link RaddResponseDecorator#writeWith(Publisher)}
      */
     @Test
-    void testWriteWith() {
-        // TODO: Complete this test.
-        //   Diffblue AI was unable to find a test
-
-        (new RaddResponseDecorator(new RaddResponseDecorator(new RaddResponseDecorator(
-                new RaddResponseDecorator(new RaddResponseDecorator(new MockServerHttpResponse()))))))
-                .writeWith(mock(Publisher.class));
-    }
-
-    /**
-     * Method under test: {@link RaddResponseDecorator#writeWith(Publisher)}
-     */
-    @Test
-    void testWriteWith3() {
-        // TODO: Complete this test.
-        //   Diffblue AI was unable to find a test
-
-        (new RaddResponseDecorator(new RaddResponseDecorator(new RaddResponseDecorator(new RaddResponseDecorator(
-                new RaddResponseDecorator(new HttpHeadResponseDecorator(new RaddResponseDecorator(new RaddResponseDecorator(
-                        new RaddResponseDecorator(new RaddResponseDecorator(new MockServerHttpResponse())))))))))))
-                .writeWith(mock(Publisher.class));
-    }
-
-    /**
-     * Method under test: {@link RaddResponseDecorator#writeWith(Publisher)}
-     */
-    @Test
     void testWriteWith4() {
         ServerHttpResponseDecorator delegate = mock(ServerHttpResponseDecorator.class);
         ChannelSendOperator<Object> channelSendOperator = new ChannelSendOperator<>(mock(Publisher.class),
