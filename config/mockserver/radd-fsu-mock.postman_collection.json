@@ -768,6 +768,49 @@
 					"response": []
 				},
 				{
+					"name": "200 Documenti già scaricati",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:1080/radd-private/api/v1/act/inquiry?recipientTaxId=RSSSRG80A01F839I&recipientType=PF&qrCode=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1080",
+							"path": [
+								"radd-private",
+								"api",
+								"v1",
+								"act",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "RSSSRG80A01F839I"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								},
+								{
+									"key": "qrCode",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "200 KO",
 					"request": {
 						"method": "GET",
