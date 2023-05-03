@@ -8,7 +8,7 @@
           {
             "schema": {
               "type": "string",
-              "pattern": "^[0-9a-zA-Z]*$"
+              "pattern": "^.*$"
             }
           }
         ]
@@ -36,6 +36,48 @@
           "status": {
             "code": 0,
             "message": "OK"
+          }
+        }
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "GET",
+      "path": "/radd-private/api/v1/aor/inquiry",
+      "headers": {
+        "uid": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
+        ]
+      },
+      "queryStringParameters": {
+        "recipientTaxId": [
+          "RSSSRG80A01F839I"
+        ],
+        "recipientType": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^(PF|PG)$"
+            }
+          }
+        ]
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "body": {
+        "type": "JSON",
+        "json": {
+          "result": true,
+          "status": {
+            "code": 99,
+            "message": "KO"
           }
         }
       }
@@ -554,7 +596,7 @@
           {
             "schema": {
               "type": "string",
-              "pattern": "^[0-9a-zA-Z]*$"
+              "pattern": "^.*$"
             }
           }
         ]
@@ -596,7 +638,7 @@
           {
             "schema": {
               "type": "string",
-              "pattern": "^[0-9a-zA-Z]*$"
+              "pattern": "^.*$"
             }
           }
         ]

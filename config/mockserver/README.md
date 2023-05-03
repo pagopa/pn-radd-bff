@@ -167,7 +167,7 @@ Use cases:
 | FNIFNA80A01H501G | 400         |                                                     |
 | FRMTTR76M06B715E | 405         |                                                     |
 | RFNNTR76M06B715E | 403         |                                                     |
-| CIACIA80A01H501X | 500         |                                                     |
+| VIAVIA90A01H501X | 500         |                                                     |
 | GNIGNI80A01H501R | 200         | OK                                                  |
 | VTOMRC01P30L736Y | 200         | OK (completeTransaction KO)                         |
 | LBOMRC01P30L736Y | 200         | OK (completeTransaction Transazione Inesistente)    |
