@@ -8,6 +8,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
@@ -15,8 +16,10 @@ import reactor.test.StepVerifier;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-@ExtendWith(SpringExtension.class)
+@SpringBootTest
+@ExtendWith (SpringExtension.class)
 class PnRaddFsuClientTest {
+
 
     private static PnRaddFsuClient pnRaddFsuClient;
 
@@ -44,7 +47,7 @@ class PnRaddFsuClientTest {
 
 
     @BeforeAll
-    static void init() {
+    static void init () {
         pnRaddBffConfig = new PnRaddBffConfig();
         pnRaddBffConfig.setClientPnRaddFsuBasepath("http://localhost:8080");
         responseExchangeFilter = new ResponseExchangeFilter();
@@ -53,7 +56,7 @@ class PnRaddFsuClientTest {
 
 
     @Test
-    void testActInquiry() {
+    void testActInquiry () {
 
         ActInquiryResponseDto actInquiryResponseDto = new ActInquiryResponseDto();
 
@@ -70,9 +73,8 @@ class PnRaddFsuClientTest {
         StepVerifier.create(pnRaddFsuClient.actInquiry("uid", "recipientTaxId", "recipientType", "qrCode"))
                 .expectNext(actInquiryResponseDto);
     }
-
     @Test
-    void testAorInquiry() {
+    void testAorInquiry () {
 
         AORInquiryResponseDto aorInquiryResponseDto = new AORInquiryResponseDto();
 
@@ -89,9 +91,8 @@ class PnRaddFsuClientTest {
         StepVerifier.create(pnRaddFsuClient.aorInquiry("uid", "recipientTaxId", "recipientType"))
                 .expectNext(aorInquiryResponseDto);
     }
-
     @Test
-    void testDocumentUpload() {
+    void testDocumentUpload () {
 
         DocumentUploadRequestDto documentUploadRequestDto = new DocumentUploadRequestDto();
 
@@ -116,9 +117,8 @@ class PnRaddFsuClientTest {
         StepVerifier.create(pnRaddFsuClient.documentUpload("uid", documentUploadRequestDto))
                 .expectNext(documentUploadResponseDto);
     }
-
     @Test
-    void testActAbortTransaction() {
+    void testActAbortTransaction () {
 
         AbortTransactionRequestDto abortTransactionRequestDto = mock(AbortTransactionRequestDto.class);
 
@@ -133,7 +133,7 @@ class PnRaddFsuClientTest {
     }
 
     @Test
-    void testActCompleteTransaction() {
+    void testActCompleteTransaction () {
 
         CompleteTransactionRequestDto completeTransactionRequestDto = mock(CompleteTransactionRequestDto.class);
 
@@ -148,7 +148,7 @@ class PnRaddFsuClientTest {
     }
 
     @Test
-    void testActStartTransaction() {
+    void testActStartTransaction () {
 
         ActStartTransactionRequestDto actStartTransactionRequestDto = mock(ActStartTransactionRequestDto.class);
 
@@ -163,7 +163,7 @@ class PnRaddFsuClientTest {
     }
 
     @Test
-    void testAORAbortTransaction() {
+    void testAORAbortTransaction () {
 
         AbortTransactionRequestDto abortTransactionRequestDto = mock(AbortTransactionRequestDto.class);
 
@@ -178,7 +178,7 @@ class PnRaddFsuClientTest {
     }
 
     @Test
-    void testAORCompleteTransaction() {
+    void testAORCompleteTransaction () {
 
         CompleteTransactionRequestDto completeTransactionRequestDto = mock(CompleteTransactionRequestDto.class);
 
@@ -193,7 +193,7 @@ class PnRaddFsuClientTest {
     }
 
     @Test
-    void testAORStartTransaction() {
+    void testAORStartTransaction () {
 
         AorStartTransactionRequestDto aorStartTransactionRequestDto = mock(AorStartTransactionRequestDto.class);
 
@@ -205,6 +205,68 @@ class PnRaddFsuClientTest {
 
         StepVerifier.create(pnRaddFsuClient.startAorTransaction("uid", aorStartTransactionRequestDto))
                 .expectNext(startTransactionResponseDto);
+    }
+    @Test
+    void testGetActPracticesByInternalId () {
+
+        FilterRequestDto filterRequestDto = mock(FilterRequestDto.class);
+
+        OperationsActDetailsResponseDto operationsActDetailsResponseDto = mock(OperationsActDetailsResponseDto.class);
+
+        when(notificationInquiryApi.getActPracticesByInternalId("internalID",filterRequestDto))
+                .thenReturn(Mono.just(operationsActDetailsResponseDto));
+        StepVerifier.create(pnRaddFsuClient.getActPracticesByInternalId("InternalId",filterRequestDto))
+                .expectNext(operationsActDetailsResponseDto);
+    }
+    @Test
+    void testGetActTransactionByOperationId () {
+
+        OperationActResponseDto operationActResponseDto = mock(OperationActResponseDto.class);
+
+        when(notificationInquiryApi.getActTransactionByOperationId("operationId"))
+                .thenReturn(Mono.just(operationActResponseDto));
+        StepVerifier.create(pnRaddFsuClient.getActTransactionByOperationId("operationId"))
+                .expectNext(operationActResponseDto);
+    }
+    @Test
+    void testGetActPracticesByIun() {
+        OperationsResponseDto operationsResponseDto = mock(OperationsResponseDto.class);
+
+        when(notificationInquiryApi.getActPracticesByIun("iun"))
+                .thenReturn(Mono.just(operationsResponseDto));
+        StepVerifier.create(pnRaddFsuClient.getActPracticesByIun("iun"))
+                .expectNext(operationsResponseDto);
+    }
+    @Test
+    void testGetAorPracticesByInternalId () {
+
+        FilterRequestDto filterRequestDto = mock(FilterRequestDto.class);
+
+        OperationsAorDetailsResponseDto operationsAorDetailsResponseDto = mock(OperationsAorDetailsResponseDto.class);
+
+        when(notificationInquiryApi.getAorPracticesByInternalId("internalID",filterRequestDto))
+                .thenReturn(Mono.just(operationsAorDetailsResponseDto));
+        StepVerifier.create(pnRaddFsuClient.getAorPracticesByInternalId("InternalId",filterRequestDto))
+                .expectNext(operationsAorDetailsResponseDto);
+    }
+    @Test
+    void testGetAorPracticesByIun() {
+        OperationsResponseDto operationsResponseDto = mock(OperationsResponseDto.class);
+
+        when(notificationInquiryApi.getAorPracticesByIun("iun"))
+                .thenReturn(Mono.just(operationsResponseDto));
+        StepVerifier.create(pnRaddFsuClient.getAorPracticesByIun("iun"))
+                .expectNext(operationsResponseDto);
+    }
+    @Test
+    void testGetAorTransactionByOperationId () {
+
+        OperationAorResponseDto operationAorResponseDto = mock(OperationAorResponseDto.class);
+
+        when(notificationInquiryApi.getAorTransactionByOperationId("operationId"))
+                .thenReturn(Mono.just(operationAorResponseDto));
+        StepVerifier.create(pnRaddFsuClient.getAorTransactionByOperationId("operationId"))
+                .expectNext(operationAorResponseDto);
     }
 }
 
