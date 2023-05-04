@@ -8,21 +8,26 @@
           "application/json"
         ],
         "uid": [
-          "uid"
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
         ]
       },
       "body": {
         "type": "JSON",
         "json": {
-          "versionToken": "string",
-          "fileKey": "string",
-          "operationId": "string",
+          "versionToken": "${json-unit.regex}(^.*$)",
+          "fileKey": "${json-unit.regex}(^.*$)",
+          "operationId": "${json-unit.regex}(^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$)",
           "recipientTaxId": "GNIGNI80A01H501R",
-          "recipientType": "PF",
-          "delegateTaxId": "RFRGRZ66E21H751B",
-          "operationDate": "2023-04-19T11:44:28Z",
-          "checksum": "YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo=",
-          "qrCode": "string"
+          "recipientType": "${json-unit.regex}(^(PF|PG)$)",
+          "delegateTaxId": "${json-unit.regex}(^.*$)",
+          "operationDate": "${json-unit.regex}((\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z)))",
+          "checksum": "708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560",
+          "qrCode": "${json-unit.regex}(^[0-9a-zA-Z]*$)"
         }
       }
     },
@@ -32,12 +37,13 @@
         "type": "JSON",
         "json": {
           "urlList": [
-            "string"
+            "http://web.pagopa.dev.it/notifiche/act/act1.pdf",
+            "http://web.pagopa.dev.it/notifiche/act/act2.pdf"
           ],
           "status": {
             "code": 0,
             "message": "OK",
-            "retryAfter": 670
+            "retryAfter": 0
           }
         }
       }
@@ -52,21 +58,26 @@
           "application/json"
         ],
         "uid": [
-          "uid"
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
         ]
       },
       "body": {
         "type": "JSON",
         "json": {
-          "versionToken": "string",
-          "fileKey": "string",
-          "operationId": "string",
-          "recipientTaxId": "PLOMRC01P30L736Y",
-          "recipientType": "PF",
-          "delegateTaxId": "RFRGRZ66E21H751B",
-          "operationDate": "2023-04-19T11:44:28Z",
-          "checksum": "YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo=",
-          "qrCode": "string"
+          "versionToken": "${json-unit.regex}(^.*$)",
+          "fileKey": "${json-unit.regex}(^.*$)",
+          "operationId": "${json-unit.regex}(^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$)",
+          "recipientTaxId": "ZZAMRC01P30L736Y",
+          "recipientType": "${json-unit.regex}(^(PF|PG)$)",
+          "delegateTaxId": "${json-unit.regex}(^.*$)",
+          "operationDate": "${json-unit.regex}((\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z)))",
+          "checksum": "708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560",
+          "qrCode": "${json-unit.regex}(^[0-9a-zA-Z]*$)"
         }
       }
     },
@@ -76,12 +87,460 @@
         "type": "JSON",
         "json": {
           "urlList": [
-            "string"
+            "http://web.pagopa.dev.it/notifiche/act/act1.pdf",
+            "http://web.pagopa.dev.it/notifiche/act/act2.pdf"
           ],
+          "status": {
+            "code": 0,
+            "message": "OK",
+            "retryAfter": 0
+          }
+        }
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/radd-private/api/v1/act/transaction/start",
+      "headers": {
+        "Content-Type": [
+          "application/json"
+        ],
+        "uid": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
+        ]
+      },
+      "body": {
+        "type": "JSON",
+        "json": {
+          "versionToken": "${json-unit.regex}(^.*$)",
+          "fileKey": "${json-unit.regex}(^.*$)",
+          "operationId": "${json-unit.regex}(^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$)",
+          "recipientTaxId": "GTAMRC01P30L736Y",
+          "recipientType": "${json-unit.regex}(^(PF|PG)$)",
+          "delegateTaxId": "${json-unit.regex}(^.*$)",
+          "operationDate": "${json-unit.regex}((\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z)))",
+          "checksum": "708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560",
+          "qrCode": "${json-unit.regex}(^[0-9a-zA-Z]*$)"
+        }
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "body": {
+        "type": "JSON",
+        "json": {
+          "urlList": [
+            "http://web.pagopa.dev.it/notifiche/act/act1.pdf",
+            "http://web.pagopa.dev.it/notifiche/act/act2.pdf"
+          ],
+          "status": {
+            "code": 0,
+            "message": "OK",
+            "retryAfter": 0
+          }
+        }
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/radd-private/api/v1/act/transaction/start",
+      "headers": {
+        "Content-Type": [
+          "application/json"
+        ],
+        "uid": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
+        ]
+      },
+      "body": {
+        "type": "JSON",
+        "json": {
+          "versionToken": "${json-unit.regex}(^.*$)",
+          "fileKey": "${json-unit.regex}(^.*$)",
+          "operationId": "${json-unit.regex}(^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$)",
+          "recipientTaxId": "ZTLMRC01P30L736Y",
+          "recipientType": "${json-unit.regex}(^(PF|PG)$)",
+          "delegateTaxId": "${json-unit.regex}(^.*$)",
+          "operationDate": "${json-unit.regex}((\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z)))",
+          "checksum": "708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560",
+          "qrCode": "${json-unit.regex}(^[0-9a-zA-Z]*$)"
+        }
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "body": {
+        "type": "JSON",
+        "json": {
+          "urlList": [
+            "http://web.pagopa.dev.it/notifiche/act/act1.pdf",
+            "http://web.pagopa.dev.it/notifiche/act/act2.pdf"
+          ],
+          "status": {
+            "code": 0,
+            "message": "OK",
+            "retryAfter": 0
+          }
+        }
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/radd-private/api/v1/act/transaction/start",
+      "headers": {
+        "Content-Type": [
+          "application/json"
+        ],
+        "uid": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
+        ]
+      },
+      "body": {
+        "type": "JSON",
+        "json": {
+          "versionToken": "${json-unit.regex}(^.*$)",
+          "fileKey": "${json-unit.regex}(^.*$)",
+          "operationId": "${json-unit.regex}(^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$)",
+          "recipientTaxId": "DAMMRC01P30L736Y",
+          "recipientType": "${json-unit.regex}(^(PF|PG)$)",
+          "delegateTaxId": "${json-unit.regex}(^.*$)",
+          "operationDate": "${json-unit.regex}((\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z)))",
+          "checksum": "708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560",
+          "qrCode": "${json-unit.regex}(^[0-9a-zA-Z]*$)"
+        }
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "body": {
+        "type": "JSON",
+        "json": {
+          "urlList": [
+            "http://web.pagopa.dev.it/notifiche/act/act1.pdf",
+            "http://web.pagopa.dev.it/notifiche/act/act2.pdf"
+          ],
+          "status": {
+            "code": 0,
+            "message": "OK",
+            "retryAfter": 0
+          }
+        }
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/radd-private/api/v1/act/transaction/start",
+      "headers": {
+        "Content-Type": [
+          "application/json"
+        ],
+        "uid": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
+        ]
+      },
+      "body": {
+        "type": "JSON",
+        "json": {
+          "versionToken": "${json-unit.regex}(^.*$)",
+          "fileKey": "${json-unit.regex}(^.*$)",
+          "operationId": "${json-unit.regex}(^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$)",
+          "recipientTaxId": "RADMRC01P30L736Y",
+          "recipientType": "${json-unit.regex}(^(PF|PG)$)",
+          "delegateTaxId": "${json-unit.regex}(^.*$)",
+          "operationDate": "${json-unit.regex}((\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z)))",
+          "checksum": "708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560",
+          "qrCode": "${json-unit.regex}(^[0-9a-zA-Z]*$)"
+        }
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "body": {
+        "type": "JSON",
+        "json": {
+          "urlList": [
+            "http://web.pagopa.dev.it/notifiche/act/act1.pdf",
+            "http://web.pagopa.dev.it/notifiche/act/act2.pdf"
+          ],
+          "status": {
+            "code": 0,
+            "message": "OK",
+            "retryAfter": 0
+          }
+        }
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/radd-private/api/v1/act/transaction/start",
+      "headers": {
+        "Content-Type": [
+          "application/json"
+        ],
+        "uid": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
+        ]
+      },
+      "body": {
+        "type": "JSON",
+        "json": {
+          "versionToken": "${json-unit.regex}(^.*$)",
+          "fileKey": "${json-unit.regex}(^.*$)",
+          "operationId": "${json-unit.regex}(^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$)",
+          "recipientTaxId": "VTOMRC01P30L736Y",
+          "recipientType": "${json-unit.regex}(^(PF|PG)$)",
+          "delegateTaxId": "${json-unit.regex}(^.*$)",
+          "operationDate": "${json-unit.regex}((\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z)))",
+          "checksum": "708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560",
+          "qrCode": "${json-unit.regex}(^[0-9a-zA-Z]*$)"
+        }
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "body": {
+        "type": "JSON",
+        "json": {
+          "urlList": [
+            "http://web.pagopa.dev.it/notifiche/act/act1.pdf",
+            "http://web.pagopa.dev.it/notifiche/act/act2.pdf"
+          ],
+          "status": {
+            "code": 0,
+            "message": "OK",
+            "retryAfter": 0
+          }
+        }
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/radd-private/api/v1/act/transaction/start",
+      "headers": {
+        "Content-Type": [
+          "application/json"
+        ],
+        "uid": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
+        ]
+      },
+      "body": {
+        "type": "JSON",
+        "json": {
+          "versionToken": "${json-unit.regex}(^.*$)",
+          "fileKey": "${json-unit.regex}(^.*$)",
+          "operationId": "${json-unit.regex}(^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$)",
+          "recipientTaxId": "LBOMRC01P30L736Y",
+          "recipientType": "${json-unit.regex}(^(PF|PG)$)",
+          "delegateTaxId": "${json-unit.regex}(^.*$)",
+          "operationDate": "${json-unit.regex}((\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z)))",
+          "checksum": "708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560",
+          "qrCode": "${json-unit.regex}(^[0-9a-zA-Z]*$)"
+        }
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "body": {
+        "type": "JSON",
+        "json": {
+          "urlList": [
+            "http://web.pagopa.dev.it/notifiche/act/act1.pdf",
+            "http://web.pagopa.dev.it/notifiche/act/act2.pdf"
+          ],
+          "status": {
+            "code": 0,
+            "message": "OK",
+            "retryAfter": 0
+          }
+        }
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/radd-private/api/v1/act/transaction/start",
+      "headers": {
+        "Content-Type": [
+          "application/json"
+        ],
+        "uid": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
+        ]
+      },
+      "body": {
+        "type": "JSON",
+        "json": {
+          "versionToken": "${json-unit.regex}(^.*$)",
+          "fileKey": "${json-unit.regex}(^.*$)",
+          "operationId": "${json-unit.regex}(^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$)",
+          "recipientTaxId": "AEDMRC01P30L736Y",
+          "recipientType": "${json-unit.regex}(^(PF|PG)$)",
+          "delegateTaxId": "${json-unit.regex}(^.*$)",
+          "operationDate": "${json-unit.regex}((\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z)))",
+          "checksum": "708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560",
+          "qrCode": "${json-unit.regex}(^[0-9a-zA-Z]*$)"
+        }
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "body": {
+        "type": "JSON",
+        "json": {
+          "urlList": [
+            "http://web.pagopa.dev.it/notifiche/act/act1.pdf",
+            "http://web.pagopa.dev.it/notifiche/act/act2.pdf"
+          ],
+          "status": {
+            "code": 0,
+            "message": "OK",
+            "retryAfter": 0
+          }
+        }
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/radd-private/api/v1/act/transaction/start",
+      "headers": {
+        "Content-Type": [
+          "application/json"
+        ],
+        "uid": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
+        ]
+      },
+      "body": {
+        "type": "JSON",
+        "json": {
+          "versionToken": "${json-unit.regex}(^.*$)",
+          "fileKey": "${json-unit.regex}(^.*$)",
+          "operationId": "${json-unit.regex}(^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$)",
+          "recipientTaxId": "MADMRC01P30L736Y",
+          "recipientType": "${json-unit.regex}(^(PF|PG)$)",
+          "delegateTaxId": "${json-unit.regex}(^.*$)",
+          "operationDate": "${json-unit.regex}((\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z)))",
+          "checksum": "708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560",
+          "qrCode": "${json-unit.regex}(^[0-9a-zA-Z]*$)"
+        }
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "body": {
+        "type": "JSON",
+        "json": {
+          "urlList": [
+            "http://web.pagopa.dev.it/notifiche/act/act1.pdf",
+            "http://web.pagopa.dev.it/notifiche/act/act2.pdf"
+          ],
+          "status": {
+            "code": 0,
+            "message": "OK",
+            "retryAfter": 0
+          }
+        }
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/radd-private/api/v1/act/transaction/start",
+      "headers": {
+        "Content-Type": [
+          "application/json"
+        ],
+        "uid": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
+        ]
+      },
+      "body": {
+        "type": "JSON",
+        "json": {
+          "versionToken": "${json-unit.regex}(^.*$)",
+          "fileKey": "${json-unit.regex}(^.*$)",
+          "operationId": "${json-unit.regex}(^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$)",
+          "recipientTaxId": "PLOMRC01P30L736Y",
+          "recipientType": "${json-unit.regex}(^(PF|PG)$)",
+          "delegateTaxId": "${json-unit.regex}(^.*$)",
+          "operationDate": "${json-unit.regex}((\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z)))",
+          "checksum": "708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560",
+          "qrCode": "${json-unit.regex}(^[0-9a-zA-Z]*$)"
+        }
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "body": {
+        "type": "JSON",
+        "json": {
+          "urlList": [],
           "status": {
             "code": 99,
             "message": "KO",
-            "retryAfter": 670
+            "retryAfter": 0
           }
         }
       }
@@ -96,21 +555,26 @@
           "application/json"
         ],
         "uid": [
-          "uid"
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
         ]
       },
       "body": {
         "type": "JSON",
         "json": {
-          "versionToken": "string",
-          "fileKey": "string",
-          "operationId": "string",
+          "versionToken": "${json-unit.regex}(^.*$)",
+          "fileKey": "${json-unit.regex}(^.*$)",
+          "operationId": "${json-unit.regex}(^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$)",
           "recipientTaxId": "TSTGNN80A01F839X",
-          "recipientType": "PF",
-          "delegateTaxId": "RFRGRZ66E21H751B",
-          "operationDate": "2023-04-19T11:44:28Z",
-          "checksum": "YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo=",
-          "qrCode": "string"
+          "recipientType": "${json-unit.regex}(^(PF|PG)$)",
+          "delegateTaxId": "${json-unit.regex}(^.*$)",
+          "operationDate": "${json-unit.regex}((\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z)))",
+          "checksum": "708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560",
+          "qrCode": "${json-unit.regex}(^[0-9a-zA-Z]*$)"
         }
       }
     },
@@ -119,9 +583,7 @@
       "body": {
         "type": "JSON",
         "json": {
-          "urlList": [
-            "string"
-          ],
+          "urlList": [],
           "status": {
             "code": 2,
             "message": "Not Ready",
@@ -143,15 +605,15 @@
       "body": {
         "type": "JSON",
         "json": {
-          "versionToken": "string",
-          "fileKey": "string",
-          "operationId": "string",
+          "versionToken": "${json-unit.regex}(^.*$)",
+          "fileKey": "${json-unit.regex}(^.*$)",
+          "operationId": "${json-unit.regex}(^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$)",
           "recipientTaxId": "GNIGNI80A01H501R",
-          "recipientType": "PF",
-          "delegateTaxId": "RFRGRZ66E21H751B",
-          "operationDate": "2023-04-19T11:44:28Z",
-          "checksum": "YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo=",
-          "qrCode": "string"
+          "recipientType": "${json-unit.regex}(^(PF|PG)$)",
+          "delegateTaxId": "${json-unit.regex}(^.*$)",
+          "operationDate": "${json-unit.regex}((\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z)))",
+          "checksum": "708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560",
+          "qrCode": "${json-unit.regex}(^[0-9a-zA-Z]*$)"
         }
       }
     },
@@ -169,21 +631,26 @@
           "application/json"
         ],
         "uid": [
-          "uid"
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
         ]
       },
       "body": {
         "type": "JSON",
         "json": {
-          "versionToken": "string",
-          "fileKey": "string",
-          "operationId": "string",
+          "versionToken": "${json-unit.regex}(^.*$)",
+          "fileKey": "${json-unit.regex}(^.*$)",
+          "operationId": "${json-unit.regex}(^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$)",
           "recipientTaxId": "FNIFNA80A01H501G",
-          "recipientType": "PF",
-          "delegateTaxId": "RFRGRZ66E21H751B",
-          "operationDate": "2023-04-19T11:44:28Z",
-          "checksum": "YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo=",
-          "qrCode": "string"
+          "recipientType": "${json-unit.regex}(^(PF|PG)$)",
+          "delegateTaxId": "${json-unit.regex}(^.*$)",
+          "operationDate": "${json-unit.regex}((\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z)))",
+          "checksum": "708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560",
+          "qrCode": "${json-unit.regex}(^[0-9a-zA-Z]*$)"
         }
       }
     },
@@ -201,21 +668,26 @@
           "application/json"
         ],
         "uid": [
-          "uid"
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
         ]
       },
       "body": {
         "type": "JSON",
         "json": {
-          "versionToken": "string",
-          "fileKey": "string",
-          "operationId": "string",
+          "versionToken": "${json-unit.regex}(^.*$)",
+          "fileKey": "${json-unit.regex}(^.*$)",
+          "operationId": "${json-unit.regex}(^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$)",
           "recipientTaxId": "FRMTTR76M06B715E",
-          "recipientType": "PF",
-          "delegateTaxId": "RFRGRZ66E21H751B",
-          "operationDate": "2023-04-19T11:44:28Z",
-          "checksum": "YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo=",
-          "qrCode": "string"
+          "recipientType": "${json-unit.regex}(^(PF|PG)$)",
+          "delegateTaxId": "${json-unit.regex}(^.*$)",
+          "operationDate": "${json-unit.regex}((\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z)))",
+          "checksum": "708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560",
+          "qrCode": "${json-unit.regex}(^[0-9a-zA-Z]*$)"
         }
       }
     },
@@ -233,21 +705,26 @@
           "application/json"
         ],
         "uid": [
-          "uid"
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
         ]
       },
       "body": {
         "type": "JSON",
         "json": {
-          "versionToken": "string",
-          "fileKey": "string",
-          "operationId": "string",
-          "recipientTaxId": "CIACIA80A01H501X",
-          "recipientType": "PF",
-          "delegateTaxId": "RFRGRZ66E21H751B",
-          "operationDate": "2023-04-19T11:44:28Z",
-          "checksum": "YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo=",
-          "qrCode": "string"
+          "versionToken": "${json-unit.regex}(^.*$)",
+          "fileKey": "${json-unit.regex}(^.*$)",
+          "operationId": "${json-unit.regex}(^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$)",
+          "recipientTaxId": "VIAVIA90A01H501X",
+          "recipientType": "${json-unit.regex}(^(PF|PG)$)",
+          "delegateTaxId": "${json-unit.regex}(^.*$)",
+          "operationDate": "${json-unit.regex}((\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z)))",
+          "checksum": "708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560",
+          "qrCode": "${json-unit.regex}(^[0-9a-zA-Z]*$)"
         }
       }
     },
@@ -265,21 +742,26 @@
           "application/json"
         ],
         "uid": [
-          "uid"
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
         ]
       },
       "body": {
         "type": "JSON",
         "json": {
-          "versionToken": "string",
-          "fileKey": "string",
-          "operationId": "string",
+          "versionToken": "${json-unit.regex}(^.*$)",
+          "fileKey": "${json-unit.regex}(^.*$)",
+          "operationId": "${json-unit.regex}(^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$)",
           "recipientTaxId": "RFNNTR76M06B715E",
-          "recipientType": "PF",
-          "delegateTaxId": "RFRGRZ66E21H751B",
-          "operationDate": "2023-04-19T11:44:28Z",
-          "checksum": "YTlkZGRkNzgyZWM0NzkyODdjNmQ0NGE5ZDM2YTg4ZjQ5OTE1ZGM2NjliYjgzNzViMTZhMmE5ZmE3NmE4ZDQzNwo=",
-          "qrCode": "string"
+          "recipientType": "${json-unit.regex}(^(PF|PG)$)",
+          "delegateTaxId": "${json-unit.regex}(^.*$)",
+          "operationDate": "${json-unit.regex}((\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z)))",
+          "checksum": "708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560",
+          "qrCode": "${json-unit.regex}(^[0-9a-zA-Z]*$)"
         }
       }
     },
@@ -297,14 +779,19 @@
           "application/json"
         ],
         "uid": [
-          "uid"
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
         ]
       },
       "body": {
         "type": "JSON",
         "json": {
-          "operationId": "2bb5c29e0cf411ed861d0242ac120002",
-          "operationDate": "2022-06-21T11:44:28Z"
+          "operationId": "9795ea34-e4e9-11ed-b5ea-0242ac120002",
+          "operationDate": "${json-unit.regex}((\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z)))"
         }
       }
     },
@@ -330,14 +817,19 @@
           "application/json"
         ],
         "uid": [
-          "uid"
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
         ]
       },
       "body": {
         "type": "JSON",
         "json": {
-          "operationId": "67d8a1f225f24c13a05e00a0d8a8aaba",
-          "operationDate": "2022-06-21T11:44:28Z"
+          "operationId": "4d4c70e7-8a69-4a60-b2e2-0a36b8d17bc5",
+          "operationDate": "${json-unit.regex}((\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z)))"
         }
       }
     },
@@ -348,7 +840,7 @@
         "json": {
           "status": {
             "code": 99,
-            "message": "OK"
+            "message": "KO"
           }
         }
       }
@@ -363,14 +855,19 @@
           "application/json"
         ],
         "uid": [
-          "uid"
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
         ]
       },
       "body": {
         "type": "JSON",
         "json": {
-          "operationId": "78c1f2769c8e4ba084a62e778a143d67",
-          "operationDate": "2022-06-21T11:44:28Z"
+          "operationId": "9da7a31a-c29c-4760-91b8-7d2f59d27734",
+          "operationDate": "${json-unit.regex}((\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z)))"
         }
       }
     },
@@ -396,14 +893,19 @@
           "application/json"
         ],
         "uid": [
-          "uid"
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
         ]
       },
       "body": {
         "type": "JSON",
         "json": {
-          "operationId": "e40474dc17f14e309ce2a33e62d3d174",
-          "operationDate": "2022-06-21T11:44:28Z"
+          "operationId": "6ee9f7d9-6b3e-431a-a39f-70f098b66002",
+          "operationDate": "${json-unit.regex}((\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z)))"
         }
       }
     },
@@ -432,8 +934,8 @@
       "body": {
         "type": "JSON",
         "json": {
-          "operationId": "2bb5c29e0cf411ed861d0242ac120002",
-          "operationDate": "2022-06-21T11:44:28Z"
+          "operationId": "9795ea34-e4e9-11ed-b5ea-0242ac120002",
+          "operationDate": "${json-unit.regex}((\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z)))"
         }
       }
     },
@@ -454,8 +956,8 @@
       "body": {
         "type": "JSON",
         "json": {
-          "operationId": "2c12e95533d0444991e8f18bb232a44b",
-          "operationDate": "2022-06-21T11:44:28Z"
+          "operationId": "c447c68d-6d22-4c95-9f2b-f53f8d9392ee",
+          "operationDate": "${json-unit.regex}((\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z)))"
         }
       }
     },
@@ -476,8 +978,8 @@
       "body": {
         "type": "JSON",
         "json": {
-          "operationId": "12550da94bc24a52a839628d9f9c37d8",
-          "operationDate": "2022-06-21T11:44:28Z"
+          "operationId": "76e3d28f-70e4-4d2b-b4f1-cad4c4f20a0e",
+          "operationDate": "${json-unit.regex}((\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z)))"
         }
       }
     },
@@ -498,8 +1000,8 @@
       "body": {
         "type": "JSON",
         "json": {
-          "operationId": "9415a0b4c4fc4d4f9a5bc5e5f5aefb47",
-          "operationDate": "2022-06-21T11:44:28Z"
+          "operationId": "70d5f0c2-0c5c-4745-b5a5-5b0fb15d694d",
+          "operationDate": "${json-unit.regex}((\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z)))"
         }
       }
     },
@@ -520,8 +1022,8 @@
       "body": {
         "type": "JSON",
         "json": {
-          "operationId": "25550da94bc24a52a839628d9f9c37d8",
-          "operationDate": "2022-06-21T11:44:28Z"
+          "operationId": "f59f05e6-9d88-4c7d-9bb3-75c9828f9995",
+          "operationDate": "${json-unit.regex}((\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z)))"
         }
       }
     },
@@ -539,15 +1041,20 @@
           "application/json"
         ],
         "uid": [
-          "uid"
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
         ]
       },
       "body": {
         "type": "JSON",
         "json": {
-          "operationId": "2bb5c29e0cf411ed861d0242ac120002",
+          "operationId": "8ed10708-e511-11ed-b5ea-0242ac120002",
           "reason": "abort",
-          "operationDate": "2022-06-21T11:44:28Z"
+          "operationDate": "${json-unit.regex}((\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z)))"
         }
       }
     },
@@ -573,15 +1080,20 @@
           "application/json"
         ],
         "uid": [
-          "uid"
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
         ]
       },
       "body": {
         "type": "JSON",
         "json": {
-          "operationId": "67d8a1f225f24c13a05e00a0d8a8aaba",
+          "operationId": "8ed0f8da-e511-11ed-b5ea-0242ac120002",
           "reason": "abort",
-          "operationDate": "2022-06-21T11:44:28Z"
+          "operationDate": "${json-unit.regex}((\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z)))"
         }
       }
     },
@@ -592,7 +1104,7 @@
         "json": {
           "status": {
             "code": 99,
-            "message": "OK"
+            "message": "KO"
           }
         }
       }
@@ -607,15 +1119,20 @@
           "application/json"
         ],
         "uid": [
-          "uid"
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
         ]
       },
       "body": {
         "type": "JSON",
         "json": {
-          "operationId": "78c1f2769c8e4ba084a62e778a143d67",
+          "operationId": "8ed1024e-e511-11ed-b5ea-0242ac120002",
           "reason": "abort",
-          "operationDate": "2022-06-21T11:44:28Z"
+          "operationDate": "${json-unit.regex}((\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z)))"
         }
       }
     },
@@ -641,15 +1158,20 @@
           "application/json"
         ],
         "uid": [
-          "uid"
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
         ]
       },
       "body": {
         "type": "JSON",
         "json": {
-          "operationId": "e40474dc17f14e309ce2a33e62d3d174",
+          "operationId": "8ed10442-e511-11ed-b5ea-0242ac120002",
           "reason": "abort",
-          "operationDate": "2022-06-21T11:44:28Z"
+          "operationDate": "${json-unit.regex}((\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z)))"
         }
       }
     },
@@ -678,9 +1200,9 @@
       "body": {
         "type": "JSON",
         "json": {
-          "operationId": "2bb5c29e0cf411ed861d0242ac120002",
+          "operationId": "8ed10708-e511-11ed-b5ea-0242ac120002",
           "reason": "abort",
-          "operationDate": "2022-06-21T11:44:28Z"
+          "operationDate": "${json-unit.regex}((\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z)))"
         }
       }
     },
@@ -701,9 +1223,9 @@
       "body": {
         "type": "JSON",
         "json": {
-          "operationId": "2c12e95533d0444991e8f18bb232a44b",
+          "operationId": "8ed10ae6-e511-11ed-b5ea-0242ac120002",
           "reason": "abort",
-          "operationDate": "2022-06-21T11:44:28Z"
+          "operationDate": "${json-unit.regex}((\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z)))"
         }
       }
     },
@@ -724,9 +1246,9 @@
       "body": {
         "type": "JSON",
         "json": {
-          "operationId": "12550da94bc24a52a839628d9f9c37d8",
+          "operationId": "8ed109c4-e511-11ed-b5ea-0242ac120002",
           "reason": "abort",
-          "operationDate": "2022-06-21T11:44:28Z"
+          "operationDate": "${json-unit.regex}((\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z)))"
         }
       }
     },
@@ -747,9 +1269,9 @@
       "body": {
         "type": "JSON",
         "json": {
-          "operationId": "9415a0b4c4fc4d4f9a5bc5e5f5aefb47",
+          "operationId": "8ed105dc-e511-11ed-b5ea-0242ac120002",
           "reason": "abort",
-          "operationDate": "2022-06-21T11:44:28Z"
+          "operationDate": "${json-unit.regex}((\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z)))"
         }
       }
     },
@@ -770,9 +1292,9 @@
       "body": {
         "type": "JSON",
         "json": {
-          "operationId": "25550da94bc24a52a839628d9f9c37d8",
+          "operationId": "8ed1083e-e511-11ed-b5ea-0242ac120002",
           "reason": "abort",
-          "operationDate": "2022-06-21T11:44:28Z"
+          "operationDate": "${json-unit.regex}((\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d\\.\\d+([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z))|(\\d{4}-[01]\\d-[0-3]\\dT[0-2]\\d:[0-5]\\d([+-][0-2]\\d:[0-5]\\d|Z)))"
         }
       }
     },
