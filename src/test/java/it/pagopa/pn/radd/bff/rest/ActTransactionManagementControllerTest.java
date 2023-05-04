@@ -1,19 +1,23 @@
 package it.pagopa.pn.radd.bff.rest;
 
-import it.pagopa.pn.radd.bff.rest.v1.dto.AbortTransactionResponse;
-import it.pagopa.pn.radd.bff.rest.v1.dto.CompleteTransactionResponse;
-import it.pagopa.pn.radd.bff.rest.v1.dto.StartTransactionResponse;
+import it.pagopa.pn.radd.bff.rest.v1.dto.*;
 import it.pagopa.pn.radd.bff.service.ActTransactionManagementService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
+import reactor.core.scheduler.Scheduler;
+import reactor.test.StepVerifier;
 
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 @ContextConfiguration(classes = {ActTransactionManagementController.class})
 @ExtendWith(SpringExtension.class)
@@ -24,16 +28,24 @@ class ActTransactionManagementControllerTest {
     @MockBean
     private ActTransactionManagementService actTransactionManagementService;
 
+    @MockBean
+    private Scheduler scheduler;
+    @Mock
+    ServerWebExchange serverWebExchange;
+
     /**
      * Method under test: {@link ActTransactionManagementController#abortActTransaction(String, Mono, ServerWebExchange)}
      */
     @Test
     void testAbortActTransaction3() {
-        when(actTransactionManagementService.abortActTransaction(any(), any()))
-                .thenReturn((Mono<AbortTransactionResponse>) mock(Mono.class));
-        actTransactionManagementController.abortActTransaction("1234", null, null);
-        verify(actTransactionManagementService).abortActTransaction(any(),
-                any());
+        when(actTransactionManagementService.abortActTransaction(Mockito.any(),
+                Mockito.any())).thenReturn(mock(Mono.class));
+        Mono<AbortTransactionRequest> abortTransactionRequest = mock(Mono.class);
+
+        AbortTransactionResponse abortTransactionResponse = mock(AbortTransactionResponse.class);
+
+        StepVerifier.create(actTransactionManagementController.abortActTransaction("uid", abortTransactionRequest, serverWebExchange))
+                .expectNext(ResponseEntity.ok().body(abortTransactionResponse));
     }
 
     /**
@@ -41,11 +53,13 @@ class ActTransactionManagementControllerTest {
      */
     @Test
     void testCompleteActTransaction3() {
-        when(actTransactionManagementService.completeActTransaction(any(),
-                any())).thenReturn((Mono<CompleteTransactionResponse>) mock(Mono.class));
-        actTransactionManagementController.completeActTransaction("1234", null, null);
-        verify(actTransactionManagementService).completeActTransaction(any(),
-                any());
+        when(actTransactionManagementService.completeActTransaction(Mockito.any(),
+                Mockito.any())).thenReturn(mock(Mono.class));
+        Mono<CompleteTransactionRequest> completeTransactionRequest = mock(Mono.class);
+        CompleteTransactionResponse completeTransactionResponse = mock(CompleteTransactionResponse.class);
+
+        StepVerifier.create(actTransactionManagementController.completeActTransaction("uid", completeTransactionRequest, serverWebExchange))
+                .expectNext(ResponseEntity.ok().body(completeTransactionResponse));
     }
 
     /**
@@ -53,12 +67,13 @@ class ActTransactionManagementControllerTest {
      */
     @Test
     void testStartActTransaction3() {
-        when(
-                actTransactionManagementService.startActTransaction(any(), any()))
-                .thenReturn((Mono<StartTransactionResponse>) mock(Mono.class));
-        actTransactionManagementController.startActTransaction("1234", null, null);
-        verify(actTransactionManagementService).startActTransaction(any(),
-                any());
+        when(actTransactionManagementService.startActTransaction(Mockito.any(),
+                Mockito.any())).thenReturn(mock(Mono.class));
+        Mono<ActStartTransactionRequest> actStartTransactionRequest = mock(Mono.class);
+        StartTransactionResponse startTransactionResponse = mock(StartTransactionResponse.class);
+
+        StepVerifier.create(actTransactionManagementController.startActTransaction("uid", actStartTransactionRequest, serverWebExchange))
+                .expectNext(ResponseEntity.ok().body(startTransactionResponse));
     }
 }
 

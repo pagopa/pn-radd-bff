@@ -2,6 +2,7 @@ package it.pagopa.pn.radd.bff.log;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.buffer.DataBuffer;
 import org.springframework.core.io.buffer.DataBufferWrapper;
@@ -27,7 +28,6 @@ import static org.mockito.Mockito.*;
 class ResponseExchangeFilterTest {
     @Autowired
     private ResponseExchangeFilter responseExchangeFilter;
-
 
     /**
      * Method under test: {@link ResponseExchangeFilter#logResponseBody(long, WebClientResponseException, ClientRequest)}
@@ -62,6 +62,22 @@ class ResponseExchangeFilterTest {
         verify(unknownHttpStatusCodeException).getResponseBodyAsString();
         verify(unknownHttpStatusCodeException, atLeast(1)).getStatusCode();
         verify(clientRequest).url();
+    }
+
+    /**
+     * Method under test: {@link ResponseExchangeFilter#logResponseBody(long, WebClientResponseException, ClientRequest)}
+     */
+    @Test
+    void testLogResponseBody8() {
+        UnknownHttpStatusCodeException exception = mock(UnknownHttpStatusCodeException.class);
+        when(exception.getResponseBodyAsString()).thenReturn("Not all who wander are lost");
+        when(exception.getStatusCode()).thenReturn(HttpStatus.CONTINUE);
+        ClientRequest request = mock(ClientRequest.class);
+        when(request.url()).thenReturn(Paths.get(System.getProperty("java.io.tmpdir"), "test.txt").toUri());
+        responseExchangeFilter.logResponseBody(1L, exception, request);
+        verify(exception).getResponseBodyAsString();
+        verify(exception, atLeast(1)).getStatusCode();
+        verify(request).url();
     }
 
     /**
@@ -100,6 +116,42 @@ class ResponseExchangeFilterTest {
                 () -> responseExchangeFilter.logRequestBody(dataBuffer, clientRequest));
         verify(clientRequest).url();
         verify(clientRequest).method();
+    }
+
+    /**
+     * Method under test: {@link ResponseExchangeFilter#logRequestBody(DataBuffer, ClientRequest)}
+     */
+    @Test
+    void testLogRequestBody4() {
+        DefaultDataBuffer delegate = mock(DefaultDataBuffer.class);
+        when(delegate.toString(Mockito.any())).thenReturn("String");
+        DataBufferWrapper dataBuffer = new DataBufferWrapper(
+                new DataBufferWrapper(new DataBufferWrapper(new DataBufferWrapper(delegate))));
+        ClientRequest request = mock(ClientRequest.class);
+        when(request.url()).thenReturn(Paths.get(System.getProperty("java.io.tmpdir"), "test.txt").toUri());
+        when(request.method()).thenReturn(HttpMethod.GET);
+        responseExchangeFilter.logRequestBody(dataBuffer, request);
+        verify(delegate).toString(Mockito.any());
+        verify(request).url();
+        verify(request).method();
+    }
+
+    /**
+     * Method under test: {@link ResponseExchangeFilter#logRequestBody(DataBuffer, ClientRequest)}
+     */
+    @Test
+    void testLogRequestBody5() {
+        DefaultDataBuffer delegate = mock(DefaultDataBuffer.class);
+        when(delegate.toString(Mockito.any())).thenReturn("String");
+        DataBufferWrapper dataBuffer = new DataBufferWrapper(
+                new DataBufferWrapper(new DataBufferWrapper(new DataBufferWrapper(delegate))));
+        ClientRequest request = mock(ClientRequest.class);
+        when(request.url()).thenThrow(new WebClientResponseException(3, "Request HTTP {} to: {} - body: {}",
+                new HttpHeaders(), new byte[]{'A', 3, 'A', 3, 'A', 3, 'A', 3}, null));
+        when(request.method()).thenReturn(HttpMethod.GET);
+        assertThrows(WebClientResponseException.class, () -> responseExchangeFilter.logRequestBody(dataBuffer, request));
+        verify(request).url();
+        verify(request).method();
     }
 }
 

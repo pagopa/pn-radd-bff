@@ -1,13 +1,11 @@
 package it.pagopa.pn.radd.bff.service;
 
-import static org.mockito.Mockito.mock;
-
 import it.pagopa.pn.radd.bff.client.PnRaddFsuClient;
 import it.pagopa.pn.radd.bff.converter.TransactionManagementConverter;
-import it.pagopa.pn.radd.bff.rest.v1.dto.AbortTransactionRequest;
-import it.pagopa.pn.radd.bff.rest.v1.dto.ActStartTransactionRequest;
-import it.pagopa.pn.radd.bff.rest.v1.dto.CompleteTransactionRequest;
-import org.junit.jupiter.api.Disabled;
+import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.AbortTransactionResponseDto;
+import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.CompleteTransactionResponseDto;
+import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.StartTransactionResponseDto;
+import it.pagopa.pn.radd.bff.rest.v1.dto.*;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +13,11 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import reactor.core.publisher.Mono;
+import reactor.test.StepVerifier;
+
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 @ContextConfiguration(classes = {ActTransactionManagementService.class})
 @ExtendWith(SpringExtension.class)
@@ -28,101 +31,46 @@ class ActTransactionManagementServiceTest {
     @MockBean
     private TransactionManagementConverter transactionManagementConverter;
 
-    /**
-     * Method under test: {@link ActTransactionManagementService#abortActTransaction(String, Mono)}
-     */
     @Test
-    @Disabled("TODO: Complete this test")
-    void testAbortActTransaction() {
-        // TODO: Complete this test.
-        //   Reason: R013 No inputs found that don't throw a trivial exception.
-        //   Diffblue Cover tried to run the arrange/act section, but the method under
-        //   test threw
-        //   java.lang.NullPointerException: Cannot invoke "reactor.core.publisher.Mono.map(java.util.function.Function)" because "abortTransactionRequest" is null
-        //       at it.pagopa.pn.radd.bff.service.ActTransactionManagementService.abortActTransaction(ActTransactionManagementService.java:19)
-        //   See https://diff.blue/R013 to resolve this issue.
-
-        actTransactionManagementService.abortActTransaction("1234", null);
-    }
-
-    /**
-     * Method under test: {@link ActTransactionManagementService#abortActTransaction(String, Mono)}
-     */
-    @Test
-    void testAbortActTransaction2() {
-        // TODO: Complete this test.
-        //   Reason: R002 Missing observers.
-        //   Diffblue Cover was unable to create an assertion.
-        //   Add getters for the following fields or make them package-private:
-        //     ActTransactionManagementService.pnRaddFsuClient
-        //     ActTransactionManagementService.transactionManagementConverter
-
-        actTransactionManagementService.abortActTransaction("1234", (Mono<AbortTransactionRequest>) mock(Mono.class));
-    }
-
-    /**
-     * Method under test: {@link ActTransactionManagementService#completeActTransaction(String, Mono)}
-     */
-    @Test
-    @Disabled("TODO: Complete this test")
-    void testCompleteActTransaction() {
-        // TODO: Complete this test.
-        //   Reason: R013 No inputs found that don't throw a trivial exception.
-        //   Diffblue Cover tried to run the arrange/act section, but the method under
-        //   test threw
-        //   java.lang.NullPointerException: Cannot invoke "reactor.core.publisher.Mono.map(java.util.function.Function)" because "completeTransactionRequest" is null
-        //       at it.pagopa.pn.radd.bff.service.ActTransactionManagementService.completeActTransaction(ActTransactionManagementService.java:25)
-        //   See https://diff.blue/R013 to resolve this issue.
-
-        actTransactionManagementService.completeActTransaction("1234", null);
-    }
-
-    /**
-     * Method under test: {@link ActTransactionManagementService#completeActTransaction(String, Mono)}
-     */
-    @Test
-    void testCompleteActTransaction2() {
-        // TODO: Complete this test.
-        //   Reason: R002 Missing observers.
-        //   Diffblue Cover was unable to create an assertion.
-        //   Add getters for the following fields or make them package-private:
-        //     ActTransactionManagementService.pnRaddFsuClient
-        //     ActTransactionManagementService.transactionManagementConverter
-
-        actTransactionManagementService.completeActTransaction("1234",
-                (Mono<CompleteTransactionRequest>) mock(Mono.class));
-    }
-
-    /**
-     * Method under test: {@link ActTransactionManagementService#startActTransaction(String, Mono)}
-     */
-    @Test
-    @Disabled("TODO: Complete this test")
     void testStartActTransaction() {
-        // TODO: Complete this test.
-        //   Reason: R013 No inputs found that don't throw a trivial exception.
-        //   Diffblue Cover tried to run the arrange/act section, but the method under
-        //   test threw
-        //   java.lang.NullPointerException: Cannot invoke "reactor.core.publisher.Mono.map(java.util.function.Function)" because "actStartTransactionRequest" is null
-        //       at it.pagopa.pn.radd.bff.service.ActTransactionManagementService.startActTransaction(ActTransactionManagementService.java:31)
-        //   See https://diff.blue/R013 to resolve this issue.
+        when(pnRaddFsuClient.startActTransaction(any(), any()))
+                .thenReturn((Mono<StartTransactionResponseDto>) mock(Mono.class));
 
-        actTransactionManagementService.startActTransaction("1234", null);
+        StartTransactionResponse startTransactionResponse = mock(StartTransactionResponse.class);
+        when(transactionManagementConverter.startTransactionDtoToResponse(any())).thenReturn(startTransactionResponse);
+
+        ActStartTransactionRequest actStartTransactionRequest = mock(ActStartTransactionRequest.class);
+
+        StepVerifier.create(actTransactionManagementService.startActTransaction("1234", Mono.just(actStartTransactionRequest)))
+                .expectNext(startTransactionResponse);
     }
 
-    /**
-     * Method under test: {@link ActTransactionManagementService#startActTransaction(String, Mono)}
-     */
     @Test
-    void testStartActTransaction2() {
-        // TODO: Complete this test.
-        //   Reason: R002 Missing observers.
-        //   Diffblue Cover was unable to create an assertion.
-        //   Add getters for the following fields or make them package-private:
-        //     ActTransactionManagementService.pnRaddFsuClient
-        //     ActTransactionManagementService.transactionManagementConverter
+    void testAbortActTransaction() {
+        when(pnRaddFsuClient.abortActTransaction(any(), any()))
+                .thenReturn((Mono<AbortTransactionResponseDto>) mock(Mono.class));
 
-        actTransactionManagementService.startActTransaction("1234", (Mono<ActStartTransactionRequest>) mock(Mono.class));
+        AbortTransactionResponse abortTransactionResponse = mock(AbortTransactionResponse.class);
+        when(transactionManagementConverter.abortTransactionDtoToResponse(any())).thenReturn(abortTransactionResponse);
+
+        AbortTransactionRequest abortTransactionRequest = mock(AbortTransactionRequest.class);
+
+        StepVerifier.create(actTransactionManagementService.abortActTransaction("1234", Mono.just(abortTransactionRequest)))
+                .expectNext(abortTransactionResponse);
+    }
+
+    @Test
+    void testCompleteActTransaction() {
+        when(pnRaddFsuClient.completeActTransaction(any(), any()))
+                .thenReturn((Mono<CompleteTransactionResponseDto>) mock(Mono.class));
+
+        CompleteTransactionResponse completeTransactionResponse = mock(CompleteTransactionResponse.class);
+        when(transactionManagementConverter.completeTransactionDtoToResponse(any())).thenReturn(completeTransactionResponse);
+
+        CompleteTransactionRequest completeTransactionRequest = mock(CompleteTransactionRequest.class);
+
+        StepVerifier.create(actTransactionManagementService.completeActTransaction("1234", Mono.just(completeTransactionRequest)))
+                .expectNext(completeTransactionResponse);
     }
 }
 

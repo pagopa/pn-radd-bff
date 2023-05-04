@@ -16,32 +16,33 @@ import static it.pagopa.pn.radd.bff.exception.PnRaddBffExceptionCodes.*;
 @Component
 public class PnRaddFsuClient extends CommonBaseClient {
 
-    private DocumentUploadApi documentUploadApi;
-
-    private ActDocumentInquiryApi actDocumentInquiryApi;
-    private ActTransactionManagementApi actTransactionManagementApi;
-
-    private AorDocumentInquiryApi aorDocumentInquiryApi;
-    private AorTransactionManagementApi aorTransactionManagementApi;
+    private final DocumentUploadApi documentUploadApi;
+    private final ActDocumentInquiryApi actDocumentInquiryApi;
+    private final ActTransactionManagementApi actTransactionManagementApi;
+    private final AorDocumentInquiryApi aorDocumentInquiryApi;
+    private final AorTransactionManagementApi aorTransactionManagementApi;
+    private final NotificationInquiryApi notificationInquiryApi;
 
     private final PnRaddBffConfig pnRaddBffConfig;
     private final ResponseExchangeFilter responseExchangeFilter;
 
     public PnRaddFsuClient(PnRaddBffConfig pnRaddBffConfig, ResponseExchangeFilter responseExchangeFilter) {
+        this.notificationInquiryApi = new NotificationInquiryApi();
         this.pnRaddBffConfig = pnRaddBffConfig;
         this.responseExchangeFilter = responseExchangeFilter;
-        init();
-    }
-
-    private void init() {
-        ApiClient apiClient = new ApiClient(super.initWebClient(ApiClient.buildWebClientBuilder()
-                .filters(f -> f.add(responseExchangeFilter))));
-        apiClient.setBasePath(pnRaddBffConfig.getClientPnRaddFsuBasepath());
+        ApiClient apiClient = init();
         this.documentUploadApi = new DocumentUploadApi(apiClient);
         this.actDocumentInquiryApi = new ActDocumentInquiryApi(apiClient);
         this.actTransactionManagementApi = new ActTransactionManagementApi(apiClient);
         this.aorDocumentInquiryApi = new AorDocumentInquiryApi(apiClient);
         this.aorTransactionManagementApi = new AorTransactionManagementApi(apiClient);
+    }
+
+    private ApiClient init() {
+        ApiClient apiClient = new ApiClient(super.initWebClient(ApiClient.buildWebClientBuilder()
+                .filters(f -> f.add(responseExchangeFilter))));
+        apiClient.setBasePath(pnRaddBffConfig.getClientPnRaddFsuBasepath());
+        return apiClient;
     }
 
     public Mono<ActInquiryResponseDto> actInquiry(String uid, String recipientTaxId, String recipientType, String qrCode) {
@@ -88,6 +89,38 @@ public class PnRaddFsuClient extends CommonBaseClient {
         return aorTransactionManagementApi.completeAorTransaction(uid, completeTransactionRequestDto)
                 .onErrorMap(WebClientResponseException.class, e -> wrap(ERROR_CODE_AOR_TRANSACTION, ERROR_MESSAGE_AOR_COMPLETE_TRANSACTION, e));
     }
+
+    public  Mono<OperationsActDetailsResponseDto> getActPracticesByInternalId(String taxId, FilterRequestDto filterRequestDto) {
+        return notificationInquiryApi.getActPracticesByInternalId(taxId, filterRequestDto)
+                .onErrorMap(WebClientResponseException.class, e -> wrap(ERROR_CODE_ACT_NOTIFICATION_INQUIRY, ERROR_MESSAGE_ACT_OPERATIONS_BY_INTERNAL_ID, e));
+    }
+
+    public  Mono<OperationsResponseDto> getActPracticesByIun(String iun) {
+        return notificationInquiryApi.getActPracticesByIun(iun)
+                .onErrorMap(WebClientResponseException.class, e -> wrap(ERROR_CODE_ACT_NOTIFICATION_INQUIRY, ERROR_MESSAGE_ACT_OPERATIONS_BY_IUN, e));
+    }
+
+    public  Mono<OperationActResponseDto> getActTransactionByOperationId(String operationId) {
+        return notificationInquiryApi.getActTransactionByOperationId(operationId)
+                .onErrorMap(WebClientResponseException.class, e -> wrap(ERROR_CODE_ACT_NOTIFICATION_INQUIRY, ERROR_MESSAGE_ACT_OPERATION_BY_ID, e));
+    }
+
+    public  Mono<OperationsAorDetailsResponseDto> getAorPracticesByInternalId(String taxId, FilterRequestDto filterRequestDto) {
+        return notificationInquiryApi.getAorPracticesByInternalId(taxId, filterRequestDto)
+                .onErrorMap(WebClientResponseException.class, e -> wrap(ERROR_CODE_AOR_NOTIFICATION_INQUIRY, ERROR_MESSAGE_AOR_OPERATIONS_BY_INTERNAL_ID, e));
+    }
+
+    public  Mono<OperationsResponseDto> getAorPracticesByIun(String iun) {
+        return notificationInquiryApi
+                .getAorPracticesByIun(iun)
+                .onErrorMap(WebClientResponseException.class, e -> wrap(ERROR_CODE_AOR_NOTIFICATION_INQUIRY, ERROR_MESSAGE_AOR_OPERATIONS_BY_IUN, e));
+    }
+
+    public  Mono<OperationAorResponseDto> getAorTransactionByOperationId(String operationId) {
+        return notificationInquiryApi.getAorTransactionByOperationId(operationId)
+                .onErrorMap(WebClientResponseException.class, e -> wrap(ERROR_CODE_AOR_NOTIFICATION_INQUIRY, ERROR_MESSAGE_AOR_OPERATION_BY_ID, e));
+    }
+
 
     private PnRaddFsuException wrap(String code, String message, WebClientResponseException e) {
         return new PnRaddFsuException(e.getMessage(), code, message, e.getStatusCode().value(), e.getStatusText(), e);

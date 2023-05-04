@@ -5,15 +5,20 @@ import it.pagopa.pn.radd.bff.rest.v1.dto.DocumentUploadRequest;
 import it.pagopa.pn.radd.bff.rest.v1.dto.DocumentUploadResponse;
 import it.pagopa.pn.radd.bff.service.DocumentUploadService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
+import reactor.core.scheduler.Scheduler;
 
 @RestController
 @RequiredArgsConstructor
 public class DocumentUploadController implements DocumentUploadApi {
+
+    @Qualifier("raddBffScheduler")
+    private final Scheduler scheduler;
 
     private final DocumentUploadService documentUploadService;
 
@@ -35,6 +40,7 @@ public class DocumentUploadController implements DocumentUploadApi {
                                                                        Mono<DocumentUploadRequest> documentUploadRequest,
                                                                        final ServerWebExchange exchange) {
         return documentUploadService.documentUpload(xPagopaPnUid, documentUploadRequest)
-                .map(m -> ResponseEntity.status(HttpStatus.OK).body(m));
+                .map(m -> ResponseEntity.status(HttpStatus.OK).body(m))
+                .publishOn(scheduler);
     }
 }
