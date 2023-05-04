@@ -171,10 +171,44 @@ public class NotificationInquiryConverter {
     }
 
     public OperationActResponse operationActDtoToResponse(OperationActResponseDto operationActResponseDto) {
+
         return null;
     }
 
     public OperationsActDetailsResponse operationsActDetailsDtoToResponse(OperationsActDetailsResponseDto operationsActDetailsResponseDto) {
-        return null;
+        OperationsActDetailsResponse operationsActDetailsResponse = new OperationsActDetailsResponse();
+
+        List<OperationActDetailResponse> listOperationActDetailResponse = new ArrayList<>();
+        operationsActDetailsResponseDto.getElements().stream().forEach(t -> {
+            OperationActDetailResponse operationActDetailResponse = new OperationActDetailResponse();
+
+            operationActDetailResponse.setOperationId(t.getOperationId());
+            operationActDetailResponse.setOperationStatus(t.getOperationStatus());
+            operationActDetailResponse.setFileKey(t.getFileKey());
+            operationActDetailResponse.setOperationType(t.getOperationType());
+            operationActDetailResponse.setDelegateTaxId(t.getDelegateTaxId());
+            operationActDetailResponse.setIun(t.getIun());
+            operationActDetailResponse.setQrCode(t.getQrCode());
+            operationActDetailResponse.setErrorReason(t.getErrorReason());
+            operationActDetailResponse.setRecipientType(t.getRecipientType());
+            operationActDetailResponse.setUid(t.getUid());
+            operationActDetailResponse.setOperationEndDate(new Date(t.getOperationEndDate().toInstant().toEpochMilli()));
+            operationActDetailResponse.setOperationStartDate(new Date(t.getOperationStartDate().toInstant().toEpochMilli()));
+            operationActDetailResponse.setRecipientTaxId(t.getRecipientTaxId());
+
+            listOperationActDetailResponse.add(operationActDetailResponse);
+        });
+
+        operationsActDetailsResponse.setElements(listOperationActDetailResponse);
+        OperationResponseStatus operationResponseStatus = new OperationResponseStatus();
+        OperationResponseStatusDto operationResponseStatusDto = operationsActDetailsResponseDto.getStatus();
+
+        operationResponseStatus.setCode(OperationResponseStatus.CodeEnum.fromValue(operationResponseStatusDto.getCode().getValue()));
+        operationResponseStatus.setMessage(operationResponseStatusDto.getMessage());
+        operationsActDetailsResponse.setStatus(operationResponseStatus);
+
+        operationsActDetailsResponse.setResult(operationsActDetailsResponseDto.getResult());
+
+        return operationsActDetailsResponse;
     }
 }
