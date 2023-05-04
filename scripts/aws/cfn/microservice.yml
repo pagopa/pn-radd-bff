@@ -151,6 +151,10 @@ Parameters:
     Type: Number
     Description: maximum autoscaling number of tasks
 
+  AmplifyCorsDomain:
+    Type: String
+    Description: 'Domain used by amplify to make cross origin request'
+
 Resources:
 
   # PN-RADD-BFF microservice
@@ -180,6 +184,7 @@ Resources:
         ContainerEnvEntry2: !Sub 'CORS_ALLOWED_DOMAINS=${CorsAllowedDomains}'
         ContainerEnvEntry3: !Sub 'PN_RADD_BFF_HEALTH_CHECK_PATH=${HealthCheckEndpoint}'
         ContainerEnvEntry4: !Sub 'PN_RADD_BFF_CLIENT_PN_RADD_FSU_BASEPATH=http://${ApplicationLoadBalancerDomain}:8080'
+        ContainerEnvEntry5: !Sub 'PN_RADD_BFF_AMPLIFY_CORS_DOMAIN=${AmplifyCorsDomain}'
         MappedPaths: '/radd-web/*'
         ECSClusterName: !Ref ECSClusterName
         Subnets: !Ref SubnetsIds
