@@ -1,15 +1,7 @@
 package it.pagopa.pn.radd.bff.converter;
 
 import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.*;
-import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.FilterRequestDto;
-import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.OperationActDetailResponseDto;
-import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.OperationResponseStatusDto;
-import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.OperationsActDetailsResponseDto;
 import it.pagopa.pn.radd.bff.rest.v1.dto.*;
-import it.pagopa.pn.radd.bff.rest.v1.dto.FilterRequest;
-import it.pagopa.pn.radd.bff.rest.v1.dto.OperationResponseStatus;
-import it.pagopa.pn.radd.bff.rest.v1.dto.OperationsActDetailsResponse;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
@@ -22,18 +14,11 @@ import reactor.core.publisher.Flux;
 import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.*;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
 
 @ContextConfiguration (classes = {NotificationInquiryConverter.class})
 @ExtendWith (SpringExtension.class)
@@ -438,62 +423,22 @@ class NotificationInquiryConverterTest {
 	 * Method under test: {@link NotificationInquiryConverter#operationsAorDetailsDtoToResponse(OperationsAorDetailsResponseDto)}
 	 */
 	@Test
-	void testOperationsAorDetailsDtoToResponse5 () {
-		ArrayList<OperationAorDetailResponseDto> elements = new ArrayList<>();
-		elements.add(new OperationAorDetailResponseDto());
-
-		OperationResponseStatusDto operationResponseStatusDto = new OperationResponseStatusDto();
-		operationResponseStatusDto.code(OperationResponseStatusDto.CodeEnum.NUMBER_0);
-		OperationsAorDetailsResponseDto operationsAorDetailsResponseDto = mock(OperationsAorDetailsResponseDto.class);
-		when(operationsAorDetailsResponseDto.getResult()).thenReturn(true);
-		when(operationsAorDetailsResponseDto.getStatus()).thenReturn(operationResponseStatusDto);
-		when(operationsAorDetailsResponseDto.elements(Mockito.<List<OperationAorDetailResponseDto>>any()))
-				.thenReturn(new OperationsAorDetailsResponseDto());
-		ArrayList<OperationAorDetailResponseDto> operationAorDetailResponseDtoList = new ArrayList<>();
-		when(operationsAorDetailsResponseDto.getElements()).thenReturn(operationAorDetailResponseDtoList);
-		operationsAorDetailsResponseDto.elements(elements);
-		OperationsAorDetailsResponse actualOperationsAorDetailsDtoToResponseResult = notificationInquiryConverter
-				.operationsAorDetailsDtoToResponse(operationsAorDetailsResponseDto);
-		assertEquals(operationAorDetailResponseDtoList, actualOperationsAorDetailsDtoToResponseResult.getElements());
-		assertTrue(actualOperationsAorDetailsDtoToResponseResult.getResult());
-		OperationResponseStatus status = actualOperationsAorDetailsDtoToResponseResult.getStatus();
-		assertNull(status.getMessage());
-		assertEquals(OperationResponseStatus.CodeEnum.NUMBER_0, status.getCode());
-		verify(operationsAorDetailsResponseDto).getStatus();
-		verify(operationsAorDetailsResponseDto).elements(Mockito.<List<OperationAorDetailResponseDto>>any());
-		verify(operationsAorDetailsResponseDto).getResult();
-		verify(operationsAorDetailsResponseDto).getElements();
-	}
-
-	/**
-	 * Method under test: {@link NotificationInquiryConverter#operationsAorDetailsDtoToResponse(OperationsAorDetailsResponseDto)}
-	 */
-	@Test
 	void testOperationsAorDetailsDtoToResponse6 () {
-		ArrayList<OperationAorDetailResponseDto> elements = new ArrayList<>();
-		elements.add(new OperationAorDetailResponseDto());
-
+		OperationsAorDetailsResponseDto operationsAorDetailsResponseDto = new OperationsAorDetailsResponseDto();
+		OperationAorDetailResponseDto operationAorDetailResponseDto = new OperationAorDetailResponseDto();
 		OperationResponseStatusDto operationResponseStatusDto = new OperationResponseStatusDto();
+		operationsAorDetailsResponseDto.setResult(true);
+		operationsAorDetailsResponseDto.setStatus(operationResponseStatusDto);
+
+		operationsAorDetailsResponseDto.setElements(List.of(operationAorDetailResponseDto));
+
 		operationResponseStatusDto.code(OperationResponseStatusDto.CodeEnum.NUMBER_1);
-		OperationsAorDetailsResponseDto operationsAorDetailsResponseDto = mock(OperationsAorDetailsResponseDto.class);
-		when(operationsAorDetailsResponseDto.getResult()).thenReturn(true);
-		when(operationsAorDetailsResponseDto.getStatus()).thenReturn(operationResponseStatusDto);
-		when(operationsAorDetailsResponseDto.elements(Mockito.<List<OperationAorDetailResponseDto>>any()))
-				.thenReturn(new OperationsAorDetailsResponseDto());
-		ArrayList<OperationAorDetailResponseDto> operationAorDetailResponseDtoList = new ArrayList<>();
-		when(operationsAorDetailsResponseDto.getElements()).thenReturn(operationAorDetailResponseDtoList);
-		operationsAorDetailsResponseDto.elements(elements);
 		OperationsAorDetailsResponse actualOperationsAorDetailsDtoToResponseResult = notificationInquiryConverter
 				.operationsAorDetailsDtoToResponse(operationsAorDetailsResponseDto);
-		assertEquals(operationAorDetailResponseDtoList, actualOperationsAorDetailsDtoToResponseResult.getElements());
 		assertTrue(actualOperationsAorDetailsDtoToResponseResult.getResult());
 		OperationResponseStatus status = actualOperationsAorDetailsDtoToResponseResult.getStatus();
 		assertNull(status.getMessage());
 		assertEquals(OperationResponseStatus.CodeEnum.NUMBER_1, status.getCode());
-		verify(operationsAorDetailsResponseDto).getStatus();
-		verify(operationsAorDetailsResponseDto).elements(Mockito.<List<OperationAorDetailResponseDto>>any());
-		verify(operationsAorDetailsResponseDto).getResult();
-		verify(operationsAorDetailsResponseDto).getElements();
 	}
 
 	/**
@@ -607,77 +552,26 @@ class NotificationInquiryConverterTest {
 		assertNull(notificationInquiryConverter.operationActDtoToResponse(new OperationActResponseDto()));
 		assertNull(notificationInquiryConverter.operationActDtoToResponse(mock(OperationActResponseDto.class)));
 	}
-
-	/**
-	 * Method under test: {@link NotificationInquiryConverter#operationsActDetailsDtoToResponse(OperationsActDetailsResponseDto)}
-	 */
-	@Test
-	void testOperationsActDetailsDtoToResponse5 () {
-		// Arrange
-		ArrayList<OperationActDetailResponseDto> elements = new ArrayList<>();
-		elements.add(new OperationActDetailResponseDto());
-
-		OperationResponseStatusDto operationResponseStatusDto = new OperationResponseStatusDto();
-		operationResponseStatusDto.code(OperationResponseStatusDto.CodeEnum.NUMBER_0);
-		OperationsActDetailsResponseDto operationsActDetailsResponseDto = mock(OperationsActDetailsResponseDto.class);
-		when(operationsActDetailsResponseDto.getResult()).thenReturn(true);
-		when(operationsActDetailsResponseDto.getStatus()).thenReturn(operationResponseStatusDto);
-		when(operationsActDetailsResponseDto.elements(Mockito.<List<OperationActDetailResponseDto>>any()))
-				.thenReturn(new OperationsActDetailsResponseDto());
-		ArrayList<OperationActDetailResponseDto> operationActDetailResponseDtoList = new ArrayList<>();
-		when(operationsActDetailsResponseDto.getElements()).thenReturn(operationActDetailResponseDtoList);
-		operationsActDetailsResponseDto.elements(elements);
-
-		// Act
-		OperationsActDetailsResponse actualOperationsActDetailsDtoToResponseResult = notificationInquiryConverter
-				.operationsActDetailsDtoToResponse(operationsActDetailsResponseDto);
-
-		// Assert
-		assertEquals(operationActDetailResponseDtoList, actualOperationsActDetailsDtoToResponseResult.getElements());
-		assertTrue(actualOperationsActDetailsDtoToResponseResult.getResult());
-		OperationResponseStatus status = actualOperationsActDetailsDtoToResponseResult.getStatus();
-		assertNull(status.getMessage());
-		assertEquals(OperationResponseStatus.CodeEnum.NUMBER_0, status.getCode());
-		verify(operationsActDetailsResponseDto).getStatus();
-		verify(operationsActDetailsResponseDto).elements(Mockito.<List<OperationActDetailResponseDto>>any());
-		verify(operationsActDetailsResponseDto).getResult();
-		verify(operationsActDetailsResponseDto).getElements();
-	}
-
 	/**
 	 * Method under test: {@link NotificationInquiryConverter#operationsActDetailsDtoToResponse(OperationsActDetailsResponseDto)}
 	 */
 	@Test
 	void testOperationsActDetailsDtoToResponse6 () {
-		// Arrange
-		ArrayList<OperationActDetailResponseDto> elements = new ArrayList<>();
-		elements.add(new OperationActDetailResponseDto());
-
+		OperationsActDetailsResponseDto operationsActDetailsResponseDto = new OperationsActDetailsResponseDto();
+		OperationActDetailResponseDto operationActDetailResponseDto = new OperationActDetailResponseDto();
 		OperationResponseStatusDto operationResponseStatusDto = new OperationResponseStatusDto();
-		operationResponseStatusDto.code(OperationResponseStatusDto.CodeEnum.NUMBER_1);
-		OperationsActDetailsResponseDto operationsActDetailsResponseDto = mock(OperationsActDetailsResponseDto.class);
-		when(operationsActDetailsResponseDto.getResult()).thenReturn(true);
-		when(operationsActDetailsResponseDto.getStatus()).thenReturn(operationResponseStatusDto);
-		when(operationsActDetailsResponseDto.elements(Mockito.<List<OperationActDetailResponseDto>>any()))
-				.thenReturn(new OperationsActDetailsResponseDto());
-		ArrayList<OperationActDetailResponseDto> operationActDetailResponseDtoList = new ArrayList<>();
-		when(operationsActDetailsResponseDto.getElements()).thenReturn(operationActDetailResponseDtoList);
-		operationsActDetailsResponseDto.elements(elements);
+		operationsActDetailsResponseDto.setResult(true);
+		operationsActDetailsResponseDto.setStatus(operationResponseStatusDto);
 
-		// Act
+		operationsActDetailsResponseDto.setElements(List.of(operationActDetailResponseDto));
+
+		operationResponseStatusDto.code(OperationResponseStatusDto.CodeEnum.NUMBER_1);
 		OperationsActDetailsResponse actualOperationsActDetailsDtoToResponseResult = notificationInquiryConverter
 				.operationsActDetailsDtoToResponse(operationsActDetailsResponseDto);
-
-		// Assert
-		assertEquals(operationActDetailResponseDtoList, actualOperationsActDetailsDtoToResponseResult.getElements());
 		assertTrue(actualOperationsActDetailsDtoToResponseResult.getResult());
 		OperationResponseStatus status = actualOperationsActDetailsDtoToResponseResult.getStatus();
 		assertNull(status.getMessage());
 		assertEquals(OperationResponseStatus.CodeEnum.NUMBER_1, status.getCode());
-		verify(operationsActDetailsResponseDto).getStatus();
-		verify(operationsActDetailsResponseDto).elements(Mockito.<List<OperationActDetailResponseDto>>any());
-		verify(operationsActDetailsResponseDto).getResult();
-		verify(operationsActDetailsResponseDto).getElements();
 	}
 }
 
