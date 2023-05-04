@@ -1,3 +1,5 @@
 {
-  "Parameters" : {}
+  "Parameters" : {
+    "AmplifyCorsDomain": "https://develop.d19zh2gqugqm5d.amplifyapp.com/"
+  }
 }
