@@ -1658,7 +1658,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:1080/radd-private/api/v1/aor/inquiry?recipientTaxId=PLOMRC01P30L736Y&recipientType=PF",
+							"raw": "http://localhost:1080/radd-private/api/v1/aor/inquiry?recipientTaxId=RSSSRG80A01F839I&recipientType=PF",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1674,7 +1674,7 @@
 							"query": [
 								{
 									"key": "recipientTaxId",
-									"value": "PLOMRC01P30L736Y"
+									"value": "RSSSRG80A01F839I"
 								},
 								{
 									"key": "recipientType",
