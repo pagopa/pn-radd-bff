@@ -538,16 +538,14 @@ class NotificationInquiryConverterTest {
 	/**
 	 * Method under test: {@link NotificationInquiryConverter#operationAorDtoToResponse(OperationAorResponseDto)}
 	 */
-
-
-	/**
-	 * Method under test: {@link NotificationInquiryConverter#operationAorDtoToResponse(OperationAorResponseDto)}
-	 */
 	@Test
 	void testOperationAorDtoToResponse2 () {
 		// Arrange
 		OperationAorResponseDto operationAorResponseDto = new OperationAorResponseDto();
-
+		OperationAorDetailResponseDto operationAorDetailResponseDto = new OperationAorDetailResponseDto();
+		operationAorDetailResponseDto.setOperationStartDate(OffsetDateTime.now());
+		operationAorDetailResponseDto.setOperationEndDate(OffsetDateTime.now());
+		operationAorResponseDto.element(operationAorDetailResponseDto);
 		// Act
 		OperationAorResponse actualOperationAorDtoToResponseResult = notificationInquiryConverter
 				.operationAorDtoToResponse(operationAorResponseDto);
@@ -555,24 +553,21 @@ class NotificationInquiryConverterTest {
 		// Assert
 		assertNull(actualOperationAorDtoToResponseResult.getResult());
 		OperationAorDetailResponse element = actualOperationAorDtoToResponseResult.getElement();
-		assertEquals("recipientType", element.getRecipientType());
-		assertEquals("recipientTaxId", element.getRecipientTaxId());
-		assertEquals("qrCode", element.getQrCode());
-		assertEquals("operationType", element.getOperationType());
-		assertEquals("operationStatus", element.getOperationStatus());
-		assertEquals("operationId", element.getOperationId());
-		assertEquals(1, element.getIuns().size());
-		assertEquals("fileKey", element.getFileKey());
-		assertEquals("errorReason", element.getErrorReason());
-		assertEquals("delegateTaxId", element.getDelegateTaxId());
-		assertEquals("uid", element.getUid());
+		assertNull(element.getRecipientType());
+		assertNull(element.getRecipientTaxId());
+		assertNull(element.getQrCode());
+		assertNull(element.getOperationType());
+		assertNull(element.getOperationStatus());
+		assertNull(element.getOperationId());
+		assertNull(element.getIuns());
+		assertNull(element.getFileKey());
+		assertNull(element.getErrorReason());
+		assertNull(element.getDelegateTaxId());
+		assertNull(element.getUid());
 		assertNull(operationAorResponseDto.getStatus());
+		assertNotNull(element.getOperationStartDate());
+		assertNotNull(element.getOperationEndDate());
 	}
-
-	/**
-	 * Method under test: {@link NotificationInquiryConverter#operationAorDtoToResponse(OperationAorResponseDto)}
-	 */
-
 
 	/**
 	 * Method under test: {@link NotificationInquiryConverter#operationAorDtoToResponse(OperationAorResponseDto)}
@@ -583,6 +578,7 @@ class NotificationInquiryConverterTest {
 		OperationAorResponseDto operationAorResponseDto = new OperationAorResponseDto();
 		OperationResponseStatusDto status = new OperationResponseStatusDto();
 		operationAorResponseDto.status(status);
+		operationAorResponseDto.element(new OperationAorDetailResponseDto());
 
 		// Act
 		OperationAorResponse actualOperationAorDtoToResponseResult = notificationInquiryConverter
@@ -591,17 +587,17 @@ class NotificationInquiryConverterTest {
 		// Assert
 		assertNull(actualOperationAorDtoToResponseResult.getResult());
 		OperationAorDetailResponse element = actualOperationAorDtoToResponseResult.getElement();
-		assertEquals("recipientType", element.getRecipientType());
-		assertEquals("recipientTaxId", element.getRecipientTaxId());
-		assertEquals("qrCode", element.getQrCode());
-		assertEquals("operationType", element.getOperationType());
-		assertEquals("operationStatus", element.getOperationStatus());
-		assertEquals("operationId", element.getOperationId());
-		assertEquals(1, element.getIuns().size());
-		assertEquals("fileKey", element.getFileKey());
-		assertEquals("errorReason", element.getErrorReason());
-		assertEquals("delegateTaxId", element.getDelegateTaxId());
-		assertEquals("uid", element.getUid());
+		assertNull(element.getRecipientType());
+		assertNull(element.getRecipientTaxId());
+		assertNull(element.getQrCode());
+		assertNull(element.getOperationType());
+		assertNull(element.getOperationStatus());
+		assertNull(element.getOperationId());
+		assertNull(element.getIuns());
+		assertNull(element.getFileKey());
+		assertNull(element.getErrorReason());
+		assertNull(element.getDelegateTaxId());
+		assertNull(element.getUid());
 		assertSame(status, operationAorResponseDto.getStatus());
 	}
 
@@ -616,6 +612,7 @@ class NotificationInquiryConverterTest {
 
 		OperationAorResponseDto operationAorResponseDto = new OperationAorResponseDto();
 		operationAorResponseDto.status(status);
+		operationAorResponseDto.element(new OperationAorDetailResponseDto());
 
 		// Act
 		OperationAorResponse actualOperationAorDtoToResponseResult = notificationInquiryConverter
@@ -624,17 +621,17 @@ class NotificationInquiryConverterTest {
 		// Assert
 		assertNull(actualOperationAorDtoToResponseResult.getResult());
 		OperationAorDetailResponse element = actualOperationAorDtoToResponseResult.getElement();
-		assertEquals("recipientType", element.getRecipientType());
-		assertEquals("recipientTaxId", element.getRecipientTaxId());
-		assertEquals("qrCode", element.getQrCode());
-		assertEquals("operationType", element.getOperationType());
-		assertEquals("operationStatus", element.getOperationStatus());
-		assertEquals("operationId", element.getOperationId());
-		assertEquals(1, element.getIuns().size());
-		assertEquals("fileKey", element.getFileKey());
-		assertEquals("errorReason", element.getErrorReason());
-		assertEquals("delegateTaxId", element.getDelegateTaxId());
-		assertEquals("uid", element.getUid());
+		assertNull(element.getRecipientType());
+		assertNull(element.getRecipientTaxId());
+		assertNull(element.getQrCode());
+		assertNull(element.getOperationType());
+		assertNull(element.getOperationStatus());
+		assertNull(element.getOperationId());
+		assertNull(element.getIuns());
+		assertNull(element.getFileKey());
+		assertNull(element.getErrorReason());
+		assertNull(element.getDelegateTaxId());
+		assertNull(element.getUid());
 		assertSame(status, operationAorResponseDto.getStatus());
 	}
 
@@ -649,6 +646,7 @@ class NotificationInquiryConverterTest {
 
 		OperationAorResponseDto operationAorResponseDto = new OperationAorResponseDto();
 		operationAorResponseDto.status(status);
+		operationAorResponseDto.element(new OperationAorDetailResponseDto());
 
 		// Act
 		OperationAorResponse actualOperationAorDtoToResponseResult = notificationInquiryConverter
@@ -657,17 +655,17 @@ class NotificationInquiryConverterTest {
 		// Assert
 		assertNull(actualOperationAorDtoToResponseResult.getResult());
 		OperationAorDetailResponse element = actualOperationAorDtoToResponseResult.getElement();
-		assertEquals("recipientType", element.getRecipientType());
-		assertEquals("recipientTaxId", element.getRecipientTaxId());
-		assertEquals("qrCode", element.getQrCode());
-		assertEquals("operationType", element.getOperationType());
-		assertEquals("operationStatus", element.getOperationStatus());
-		assertEquals("operationId", element.getOperationId());
-		assertEquals(1, element.getIuns().size());
-		assertEquals("fileKey", element.getFileKey());
-		assertEquals("errorReason", element.getErrorReason());
-		assertEquals("delegateTaxId", element.getDelegateTaxId());
-		assertEquals("uid", element.getUid());
+		assertNull(element.getRecipientType());
+		assertNull(element.getRecipientTaxId());
+		assertNull(element.getQrCode());
+		assertNull(element.getOperationType());
+		assertNull(element.getOperationStatus());
+		assertNull(element.getOperationId());
+		assertNull(element.getIuns());
+		assertNull(element.getFileKey());
+		assertNull(element.getErrorReason());
+		assertNull(element.getDelegateTaxId());
+		assertNull(element.getUid());
 		assertSame(status, operationAorResponseDto.getStatus());
 	}
 
@@ -682,6 +680,7 @@ class NotificationInquiryConverterTest {
 
 		OperationAorResponseDto operationAorResponseDto = new OperationAorResponseDto();
 		operationAorResponseDto.status(status);
+		operationAorResponseDto.element(new OperationAorDetailResponseDto());
 
 		// Act
 		OperationAorResponse actualOperationAorDtoToResponseResult = notificationInquiryConverter
@@ -690,17 +689,17 @@ class NotificationInquiryConverterTest {
 		// Assert
 		assertNull(actualOperationAorDtoToResponseResult.getResult());
 		OperationAorDetailResponse element = actualOperationAorDtoToResponseResult.getElement();
-		assertEquals("recipientType", element.getRecipientType());
-		assertEquals("recipientTaxId", element.getRecipientTaxId());
-		assertEquals("qrCode", element.getQrCode());
-		assertEquals("operationType", element.getOperationType());
-		assertEquals("operationStatus", element.getOperationStatus());
-		assertEquals("operationId", element.getOperationId());
-		assertEquals(1, element.getIuns().size());
-		assertEquals("fileKey", element.getFileKey());
-		assertEquals("errorReason", element.getErrorReason());
-		assertEquals("delegateTaxId", element.getDelegateTaxId());
-		assertEquals("uid", element.getUid());
+		assertNull(element.getRecipientType());
+		assertNull(element.getRecipientTaxId());
+		assertNull(element.getQrCode());
+		assertNull(element.getOperationType());
+		assertNull(element.getOperationStatus());
+		assertNull(element.getOperationId());
+		assertNull(element.getIuns());
+		assertNull(element.getFileKey());
+		assertNull(element.getErrorReason());
+		assertNull(element.getDelegateTaxId());
+		assertNull(element.getUid());
 		assertSame(status, operationAorResponseDto.getStatus());
 	}
 
@@ -711,6 +710,11 @@ class NotificationInquiryConverterTest {
 	void testOperationActDtoToResponse2 () {
 		// Arrange
 		OperationActResponseDto operationActResponseDto = new OperationActResponseDto();
+		operationActResponseDto.element(new OperationActDetailResponseDto());
+		OperationActDetailResponseDto operationActDetailResponseDto = new OperationActDetailResponseDto();
+		operationActDetailResponseDto.setOperationStartDate(OffsetDateTime.now());
+		operationActDetailResponseDto.setOperationEndDate(OffsetDateTime.now());
+		operationActResponseDto.element(operationActDetailResponseDto);
 
 		// Act
 		OperationActResponse actualOperationActDtoToResponseResult = notificationInquiryConverter
@@ -719,19 +723,23 @@ class NotificationInquiryConverterTest {
 		// Assert
 		assertNull(actualOperationActDtoToResponseResult.getResult());
 		OperationActDetailResponse element = actualOperationActDtoToResponseResult.getElement();
-		assertEquals("recipientType", element.getRecipientType());
-		assertEquals("recipientTaxId", element.getRecipientTaxId());
-		assertEquals("qrCode", element.getQrCode());
-		assertEquals("operationType", element.getOperationType());
-		assertEquals("operationStatus", element.getOperationStatus());
-		assertEquals("operationId", element.getOperationId());
-		assertEquals("iun", element.getIun());
-		assertEquals("fileKey", element.getFileKey());
-		assertEquals("errorReason", element.getErrorReason());
-		assertEquals("delegateTaxId", element.getDelegateTaxId());
-		assertEquals("uid", element.getUid());
+		assertNull(element.getRecipientType());
+		assertNull(element.getRecipientTaxId());
+		assertNull(element.getQrCode());
+		assertNull(element.getOperationType());
+		assertNull(element.getOperationStatus());
+		assertNull(element.getOperationId());
+		assertNull(element.getIun());
+		assertNull(element.getFileKey());
+		assertNull(element.getErrorReason());
+		assertNull(element.getDelegateTaxId());
+		assertNull(element.getUid());
 		assertNull(operationActResponseDto.getStatus());
+		assertNotNull(element.getOperationStartDate());
+		assertNotNull(element.getOperationEndDate());
+
 	}
+
 
 	/**
 	 * Method under test: {@link NotificationInquiryConverter#operationActDtoToResponse(OperationActResponseDto)}
@@ -742,6 +750,7 @@ class NotificationInquiryConverterTest {
 		OperationActResponseDto operationActResponseDto = new OperationActResponseDto();
 		OperationResponseStatusDto status = new OperationResponseStatusDto();
 		operationActResponseDto.status(status);
+		operationActResponseDto.element(new OperationActDetailResponseDto());
 
 		// Act
 		OperationActResponse actualOperationActDtoToResponseResult = notificationInquiryConverter
@@ -750,17 +759,17 @@ class NotificationInquiryConverterTest {
 		// Assert
 		assertNull(actualOperationActDtoToResponseResult.getResult());
 		OperationActDetailResponse element = actualOperationActDtoToResponseResult.getElement();
-		assertEquals("recipientType", element.getRecipientType());
-		assertEquals("recipientTaxId", element.getRecipientTaxId());
-		assertEquals("qrCode", element.getQrCode());
-		assertEquals("operationType", element.getOperationType());
-		assertEquals("operationStatus", element.getOperationStatus());
-		assertEquals("operationId", element.getOperationId());
-		assertEquals("iun", element.getIun());
-		assertEquals("fileKey", element.getFileKey());
-		assertEquals("errorReason", element.getErrorReason());
-		assertEquals("delegateTaxId", element.getDelegateTaxId());
-		assertEquals("uid", element.getUid());
+		assertNull(element.getRecipientType());
+		assertNull(element.getRecipientTaxId());
+		assertNull(element.getQrCode());
+		assertNull(element.getOperationType());
+		assertNull(element.getOperationStatus());
+		assertNull(element.getOperationId());
+		assertNull(element.getIun());
+		assertNull(element.getFileKey());
+		assertNull(element.getErrorReason());
+		assertNull(element.getDelegateTaxId());
+		assertNull(element.getUid());
 		assertSame(status, operationActResponseDto.getStatus());
 	}
 
@@ -775,6 +784,7 @@ class NotificationInquiryConverterTest {
 
 		OperationActResponseDto operationActResponseDto = new OperationActResponseDto();
 		operationActResponseDto.status(status);
+		operationActResponseDto.element(new OperationActDetailResponseDto());
 
 		// Act
 		OperationActResponse actualOperationActDtoToResponseResult = notificationInquiryConverter
@@ -783,17 +793,17 @@ class NotificationInquiryConverterTest {
 		// Assert
 		assertNull(actualOperationActDtoToResponseResult.getResult());
 		OperationActDetailResponse element = actualOperationActDtoToResponseResult.getElement();
-		assertEquals("recipientType", element.getRecipientType());
-		assertEquals("recipientTaxId", element.getRecipientTaxId());
-		assertEquals("qrCode", element.getQrCode());
-		assertEquals("operationType", element.getOperationType());
-		assertEquals("operationStatus", element.getOperationStatus());
-		assertEquals("operationId", element.getOperationId());
-		assertEquals("iun", element.getIun());
-		assertEquals("fileKey", element.getFileKey());
-		assertEquals("errorReason", element.getErrorReason());
-		assertEquals("delegateTaxId", element.getDelegateTaxId());
-		assertEquals("uid", element.getUid());
+		assertNull(element.getRecipientType());
+		assertNull(element.getRecipientTaxId());
+		assertNull(element.getQrCode());
+		assertNull(element.getOperationType());
+		assertNull(element.getOperationStatus());
+		assertNull(element.getOperationId());
+		assertNull(element.getIun());
+		assertNull(element.getFileKey());
+		assertNull(element.getErrorReason());
+		assertNull(element.getDelegateTaxId());
+		assertNull(element.getUid());
 		assertSame(status, operationActResponseDto.getStatus());
 	}
 
@@ -808,6 +818,7 @@ class NotificationInquiryConverterTest {
 
 		OperationActResponseDto operationActResponseDto = new OperationActResponseDto();
 		operationActResponseDto.status(status);
+		operationActResponseDto.element(new OperationActDetailResponseDto());
 
 		// Act
 		OperationActResponse actualOperationActDtoToResponseResult = notificationInquiryConverter
@@ -816,17 +827,17 @@ class NotificationInquiryConverterTest {
 		// Assert
 		assertNull(actualOperationActDtoToResponseResult.getResult());
 		OperationActDetailResponse element = actualOperationActDtoToResponseResult.getElement();
-		assertEquals("recipientType", element.getRecipientType());
-		assertEquals("recipientTaxId", element.getRecipientTaxId());
-		assertEquals("qrCode", element.getQrCode());
-		assertEquals("operationType", element.getOperationType());
-		assertEquals("operationStatus", element.getOperationStatus());
-		assertEquals("operationId", element.getOperationId());
-		assertEquals("iun", element.getIun());
-		assertEquals("fileKey", element.getFileKey());
-		assertEquals("errorReason", element.getErrorReason());
-		assertEquals("delegateTaxId", element.getDelegateTaxId());
-		assertEquals("uid", element.getUid());
+		assertNull(element.getRecipientType());
+		assertNull(element.getRecipientTaxId());
+		assertNull(element.getQrCode());
+		assertNull(element.getOperationType());
+		assertNull(element.getOperationStatus());
+		assertNull(element.getOperationId());
+		assertNull(element.getIun());
+		assertNull(element.getFileKey());
+		assertNull(element.getErrorReason());
+		assertNull(element.getDelegateTaxId());
+		assertNull(element.getUid());
 		assertSame(status, operationActResponseDto.getStatus());
 	}
 
@@ -841,6 +852,7 @@ class NotificationInquiryConverterTest {
 
 		OperationActResponseDto operationActResponseDto = new OperationActResponseDto();
 		operationActResponseDto.status(status);
+		operationActResponseDto.element(new OperationActDetailResponseDto());
 
 		// Act
 		OperationActResponse actualOperationActDtoToResponseResult = notificationInquiryConverter
@@ -849,24 +861,19 @@ class NotificationInquiryConverterTest {
 		// Assert
 		assertNull(actualOperationActDtoToResponseResult.getResult());
 		OperationActDetailResponse element = actualOperationActDtoToResponseResult.getElement();
-		assertEquals("recipientType", element.getRecipientType());
-		assertEquals("recipientTaxId", element.getRecipientTaxId());
-		assertEquals("qrCode", element.getQrCode());
-		assertEquals("operationType", element.getOperationType());
-		assertEquals("operationStatus", element.getOperationStatus());
-		assertEquals("operationId", element.getOperationId());
-		assertEquals("iun", element.getIun());
-		assertEquals("fileKey", element.getFileKey());
-		assertEquals("errorReason", element.getErrorReason());
-		assertEquals("delegateTaxId", element.getDelegateTaxId());
-		assertEquals("uid", element.getUid());
+		assertNull(element.getRecipientType());
+		assertNull(element.getRecipientTaxId());
+		assertNull(element.getQrCode());
+		assertNull(element.getOperationType());
+		assertNull(element.getOperationStatus());
+		assertNull(element.getOperationId());
+		assertNull(element.getIun());
+		assertNull(element.getFileKey());
+		assertNull(element.getErrorReason());
+		assertNull(element.getDelegateTaxId());
+		assertNull(element.getUid());
 		assertSame(status, operationActResponseDto.getStatus());
 	}
-
-	/**
-	 * Method under test: {@link NotificationInquiryConverter#operationActDtoToResponse(OperationActResponseDto)}
-	 */
-
 
 	/**
 	 * Method under test: {@link NotificationInquiryConverter#operationsActDetailsDtoToResponse(OperationsActDetailsResponseDto)}
