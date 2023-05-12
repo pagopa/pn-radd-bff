@@ -423,12 +423,14 @@ class NotificationInquiryConverterTest {
 	 * Method under test: {@link NotificationInquiryConverter#operationsAorDetailsDtoToResponse(OperationsAorDetailsResponseDto)}
 	 */
 	@Test
-	void testOperationsAorDetailsDtoToResponse6 () {
+	void testOperationsAorDetailsDtoToResponse () {
 		OperationsAorDetailsResponseDto operationsAorDetailsResponseDto = new OperationsAorDetailsResponseDto();
 		OperationAorDetailResponseDto operationAorDetailResponseDto = new OperationAorDetailResponseDto();
 		OperationResponseStatusDto operationResponseStatusDto = new OperationResponseStatusDto();
 		operationsAorDetailsResponseDto.setResult(true);
 		operationsAorDetailsResponseDto.setStatus(operationResponseStatusDto);
+		operationAorDetailResponseDto.setOperationStartDate(OffsetDateTime.now());
+		operationAorDetailResponseDto.setOperationEndDate(OffsetDateTime.now());
 
 		operationsAorDetailsResponseDto.setElements(List.of(operationAorDetailResponseDto));
 
@@ -885,6 +887,8 @@ class NotificationInquiryConverterTest {
 		OperationResponseStatusDto operationResponseStatusDto = new OperationResponseStatusDto();
 		operationsActDetailsResponseDto.setResult(true);
 		operationsActDetailsResponseDto.setStatus(operationResponseStatusDto);
+		operationActDetailResponseDto.setOperationStartDate(OffsetDateTime.now());
+		operationActDetailResponseDto.setOperationEndDate(OffsetDateTime.now());
 
 		operationsActDetailsResponseDto.setElements(List.of(operationActDetailResponseDto));
 
