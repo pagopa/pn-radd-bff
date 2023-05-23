@@ -971,7 +971,9 @@
             {
               "operationStatus": "COMPLETED",
               "operationType": "ACT",
-              "iun": "LJLH-GNTJ-DVXR-202209-J-1",
+              "iuns": [
+			  "LJLH-GNTJ-DVXR-202209-J-1"
+			  ],
               "operationId": "asd1234",
               "fileKey": "FL-23-KKL",
               "qrCode": "FBD",
@@ -1017,7 +1019,9 @@
             {
               "operationStatus": "COMPLETED",
               "operationType": "ACT",
-              "iun": "LJLH-GNTJ-DVXR-202209-J-1",
+              "iuns": [
+                "LJLH-GNTJ-DVXR-202209-J-1"
+              ],
               "operationId": "asd1234",
               "fileKey": "FL-23-KKL",
               "qrCode": "FBD",
@@ -1063,7 +1067,9 @@
             {
               "operationStatus": "COMPLETED",
               "operationType": "ACT",
-              "iun": "LJLH-GNTJ-DVXR-202209-J-1",
+              "iuns":[
+                "LJLH-GNTJ-DVXR-202209-J-1"
+              ],
               "operationId": "asd1234",
               "fileKey": "FL-23-KKL",
               "qrCode": "FBD",
