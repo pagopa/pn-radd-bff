@@ -3,8 +3,7 @@ package it.pagopa.pn.radd.bff.converter;
 import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.*;
 import it.pagopa.pn.radd.bff.rest.v1.dto.*;
 import org.springframework.stereotype.Component;
-import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
+
 
 import java.time.ZoneOffset;
 import java.util.ArrayList;
@@ -156,18 +155,6 @@ public class NotificationInquiryConverter {
         return filterRequestDto;
     }
 
-    public Mono<OperationsResponse> operationsActDtoToResponse(Flux<OperationActResponseDto> operationsResponseDto) {
-        OperationsResponse operationsResponse = new OperationsResponse();
-
-        return Mono.empty();
-    }
-
-    public Mono<OperationsResponse> operationsAorDtoToResponse(Flux<OperationAorResponseDto> operationsResponseDto) {
-        OperationsResponse operationsResponse = new OperationsResponse();
-
-        return Mono.empty();
-    }
-
     public OperationAorResponse operationAorDtoToResponse(OperationAorResponseDto operationAorResponseDto) {
         OperationAorResponse operationAorResponse = new OperationAorResponse();
         OperationAorDetailResponse operationAorDetailResponse = new OperationAorDetailResponse();
@@ -276,5 +263,71 @@ public class NotificationInquiryConverter {
         operationsActDetailsResponse.setStatus(operationResponseStatus);
         operationsActDetailsResponse.setResult(operationsActDetailsResponseDto.getResult());
         return operationsActDetailsResponse;
+    }
+
+    public OperationsResponse operationsDtoToResponse(List<OperationsDetailsResponse> operationsDetailsResponses,
+                                                      Boolean result,
+                                                      OperationResponseStatusDto operationResponseStatusDto) {
+
+        OperationsResponse operationsResponse = new OperationsResponse();
+
+        operationsResponse.setResult(result);
+
+        OperationResponseStatus operationResponseStatus = new OperationResponseStatus();
+        if(operationResponseStatusDto != null) {
+            if (operationResponseStatusDto.getCode() != null) {
+                operationResponseStatus.setCode(OperationResponseStatus.CodeEnum.fromValue(operationResponseStatusDto.getCode().getValue()));
+            }
+            operationResponseStatus.setMessage(operationResponseStatusDto.getMessage());
+        }
+        operationsResponse.setStatus(operationResponseStatus);
+
+        operationsResponse.setOperations(operationsDetailsResponses);
+        return operationsResponse;
+    }
+
+    public OperationsDetailsResponse enrichAorData(OperationAorResponseDto operationAorResponseDto) {
+        OperationsDetailsResponse operationsDetailsResponse = new OperationsDetailsResponse();
+
+        OperationAorDetailResponseDto operationAorDetailResponseDto = operationAorResponseDto.getElement();
+
+        operationsDetailsResponse.setOperationId(operationAorDetailResponseDto.getOperationId());
+        operationsDetailsResponse.setOperationStatus(operationAorDetailResponseDto.getOperationStatus());
+        operationsDetailsResponse.setFileKey(operationAorDetailResponseDto.getFileKey());
+        operationsDetailsResponse.setOperationType(operationAorDetailResponseDto.getOperationType());
+        operationsDetailsResponse.setIuns(operationAorDetailResponseDto.getIuns());
+        operationsDetailsResponse.setQrCode(operationAorDetailResponseDto.getQrCode());
+        operationsDetailsResponse.setErrorReason(operationAorDetailResponseDto.getErrorReason());
+        operationsDetailsResponse.setRecipientType(operationAorDetailResponseDto.getRecipientType());
+        operationsDetailsResponse.setUid(operationAorDetailResponseDto.getUid());
+        if(operationAorDetailResponseDto.getOperationEndDate()!=null)
+            operationsDetailsResponse.setOperationEndDate(new Date(operationAorDetailResponseDto.getOperationEndDate().toInstant().toEpochMilli()));
+        if(operationAorDetailResponseDto.getOperationStartDate()!=null)
+            operationsDetailsResponse.setOperationStartDate(new Date(operationAorDetailResponseDto.getOperationStartDate().toInstant().toEpochMilli()));
+
+        return operationsDetailsResponse;
+
+    }
+
+    public OperationsDetailsResponse enrichActData(OperationActResponseDto operationActResponseDto) {
+        OperationsDetailsResponse operationsDetailsResponse = new OperationsDetailsResponse();
+
+        OperationActDetailResponseDto operationActDetailResponseDto = operationActResponseDto.getElement();
+
+        operationsDetailsResponse.setOperationId(operationActDetailResponseDto.getOperationId());
+        operationsDetailsResponse.setOperationStatus(operationActDetailResponseDto.getOperationStatus());
+        operationsDetailsResponse.setFileKey(operationActDetailResponseDto.getFileKey());
+        operationsDetailsResponse.setOperationType(operationActDetailResponseDto.getOperationType());
+        operationsDetailsResponse.setIuns(List.of(operationActDetailResponseDto.getIun()));
+        operationsDetailsResponse.setQrCode(operationActDetailResponseDto.getQrCode());
+        operationsDetailsResponse.setErrorReason(operationActDetailResponseDto.getErrorReason());
+        operationsDetailsResponse.setRecipientType(operationActDetailResponseDto.getRecipientType());
+        operationsDetailsResponse.setUid(operationActDetailResponseDto.getUid());
+        if(operationActDetailResponseDto.getOperationEndDate()!=null)
+            operationsDetailsResponse.setOperationEndDate(new Date(operationActDetailResponseDto.getOperationEndDate().toInstant().toEpochMilli()));
+        if(operationActDetailResponseDto.getOperationStartDate()!=null)
+            operationsDetailsResponse.setOperationStartDate(new Date(operationActDetailResponseDto.getOperationStartDate().toInstant().toEpochMilli()));
+
+        return operationsDetailsResponse;
     }
 }

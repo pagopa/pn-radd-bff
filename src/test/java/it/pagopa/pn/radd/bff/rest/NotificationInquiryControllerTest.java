@@ -94,7 +94,7 @@ class NotificationInquiryControllerTest {
 		operationsDetailsResponse.setUid("uid");
 		operationsDetailsResponse.setOperationEndDate(new Date(System.currentTimeMillis() + 1000000L));
 		operationsDetailsResponse.setOperationStartDate(new Date(System.currentTimeMillis()));
-		operationsDetailsResponse.setIun("iun");
+		operationsDetailsResponse.setIuns(List.of("iun"));
 
 		operationsResponse.setOperations(List.of(operationsDetailsResponse));
 		operationsResponse.setResult(true);
@@ -179,7 +179,7 @@ class NotificationInquiryControllerTest {
 		operationsDetailsResponse.setUid("uid");
 		operationsDetailsResponse.setOperationEndDate(new Date(System.currentTimeMillis() + 1000000L));
 		operationsDetailsResponse.setOperationStartDate(new Date(System.currentTimeMillis()));
-		operationsDetailsResponse.setIun("iun");
+		operationsDetailsResponse.setIuns(List.of("iun"));
 
 		operationsResponse.setOperations(List.of(operationsDetailsResponse));
 		operationsResponse.setResult(true);
