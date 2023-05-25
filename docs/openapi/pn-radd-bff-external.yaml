@@ -107,6 +107,26 @@ paths:
         500:
           $ref: '#/components/responses/InternalError'
 
+  /radd-web/getDocumentStatus/{fileKey}:
+    parameters:
+      - $ref: '#/components/parameters/fileKey'
+    get:
+      tags:
+        - getDocumentStatus
+      operationId: getDocumentStatus
+      description: API utilizzata per il polling dello stato di pronto relativo al caricamento di un documento.
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetDocumentStatusResponse'
+        404:
+          $ref: '#/components/responses/NotFound'
+        500:
+          $ref: '#/components/responses/InternalError'
+
   /radd/act/transaction/start:
     post:
       tags:
@@ -674,6 +694,17 @@ components:
         status:
           $ref: '#/components/schemas/ResponseStatus'
 
+    GetDocumentStatusResponse:
+      description: Oggetto di risposta relativo al polling dello stato di pronto di un documento
+      type: object
+      properties:
+        fileKey:
+          type: string
+          example: "esempio da scrivere"
+        ready:
+          type: boolean
+          example: true
+
     ActInquiryResponseStatus:
       description: Stato della response
       allOf:
@@ -955,6 +986,14 @@ components:
       schema:
         type: string
       example: "asd123"
+    fileKey:
+      name: fileKey
+      description: Identificativo del file
+      in: path
+      required: true
+      schema:
+        type: string
+      example: "FL-23-KKL"
     iun:
       name: iun
       description: Identification code
