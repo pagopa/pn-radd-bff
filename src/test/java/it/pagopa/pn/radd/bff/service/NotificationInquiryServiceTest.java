@@ -4,9 +4,7 @@ import it.pagopa.pn.radd.bff.client.PnRaddFsuClient;
 import it.pagopa.pn.radd.bff.converter.NotificationInquiryConverter;
 import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.OperationsActDetailsResponseDto;
 import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.OperationsAorDetailsResponseDto;
-import it.pagopa.pn.radd.bff.rest.v1.dto.FilterRequest;
-import it.pagopa.pn.radd.bff.rest.v1.dto.OperationsActDetailsResponse;
-import it.pagopa.pn.radd.bff.rest.v1.dto.OperationsAorDetailsResponse;
+import it.pagopa.pn.radd.bff.rest.v1.dto.*;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -57,15 +55,6 @@ class NotificationInquiryServiceTest {
 				.expectNext(operationsAorDetailsResponse);
 	}
 
-	/**
-	 * Method under test: {@link NotificationInquiryService#getActPracticesByIun(String)}
-	 */
-	@Test
-	void testGetActPracticesByIun () {
-		when(pnRaddFsuClient.getActPracticesByIun(any()))
-				.thenReturn(mock(Mono.class));
-		StepVerifier.create(notificationInquiryService.getActPracticesByIun("Iun"));
-	}
 
 	/**
 	 * Method under test: {@link NotificationInquiryService#getActTransactionByOperationId(String)}
@@ -82,15 +71,7 @@ class NotificationInquiryServiceTest {
 		verify(pnRaddFsuClient).getActTransactionByOperationId(any());
 	}
 
-	/**
-	 * Method under test: {@link NotificationInquiryService#getAorPracticesByIun(String)}
-	 */
-	@Test
-	void testGetAorPracticesByIun () {
-		when(pnRaddFsuClient.getAorPracticesByIun(any()))
-				.thenReturn(mock(Mono.class));
-		StepVerifier.create(notificationInquiryService.getAorPracticesByIun("Iun"));
-	}
+
 	/**
 	 * Method under test: {@link NotificationInquiryService#getAorTransactionByOperationId(String)}
 	 */

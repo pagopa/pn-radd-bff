@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
+import reactor.util.function.Tuples;
 
 @Component
 @RequiredArgsConstructor
@@ -25,10 +26,14 @@ public class NotificationInquiryService {
 
     public  Mono<OperationsResponse> getActPracticesByIun(String iun) {
         return pnRaddFsuClient.getActPracticesByIun(iun)
-                .map(t -> Flux.fromStream(t.getOperationIds().stream())
-                        .flatMap(pnRaddFsuClient::getActTransactionByOperationId))
-                .flatMap(notificationInquiryConverter::operationsActDtoToResponse);
+                .flatMap(t -> Flux.fromStream(t.getOperationIds().stream())
+                        .flatMap(pnRaddFsuClient::getActTransactionByOperationId)
+                        .map(notificationInquiryConverter::enrichActData)
+                        .collectList()
+                        .map(v -> Tuples.of(v, t.getResult(), t.getStatus())))
+                .map(y -> notificationInquiryConverter.operationsDtoToResponse(y.getT1(), y.getT2(), y.getT3()));
     }
+
 
     public  Mono<OperationActResponse> getActTransactionByOperationId(String operationId) {
         return pnRaddFsuClient.getActTransactionByOperationId(operationId)
@@ -44,10 +49,12 @@ public class NotificationInquiryService {
 
     public  Mono<OperationsResponse> getAorPracticesByIun(String iun) {
         return pnRaddFsuClient.getAorPracticesByIun(iun)
-                .map(t -> Flux.fromStream(t.getOperationIds().stream())
-                        .flatMap(pnRaddFsuClient::getAorTransactionByOperationId))
-                .flatMap(notificationInquiryConverter::operationsAorDtoToResponse);
-
+                .flatMap(t -> Flux.fromStream(t.getOperationIds().stream())
+                        .flatMap(pnRaddFsuClient::getAorTransactionByOperationId)
+                        .map(notificationInquiryConverter::enrichAorData)
+                        .collectList()
+                        .map(v -> Tuples.of(v, t.getResult(), t.getStatus())))
+                .map(y -> notificationInquiryConverter.operationsDtoToResponse(y.getT1(), y.getT2(), y.getT3()));
     }
 
     public  Mono<OperationAorResponse> getAorTransactionByOperationId(String operationId) {

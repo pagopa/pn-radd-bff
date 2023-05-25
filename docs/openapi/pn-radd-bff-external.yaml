@@ -713,9 +713,11 @@ components:
         operationType:
           type: string
           example: "ACT"
-        iun:
-          type: string
-          example: "LJLH-GNTJ-DVXR-202209-J-1"
+        iuns:
+          type: array
+          items:
+            type: string
+            example: "welcome"
         operationId:
           type: string
           example: "asd1234"
@@ -725,9 +727,15 @@ components:
         qrCode:
           type: string
           example: "FBD"
+        recipientTaxId:
+          type: string
+          example: "TNTGTR76E21H751S"
         recipientType:
           type: string
           example: "PF"
+        delegateTaxId:
+          type: string
+          example: "RFRGRZ66E21H751B"
         uid:
           type: string
           example: "uddHHHw123mk"
