@@ -2,8 +2,9 @@ package it.pagopa.pn.radd.bff.repository;
 
 import it.pagopa.pn.radd.bff.entity.DocumentModel;
 import it.pagopa.pn.radd.bff.exception.PnRaddBffException;
-import lombok.Value;
+
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Mono;
@@ -22,7 +23,7 @@ public class DocumentRepositoryImpl implements DocumentRepository {
 	private final DynamoDbEnhancedAsyncClient dynamoDbEnhancedClient;
 
 	public DocumentRepositoryImpl (DynamoDbEnhancedAsyncClient dynamoDbEnhancedClient,
-								   @Value ("${pn.radd.bff.dynamodb.tablename.pn-document}") String tableName) {
+								   @Value("${pn.radd.bff.dynamodb.tablename.pn-document}") String tableName) {
 		this.table = dynamoDbEnhancedClient.table(tableName, TableSchema.fromBean(DocumentModel.class));
 		this.dynamoDbEnhancedClient = dynamoDbEnhancedClient;
 	}
