@@ -107,13 +107,13 @@ paths:
         500:
           $ref: '#/components/responses/InternalError'
 
-  /radd-web/getDocumentStatus/{fileKey}:
+  /{fileKey}:
     parameters:
       - $ref: '#/components/parameters/fileKey'
     get:
       tags:
-        - getDocumentStatus
-      operationId: getDocumentStatus
+        - Document
+      operationId: getDocumentByFileKey
       description: API utilizzata per il polling dello stato di pronto relativo al caricamento di un documento.
       responses:
         200:
@@ -121,7 +121,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetDocumentStatusResponse'
+                $ref: '#/components/schemas/DocumentResponse'
         404:
           $ref: '#/components/responses/NotFound'
         500:
@@ -694,7 +694,7 @@ components:
         status:
           $ref: '#/components/schemas/ResponseStatus'
 
-    GetDocumentStatusResponse:
+    DocumentResponse:
       description: Oggetto di risposta relativo al polling dello stato di pronto di un documento
       type: object
       properties:

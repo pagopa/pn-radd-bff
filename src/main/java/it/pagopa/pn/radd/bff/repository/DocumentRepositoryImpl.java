@@ -2,8 +2,10 @@ package it.pagopa.pn.radd.bff.repository;
 
 import it.pagopa.pn.radd.bff.constant.DocumentConstant;
 import it.pagopa.pn.radd.bff.entity.DocumentModel;
+import it.pagopa.pn.radd.bff.exception.PnRaddBffException;
 import lombok.Value;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -16,74 +18,27 @@ import software.amazon.awssdk.services.dynamodb.model.AttributeValue;
 import java.util.HashMap;
 import java.util.Map;
 
+import static it.pagopa.pn.radd.bff.exception.PnRaddBffExceptionCodes.ERROR_CODE_DOCUMENT_NOT_FOUND;
+import static it.pagopa.pn.radd.bff.exception.PnRaddBffExceptionCodes.ERROR_MESSAGE_DOCUMENT_NOT_FOUND;
+
 @Slf4j
 @Component
 public class DocumentRepositoryImpl implements DocumentRepository {
 	private final DynamoDbAsyncTable<DocumentModel> table;
 	private final DynamoDbEnhancedAsyncClient dynamoDbEnhancedClient;
-	private final String gsiPageableDocument;
 
 	public DocumentRepositoryImpl (DynamoDbEnhancedAsyncClient dynamoDbEnhancedClient,
-								   @Value ("${pn.radd.bff.document.gsi-pageable-id}") String gsiPageableDocument,
 								   @Value ("${pn.radd.bff.dynamodb.tablename.pn-document}") String tableName) {
 		this.table = dynamoDbEnhancedClient.table(tableName, TableSchema.fromBean(DocumentModel.class));
 		this.dynamoDbEnhancedClient = dynamoDbEnhancedClient;
-		this.gsiPageableDocument = gsiPageableDocument;
 	}
-
 	@Override
-	public Mono<Page<DocumentModel>> getAllDocumentByStatus (String status, DocumentPageable pageable) {
-		Map<String, String> expressionNames = new HashMap<>();
-		expressionNames.put("#status", "status");
-
-
-		Map<String, AttributeValue> expressionValues = new HashMap<>();
-		expressionValues.put(":status", AttributeValue.builder().s(status).build());
-
-
-		Map<String, AttributeValue> attributeValue = null;
-
-
-		if (pageable.isPage()) {
-			attributeValue = new HashMap<>();
-			attributeValue.put(DocumentConstant.DOCUMENT_ID, AttributeValue.builder().s(pageable.getLastEvaluatedId()).build());
-			attributeValue.put(DocumentConstant.PAGEABLE, AttributeValue.builder().s(DocumentConstant.PAGEABLE_VALUE).build());
-		}
-
-
-		QueryConditional queryConditional = QueryConditional.sortBeginsWith(Key.builder()
-				.partitionValue(DocumentConstant.PAGEABLE_VALUE)
-				.build());
-
-
-		QueryEnhancedRequest queryEnhancedRequest = QueryEnhancedRequest.builder()
-				.queryConditional(queryConditional)
-				.filterExpression(expressionBuilder("(#status = :status)", expressionValues, expressionNames))
-				.exclusiveStartKey(attributeValue)
-				.limit(pageable.getLimit())
+	public Mono<DocumentModel> findByFileKey(String fileKey){
+		Key key = Key.builder()
+				.partitionValue(fileKey)
 				.build();
-
-
-		if (pageable.hasLimit()) {
-			return Mono.from(table.index(gsiPageableDocument).query(queryEnhancedRequest));
-		} else {
-			return Flux.from(table.index(gsiPageableDocument).query(queryEnhancedRequest).flatMapIterable(Page::items))
-					.collectList()
-					.map(Page::create);
-		}
-	}
-
-	private static Expression expressionBuilder (String expression, Map<String, AttributeValue> expressionValues, Map<String, String> expressionNames) {
-		Expression.Builder expressionBuilder = Expression.builder();
-		if (expression != null) {
-			expressionBuilder.expression(expression);
-		}
-		if (expressionValues != null) {
-			expressionBuilder.expressionValues(expressionValues);
-		}
-		if (expressionNames != null) {
-			expressionBuilder.expressionNames(expressionNames);
-		}
-		return expressionBuilder.build();
+		return Mono.fromFuture(table.getItem(key))
+				.switchIfEmpty(Mono.error(new PnRaddBffException(ERROR_CODE_DOCUMENT_NOT_FOUND,
+						ERROR_MESSAGE_DOCUMENT_NOT_FOUND, HttpStatus.NOT_FOUND.value(),HttpStatus.NOT_FOUND.toString(), null, null)));
 	}
 }

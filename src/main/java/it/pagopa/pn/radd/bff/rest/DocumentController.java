@@ -37,8 +37,8 @@ public class DocumentController implements DocumentApi {
 	 *         or Internal Server Error (status code 500)
 	 */
 	@Override
-	public Mono<ResponseEntity<DocumentResponse>> getDocumentStatus(String status, final ServerWebExchange exchange) {
-		return documentService.getAllDocumentByStatus(status, )
+	public Mono<ResponseEntity<DocumentResponse>> getDocumentByFileKey(String fileKey, final ServerWebExchange exchange) {
+		return documentService.getDocumentByFileKey(fileKey)
 				.map(m -> ResponseEntity.status(HttpStatus.OK).body(m))
 				.publishOn(scheduler);
 	}

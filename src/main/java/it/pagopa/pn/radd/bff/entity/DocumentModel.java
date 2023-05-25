@@ -10,15 +10,14 @@ import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.*;
 public class DocumentModel {
 	@Getter (onMethod = @__ ({
 			@DynamoDbPartitionKey,
-			@DynamoDbAttribute (DocumentConstant.DOCUMENT_ID)
+			@DynamoDbAttribute (DocumentConstant.FILE_KEY)
 			}))
-	private String documentId;
+	private String fileKey;
 
 	@Getter (onMethod = @__ ({
-			@DynamoDbSortKey,
-			@DynamoDbAttribute (DocumentConstant.SORT_ID)
+			@DynamoDbAttribute (DocumentConstant.TTL)
 	}))
-	private String sortId;
+	private long ttl;
 
 	@Getter(onMethod = @__({
 			@DynamoDbAttribute(DocumentConstant.PAGEABLE),

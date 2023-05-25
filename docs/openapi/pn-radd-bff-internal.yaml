@@ -128,13 +128,13 @@ paths:
         500:
           $ref: '#/components/responses/InternalError'
 
-  /radd-web/Document/{fileKey}:
+  /{fileKey}:
     parameters:
       - $ref: '#/components/parameters/fileKey'
     get:
       tags:
         - Document
-      operationId: getDocumentStatus
+      operationId: getDocumentByFileKey
       description: API utilizzata per il polling dello stato di pronto relativo al caricamento di un documento.
       responses:
         200:
