@@ -1,7 +1,6 @@
 package it.pagopa.pn.radd.bff.exception;
 
 import it.pagopa.pn.commons.exceptions.PnRuntimeException;
-import org.springframework.http.HttpStatus;
 import org.springframework.lang.NonNull;
 import org.springframework.lang.Nullable;
 

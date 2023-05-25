@@ -1,10 +1,7 @@
 package it.pagopa.pn.radd.bff.service;
 
-import it.pagopa.pn.radd.bff.client.PnRaddFsuClient;
 import it.pagopa.pn.radd.bff.converter.DocumentConverter;
-import it.pagopa.pn.radd.bff.entity.DocumentModel;
 import it.pagopa.pn.radd.bff.repository.DocumentRepository;
-import it.pagopa.pn.radd.bff.repository.DocumentRepositoryImpl;
 import it.pagopa.pn.radd.bff.rest.v1.dto.DocumentResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;

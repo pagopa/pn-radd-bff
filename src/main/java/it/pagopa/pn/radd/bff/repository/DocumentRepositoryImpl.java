@@ -1,22 +1,16 @@
 package it.pagopa.pn.radd.bff.repository;
 
-import it.pagopa.pn.radd.bff.constant.DocumentConstant;
 import it.pagopa.pn.radd.bff.entity.DocumentModel;
 import it.pagopa.pn.radd.bff.exception.PnRaddBffException;
 import lombok.Value;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
-import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-import software.amazon.awssdk.enhanced.dynamodb.*;
-import software.amazon.awssdk.enhanced.dynamodb.model.Page;
-import software.amazon.awssdk.enhanced.dynamodb.model.QueryConditional;
-import software.amazon.awssdk.enhanced.dynamodb.model.QueryEnhancedRequest;
-import software.amazon.awssdk.services.dynamodb.model.AttributeValue;
-
-import java.util.HashMap;
-import java.util.Map;
+import software.amazon.awssdk.enhanced.dynamodb.DynamoDbAsyncTable;
+import software.amazon.awssdk.enhanced.dynamodb.DynamoDbEnhancedAsyncClient;
+import software.amazon.awssdk.enhanced.dynamodb.Key;
+import software.amazon.awssdk.enhanced.dynamodb.TableSchema;
 
 import static it.pagopa.pn.radd.bff.exception.PnRaddBffExceptionCodes.ERROR_CODE_DOCUMENT_NOT_FOUND;
 import static it.pagopa.pn.radd.bff.exception.PnRaddBffExceptionCodes.ERROR_MESSAGE_DOCUMENT_NOT_FOUND;
