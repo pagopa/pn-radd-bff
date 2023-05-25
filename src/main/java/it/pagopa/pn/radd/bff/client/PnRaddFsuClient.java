@@ -27,7 +27,6 @@ public class PnRaddFsuClient extends CommonBaseClient {
     private final ResponseExchangeFilter responseExchangeFilter;
 
     public PnRaddFsuClient(PnRaddBffConfig pnRaddBffConfig, ResponseExchangeFilter responseExchangeFilter) {
-        this.notificationInquiryApi = new NotificationInquiryApi();
         this.pnRaddBffConfig = pnRaddBffConfig;
         this.responseExchangeFilter = responseExchangeFilter;
         ApiClient apiClient = init();
@@ -36,6 +35,7 @@ public class PnRaddFsuClient extends CommonBaseClient {
         this.actTransactionManagementApi = new ActTransactionManagementApi(apiClient);
         this.aorDocumentInquiryApi = new AorDocumentInquiryApi(apiClient);
         this.aorTransactionManagementApi = new AorTransactionManagementApi(apiClient);
+        this.notificationInquiryApi = new NotificationInquiryApi(apiClient);
     }
 
     private ApiClient init() {

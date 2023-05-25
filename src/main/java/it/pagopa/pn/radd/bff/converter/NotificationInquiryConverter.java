@@ -296,6 +296,8 @@ public class NotificationInquiryConverter {
         operationsDetailsResponse.setFileKey(operationAorDetailResponseDto.getFileKey());
         operationsDetailsResponse.setOperationType(operationAorDetailResponseDto.getOperationType());
         operationsDetailsResponse.setIuns(operationAorDetailResponseDto.getIuns());
+        operationsDetailsResponse.setRecipientTaxId(operationAorDetailResponseDto.getRecipientTaxId());
+        operationsDetailsResponse.setDelegateTaxId(operationAorDetailResponseDto.getDelegateTaxId());
         operationsDetailsResponse.setQrCode(operationAorDetailResponseDto.getQrCode());
         operationsDetailsResponse.setErrorReason(operationAorDetailResponseDto.getErrorReason());
         operationsDetailsResponse.setRecipientType(operationAorDetailResponseDto.getRecipientType());
@@ -319,6 +321,8 @@ public class NotificationInquiryConverter {
         operationsDetailsResponse.setFileKey(operationActDetailResponseDto.getFileKey());
         operationsDetailsResponse.setOperationType(operationActDetailResponseDto.getOperationType());
         operationsDetailsResponse.setIuns(List.of(operationActDetailResponseDto.getIun()));
+        operationsDetailsResponse.setRecipientTaxId(operationActDetailResponseDto.getRecipientTaxId());
+        operationsDetailsResponse.setDelegateTaxId(operationActDetailResponseDto.getDelegateTaxId());
         operationsDetailsResponse.setQrCode(operationActDetailResponseDto.getQrCode());
         operationsDetailsResponse.setErrorReason(operationActDetailResponseDto.getErrorReason());
         operationsDetailsResponse.setRecipientType(operationActDetailResponseDto.getRecipientType());
