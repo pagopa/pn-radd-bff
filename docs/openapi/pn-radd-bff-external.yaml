@@ -107,7 +107,7 @@ paths:
         500:
           $ref: '#/components/responses/InternalError'
 
-  /{fileKey}:
+  /radd-web/document-ready/{fileKey}:
     parameters:
       - $ref: '#/components/parameters/fileKey'
     get:
@@ -549,7 +549,7 @@ components:
           example: "TNTGTR76E21H751S"
         recipientType:
           type: string
-          enum: ["PF", "PG"]
+          enum: [ "PF", "PG" ]
           example: "PF"
         delegateTaxId:
           type: string
@@ -620,7 +620,7 @@ components:
             * 0 -> OK
             * 99 -> KO
           type: number
-          enum: [0, 99]
+          enum: [ 0, 99 ]
         message:
           type: string
           example: OK
@@ -638,7 +638,7 @@ components:
                 * 99 -> KO
                 * 2 -> NotReady
               type: number
-              enum: [0, 99, 2]
+              enum: [ 0, 99, 2 ]
             retryAfter:
               description: Tempo, espresso in ms comunicato  al chiamante, trascorso il quale è possibile effettuare un nuovo tentativo di avvio della transazione.
               type: number
@@ -658,7 +658,7 @@ components:
                 * 2 -> Transazione già completata (Messaggio di errore differente se già completata per chiamata a complete piuttosto che abort)
                 * 99 -> KO
               type: number
-              enum: [0,1,2,99]
+              enum: [ 0,1,2,99 ]
 
     DocumentUploadRequest:
       description: Richiesta di upload verso PagoPA
@@ -720,7 +720,7 @@ components:
                 * 3 -> Stampa già eseguita
                 * 99 -> KO
               type: number
-              enum: [0,1,2,3,99]
+              enum: [ 0,1,2,3,99 ]
 
     OperationsResponse:
       description: Pratiche recuperate
@@ -820,7 +820,7 @@ components:
                 * 1 -> Nessun elemento associato
                 * 99 -> KO
               type: number
-              enum: [0,1,99]
+              enum: [ 0,1,99 ]
 
     OperationActResponse:
       description: Risposta della notifica
@@ -961,7 +961,7 @@ components:
       required: true
       schema:
         type: string
-        enum: ["PF", "PG"]
+        enum: [ "PF", "PG" ]
       example: PF
     delegateTaxId:
       name: delegateTaxId
@@ -1058,11 +1058,11 @@ components:
             $ref: 'remote-refs.yaml#/components/schemas/Problem'
 
 
-  securitySchemes:                                      # ONLY EXTERNAL
-    bearerAuth:                                         # ONLY EXTERNAL
+  securitySchemes: # ONLY EXTERNAL
+    bearerAuth: # ONLY EXTERNAL
       type: http                                        # ONLY EXTERNAL
       scheme: bearer                                    # ONLY EXTERNAL
       bearerFormat: JWT                                 # ONLY EXTERNAL
 
-security:                                               # ONLY EXTERNAL
-  - bearerAuth: []                                      # ONLY EXTERNAL
+security: # ONLY EXTERNAL
+  - bearerAuth: [ ]                                      # ONLY EXTERNAL

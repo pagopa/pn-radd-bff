@@ -128,7 +128,7 @@ paths:
         500:
           $ref: '#/components/responses/InternalError'
 
-  /{fileKey}:
+  /radd-web/document-ready/{fileKey}:
     parameters:
       - $ref: '#/components/parameters/fileKey'
     get:
