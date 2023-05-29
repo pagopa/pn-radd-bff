@@ -8,9 +8,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
@@ -20,7 +18,6 @@ import reactor.core.scheduler.Scheduler;
 @RestController
 @Slf4j
 @Api(tags = "Document")
-@RequestMapping(value="/document", produces = MediaType.APPLICATION_JSON_VALUE)
 @RequiredArgsConstructor
 public class DocumentController implements DocumentApi {
 	@Qualifier ("raddBffScheduler")
