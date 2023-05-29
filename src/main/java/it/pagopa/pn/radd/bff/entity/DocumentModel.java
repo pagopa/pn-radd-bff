@@ -19,10 +19,4 @@ public class DocumentModel {
 			@DynamoDbAttribute (DocumentConstant.TTL)
 	}))
 	private long ttl;
-
-	@Getter(onMethod = @__({
-			@DynamoDbAttribute(DocumentConstant.PAGEABLE),
-			@DynamoDbSecondaryPartitionKey (indexNames = DocumentConstant.GSI_PAGEABLE_ID)
-	}))
-	private String pageable = DocumentConstant.PAGEABLE_VALUE;
 }

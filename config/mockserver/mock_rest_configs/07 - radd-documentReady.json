@@ -22,7 +22,7 @@
       "path": "/radd-web/document-ready/{fileKey}",
       "pathParameters":
       {
-        "fileKey": ["500"]
+        "fileKey": ["PN_RADD_FSU_ATTACHMENT-21703b4070084bb5b79662abd5fec424.zip"]
       }
     },
     "httpResponse": {
@@ -35,7 +35,7 @@
       "path": "/radd-web/document-ready/{fileKey}",
       "pathParameters":
       {
-        "fileKey": ["404"]
+        "fileKey": ["PN_RADD_FSU_ATTACHMENT-22703b4070084bb5b79662abd5fec424.zip"]
       }
     },
     "httpResponse": {
@@ -48,13 +48,13 @@
       "path": "/radd-web/document-ready/{fileKey}",
       "pathParameters":
       {
-        "fileKey": ["!PN_RADD_FSU_ATTACHMENT-19703b4070084bb5b79662abd5fec424.zip"]
+        "fileKey": ["PN_RADD_FSU_ATTACHMENT-20703b4070084bb5b79662abd5fec424.zip"]
       }
     },
     "httpResponse": {
       "statusCode": 200,
       "body": {
-        "fileKey": "PN_RADD_FSU_ATTACHMENT-19703b4070084bb5b79662abd5fec424.zip",
+        "fileKey": "PN_RADD_FSU_ATTACHMENT-20703b4070084bb5b79662abd5fec424.zip",
         "ready:": false
       }
     }

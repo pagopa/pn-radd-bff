@@ -325,3 +325,16 @@ Use cases:
 | PF-4fc75df3-0913-407e-bdaa-e50329708b7d | 200         | OK                        |
 | PF-d0556f95-6de8-4a92-aa2e-5479f6a1d6d7 | 200         | KO                        |
 | PF-e6c22e6b-1276-44a6-a50a-5c0e4639425d | 200         | Nessun Elemento Associato |
+
+### document-ready
+
+Path: `/radd-web/document-ready/{fileKey}`
+
+Use cases:
+
+| fileKey                                                     | Status Code | Valido |
+|-------------------------------------------------------------|-------------|--------|
+| PN_RADD_FSU_ATTACHMENT-21703b4070084bb5b79662abd5fec424.zip | 500         |        |
+| PN_RADD_FSU_ATTACHMENT-22703b4070084bb5b79662abd5fec424.zip | 404         |        |
+| PN_RADD_FSU_ATTACHMENT-19703b4070084bb5b79662abd5fec424.zip | 200         | OK     |
+| PN_RADD_FSU_ATTACHMENT-20703b4070084bb5b79662abd5fec424.zip | 200         | KO     |

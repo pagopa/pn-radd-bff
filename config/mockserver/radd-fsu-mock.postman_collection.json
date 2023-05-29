@@ -6449,6 +6449,95 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "DocumentReady",
+			"item": [
+				{
+					"name": "200 OK",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1080/radd-web/document-ready/PN_RADD_FSU_ATTACHMENT-19703b4070084bb5b79662abd5fec424.zip",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1080",
+							"path": [
+								"radd-web",
+								"document-ready",
+								"PN_RADD_FSU_ATTACHMENT-19703b4070084bb5b79662abd5fec424.zip"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "404",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1080/radd-web/document-ready/PN_RADD_FSU_ATTACHMENT-19703b4070084bb5b79662abd5fec424.zip",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1080",
+							"path": [
+								"radd-web",
+								"document-ready",
+								"PN_RADD_FSU_ATTACHMENT-19703b4070084bb5b79662abd5fec424.zip"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "500",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1080/radd-web/document-ready/PN_RADD_FSU_ATTACHMENT-21703b4070084bb5b79662abd5fec424.zip",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1080",
+							"path": [
+								"radd-web",
+								"document-ready",
+								"PN_RADD_FSU_ATTACHMENT-21703b4070084bb5b79662abd5fec424.zip"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 KO",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1080/radd-web/document-ready/PN_RADD_FSU_ATTACHMENT-20703b4070084bb5b79662abd5fec424.zip",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1080",
+							"path": [
+								"radd-web",
+								"document-ready",
+								"PN_RADD_FSU_ATTACHMENT-20703b4070084bb5b79662abd5fec424.zip"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
