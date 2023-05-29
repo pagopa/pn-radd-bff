@@ -31,9 +31,6 @@ public class DocumentRepositoryImpl implements DocumentRepository {
 		Key key = Key.builder()
 				.partitionValue(fileKey)
 				.build();
-		return Mono.fromFuture(table.getItem(key))
-				.switchIfEmpty(Mono.error(new PnRaddBffException(ERROR_CODE_DOCUMENT_NOT_FOUND,
-						ERROR_MESSAGE_DOCUMENT_NOT_FOUND, HttpStatus.NOT_FOUND.value(), HttpStatus.NOT_FOUND.toString(),
-						null, null)));
+		return Mono.fromFuture(table.getItem(key));
 	}
 }
