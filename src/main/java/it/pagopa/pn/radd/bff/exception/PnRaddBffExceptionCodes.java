@@ -28,5 +28,8 @@ public class PnRaddBffExceptionCodes extends PnExceptionsCodes {
     public static final String ERROR_MESSAGE_ACT_OPERATIONS_BY_INTERNAL_ID = "Errore durante la chiamata al servizio Act Operations by Internal Id di pn-radd-fsu";
     public static final String ERROR_MESSAGE_AOR_OPERATIONS_BY_INTERNAL_ID = "Errore durante la chiamata al servizio AOR Operations by Internal Id di pn-radd-fsu";
 
+    public static final String ERROR_CODE_PN_DATA_VAULT_RECIPIENT_DENOMINATION = "PN_DATA_VAULT_RECIPIENT_DENOMINATION";
+    public static final String ERROR_MESSAGE_PN_DATA_VAULT_RECIPIENT_DENOMINATION = "Errore durante la chiamata al servizio Recipient Denomination di pn-data-vault";
+
 
 }
