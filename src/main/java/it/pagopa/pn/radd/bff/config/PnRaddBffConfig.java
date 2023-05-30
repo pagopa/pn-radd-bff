@@ -16,4 +16,5 @@ public class PnRaddBffConfig {
 
     private String clientPnRaddFsuBasepath;
 
+    private String clientPnDataVaultBasepath;
 }
