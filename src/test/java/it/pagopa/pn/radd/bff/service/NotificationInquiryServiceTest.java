@@ -1,6 +1,5 @@
 package it.pagopa.pn.radd.bff.service;
 
-import it.pagopa.pn.radd.bff.client.PnDataVaultClient;
 import it.pagopa.pn.radd.bff.client.PnRaddFsuClient;
 import it.pagopa.pn.radd.bff.converter.NotificationInquiryConverter;
 import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.*;
@@ -10,7 +9,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 

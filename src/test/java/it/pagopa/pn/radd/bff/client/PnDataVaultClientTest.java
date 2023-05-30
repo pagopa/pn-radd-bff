@@ -1,29 +1,23 @@
 package it.pagopa.pn.radd.bff.client;
 
-import static org.junit.jupiter.api.Assertions.assertSame;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
-
 import it.pagopa.pn.radd.bff.config.PnRaddBffConfig;
 import it.pagopa.pn.radd.bff.log.ResponseExchangeFilter;
 import it.pagopa.pn.radd.bff.msclient.generated.data.vault.v1.api.RecipientsApi;
 import it.pagopa.pn.radd.bff.msclient.generated.data.vault.v1.dto.BaseRecipientDtoDto;
-
-import java.util.List;
-
 import it.pagopa.pn.radd.bff.msclient.generated.data.vault.v1.dto.RecipientTypeDto;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import reactor.core.publisher.Flux;
 import reactor.test.StepVerifier;
+
+import java.util.List;
+
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.when;
 
 @SpringBootTest
 @ExtendWith(SpringExtension.class)
