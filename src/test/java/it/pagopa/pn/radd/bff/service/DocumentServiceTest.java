@@ -1,17 +1,9 @@
 package it.pagopa.pn.radd.bff.service;
 
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyBoolean;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
-
 import it.pagopa.pn.radd.bff.converter.DocumentConverter;
 import it.pagopa.pn.radd.bff.entity.DocumentModel;
-import it.pagopa.pn.radd.bff.repository.DocumentRepository;
 import it.pagopa.pn.radd.bff.repository.DocumentRepositoryImpl;
 import it.pagopa.pn.radd.bff.rest.v1.dto.DocumentResponse;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
@@ -21,6 +13,9 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
+
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 @ContextConfiguration (classes = {DocumentService.class})
 @ExtendWith (SpringExtension.class)
