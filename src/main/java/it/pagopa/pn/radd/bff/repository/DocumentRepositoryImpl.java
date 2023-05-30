@@ -1,19 +1,14 @@
 package it.pagopa.pn.radd.bff.repository;
 
 import it.pagopa.pn.radd.bff.entity.DocumentModel;
-import it.pagopa.pn.radd.bff.exception.PnRaddBffException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Mono;
 import software.amazon.awssdk.enhanced.dynamodb.DynamoDbAsyncTable;
 import software.amazon.awssdk.enhanced.dynamodb.DynamoDbEnhancedAsyncClient;
 import software.amazon.awssdk.enhanced.dynamodb.Key;
 import software.amazon.awssdk.enhanced.dynamodb.TableSchema;
-
-import static it.pagopa.pn.radd.bff.exception.PnRaddBffExceptionCodes.ERROR_CODE_DOCUMENT_NOT_FOUND;
-import static it.pagopa.pn.radd.bff.exception.PnRaddBffExceptionCodes.ERROR_MESSAGE_DOCUMENT_NOT_FOUND;
 
 @Slf4j
 @Component

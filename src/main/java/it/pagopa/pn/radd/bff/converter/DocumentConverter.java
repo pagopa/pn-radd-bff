@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class DocumentConverter {
 
-	public DocumentResponse documentModelToResponse(DocumentModel documentModel, boolean isReady) {
+	public DocumentResponse documentModelToResponse (DocumentModel documentModel, boolean isReady) {
 		DocumentResponse documentResponse = new DocumentResponse();
 		documentResponse.setFileKey(documentModel.getFileKey());
 		documentResponse.setReady(isReady);

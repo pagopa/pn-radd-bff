@@ -1,32 +1,42 @@
 package it.pagopa.pn.radd.bff.repository;
 
 import it.pagopa.pn.radd.bff.entity.DocumentModel;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-import reactor.core.publisher.Mono;
+import reactor.test.StepVerifier;
+import software.amazon.awssdk.enhanced.dynamodb.DynamoDbAsyncTable;
+import software.amazon.awssdk.enhanced.dynamodb.DynamoDbEnhancedAsyncClient;
+import software.amazon.awssdk.enhanced.dynamodb.Key;
+
+import java.util.concurrent.CompletableFuture;
+
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.when;
+
 
 @ContextConfiguration (classes = {DocumentRepositoryImpl.class})
-@ExtendWith (SpringExtension.class)
+@ExtendWith(MockitoExtension.class)
 class DocumentRepositoryImplTest {
-	@Autowired
-	private DocumentRepositoryImpl documentRepositoryImpl;
 
-	/**
-	 * Method under test: {@link DocumentRepositoryImpl#findByFileKey(String)}
-	 */
+	@Mock
+	private DynamoDbAsyncTable<Object> table;
+	@Mock
+	private DynamoDbEnhancedAsyncClient dynamoDbEnhancedAsyncClient;
+
 	@Test
-	@Disabled ("TODO: Complete this test")
-	void testFindByFileKey () {
-
-		String fileKey = "";
-
-		// Act
-		Mono<DocumentModel> actualFindByFileKeyResult = this.documentRepositoryImpl.findByFileKey(fileKey);
-
+	void testFindByFileKey() {
+		when(dynamoDbEnhancedAsyncClient.table(any(), any()))
+				.thenReturn(table);
+		DocumentRepository documentRepository = new DocumentRepositoryImpl(dynamoDbEnhancedAsyncClient, "");
+		when(table.getItem(any(Key.class)))
+				.thenReturn(CompletableFuture.completedFuture(new DocumentModel()));
+		StepVerifier.create(documentRepository.findByFileKey("fileKey"))
+				.expectNextCount(1)
+				.verifyComplete();
 	}
 }
 
