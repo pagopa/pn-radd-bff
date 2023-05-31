@@ -7,7 +7,6 @@ import it.pagopa.pn.radd.bff.rest.v1.dto.FilterRequest;
 
 import java.util.Date;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
