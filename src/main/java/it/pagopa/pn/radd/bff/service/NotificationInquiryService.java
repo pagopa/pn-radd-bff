@@ -34,21 +34,25 @@ public class NotificationInquiryService {
 
     public  Mono<OperationsResponse> getActPracticesByIun(String iun) {
         return pnRaddFsuClient.getActPracticesByIun(iun)
-                .flatMap(operationsResponseDto -> Flux.fromStream(operationsResponseDto.getOperationIds().stream())
-                        .flatMap(pnRaddFsuClient::getActTransactionByOperationId)
-                        .map(notificationInquiryConverter::enrichActData)
-                        .collectList()
-                        .flatMap(operationsDetailsResponsesList -> dataVaultService.getRecipientDenominationByInternalId(getTaxIds(operationsDetailsResponsesList))
-                                .map(deanonymizedTaxIds -> Tuples.of(operationsDetailsResponsesList,
-                                        deanonymizedTaxIds)))
-                        .map(resultToConverter -> Tuples.of(resultToConverter.getT1(),
-                                resultToConverter.getT2(),
-                                operationsResponseDto.getResult(),
-                                operationsResponseDto.getStatus()))
-                        .map(resultToFinalConverter -> notificationInquiryConverter.operationsDtoToResponse(resultToFinalConverter.getT1(),
-                                resultToFinalConverter.getT2(),
-                                resultToFinalConverter.getT3(),
-                                resultToFinalConverter.getT4())));
+                .flatMap(operationsResponseDto -> {
+                    if(operationsResponseDto.getOperationIds().isEmpty())
+                        return Mono.just(notificationInquiryConverter.noAssociatedOperationFoundResponse(operationsResponseDto));
+                    return Flux.fromStream(operationsResponseDto.getOperationIds().stream())
+                            .flatMap(pnRaddFsuClient::getActTransactionByOperationId)
+                            .map(notificationInquiryConverter::enrichActData)
+                            .collectList()
+                            .flatMap(operationsDetailsResponsesList -> dataVaultService.getRecipientDenominationByInternalId(getTaxIds(operationsDetailsResponsesList))
+                                    .map(deanonymizedTaxIds -> Tuples.of(operationsDetailsResponsesList,
+                                            deanonymizedTaxIds)))
+                            .map(resultToConverter -> Tuples.of(resultToConverter.getT1(),
+                                    resultToConverter.getT2(),
+                                    operationsResponseDto.getResult(),
+                                    operationsResponseDto.getStatus()))
+                            .map(resultToFinalConverter -> notificationInquiryConverter.operationsDtoToResponse(resultToFinalConverter.getT1(),
+                                    resultToFinalConverter.getT2(),
+                                    resultToFinalConverter.getT3(),
+                                    resultToFinalConverter.getT4()));
+                });
     }
 
 
@@ -68,7 +72,10 @@ public class NotificationInquiryService {
 
     public  Mono<OperationsResponse> getAorPracticesByIun(String iun) {
         return pnRaddFsuClient.getAorPracticesByIun(iun)
-                .flatMap(operationsResponseDto -> Flux.fromStream(operationsResponseDto.getOperationIds().stream())
+                .flatMap(operationsResponseDto -> {
+                    if(operationsResponseDto.getOperationIds().isEmpty())
+                        return Mono.just(notificationInquiryConverter.noAssociatedOperationFoundResponse(operationsResponseDto));
+                    return Flux.fromStream(operationsResponseDto.getOperationIds().stream())
                         .flatMap(pnRaddFsuClient::getAorTransactionByOperationId)
                         .map(notificationInquiryConverter::enrichAorData)
                         .collectList()
@@ -82,7 +89,8 @@ public class NotificationInquiryService {
                 .map(resultToFinalConverter -> notificationInquiryConverter.operationsDtoToResponse(resultToFinalConverter.getT1(),
                         resultToFinalConverter.getT2(),
                         resultToFinalConverter.getT3(),
-                        resultToFinalConverter.getT4())));
+                        resultToFinalConverter.getT4()));
+                });
     }
 
     private Map<String, String> getTaxIds(List<OperationsDetailsResponse> operationsDetailsResponseList) {

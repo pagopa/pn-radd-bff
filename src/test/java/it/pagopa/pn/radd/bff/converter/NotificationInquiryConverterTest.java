@@ -1,7 +1,13 @@
 package it.pagopa.pn.radd.bff.converter;
 
 import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.*;
+import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.FilterRequestDto;
 import it.pagopa.pn.radd.bff.rest.v1.dto.*;
+import it.pagopa.pn.radd.bff.rest.v1.dto.FilterRequest;
+
+import java.util.Date;
+
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
@@ -16,7 +22,13 @@ import java.time.ZoneOffset;
 import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.atLeast;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 @ContextConfiguration(classes = {NotificationInquiryConverter.class})
 @ExtendWith(SpringExtension.class)
@@ -443,6 +455,7 @@ class NotificationInquiryConverterTest {
         assertNull(status.getMessage());
         assertEquals(OperationResponseStatus.CodeEnum.NUMBER_1, status.getCode());
     }
+
     /**
      * Method under test: {@link NotificationInquiryConverter#operationsAorDetailsDtoToResponse(OperationsAorDetailsResponseDto)}
      */
@@ -620,6 +633,37 @@ class NotificationInquiryConverterTest {
         verify(operationAorDetailResponseDto, atLeast(1)).getOperationEndDate();
         verify(operationAorDetailResponseDto, atLeast(1)).getOperationStartDate();
         verify(operationAorDetailResponseDto).getIuns();
+    }
+
+    /**
+     * Method under test: {@link NotificationInquiryConverter#filterRequestToDto(FilterRequest)}
+     */
+    @Test
+    void testFilterRequestToDto() {
+        FilterRequest filterRequest = new FilterRequest();
+        notificationInquiryConverter.filterRequestToDto(filterRequest);
+        assertNull(filterRequest.getFrom());
+        assertNull(filterRequest.getTo());
+    }
+
+
+    /**
+     * Method under test: {@link NotificationInquiryConverter#filterRequestToDto(FilterRequest)}
+     */
+    @Test
+    void testFilterRequestToDto3() {
+        FilterRequest filterRequest = mock(FilterRequest.class);
+        when(filterRequest.getTo())
+                .thenReturn(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+        when(filterRequest.from(Mockito.<Date>any())).thenReturn(new FilterRequest());
+        when(filterRequest.to(Mockito.<Date>any())).thenReturn(new FilterRequest());
+        when(filterRequest.getFrom())
+                .thenReturn(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
+        FilterRequestDto actualFilterRequestToDtoResult = notificationInquiryConverter.filterRequestToDto(filterRequest);
+        OffsetDateTime expectedTo = actualFilterRequestToDtoResult.getFrom();
+        assertEquals(expectedTo, actualFilterRequestToDtoResult.getTo());
+        verify(filterRequest, atLeast(1)).getFrom();
+        verify(filterRequest, atLeast(1)).getTo();
     }
 
     /**
@@ -1454,6 +1498,7 @@ class NotificationInquiryConverterTest {
         verify(operationResponseStatusDto, atLeast(1)).getCode();
         verify(operationResponseStatusDto).getMessage();
     }
+
     /**
      * Method under test: {@link NotificationInquiryConverter#enrichAorData(OperationAorResponseDto)}
      */

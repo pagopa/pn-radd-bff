@@ -148,11 +148,17 @@ public class NotificationInquiryConverter {
     }
 
     public FilterRequestDto filterRequestToDto(FilterRequest filterRequest) {
+
         FilterRequestDto filterRequestDto = new FilterRequestDto();
 
-        filterRequestDto.setFrom(filterRequest.getFrom().toInstant().atOffset(ZoneOffset.UTC));
-        filterRequestDto.setTo(filterRequest.getTo().toInstant().atOffset(ZoneOffset.UTC));
-
+        if(filterRequest.getFrom() == null || filterRequest.getTo() == null) {
+            filterRequest.to(null);
+            filterRequest.from(null);
+        }
+        else {
+            filterRequestDto.setFrom(filterRequest.getFrom().toInstant().atOffset(ZoneOffset.UTC));
+            filterRequestDto.setTo(filterRequest.getTo().toInstant().atOffset(ZoneOffset.UTC));
+        }
         return filterRequestDto;
     }
 
@@ -347,5 +353,15 @@ public class NotificationInquiryConverter {
             operationsDetailsResponse.setOperationStartDate(new Date(operationActDetailResponseDto.getOperationStartDate().toInstant().toEpochMilli()));
 
         return operationsDetailsResponse;
+    }
+
+    public OperationsResponse noAssociatedOperationFoundResponse(OperationsResponseDto operationsResponseDto) {
+        OperationsResponse operationsResponse = new OperationsResponse();
+        operationsResponse.setOperations(new ArrayList<>());
+        operationsResponse.setResult(operationsResponseDto.getResult());
+        operationsResponse.setStatus(new OperationResponseStatus()
+                .code(OperationResponseStatus.CodeEnum.NUMBER_1)
+                .message(operationsResponseDto.getStatus().getMessage()));
+        return operationsResponse;
     }
 }
