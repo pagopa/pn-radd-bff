@@ -325,3 +325,16 @@ Use cases:
 | TNTGTR76E21H751S                        | 200         | OK                        |
 | RFRGRZ66E21H751B                        | 200         | KO                        |
 | GTAMRC01P30L736Y                        | 200         | Nessun Elemento Associato |
+
+### document-ready
+
+Path: `/radd-web/document-ready/{fileKey}`
+
+Use cases:
+
+| fileKey                                                     | Status Code | Valido |
+|-------------------------------------------------------------|-------------|--------|
+| PN_RADD_FSU_ATTACHMENT-21703b4070084bb5b79662abd5fec424.zip | 500         |        |
+| PN_RADD_FSU_ATTACHMENT-22703b4070084bb5b79662abd5fec424.zip | 404         |        |
+| PN_RADD_FSU_ATTACHMENT-19703b4070084bb5b79662abd5fec424.zip | 200         | OK     |
+| PN_RADD_FSU_ATTACHMENT-20703b4070084bb5b79662abd5fec424.zip | 200         | KO     |
