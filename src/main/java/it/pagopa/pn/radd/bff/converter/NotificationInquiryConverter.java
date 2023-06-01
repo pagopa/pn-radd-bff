@@ -231,7 +231,7 @@ public class NotificationInquiryConverter {
             }
             operationResponseStatus.setMessage(operationResponseStatusDto.getMessage());
         }
-        operationActResponseDto.setStatus(operationResponseStatusDto);
+        operationActResponse.setStatus(operationResponseStatus);
         operationActResponse.setResult(operationActResponseDto.getResult());
 
         return operationActResponse;

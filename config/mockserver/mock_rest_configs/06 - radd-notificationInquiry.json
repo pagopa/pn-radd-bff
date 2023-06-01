@@ -694,14 +694,7 @@
       "method": "POST",
       "path": "/radd-private/api/v1/act/operations/by-internalId/{internalId}",
       "pathParameters": {
-        "internalId": "PF-4fc75df3-0913-407e-bdaa-e50329708b7d"
-      },
-      "body": {
-        "type": "JSON",
-        "json": {
-          "from": "2023-04-21T13:11:13.038Z",
-          "to": "2023-04-21T13:11:13.038Z"
-        }
+        "internalId": "TNTGTR76E21H751S"
       }
     },
     "httpResponse": {
@@ -740,14 +733,7 @@
       "method": "POST",
       "path": "/radd-private/api/v1/act/operations/by-internalId/{internalId}",
       "pathParameters": {
-        "internalId": "PF-d0556f95-6de8-4a92-aa2e-5479f6a1d6d7"
-      },
-      "body": {
-        "type": "JSON",
-        "json": {
-          "from": "2023-04-21T13:11:13.038Z",
-          "to": "2023-04-21T13:11:13.038Z"
-        }
+        "internalId": "RFRGRZ66E21H751B"
       }
     },
     "httpResponse": {
@@ -786,14 +772,7 @@
       "method": "POST",
       "path": "/radd-private/api/v1/act/operations/by-internalId/{internalId}",
       "pathParameters": {
-        "internalId": "PF-e6c22e6b-1276-44a6-a50a-5c0e4639425d"
-      },
-      "body": {
-        "type": "JSON",
-        "json": {
-          "from": "2023-04-21T13:11:13.038Z",
-          "to": "2023-04-21T13:11:13.038Z"
-        }
+        "internalId": "GTAMRC01P30L736Y"
       }
     },
     "httpResponse": {
@@ -833,13 +812,6 @@
       "path": "/radd-private/api/v1/act/operations/by-internalId/{internalId}",
       "pathParameters": {
         "internalId": "PF-1f994c71-e5d5-4e5c-a9a9-23ebad4d30d2"
-      },
-      "body": {
-        "type": "JSON",
-        "json": {
-          "from": "2023-04-21T13:11:13.038Z",
-          "to": "2023-04-21T13:11:13.038Z"
-        }
       }
     },
     "httpResponseTemplate": {
@@ -853,13 +825,6 @@
       "path": "/radd-private/api/v1/act/operations/by-internalId/{internalId}",
       "pathParameters": {
         "internalId": "PF-06c64ca7-8b20-4b7f-9b6a-11f91315b89c"
-      },
-      "body": {
-        "type": "JSON",
-        "json": {
-          "from": "2023-04-21T13:11:13.038Z",
-          "to": "2023-04-21T13:11:13.038Z"
-        }
       }
     },
     "httpResponseTemplate": {
@@ -873,13 +838,6 @@
       "path": "/radd-private/api/v1/act/operations/by-internalId/{internalId}",
       "pathParameters": {
         "internalId": "PF-5c584ee7-09e8-4027-b1f9-c19a9a8e79b1"
-      },
-      "body": {
-        "type": "JSON",
-        "json": {
-          "from": "2023-04-21T13:11:13.038Z",
-          "to": "2023-04-21T13:11:13.038Z"
-        }
       }
     },
     "httpResponseTemplate": {
@@ -893,13 +851,6 @@
       "path": "/radd-private/api/v1/act/operations/by-internalId/{internalId}",
       "pathParameters": {
         "internalId": "PG-81a2f2dc-5109-4659-b9a8-8e52ce89a03a"
-      },
-      "body": {
-        "type": "JSON",
-        "json": {
-          "from": "2023-04-21T13:11:13.038Z",
-          "to": "2023-04-21T13:11:13.038Z"
-        }
       }
     },
     "httpResponseTemplate": {
@@ -913,13 +864,6 @@
       "path": "/radd-private/api/v1/act/operations/by-internalId/{internalId}",
       "pathParameters": {
         "internalId": "PF-a5068d34-2677-4bfa-b0b9-945f0d37d7c5"
-      },
-      "body": {
-        "type": "JSON",
-        "json": {
-          "from": "2023-04-21T13:11:13.038Z",
-          "to": "2023-04-21T13:11:13.038Z"
-        }
       }
     },
     "httpResponseTemplate": {
@@ -933,13 +877,6 @@
       "path": "/radd-private/api/v1/act/operations/by-internalId/{internalId}",
       "pathParameters": {
         "internalId": "PG-4fa4e3a8-19f2-46e3-ba81-9f1aebbc44ec"
-      },
-      "body": {
-        "type": "JSON",
-        "json": {
-          "from": "2023-04-21T13:11:13.038Z",
-          "to": "2023-04-21T13:11:13.038Z"
-        }
       }
     },
     "httpResponseTemplate": {
@@ -952,14 +889,7 @@
       "method": "POST",
       "path": "/radd-private/api/v1/aor/operations/by-internalId/{internalId}",
       "pathParameters": {
-        "internalId": "PF-4fc75df3-0913-407e-bdaa-e50329708b7d"
-      },
-      "body": {
-        "type": "JSON",
-        "json": {
-          "from": "2023-04-21T13:11:13.038Z",
-          "to": "2023-04-21T13:11:13.038Z"
-        }
+        "internalId": "TNTGTR76E21H751S"
       }
     },
     "httpResponse": {
@@ -1000,14 +930,7 @@
       "method": "POST",
       "path": "/radd-private/api/v1/aor/operations/by-internalId/{internalId}",
       "pathParameters": {
-        "internalId": "PF-d0556f95-6de8-4a92-aa2e-5479f6a1d6d7"
-      },
-      "body": {
-        "type": "JSON",
-        "json": {
-          "from": "2023-04-21T13:11:13.038Z",
-          "to": "2023-04-21T13:11:13.038Z"
-        }
+        "internalId": "RFRGRZ66E21H751B"
       }
     },
     "httpResponse": {
@@ -1048,14 +971,7 @@
       "method": "POST",
       "path": "/radd-private/api/v1/aor/operations/by-internalId/{internalId}",
       "pathParameters": {
-        "internalId": "PF-e6c22e6b-1276-44a6-a50a-5c0e4639425d"
-      },
-      "body": {
-        "type": "JSON",
-        "json": {
-          "from": "2023-04-21T13:11:13.038Z",
-          "to": "2023-04-21T13:11:13.038Z"
-        }
+        "internalId": "GTAMRC01P30L736Y"
       }
     },
     "httpResponse": {
@@ -1097,13 +1013,6 @@
       "path": "/radd-private/api/v1/aor/operations/by-internalId/{internalId}",
       "pathParameters": {
         "internalId": "PF-1f994c71-e5d5-4e5c-a9a9-23ebad4d30d2"
-      },
-      "body": {
-        "type": "JSON",
-        "json": {
-          "from": "2023-04-21T13:11:13.038Z",
-          "to": "2023-04-21T13:11:13.038Z"
-        }
       }
     },
     "httpResponseTemplate": {
@@ -1117,13 +1026,6 @@
       "path": "/radd-private/api/v1/aor/operations/by-internalId/{internalId}",
       "pathParameters": {
         "internalId": "PF-06c64ca7-8b20-4b7f-9b6a-11f91315b89c"
-      },
-      "body": {
-        "type": "JSON",
-        "json": {
-          "from": "2023-04-21T13:11:13.038Z",
-          "to": "2023-04-21T13:11:13.038Z"
-        }
       }
     },
     "httpResponseTemplate": {
@@ -1137,13 +1039,6 @@
       "path": "/radd-private/api/v1/aor/operations/by-internalId/{internalId}",
       "pathParameters": {
         "internalId": "PF-5c584ee7-09e8-4027-b1f9-c19a9a8e79b1"
-      },
-      "body": {
-        "type": "JSON",
-        "json": {
-          "from": "2023-04-21T13:11:13.038Z",
-          "to": "2023-04-21T13:11:13.038Z"
-        }
       }
     },
     "httpResponseTemplate": {
@@ -1157,13 +1052,6 @@
       "path": "/radd-private/api/v1/aor/operations/by-internalId/{internalId}",
       "pathParameters": {
         "internalId": "PG-81a2f2dc-5109-4659-b9a8-8e52ce89a03a"
-      },
-      "body": {
-        "type": "JSON",
-        "json": {
-          "from": "2023-04-21T13:11:13.038Z",
-          "to": "2023-04-21T13:11:13.038Z"
-        }
       }
     },
     "httpResponseTemplate": {
@@ -1177,13 +1065,6 @@
       "path": "/radd-private/api/v1/aor/operations/by-internalId/{internalId}",
       "pathParameters": {
         "internalId": "PF-a5068d34-2677-4bfa-b0b9-945f0d37d7c5"
-      },
-      "body": {
-        "type": "JSON",
-        "json": {
-          "from": "2023-04-21T13:11:13.038Z",
-          "to": "2023-04-21T13:11:13.038Z"
-        }
       }
     },
     "httpResponseTemplate": {
@@ -1197,13 +1078,6 @@
       "path": "/radd-private/api/v1/aor/operations/by-internalId/{internalId}",
       "pathParameters": {
         "internalId": "PG-4fa4e3a8-19f2-46e3-ba81-9f1aebbc44ec"
-      },
-      "body": {
-        "type": "JSON",
-        "json": {
-          "from": "2023-04-21T13:11:13.038Z",
-          "to": "2023-04-21T13:11:13.038Z"
-        }
       }
     },
     "httpResponseTemplate": {
