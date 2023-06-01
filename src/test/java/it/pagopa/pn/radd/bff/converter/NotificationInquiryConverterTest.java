@@ -1051,7 +1051,6 @@ class NotificationInquiryConverterTest {
         OperationActResponseDto operationActResponseDto = mock(OperationActResponseDto.class);
         when(operationActResponseDto.getStatus()).thenReturn(new OperationResponseStatusDto());
         when(operationActResponseDto.getResult()).thenReturn(true);
-        doNothing().when(operationActResponseDto).setStatus(Mockito.<OperationResponseStatusDto>any());
         when(operationActResponseDto.getElement()).thenReturn(new OperationActDetailResponseDto());
         OperationActResponse actualOperationActDtoToResponseResult = notificationInquiryConverter
                 .operationActDtoToResponse(operationActResponseDto, new HashMap<>());
@@ -1069,7 +1068,6 @@ class NotificationInquiryConverterTest {
         verify(operationActResponseDto).getElement();
         verify(operationActResponseDto).getStatus();
         verify(operationActResponseDto).getResult();
-        verify(operationActResponseDto).setStatus(Mockito.<OperationResponseStatusDto>any());
     }
 
     /**
@@ -1101,7 +1099,6 @@ class NotificationInquiryConverterTest {
         verify(operationActResponseDto).getElement();
         verify(operationActResponseDto).getStatus();
         verify(operationActResponseDto).getResult();
-        verify(operationActResponseDto).setStatus(Mockito.<OperationResponseStatusDto>any());
         verify(operationResponseStatusDto, atLeast(1)).getCode();
         verify(operationResponseStatusDto).getMessage();
     }
@@ -1135,7 +1132,6 @@ class NotificationInquiryConverterTest {
         verify(operationActResponseDto).getElement();
         verify(operationActResponseDto).getStatus();
         verify(operationActResponseDto).getResult();
-        verify(operationActResponseDto).setStatus(Mockito.<OperationResponseStatusDto>any());
         verify(operationResponseStatusDto, atLeast(1)).getCode();
         verify(operationResponseStatusDto).getMessage();
     }
