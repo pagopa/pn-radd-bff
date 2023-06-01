@@ -379,9 +379,11 @@ public class NotificationInquiryConverter {
         OperationsResponse operationsResponse = new OperationsResponse();
         operationsResponse.setOperations(new ArrayList<>());
         operationsResponse.setResult(operationsResponseDto.getResult());
-        operationsResponse.setStatus(new OperationResponseStatus()
-                .code(OperationResponseStatus.CodeEnum.NUMBER_1)
-                .message(operationsResponseDto.getStatus().getMessage()));
+        if (operationsResponseDto.getStatus() != null) {
+            operationsResponse.setStatus(new OperationResponseStatus()
+                    .code(OperationResponseStatus.CodeEnum.NUMBER_1)
+                    .message(operationsResponseDto.getStatus().getMessage()));
+        }
         return operationsResponse;
     }
 }
