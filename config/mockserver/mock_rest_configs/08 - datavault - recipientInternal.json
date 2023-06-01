@@ -1,0 +1,55 @@
+[
+  {
+    "httpRequest": {
+      "method": "GET",
+      "path": "/datavault-private/v1/recipients/internal",
+      "queryStringParameters": {
+        "internalId": [
+          "TNTGTR76E21H751S",
+          "RFRGRZ66E21H751B"
+        ]
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "body": {
+        "type": "JSON",
+        "json": [
+          {
+            "internalId": "TNTGTR76E21H751S",
+            "taxId": "CGNNMO01T10A944Q",
+            "recipientType": "PF",
+            "denomination": "PagoP.A. S.p.A."
+          },
+          {
+            "internalId": "RFRGRZ66E21H751B",
+            "taxId": "STTMCL97S17G203T",
+            "recipientType": "PF",
+            "denomination": "PagoP.A. S.p.A."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "GET",
+      "path": "/datavault-private/v1/recipients/internal",
+      "queryStringParameters": {
+        "internalId": [
+          "DDNMTT93B21H341X"
+        ]
+      }
+    },
+    "httpResponse": {
+      "statusCode": 400,
+      "body": {
+        "type": "JSON",
+        "json": {
+          "code": "400",
+          "message": "Invalid internalId: DDNMTT93B21H341X"
+        }
+      }
+    }
+  }
+]
