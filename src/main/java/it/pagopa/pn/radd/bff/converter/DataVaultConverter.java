@@ -12,9 +12,11 @@ public class DataVaultConverter {
 
 
     public Map<String, String> mapToBaseRecipient(List<BaseRecipientDtoDto> baseRecipientDtoList) {
-       return baseRecipientDtoList
-               .stream()
-               .collect(Collectors
+
+        return baseRecipientDtoList
+                .stream()
+                .filter(baseRecipientDtoDto -> baseRecipientDtoDto.getTaxId() != null)
+                .collect(Collectors
                        .toMap(BaseRecipientDtoDto::getInternalId, BaseRecipientDtoDto::getTaxId)
                );
     }
