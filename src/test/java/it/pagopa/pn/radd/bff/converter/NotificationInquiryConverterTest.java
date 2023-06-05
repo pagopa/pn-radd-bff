@@ -1,47 +1,7 @@
 package it.pagopa.pn.radd.bff.converter;
 
 import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.*;
-import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.AbortTransactionResponseDto;
-import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.CompleteTransactionResponseDto;
-import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.FilterRequestDto;
-import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.OperationActDetailResponseDto;
-import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.OperationActResponseDto;
-import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.OperationAorDetailResponseDto;
-import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.OperationAorResponseDto;
-import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.OperationResponseStatusDto;
-import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.OperationsActDetailsResponseDto;
-import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.OperationsAorDetailsResponseDto;
-import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.OperationsResponseDto;
-import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.StartTransactionResponseDto;
-import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.StartTransactionResponseStatusDto;
-import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.TransactionResponseStatusDto;
 import it.pagopa.pn.radd.bff.rest.v1.dto.*;
-import it.pagopa.pn.radd.bff.rest.v1.dto.AbortTransactionRequest;
-import it.pagopa.pn.radd.bff.rest.v1.dto.ActStartTransactionRequest;
-import it.pagopa.pn.radd.bff.rest.v1.dto.AorStartTransactionRequest;
-import it.pagopa.pn.radd.bff.rest.v1.dto.CompleteTransactionRequest;
-import it.pagopa.pn.radd.bff.rest.v1.dto.FilterRequest;
-import it.pagopa.pn.radd.bff.rest.v1.dto.OperationActDetailResponse;
-import it.pagopa.pn.radd.bff.rest.v1.dto.OperationActResponse;
-import it.pagopa.pn.radd.bff.rest.v1.dto.OperationAorDetailResponse;
-import it.pagopa.pn.radd.bff.rest.v1.dto.OperationAorResponse;
-import it.pagopa.pn.radd.bff.rest.v1.dto.OperationResponseStatus;
-import it.pagopa.pn.radd.bff.rest.v1.dto.OperationsActDetailsResponse;
-import it.pagopa.pn.radd.bff.rest.v1.dto.OperationsAorDetailsResponse;
-import it.pagopa.pn.radd.bff.rest.v1.dto.OperationsDetailsResponse;
-import it.pagopa.pn.radd.bff.rest.v1.dto.OperationsResponse;
-import it.pagopa.pn.radd.bff.rest.v1.dto.StartTransactionResponse;
-import it.pagopa.pn.radd.bff.rest.v1.dto.StartTransactionResponseStatus;
-import it.pagopa.pn.radd.bff.rest.v1.dto.TransactionResponseStatus;
-
-import java.util.ArrayList;
-
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
@@ -56,14 +16,7 @@ import java.time.ZoneOffset;
 import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.*;
-import static org.mockito.Mockito.atLeast;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
 
 @ContextConfiguration(classes = {NotificationInquiryConverter.class})
 @ExtendWith(SpringExtension.class)
