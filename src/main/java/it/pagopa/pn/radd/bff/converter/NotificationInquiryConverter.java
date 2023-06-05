@@ -234,6 +234,7 @@ public class NotificationInquiryConverter {
             operationActDetailResponse.setErrorReason(operationActDetailResponseDto.getErrorReason());
             operationActDetailResponse.setRecipientType(operationActDetailResponseDto.getRecipientType());
             operationActDetailResponse.setUid(operationActDetailResponseDto.getUid());
+            operationActDetailResponse.setOperationId(operationActDetailResponseDto.getOperationId());
             if (operationActDetailResponseDto.getOperationEndDate() != null)
                 operationActDetailResponse.setOperationEndDate(new Date(operationActDetailResponseDto.getOperationEndDate().toInstant().toEpochMilli()));
             if (operationActDetailResponseDto.getOperationStartDate() != null)
@@ -296,7 +297,8 @@ public class NotificationInquiryConverter {
     }
 
     public OperationsResponse operationsDtoToResponse(List<OperationsDetailsResponse> operationsDetailsResponses,
-                                                      Map<String, String> deanonymizedTaxIds, Boolean result,
+                                                      Map<String, String> deanonymizedTaxIds,
+                                                      Boolean result,
                                                       OperationResponseStatusDto operationResponseStatusDto) {
 
         OperationsResponse operationsResponse = new OperationsResponse();
