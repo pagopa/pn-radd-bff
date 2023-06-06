@@ -33,7 +33,29 @@ class DataVaultConverterTest {
      * Method under test: {@link DataVaultConverter#mapToBaseRecipient(List)}
      */
     @Test
+    void testMapToBaseRecipient2() {
+        ArrayList<BaseRecipientDtoDto> baseRecipientDtoList = new ArrayList<>();
+        baseRecipientDtoList.add(new BaseRecipientDtoDto());
+        assertTrue(dataVaultConverter.mapToBaseRecipient(baseRecipientDtoList).isEmpty());
+    }
+
+    /**
+     * Method under test: {@link DataVaultConverter#mapToBaseRecipient(List)}
+     */
+    @Test
     void testMapToBaseRecipient3() {
+        ArrayList<BaseRecipientDtoDto> baseRecipientDtoList = new ArrayList<>();
+        baseRecipientDtoList.add(new BaseRecipientDtoDto());
+        baseRecipientDtoList.add(new BaseRecipientDtoDto());
+        assertTrue(dataVaultConverter.mapToBaseRecipient(baseRecipientDtoList).isEmpty());
+    }
+
+
+    /**
+     * Method under test: {@link DataVaultConverter#mapToBaseRecipient(List)}
+     */
+    @Test
+    void testMapToBaseRecipient5() {
         BaseRecipientDtoDto baseRecipientDtoDto = mock(BaseRecipientDtoDto.class);
         when(baseRecipientDtoDto.getInternalId()).thenReturn("42");
         when(baseRecipientDtoDto.getTaxId()).thenReturn("42");
@@ -44,7 +66,8 @@ class DataVaultConverterTest {
         assertEquals(1, actualMapToBaseRecipientResult.size());
         assertEquals("42", actualMapToBaseRecipientResult.get("42"));
         verify(baseRecipientDtoDto).getInternalId();
-        verify(baseRecipientDtoDto).getTaxId();
+        verify(baseRecipientDtoDto, atLeast(1)).getTaxId();
     }
+
 }
 

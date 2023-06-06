@@ -304,9 +304,9 @@ Use cases:
 | PF-5c584ee7-09e8-4027-b1f9-c19a9a8e79b1 | 403         |                           |
 | PG-81a2f2dc-5109-4659-b9a8-8e52ce89a03a | 404         |                           |
 | PF-a5068d34-2677-4bfa-b0b9-945f0d37d7c5 | 500         |                           |
-| PF-4fc75df3-0913-407e-bdaa-e50329708b7d | 200         | OK                        |
-| PF-d0556f95-6de8-4a92-aa2e-5479f6a1d6d7 | 200         | KO                        |
-| PF-e6c22e6b-1276-44a6-a50a-5c0e4639425d | 200         | Nessun Elemento Associato |
+| TNTGTR76E21H751S                        | 200         | OK                        |
+| RFRGRZ66E21H751B                        | 200         | KO                        |
+| GTAMRC01P30L736Y                        | 200         | Nessun Elemento Associato |
 
 ### operationsAorDetails
 
@@ -322,6 +322,19 @@ Use cases:
 | PF-5c584ee7-09e8-4027-b1f9-c19a9a8e79b1 | 403         |                           |
 | PG-81a2f2dc-5109-4659-b9a8-8e52ce89a03a | 404         |                           |
 | PF-a5068d34-2677-4bfa-b0b9-945f0d37d7c5 | 500         |                           |
-| PF-4fc75df3-0913-407e-bdaa-e50329708b7d | 200         | OK                        |
-| PF-d0556f95-6de8-4a92-aa2e-5479f6a1d6d7 | 200         | KO                        |
-| PF-e6c22e6b-1276-44a6-a50a-5c0e4639425d | 200         | Nessun Elemento Associato |
+| TNTGTR76E21H751S                        | 200         | OK                        |
+| RFRGRZ66E21H751B                        | 200         | KO                        |
+| GTAMRC01P30L736Y                        | 200         | Nessun Elemento Associato |
+
+### document-ready
+
+Path: `/radd-web/document-ready/{fileKey}`
+
+Use cases:
+
+| fileKey                                                     | Status Code | Valido |
+|-------------------------------------------------------------|-------------|--------|
+| PN_RADD_FSU_ATTACHMENT-21703b4070084bb5b79662abd5fec424.zip | 500         |        |
+| PN_RADD_FSU_ATTACHMENT-22703b4070084bb5b79662abd5fec424.zip | 404         |        |
+| PN_RADD_FSU_ATTACHMENT-19703b4070084bb5b79662abd5fec424.zip | 200         | OK     |
+| PN_RADD_FSU_ATTACHMENT-20703b4070084bb5b79662abd5fec424.zip | 200         | KO     |

@@ -30,8 +30,13 @@ public class NotificationInquiryConverter {
         TransactionResponseStatus transactionResponseStatus = new TransactionResponseStatus();
         TransactionResponseStatusDto transactionResponseStatusDto = abortTransactionResponseDto.getStatus();
 
-        transactionResponseStatus.setCode(TransactionResponseStatus.CodeEnum.fromValue(transactionResponseStatusDto.getCode().getValue()));
-        transactionResponseStatus.setMessage(transactionResponseStatusDto.getMessage());
+        if (transactionResponseStatusDto != null && (transactionResponseStatusDto.getCode() != null)) {
+                transactionResponseStatus.setCode(TransactionResponseStatus.CodeEnum.fromValue(transactionResponseStatusDto.getCode().getValue()));
+
+        }
+        if (transactionResponseStatusDto != null) {
+            transactionResponseStatus.setMessage(transactionResponseStatusDto.getMessage());
+        }
 
         abortTransactionResponse.setStatus(transactionResponseStatus);
 
@@ -53,8 +58,12 @@ public class NotificationInquiryConverter {
         TransactionResponseStatus transactionResponseStatus = new TransactionResponseStatus();
         TransactionResponseStatusDto transactionResponseStatusDto = completeTransactionResponseDto.getStatus();
 
-        transactionResponseStatus.setCode(TransactionResponseStatus.CodeEnum.fromValue(transactionResponseStatusDto.getCode().getValue()));
-        transactionResponseStatus.setMessage(transactionResponseStatusDto.getMessage());
+        if (transactionResponseStatusDto != null && transactionResponseStatusDto.getCode() != null) {
+            transactionResponseStatus.setCode(TransactionResponseStatus.CodeEnum.fromValue(transactionResponseStatusDto.getCode().getValue()));
+        }
+        if (transactionResponseStatusDto != null) {
+            transactionResponseStatus.setMessage(transactionResponseStatusDto.getMessage());
+        }
 
         completeTransactionResponse.setStatus(transactionResponseStatus);
 
@@ -67,8 +76,13 @@ public class NotificationInquiryConverter {
         StartTransactionResponseStatus startTransactionResponseStatus = new StartTransactionResponseStatus();
         StartTransactionResponseStatusDto startTransactionResponseStatusDto = startTransactionResponseDto.getStatus();
 
-        startTransactionResponseStatus.setCode(StartTransactionResponseStatus.CodeEnum.fromValue(startTransactionResponseStatusDto.getCode().getValue()));
-        startTransactionResponseStatus.setMessage(startTransactionResponseStatusDto.getMessage());
+        if (startTransactionResponseStatusDto != null && (startTransactionResponseStatusDto.getCode() != null)) {
+                startTransactionResponseStatus.setCode(StartTransactionResponseStatus.CodeEnum.fromValue(startTransactionResponseStatusDto.getCode().getValue()));
+
+        }
+        if (startTransactionResponseStatusDto != null) {
+            startTransactionResponseStatus.setMessage(startTransactionResponseStatusDto.getMessage());
+        }
 
         startTransactionResponse.setStatus(startTransactionResponseStatus);
 
@@ -111,27 +125,29 @@ public class NotificationInquiryConverter {
         OperationsAorDetailsResponse operationsAorDetailsResponse = new OperationsAorDetailsResponse();
 
         List<OperationAorDetailResponse> listOperationAorDetailResponse = new ArrayList<>();
-        operationsAorDetailsResponseDto.getElements().stream().forEach(t -> {
-            OperationAorDetailResponse operationAorDetailResponse = new OperationAorDetailResponse();
+        if (operationsAorDetailsResponseDto.getElements() != null) {
+            operationsAorDetailsResponseDto.getElements().forEach(t -> {
+                OperationAorDetailResponse operationAorDetailResponse = new OperationAorDetailResponse();
 
-            operationAorDetailResponse.setOperationId(t.getOperationId());
-            operationAorDetailResponse.setOperationStatus(t.getOperationStatus());
-            operationAorDetailResponse.setFileKey(t.getFileKey());
-            operationAorDetailResponse.setOperationType(t.getOperationType());
-            operationAorDetailResponse.setDelegateTaxId(t.getDelegateTaxId());
-            operationAorDetailResponse.setIuns(t.getIuns());
-            operationAorDetailResponse.setQrCode(t.getQrCode());
-            operationAorDetailResponse.setErrorReason(t.getErrorReason());
-            operationAorDetailResponse.setRecipientType(t.getRecipientType());
-            operationAorDetailResponse.setUid(t.getUid());
-            if(t.getOperationEndDate()!=null)
-                operationAorDetailResponse.setOperationEndDate(new Date(t.getOperationEndDate().toInstant().toEpochMilli()));
-            if(t.getOperationStartDate()!=null)
-                operationAorDetailResponse.setOperationStartDate(new Date(t.getOperationStartDate().toInstant().toEpochMilli()));
-            operationAorDetailResponse.setRecipientTaxId(t.getRecipientTaxId());
+                operationAorDetailResponse.setOperationId(t.getOperationId());
+                operationAorDetailResponse.setOperationStatus(t.getOperationStatus());
+                operationAorDetailResponse.setFileKey(t.getFileKey());
+                operationAorDetailResponse.setOperationType(t.getOperationType());
+                operationAorDetailResponse.setDelegateTaxId(t.getDelegateTaxId());
+                operationAorDetailResponse.setIuns(t.getIuns());
+                operationAorDetailResponse.setQrCode(t.getQrCode());
+                operationAorDetailResponse.setErrorReason(t.getErrorReason());
+                operationAorDetailResponse.setRecipientType(t.getRecipientType());
+                operationAorDetailResponse.setUid(t.getUid());
+                if(t.getOperationEndDate()!=null)
+                    operationAorDetailResponse.setOperationEndDate(new Date(t.getOperationEndDate().toInstant().toEpochMilli()));
+                if(t.getOperationStartDate()!=null)
+                    operationAorDetailResponse.setOperationStartDate(new Date(t.getOperationStartDate().toInstant().toEpochMilli()));
+                operationAorDetailResponse.setRecipientTaxId(t.getRecipientTaxId());
 
-            listOperationAorDetailResponse.add(operationAorDetailResponse);
-        });
+                listOperationAorDetailResponse.add(operationAorDetailResponse);
+            });
+        }
 
         operationsAorDetailsResponse.setElements(listOperationAorDetailResponse);
         OperationResponseStatus operationResponseStatus = new OperationResponseStatus();
@@ -159,35 +175,38 @@ public class NotificationInquiryConverter {
     public OperationAorResponse operationAorDtoToResponse(OperationAorResponseDto operationAorResponseDto, Map<String, String> denominations) {
         OperationAorResponse operationAorResponse = new OperationAorResponse();
         OperationAorDetailResponse operationAorDetailResponse = new OperationAorDetailResponse();
+        OperationResponseStatus operationResponseStatus;
+        operationResponseStatus = new OperationResponseStatus();
         OperationAorDetailResponseDto operationAorDetailResponseDto = operationAorResponseDto.getElement();
-        operationAorDetailResponse.setOperationId(operationAorDetailResponseDto.getOperationId());
-        operationAorDetailResponse.setOperationStatus(operationAorDetailResponseDto.getOperationStatus());
-        operationAorDetailResponse.setFileKey(operationAorDetailResponseDto.getFileKey());
-        operationAorDetailResponse.setOperationType(operationAorDetailResponseDto.getOperationType());
-        if(denominations.containsKey(operationAorDetailResponseDto.getRecipientTaxId()))
-            operationAorDetailResponse.setRecipientTaxId(denominations.get(operationAorDetailResponseDto.getRecipientTaxId()));
-        if(denominations.containsKey(operationAorDetailResponseDto.getDelegateTaxId()))
-            operationAorDetailResponse.setDelegateTaxId(denominations.get(operationAorDetailResponseDto.getDelegateTaxId()));
-        operationAorDetailResponse.setIuns(operationAorDetailResponseDto.getIuns());
-        operationAorDetailResponse.setQrCode(operationAorDetailResponseDto.getQrCode());
-        operationAorDetailResponse.setErrorReason(operationAorDetailResponseDto.getErrorReason());
-        operationAorDetailResponse.setRecipientType(operationAorDetailResponseDto.getRecipientType());
-        operationAorDetailResponse.setUid(operationAorDetailResponseDto.getUid());
-        if(operationAorDetailResponseDto.getOperationEndDate()!=null)
-            operationAorDetailResponse.setOperationEndDate(new Date(operationAorDetailResponseDto.getOperationEndDate().toInstant().toEpochMilli()));
-        if(operationAorDetailResponseDto.getOperationStartDate()!=null)
-            operationAorDetailResponse.setOperationStartDate(new Date(operationAorDetailResponseDto.getOperationStartDate().toInstant().toEpochMilli()));
 
-        OperationResponseStatus operationResponseStatus = new OperationResponseStatus();
-        operationAorResponse.setElement(operationAorDetailResponse);
-        OperationResponseStatusDto operationResponseStatusDto = operationAorResponseDto.getStatus();
-        if(operationResponseStatusDto!=null) {
-            if (operationResponseStatusDto.getCode() != null) {
-                operationResponseStatus.setCode(OperationResponseStatus.CodeEnum.fromValue(operationResponseStatusDto.getCode().getValue()));
+        if(operationAorDetailResponseDto != null) {
+            operationAorDetailResponse.setOperationStatus(operationAorDetailResponseDto.getOperationStatus());
+            operationAorDetailResponse.setFileKey(operationAorDetailResponseDto.getFileKey());
+            operationAorDetailResponse.setOperationType(operationAorDetailResponseDto.getOperationType());
+            if (denominations.containsKey(operationAorDetailResponseDto.getRecipientTaxId()))
+                operationAorDetailResponse.setRecipientTaxId(denominations.get(operationAorDetailResponseDto.getRecipientTaxId()));
+            if (denominations.containsKey(operationAorDetailResponseDto.getDelegateTaxId()))
+                operationAorDetailResponse.setDelegateTaxId(denominations.get(operationAorDetailResponseDto.getDelegateTaxId()));
+            operationAorDetailResponse.setIuns(operationAorDetailResponseDto.getIuns());
+            operationAorDetailResponse.setQrCode(operationAorDetailResponseDto.getQrCode());
+            operationAorDetailResponse.setErrorReason(operationAorDetailResponseDto.getErrorReason());
+            operationAorDetailResponse.setRecipientType(operationAorDetailResponseDto.getRecipientType());
+            operationAorDetailResponse.setUid(operationAorDetailResponseDto.getUid());
+            if (operationAorDetailResponseDto.getOperationEndDate() != null)
+                operationAorDetailResponse.setOperationEndDate(new Date(operationAorDetailResponseDto.getOperationEndDate().toInstant().toEpochMilli()));
+            if (operationAorDetailResponseDto.getOperationStartDate() != null)
+                operationAorDetailResponse.setOperationStartDate(new Date(operationAorDetailResponseDto.getOperationStartDate().toInstant().toEpochMilli()));
+
+            operationAorResponse.setElement(operationAorDetailResponse);
+            OperationResponseStatusDto operationResponseStatusDto = operationAorResponseDto.getStatus();
+            if (operationResponseStatusDto != null) {
+                if (operationResponseStatusDto.getCode() != null) {
+                    operationResponseStatus.setCode(OperationResponseStatus.CodeEnum.fromValue(operationResponseStatusDto.getCode().getValue()));
+                }
+                operationResponseStatus.setMessage(operationResponseStatusDto.getMessage());
             }
-            operationResponseStatus.setMessage(operationResponseStatusDto.getMessage());
         }
-        operationAorResponseDto.setStatus(operationResponseStatusDto);
+        operationAorResponse.setStatus(operationResponseStatus);
         operationAorResponse.setResult(operationAorResponseDto.getResult());
 
         return operationAorResponse;
@@ -198,36 +217,40 @@ public class NotificationInquiryConverter {
         OperationActResponse operationActResponse = new OperationActResponse();
         OperationActDetailResponse operationActDetailResponse = new OperationActDetailResponse();
         OperationActDetailResponseDto operationActDetailResponseDto = operationActResponseDto.getElement();
-        operationActDetailResponse.setOperationId(operationActDetailResponseDto.getOperationId());
-        operationActDetailResponse.setOperationStatus(operationActDetailResponseDto.getOperationStatus());
-        operationActDetailResponse.setFileKey(operationActDetailResponseDto.getFileKey());
-        operationActDetailResponse.setOperationType(operationActDetailResponseDto.getOperationType());
-        if(deanonymizedTaxIds.containsKey(operationActDetailResponseDto.getRecipientTaxId()))
-            operationActDetailResponse.setRecipientTaxId(deanonymizedTaxIds.get(operationActDetailResponseDto.getRecipientTaxId()));
-        if(deanonymizedTaxIds.containsKey(operationActDetailResponseDto.getDelegateTaxId()))
-            operationActDetailResponse.setDelegateTaxId(deanonymizedTaxIds.get(operationActDetailResponseDto.getDelegateTaxId()));
-        operationActDetailResponse.setIun(operationActDetailResponseDto.getIun());
-        operationActDetailResponse.setQrCode(operationActDetailResponseDto.getQrCode());
-        operationActDetailResponse.setErrorReason(operationActDetailResponseDto.getErrorReason());
-        operationActDetailResponse.setRecipientType(operationActDetailResponseDto.getRecipientType());
-        operationActDetailResponse.setUid(operationActDetailResponseDto.getUid());
-        if(operationActDetailResponseDto.getOperationEndDate()!=null)
-            operationActDetailResponse.setOperationEndDate(new Date(operationActDetailResponseDto.getOperationEndDate().toInstant().toEpochMilli()));
-        if(operationActDetailResponseDto.getOperationStartDate()!=null)
-            operationActDetailResponse.setOperationStartDate(new Date(operationActDetailResponseDto.getOperationStartDate().toInstant().toEpochMilli()));
+        OperationResponseStatus operationResponseStatus;
+        operationResponseStatus = new OperationResponseStatus();
+        if (operationActDetailResponseDto != null) {
+            operationActDetailResponse.setOperationId(operationActDetailResponseDto.getOperationId());
 
-        OperationResponseStatus operationResponseStatus = new OperationResponseStatus();
-        operationActResponse.setElement(operationActDetailResponse);
-        OperationResponseStatusDto operationResponseStatusDto = operationActResponseDto.getStatus();
-        if(operationResponseStatusDto!=null) {
-            if (operationResponseStatusDto.getCode() != null) {
-                operationResponseStatus.setCode(OperationResponseStatus.CodeEnum.fromValue(operationResponseStatusDto.getCode().getValue()));
+            operationActDetailResponse.setOperationStatus(operationActDetailResponseDto.getOperationStatus());
+            operationActDetailResponse.setFileKey(operationActDetailResponseDto.getFileKey());
+            operationActDetailResponse.setOperationType(operationActDetailResponseDto.getOperationType());
+            if (deanonymizedTaxIds.containsKey(operationActDetailResponseDto.getRecipientTaxId()))
+                operationActDetailResponse.setRecipientTaxId(deanonymizedTaxIds.get(operationActDetailResponseDto.getRecipientTaxId()));
+            if (deanonymizedTaxIds.containsKey(operationActDetailResponseDto.getDelegateTaxId()))
+                operationActDetailResponse.setDelegateTaxId(deanonymizedTaxIds.get(operationActDetailResponseDto.getDelegateTaxId()));
+            operationActDetailResponse.setIun(operationActDetailResponseDto.getIun());
+            operationActDetailResponse.setQrCode(operationActDetailResponseDto.getQrCode());
+            operationActDetailResponse.setErrorReason(operationActDetailResponseDto.getErrorReason());
+            operationActDetailResponse.setRecipientType(operationActDetailResponseDto.getRecipientType());
+            operationActDetailResponse.setUid(operationActDetailResponseDto.getUid());
+            operationActDetailResponse.setOperationId(operationActDetailResponseDto.getOperationId());
+            if (operationActDetailResponseDto.getOperationEndDate() != null)
+                operationActDetailResponse.setOperationEndDate(new Date(operationActDetailResponseDto.getOperationEndDate().toInstant().toEpochMilli()));
+            if (operationActDetailResponseDto.getOperationStartDate() != null)
+                operationActDetailResponse.setOperationStartDate(new Date(operationActDetailResponseDto.getOperationStartDate().toInstant().toEpochMilli()));
+
+            operationActResponse.setElement(operationActDetailResponse);
+            OperationResponseStatusDto operationResponseStatusDto = operationActResponseDto.getStatus();
+            if (operationResponseStatusDto != null) {
+                if (operationResponseStatusDto.getCode() != null) {
+                    operationResponseStatus.setCode(OperationResponseStatus.CodeEnum.fromValue(operationResponseStatusDto.getCode().getValue()));
+                }
+                operationResponseStatus.setMessage(operationResponseStatusDto.getMessage());
             }
-            operationResponseStatus.setMessage(operationResponseStatusDto.getMessage());
         }
-        operationActResponseDto.setStatus(operationResponseStatusDto);
+        operationActResponse.setStatus(operationResponseStatus);
         operationActResponse.setResult(operationActResponseDto.getResult());
-
         return operationActResponse;
     }
 
@@ -235,27 +258,29 @@ public class NotificationInquiryConverter {
         OperationsActDetailsResponse operationsActDetailsResponse = new OperationsActDetailsResponse();
 
         List<OperationActDetailResponse> listOperationActDetailResponse = new ArrayList<>();
-        operationsActDetailsResponseDto.getElements().stream().forEach(t -> {
-            OperationActDetailResponse operationActDetailResponse = new OperationActDetailResponse();
+        if (operationsActDetailsResponseDto.getElements() != null) {
+            operationsActDetailsResponseDto.getElements().forEach(t -> {
+                OperationActDetailResponse operationActDetailResponse = new OperationActDetailResponse();
 
-            operationActDetailResponse.setOperationId(t.getOperationId());
-            operationActDetailResponse.setOperationStatus(t.getOperationStatus());
-            operationActDetailResponse.setFileKey(t.getFileKey());
-            operationActDetailResponse.setOperationType(t.getOperationType());
-            operationActDetailResponse.setDelegateTaxId(t.getDelegateTaxId());
-            operationActDetailResponse.setIun(t.getIun());
-            operationActDetailResponse.setQrCode(t.getQrCode());
-            operationActDetailResponse.setErrorReason(t.getErrorReason());
-            operationActDetailResponse.setRecipientType(t.getRecipientType());
-            operationActDetailResponse.setUid(t.getUid());
-            if(t.getOperationEndDate()!=null)
-                operationActDetailResponse.setOperationEndDate(new Date(t.getOperationEndDate().toInstant().toEpochMilli()));
-            if(t.getOperationStartDate()!=null)
-                operationActDetailResponse.setOperationStartDate(new Date(t.getOperationStartDate().toInstant().toEpochMilli()));
-            operationActDetailResponse.setRecipientTaxId(t.getRecipientTaxId());
+                operationActDetailResponse.setOperationId(t.getOperationId());
+                operationActDetailResponse.setOperationStatus(t.getOperationStatus());
+                operationActDetailResponse.setFileKey(t.getFileKey());
+                operationActDetailResponse.setOperationType(t.getOperationType());
+                operationActDetailResponse.setDelegateTaxId(t.getDelegateTaxId());
+                operationActDetailResponse.setIun(t.getIun());
+                operationActDetailResponse.setQrCode(t.getQrCode());
+                operationActDetailResponse.setErrorReason(t.getErrorReason());
+                operationActDetailResponse.setRecipientType(t.getRecipientType());
+                operationActDetailResponse.setUid(t.getUid());
+                if(t.getOperationEndDate()!=null)
+                    operationActDetailResponse.setOperationEndDate(new Date(t.getOperationEndDate().toInstant().toEpochMilli()));
+                if(t.getOperationStartDate()!=null)
+                    operationActDetailResponse.setOperationStartDate(new Date(t.getOperationStartDate().toInstant().toEpochMilli()));
+                operationActDetailResponse.setRecipientTaxId(t.getRecipientTaxId());
 
-            listOperationActDetailResponse.add(operationActDetailResponse);
-        });
+                listOperationActDetailResponse.add(operationActDetailResponse);
+            });
+        }
 
         operationsActDetailsResponse.setElements(listOperationActDetailResponse);
         OperationResponseStatus operationResponseStatus = new OperationResponseStatus();
@@ -272,7 +297,8 @@ public class NotificationInquiryConverter {
     }
 
     public OperationsResponse operationsDtoToResponse(List<OperationsDetailsResponse> operationsDetailsResponses,
-                                                      Map<String, String> deanonymizedTaxIds, Boolean result,
+                                                      Map<String, String> deanonymizedTaxIds,
+                                                      Boolean result,
                                                       OperationResponseStatusDto operationResponseStatusDto) {
 
         OperationsResponse operationsResponse = new OperationsResponse();
@@ -304,23 +330,23 @@ public class NotificationInquiryConverter {
         OperationsDetailsResponse operationsDetailsResponse = new OperationsDetailsResponse();
 
         OperationAorDetailResponseDto operationAorDetailResponseDto = operationAorResponseDto.getElement();
-
-        operationsDetailsResponse.setOperationId(operationAorDetailResponseDto.getOperationId());
-        operationsDetailsResponse.setOperationStatus(operationAorDetailResponseDto.getOperationStatus());
-        operationsDetailsResponse.setFileKey(operationAorDetailResponseDto.getFileKey());
-        operationsDetailsResponse.setOperationType(operationAorDetailResponseDto.getOperationType());
-        operationsDetailsResponse.setIuns(operationAorDetailResponseDto.getIuns());
-        operationsDetailsResponse.setRecipientTaxId(operationAorDetailResponseDto.getRecipientTaxId());
-        operationsDetailsResponse.setDelegateTaxId(operationAorDetailResponseDto.getDelegateTaxId());
-        operationsDetailsResponse.setQrCode(operationAorDetailResponseDto.getQrCode());
-        operationsDetailsResponse.setErrorReason(operationAorDetailResponseDto.getErrorReason());
-        operationsDetailsResponse.setRecipientType(operationAorDetailResponseDto.getRecipientType());
-        operationsDetailsResponse.setUid(operationAorDetailResponseDto.getUid());
-        if(operationAorDetailResponseDto.getOperationEndDate()!=null)
-            operationsDetailsResponse.setOperationEndDate(new Date(operationAorDetailResponseDto.getOperationEndDate().toInstant().toEpochMilli()));
-        if(operationAorDetailResponseDto.getOperationStartDate()!=null)
-            operationsDetailsResponse.setOperationStartDate(new Date(operationAorDetailResponseDto.getOperationStartDate().toInstant().toEpochMilli()));
-
+        if(operationAorDetailResponseDto != null) {
+            operationsDetailsResponse.setOperationId(operationAorDetailResponseDto.getOperationId());
+            operationsDetailsResponse.setOperationStatus(operationAorDetailResponseDto.getOperationStatus());
+            operationsDetailsResponse.setFileKey(operationAorDetailResponseDto.getFileKey());
+            operationsDetailsResponse.setOperationType(operationAorDetailResponseDto.getOperationType());
+            operationsDetailsResponse.setIuns(operationAorDetailResponseDto.getIuns());
+            operationsDetailsResponse.setRecipientTaxId(operationAorDetailResponseDto.getRecipientTaxId());
+            operationsDetailsResponse.setDelegateTaxId(operationAorDetailResponseDto.getDelegateTaxId());
+            operationsDetailsResponse.setQrCode(operationAorDetailResponseDto.getQrCode());
+            operationsDetailsResponse.setErrorReason(operationAorDetailResponseDto.getErrorReason());
+            operationsDetailsResponse.setRecipientType(operationAorDetailResponseDto.getRecipientType());
+            operationsDetailsResponse.setUid(operationAorDetailResponseDto.getUid());
+            if (operationAorDetailResponseDto.getOperationEndDate() != null)
+                operationsDetailsResponse.setOperationEndDate(new Date(operationAorDetailResponseDto.getOperationEndDate().toInstant().toEpochMilli()));
+            if (operationAorDetailResponseDto.getOperationStartDate() != null)
+                operationsDetailsResponse.setOperationStartDate(new Date(operationAorDetailResponseDto.getOperationStartDate().toInstant().toEpochMilli()));
+        }
         return operationsDetailsResponse;
 
     }
@@ -329,23 +355,37 @@ public class NotificationInquiryConverter {
         OperationsDetailsResponse operationsDetailsResponse = new OperationsDetailsResponse();
 
         OperationActDetailResponseDto operationActDetailResponseDto = operationActResponseDto.getElement();
-
-        operationsDetailsResponse.setOperationId(operationActDetailResponseDto.getOperationId());
-        operationsDetailsResponse.setOperationStatus(operationActDetailResponseDto.getOperationStatus());
-        operationsDetailsResponse.setFileKey(operationActDetailResponseDto.getFileKey());
-        operationsDetailsResponse.setOperationType(operationActDetailResponseDto.getOperationType());
-        operationsDetailsResponse.setIuns(List.of(operationActDetailResponseDto.getIun()));
-        operationsDetailsResponse.setRecipientTaxId(operationActDetailResponseDto.getRecipientTaxId());
-        operationsDetailsResponse.setDelegateTaxId(operationActDetailResponseDto.getDelegateTaxId());
-        operationsDetailsResponse.setQrCode(operationActDetailResponseDto.getQrCode());
-        operationsDetailsResponse.setErrorReason(operationActDetailResponseDto.getErrorReason());
-        operationsDetailsResponse.setRecipientType(operationActDetailResponseDto.getRecipientType());
-        operationsDetailsResponse.setUid(operationActDetailResponseDto.getUid());
-        if(operationActDetailResponseDto.getOperationEndDate()!=null)
-            operationsDetailsResponse.setOperationEndDate(new Date(operationActDetailResponseDto.getOperationEndDate().toInstant().toEpochMilli()));
-        if(operationActDetailResponseDto.getOperationStartDate()!=null)
-            operationsDetailsResponse.setOperationStartDate(new Date(operationActDetailResponseDto.getOperationStartDate().toInstant().toEpochMilli()));
-
+        if (operationActDetailResponseDto != null) {
+            operationsDetailsResponse.setOperationId(operationActDetailResponseDto.getOperationId());
+            operationsDetailsResponse.setOperationStatus(operationActDetailResponseDto.getOperationStatus());
+            operationsDetailsResponse.setFileKey(operationActDetailResponseDto.getFileKey());
+            operationsDetailsResponse.setOperationType(operationActDetailResponseDto.getOperationType());
+            if (operationActDetailResponseDto.getIun() != null) {
+                operationsDetailsResponse.setIuns(List.of(operationActDetailResponseDto.getIun()));
+            }
+            operationsDetailsResponse.setRecipientTaxId(operationActDetailResponseDto.getRecipientTaxId());
+            operationsDetailsResponse.setDelegateTaxId(operationActDetailResponseDto.getDelegateTaxId());
+            operationsDetailsResponse.setQrCode(operationActDetailResponseDto.getQrCode());
+            operationsDetailsResponse.setErrorReason(operationActDetailResponseDto.getErrorReason());
+            operationsDetailsResponse.setRecipientType(operationActDetailResponseDto.getRecipientType());
+            operationsDetailsResponse.setUid(operationActDetailResponseDto.getUid());
+            if (operationActDetailResponseDto.getOperationEndDate() != null)
+                operationsDetailsResponse.setOperationEndDate(new Date(operationActDetailResponseDto.getOperationEndDate().toInstant().toEpochMilli()));
+            if (operationActDetailResponseDto.getOperationStartDate() != null)
+                operationsDetailsResponse.setOperationStartDate(new Date(operationActDetailResponseDto.getOperationStartDate().toInstant().toEpochMilli()));
+        }
         return operationsDetailsResponse;
+    }
+
+    public OperationsResponse noAssociatedOperationFoundResponse(OperationsResponseDto operationsResponseDto) {
+        OperationsResponse operationsResponse = new OperationsResponse();
+        operationsResponse.setOperations(new ArrayList<>());
+        operationsResponse.setResult(operationsResponseDto.getResult());
+        if (operationsResponseDto.getStatus() != null) {
+            operationsResponse.setStatus(new OperationResponseStatus()
+                    .code(OperationResponseStatus.CodeEnum.NUMBER_1)
+                    .message(operationsResponseDto.getStatus().getMessage()));
+        }
+        return operationsResponse;
     }
 }
