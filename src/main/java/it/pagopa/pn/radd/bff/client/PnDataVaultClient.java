@@ -22,6 +22,7 @@ public class PnDataVaultClient extends CommonBaseClient {
     private final PnRaddBffConfig pnRaddBffConfig;
     private final ResponseExchangeFilter responseExchangeFilter;
 
+
     public PnDataVaultClient(PnRaddBffConfig pnRaddBffConfig, ResponseExchangeFilter responseExchangeFilter) {
         this.pnRaddBffConfig = pnRaddBffConfig;
         this.responseExchangeFilter = responseExchangeFilter;

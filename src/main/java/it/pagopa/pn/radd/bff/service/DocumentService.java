@@ -21,4 +21,8 @@ public class DocumentService {
 					return documentConverter.documentModelToResponse(response,false);
 				}));
 	}
+
+    public void setDocumentReadyRecord(String fileKey) {
+		documentRepository.putDocumentReadyRecord(fileKey);
+    }
 }

@@ -10,6 +10,9 @@ import software.amazon.awssdk.enhanced.dynamodb.DynamoDbEnhancedAsyncClient;
 import software.amazon.awssdk.enhanced.dynamodb.Key;
 import software.amazon.awssdk.enhanced.dynamodb.TableSchema;
 
+import java.time.LocalDateTime;
+import java.time.ZoneOffset;
+
 @Slf4j
 @Component
 
@@ -27,5 +30,13 @@ public class DocumentRepositoryImpl implements DocumentRepository {
 				.partitionValue(fileKey)
 				.build();
 		return Mono.fromFuture(table.getItem(key));
+	}
+
+	@Override
+	public void putDocumentReadyRecord(String fileKey) {
+		DocumentModel documentModel = new DocumentModel();
+		documentModel.setFileKey(fileKey);
+		documentModel.setTtl(LocalDateTime.now().plusHours(1).toEpochSecond(ZoneOffset.UTC));
+		table.putItem(documentModel);
 	}
 }
