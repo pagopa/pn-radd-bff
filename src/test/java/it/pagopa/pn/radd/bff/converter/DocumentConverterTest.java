@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import it.pagopa.pn.radd.bff.entity.DocumentModel;
-import it.pagopa.pn.radd.bff.rest.v1.dto.DocumentResponse;
+import it.pagopa.pn.radd.bff.generated.openapi.server.v1.dto.DocumentResponse;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;

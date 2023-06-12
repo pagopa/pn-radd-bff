@@ -2,8 +2,8 @@ package it.pagopa.pn.radd.bff.service;
 
 import it.pagopa.pn.radd.bff.client.PnRaddFsuClient;
 import it.pagopa.pn.radd.bff.converter.DocumentUploadConverter;
-import it.pagopa.pn.radd.bff.rest.v1.dto.DocumentUploadRequest;
-import it.pagopa.pn.radd.bff.rest.v1.dto.DocumentUploadResponse;
+import it.pagopa.pn.radd.bff.generated.openapi.server.v1.dto.DocumentUploadRequest;
+import it.pagopa.pn.radd.bff.generated.openapi.server.v1.dto.DocumentUploadResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;

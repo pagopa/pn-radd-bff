@@ -1,7 +1,25 @@
 package it.pagopa.pn.radd.bff.converter;
 
+import it.pagopa.pn.radd.bff.generated.openapi.server.v1.dto.*;
+import it.pagopa.pn.radd.bff.generated.openapi.server.v1.dto.AbortTransactionRequest;
+import it.pagopa.pn.radd.bff.generated.openapi.server.v1.dto.AbortTransactionResponse;
+import it.pagopa.pn.radd.bff.generated.openapi.server.v1.dto.ActStartTransactionRequest;
+import it.pagopa.pn.radd.bff.generated.openapi.server.v1.dto.AorStartTransactionRequest;
+import it.pagopa.pn.radd.bff.generated.openapi.server.v1.dto.CompleteTransactionRequest;
+import it.pagopa.pn.radd.bff.generated.openapi.server.v1.dto.CompleteTransactionResponse;
+import it.pagopa.pn.radd.bff.generated.openapi.server.v1.dto.FilterRequest;
+import it.pagopa.pn.radd.bff.generated.openapi.server.v1.dto.OperationActDetailResponse;
+import it.pagopa.pn.radd.bff.generated.openapi.server.v1.dto.OperationActResponse;
+import it.pagopa.pn.radd.bff.generated.openapi.server.v1.dto.OperationAorDetailResponse;
+import it.pagopa.pn.radd.bff.generated.openapi.server.v1.dto.OperationAorResponse;
+import it.pagopa.pn.radd.bff.generated.openapi.server.v1.dto.OperationResponseStatus;
+import it.pagopa.pn.radd.bff.generated.openapi.server.v1.dto.OperationsActDetailsResponse;
+import it.pagopa.pn.radd.bff.generated.openapi.server.v1.dto.OperationsAorDetailsResponse;
+import it.pagopa.pn.radd.bff.generated.openapi.server.v1.dto.OperationsResponse;
+import it.pagopa.pn.radd.bff.generated.openapi.server.v1.dto.StartTransactionResponse;
+import it.pagopa.pn.radd.bff.generated.openapi.server.v1.dto.StartTransactionResponseStatus;
+import it.pagopa.pn.radd.bff.generated.openapi.server.v1.dto.TransactionResponseStatus;
 import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.*;
-import it.pagopa.pn.radd.bff.rest.v1.dto.*;
 import org.springframework.stereotype.Component;
 
 

@@ -8,6 +8,9 @@ import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbAttri
 import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbBean;
 import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbPartitionKey;
 
+import java.time.LocalDateTime;
+import java.time.ZoneOffset;
+
 @Data
 @DynamoDbBean
 public class DocumentModel {

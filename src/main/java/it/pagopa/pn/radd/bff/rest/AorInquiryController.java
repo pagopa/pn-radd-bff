@@ -1,7 +1,8 @@
 package it.pagopa.pn.radd.bff.rest;
 
-import it.pagopa.pn.radd.bff.rest.v1.api.AorDocumentInquiryApi;
-import it.pagopa.pn.radd.bff.rest.v1.dto.AORInquiryResponse;
+
+import it.pagopa.pn.radd.bff.generated.openapi.server.v1.api.AorDocumentInquiryApi;
+import it.pagopa.pn.radd.bff.generated.openapi.server.v1.dto.AORInquiryResponse;
 import it.pagopa.pn.radd.bff.service.AorInquiryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -25,15 +26,15 @@ public class AorInquiryController implements AorDocumentInquiryApi {
      * GET /radd-web/aor/inquiry
      * API utilizzata per la verifica della presenza a sistema di avvisi di avvenuta ricezione per il cliente.
      *
-     * @param xPagopaPnUid User Identifier (required)
+     * @param xPagopaPnUid   User Identifier (required)
      * @param recipientTaxId Codice Fiscale Destinatario (required)
-     * @param recipientType Sigla, Persona fisica o giuridica (required)
+     * @param recipientType  Sigla, Persona fisica o giuridica (required)
      * @return OK (status code 200)
-     *         or Bad Request (status code 400)
-     *         or Unauthorized (status code 401)
-     *         or Forbidden (status code 403)
-     *         or Method not allowed (status code 405)
-     *         or Internal Server Error (status code 500)
+     * or Bad Request (status code 400)
+     * or Unauthorized (status code 401)
+     * or Forbidden (status code 403)
+     * or Method not allowed (status code 405)
+     * or Internal Server Error (status code 500)
      */
     @Override
     public Mono<ResponseEntity<AORInquiryResponse>> aorInquiry(String xPagopaPnUid,

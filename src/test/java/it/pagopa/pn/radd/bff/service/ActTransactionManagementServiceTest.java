@@ -2,10 +2,10 @@ package it.pagopa.pn.radd.bff.service;
 
 import it.pagopa.pn.radd.bff.client.PnRaddFsuClient;
 import it.pagopa.pn.radd.bff.converter.TransactionManagementConverter;
+import it.pagopa.pn.radd.bff.generated.openapi.server.v1.dto.*;
 import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.AbortTransactionResponseDto;
 import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.CompleteTransactionResponseDto;
 import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.StartTransactionResponseDto;
-import it.pagopa.pn.radd.bff.rest.v1.dto.*;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;

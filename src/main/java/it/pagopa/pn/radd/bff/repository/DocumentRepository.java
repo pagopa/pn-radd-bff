@@ -6,5 +6,5 @@ import reactor.core.publisher.Mono;
 public interface DocumentRepository {
 	Mono<DocumentModel> findByFileKey(String fileKey);
 
-    void putDocumentReadyRecord(String fileKey);
+    Mono<Void> putDocumentReadyRecord(String fileKey);
 }

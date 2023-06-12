@@ -1,6 +1,6 @@
 package it.pagopa.pn.radd.bff.converter;
 
-import it.pagopa.pn.radd.bff.msclient.generated.data.vault.v1.dto.BaseRecipientDtoDto;
+import it.pagopa.pn.radd.bff.generated.openapi.msclient.data.vault.v1.dto.BaseRecipientDto;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,8 +34,8 @@ class DataVaultConverterTest {
      */
     @Test
     void testMapToBaseRecipient2() {
-        ArrayList<BaseRecipientDtoDto> baseRecipientDtoList = new ArrayList<>();
-        baseRecipientDtoList.add(new BaseRecipientDtoDto());
+        ArrayList<BaseRecipientDto> baseRecipientDtoList = new ArrayList<>();
+        baseRecipientDtoList.add(new BaseRecipientDto());
         assertTrue(dataVaultConverter.mapToBaseRecipient(baseRecipientDtoList).isEmpty());
     }
 
@@ -44,9 +44,9 @@ class DataVaultConverterTest {
      */
     @Test
     void testMapToBaseRecipient3() {
-        ArrayList<BaseRecipientDtoDto> baseRecipientDtoList = new ArrayList<>();
-        baseRecipientDtoList.add(new BaseRecipientDtoDto());
-        baseRecipientDtoList.add(new BaseRecipientDtoDto());
+        ArrayList<BaseRecipientDto> baseRecipientDtoList = new ArrayList<>();
+        baseRecipientDtoList.add(new BaseRecipientDto());
+        baseRecipientDtoList.add(new BaseRecipientDto());
         assertTrue(dataVaultConverter.mapToBaseRecipient(baseRecipientDtoList).isEmpty());
     }
 
@@ -56,11 +56,11 @@ class DataVaultConverterTest {
      */
     @Test
     void testMapToBaseRecipient5() {
-        BaseRecipientDtoDto baseRecipientDtoDto = mock(BaseRecipientDtoDto.class);
+        BaseRecipientDto baseRecipientDtoDto = mock(BaseRecipientDto.class);
         when(baseRecipientDtoDto.getInternalId()).thenReturn("42");
         when(baseRecipientDtoDto.getTaxId()).thenReturn("42");
 
-        ArrayList<BaseRecipientDtoDto> baseRecipientDtoList = new ArrayList<>();
+        ArrayList<BaseRecipientDto> baseRecipientDtoList = new ArrayList<>();
         baseRecipientDtoList.add(baseRecipientDtoDto);
         Map<String, String> actualMapToBaseRecipientResult = dataVaultConverter.mapToBaseRecipient(baseRecipientDtoList);
         assertEquals(1, actualMapToBaseRecipientResult.size());

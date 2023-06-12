@@ -1,7 +1,7 @@
 package it.pagopa.pn.radd.bff.rest;
 
-import it.pagopa.pn.radd.bff.rest.v1.api.ActDocumentInquiryApi;
-import it.pagopa.pn.radd.bff.rest.v1.dto.ActInquiryResponse;
+import it.pagopa.pn.radd.bff.generated.openapi.server.v1.api.ActDocumentInquiryApi;
+import it.pagopa.pn.radd.bff.generated.openapi.server.v1.dto.ActInquiryResponse;
 import it.pagopa.pn.radd.bff.service.ActInquiryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Qualifier;

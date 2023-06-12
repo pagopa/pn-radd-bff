@@ -6,13 +6,17 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.test.context.ContextConfiguration;
+import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 import software.amazon.awssdk.enhanced.dynamodb.DynamoDbAsyncTable;
 import software.amazon.awssdk.enhanced.dynamodb.DynamoDbEnhancedAsyncClient;
 import software.amazon.awssdk.enhanced.dynamodb.Key;
+import software.amazon.awssdk.enhanced.dynamodb.TableSchema;
 
+import javax.print.Doc;
 import java.util.concurrent.CompletableFuture;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
@@ -35,6 +39,20 @@ class DocumentRepositoryImplTest {
 				.thenReturn(CompletableFuture.completedFuture(new DocumentModel()));
 		StepVerifier.create(documentRepository.findByFileKey("fileKey"))
 				.expectNextCount(1)
+				.verifyComplete();
+	}
+
+
+	@Test
+	void testPutDocumentReadyRecord() {
+		when(dynamoDbEnhancedAsyncClient.table(any(), any()))
+				.thenReturn(table);
+		DocumentRepository documentRepository = new DocumentRepositoryImpl(dynamoDbEnhancedAsyncClient, "");
+		CompletableFuture<Void> completableFuture = new CompletableFuture<>();
+		completableFuture.complete(null);
+		when(table.putItem(any(DocumentModel.class)))
+				.thenReturn(completableFuture);
+		StepVerifier.create(documentRepository.putDocumentReadyRecord("fileKey"))
 				.verifyComplete();
 	}
 }

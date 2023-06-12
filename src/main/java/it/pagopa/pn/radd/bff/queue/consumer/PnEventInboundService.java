@@ -15,13 +15,19 @@ import java.util.UUID;
 @Configuration
 public class PnEventInboundService {
 
+    private final EventHandler eventHandler;
+
+    public PnEventInboundService(EventHandler eventHandler) {
+        this.eventHandler = eventHandler;
+    }
+
     @Bean
     public MessageRoutingCallback customRouter() {
         return new MessageRoutingCallback() {
             @Override
             public FunctionRoutingResult routingResult(Message<?> message) {
                 setTraceId(message);
-                return new FunctionRoutingResult("pnRaddBffDocumentReadyConsumer");
+                return new FunctionRoutingResult(eventHandler.getHandlerDocumentReady());
             }
         };
     }

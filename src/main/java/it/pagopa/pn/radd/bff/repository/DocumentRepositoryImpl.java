@@ -26,17 +26,27 @@ public class DocumentRepositoryImpl implements DocumentRepository {
 
 	@Override
 	public Mono<DocumentModel> findByFileKey (String fileKey) {
+		log.debug("Getting data {} from DynamoDB table {}", fileKey, table.tableName());
 		Key key = Key.builder()
 				.partitionValue(fileKey)
 				.build();
-		return Mono.fromFuture(table.getItem(key));
+		return Mono.fromFuture(table.getItem(key))
+				.map(v -> {
+					log.info("Got data from DynamoDB table {}", table.tableName());
+					return v;
+				});
 	}
 
 	@Override
-	public void putDocumentReadyRecord(String fileKey) {
+	public Mono<Void> putDocumentReadyRecord(String fileKey) {
+		log.debug("Inserting data {} in DynamoDB table {}", fileKey, table.tableName());
 		DocumentModel documentModel = new DocumentModel();
 		documentModel.setFileKey(fileKey);
 		documentModel.setTtl(LocalDateTime.now().plusHours(1).toEpochSecond(ZoneOffset.UTC));
-		table.putItem(documentModel);
+		return Mono.fromFuture(table.putItem(documentModel))
+				.map(v -> {
+					log.info("Inserted data in DynamoDB table {}", table.tableName());
+					return v;
+				});
 	}
 }

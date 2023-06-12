@@ -1,7 +1,7 @@
 package it.pagopa.pn.radd.bff.rest;
 
-import it.pagopa.pn.radd.bff.rest.v1.dto.AORInquiryResponse;
-import it.pagopa.pn.radd.bff.rest.v1.dto.ResponseStatus;
+import it.pagopa.pn.radd.bff.generated.openapi.server.v1.dto.AORInquiryResponse;
+import it.pagopa.pn.radd.bff.generated.openapi.server.v1.dto.ResponseStatus;
 import it.pagopa.pn.radd.bff.service.AorInquiryService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
