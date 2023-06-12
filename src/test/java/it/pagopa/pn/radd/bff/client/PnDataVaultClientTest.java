@@ -12,6 +12,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import reactor.core.publisher.Flux;
 import reactor.core.scheduler.Scheduler;
@@ -23,6 +24,10 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 @SpringBootTest
 @ExtendWith(SpringExtension.class)
+@TestPropertySource(properties = {
+        "AWS_REGION=eu-south-1",
+        "PN_RADD_BFF_DYNAMODB_TABLENAME_PN_DOCUMENT=test"
+})
 class PnDataVaultClientTest {
     private static PnDataVaultClient pnDataVaultClient;
 
