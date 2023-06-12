@@ -23,11 +23,13 @@ import static org.mockito.Mockito.when;
 @ExtendWith (SpringExtension.class)
 @TestPropertySource(properties = {
         "AWS_REGION=eu-south-1",
+        "PN_RADD_BFF_DYNAMODB_TABLENAME_PN_DOCUMENT=test"
 })
 class PnRaddFsuClientTest {
 
     @Value("${AWS_REGION:eu-south-1}")
     private static final String AWS_REGION = "eu-south-1";
+
     private static PnRaddFsuClient pnRaddFsuClient;
 
     @Mock

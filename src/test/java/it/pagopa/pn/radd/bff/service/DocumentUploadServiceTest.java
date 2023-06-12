@@ -13,6 +13,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
@@ -22,6 +23,10 @@ import static org.mockito.Mockito.when;
 
 @SpringBootTest
 @ExtendWith (SpringExtension.class)
+@TestPropertySource(properties = {
+        "AWS_REGION=eu-south-1",
+        "PN_RADD_BFF_DYNAMODB_TABLENAME_PN_DOCUMENT=test"
+})
 class DocumentUploadServiceTest {
     @MockBean
     private DocumentUploadConverter documentUploadConverter;
