@@ -71,6 +71,18 @@ Parameters:
     Type: String
     Description: 'pn-safe-storage to pn-radd-bff SQS queue name'
 
+  PnDocumentReadyTableArn:
+    Type: String
+    Description: 'ARN of DynamoDB table containing document ready status'
+
+  PnDocumentReadyTableName:
+    Type: String
+    Description: 'Name of DynamoDB table containing document ready status'
+
+  SafeStorageToRaddQueueARN:
+    Type: String
+    Description: 'Identify the resource that the policy applies to.'
+
   EcsLogGroup:
     Type: String
 
@@ -191,8 +203,9 @@ Resources:
         ContainerEnvEntry5: !Sub 'PN_RADD_BFF_CLIENT_PN_DATA_VAULT_BASEPATH=http://alb.confidential.pn.internal:8080'
         ContainerEnvEntry6: !Sub 'PN_RADD_BFF_AMPLIFY_CORS_DOMAIN=${AmplifyCorsDomain}'
         ContainerEnvEntry7: !Sub 'PN_SAFE_STORAGE_TO_PN_RADD_BFF_QUEUE_NAME=${PnSafeStorageToPnRaddBffQueueName}'
+        ContainerEnvEntry8: !Sub 'PN_RADD_BFF_DYNAMODB_TABLENAME_PN_DOCUMENT=${PnDocumentReadyTableName}'
 
-
+        TaskRoleManagedPolicyArn: !Ref RaddBffMicroserviceTaskManagedPolicy
         MappedPaths: '/radd-web/*'
         ECSClusterName: !Ref ECSClusterName
         Subnets: !Ref SubnetsIds
@@ -202,6 +215,80 @@ Resources:
         LoadbalancerRulePriority: !Ref MicroserviceNumber
         CloudwatchLogKinesisStreamArn: !Ref LogsKinesisSourceStreamArn
         EcsLogGroup: !Ref EcsLogGroup
+
+        NationalRegistryMicroserviceTaskManagedPolicy:
+          Type: AWS::IAM::ManagedPolicy
+          Properties:
+            PolicyDocument:
+              Version: 2012-10-17
+              Statement:
+                - Effect: Allow
+                  Action:
+                    - secretsmanager:GetSecretValue
+                  Resource:
+                    - !Sub 'arn:${AWS::Partition}:secretsmanager:${AWS::Region}:${AWS::AccountId}:secret:${SecretPrefix}*'
+                - Effect: Allow
+                  Action:
+                    - kms:Sign
+                  Resource:
+                    - !Ref PDNDSessionTokenSigningKeyARN
+                    - !Ref CheckCfPDNDSessionTokenSigningKeyARN
+                    - !Ref InadPDNDSessionTokenSigningKeyARN
+                    - !Ref CheckCfSigningKeyARN
+                    - !Ref AnprAuthChannelSigningKeyARN
+                    - !Ref AnprIntegrityRestSigningKeyARN
+                    - !Ref InfoCamereSigningKeyARN
+                - Effect: Allow
+                  Action:
+                    - kms:Encrypt
+                    - kms:Decrypt
+                  Resource:
+                    - !Ref PnBatchRequestEncryptKeyARN
+                - Effect: Allow
+                  Action:
+                    - dynamodb:GetItem
+                    - dynamodb:Query
+                    - dynamodb:Scan
+                    - dynamodb:UpdateItem
+                    - dynamodb:PutItem
+                  Resource:
+                    - !Ref CounterTableArn
+                    - !Ref BatchRequestTableArn
+                    - !Ref BatchPollingTableArn
+                    - !Sub '${BatchRequestTableArn}/index/*'
+                    - !Sub '${BatchPollingTableArn}/index/*'
+                - Effect: Allow
+                  Action:
+                    - sqs:SendMessage
+                    - sqs:GetQueueUrl
+                  Resource:
+                    - !Ref NationalRegistryGatewayOutputsQueueARN
+                - Effect: Allow
+                  Action:
+                    - ssm:GetParameter
+                    - ssm:GetParameters
+                  Resource:
+                    - !Sub 'arn:aws:ssm:${AWS::Region}:${AWS::AccountId}:parameter/MapTaxIdWhiteList'
+
+
+  RaddBffMicroserviceTaskManagedPolicy:
+    Type: AWS::IAM::ManagedPolicy
+    Properties:
+      PolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Effect: Allow
+            Action:
+              - dynamodb:GetItem
+              - dynamodb:PutItem
+            Resource:
+              - !Ref PnDocumentReadyTableArn
+          - Effect: Allow
+            Action:
+              - sqs:GetQueueUrl
+              - sqs:ReceiveMessage
+            Resource:
+              - !Ref SafeStorageToRaddQueueARN
 
   # Expose PN-RADD-BFF microservice public API with API-GW for WEB usage
   RaddBffMicroservicePublicWebAPI:
@@ -250,3 +337,9 @@ Resources:
         LogGroupsNames: !Join
           - ','
           - - !Ref EcsLogGroup
+        DynamoDBTableNames: !Join
+          - ','
+          - - !Ref PnDocumentReadyTableName
+        QueueArns: !Join
+          - ','
+          - - !Ref SafeStorageToRaddQueueARN

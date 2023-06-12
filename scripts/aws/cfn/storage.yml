@@ -55,5 +55,11 @@ Resources:
         Enabled: true
 
 Outputs:
+  PnDocumentReadyTableArn:
+    Description: ARN Dynamo Name used by application to access the key-value store of PnDocumentReadyTable
+    Value: !Sub '${PnDocumentReadyTable.Arn}'
+  PnDocumentReadyTableName:
+    Description: Name of dynamodb table containing notifications
+    Value: !Ref PnDocumentReadyTable
   EcsLogGroup:
     Value: !GetAtt PnRaddBffLogGroup.Outputs.LogGroupName
