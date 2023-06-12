@@ -37,5 +37,19 @@ class DocumentRepositoryImplTest {
 				.expectNextCount(1)
 				.verifyComplete();
 	}
+
+
+	@Test
+	void testPutDocumentReadyRecord() {
+		when(dynamoDbEnhancedAsyncClient.table(any(), any()))
+				.thenReturn(table);
+		DocumentRepository documentRepository = new DocumentRepositoryImpl(dynamoDbEnhancedAsyncClient, "");
+		CompletableFuture<Void> completableFuture = new CompletableFuture<>();
+		completableFuture.complete(null);
+		when(table.putItem(any(DocumentModel.class)))
+				.thenReturn(completableFuture);
+		StepVerifier.create(documentRepository.putDocumentReadyRecord("fileKey"))
+				.verifyComplete();
+	}
 }
 

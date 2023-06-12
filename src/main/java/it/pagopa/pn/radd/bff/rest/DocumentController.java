@@ -1,8 +1,9 @@
 package it.pagopa.pn.radd.bff.rest;
 
 import io.swagger.annotations.Api;
-import it.pagopa.pn.radd.bff.rest.v1.api.DocumentApi;
-import it.pagopa.pn.radd.bff.rest.v1.dto.DocumentResponse;
+
+import it.pagopa.pn.radd.bff.generated.openapi.server.v1.api.DocumentApi;
+import it.pagopa.pn.radd.bff.generated.openapi.server.v1.dto.DocumentResponse;
 import it.pagopa.pn.radd.bff.service.DocumentService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

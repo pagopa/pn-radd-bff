@@ -2,8 +2,8 @@ package it.pagopa.pn.radd.bff.service;
 
 import it.pagopa.pn.radd.bff.converter.DocumentConverter;
 import it.pagopa.pn.radd.bff.entity.DocumentModel;
+import it.pagopa.pn.radd.bff.generated.openapi.server.v1.dto.DocumentResponse;
 import it.pagopa.pn.radd.bff.repository.DocumentRepository;
-import it.pagopa.pn.radd.bff.rest.v1.dto.DocumentResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Mono;
@@ -21,4 +21,8 @@ public class DocumentService {
 					return documentConverter.documentModelToResponse(response,false);
 				}));
 	}
+
+    public Mono<Void> setDocumentReadyRecord(String fileKey) {
+		return documentRepository.putDocumentReadyRecord(fileKey);
+    }
 }

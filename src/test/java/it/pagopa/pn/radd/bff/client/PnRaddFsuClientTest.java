@@ -1,14 +1,16 @@
 package it.pagopa.pn.radd.bff.client;
 
 import it.pagopa.pn.radd.bff.config.PnRaddBffConfig;
+import it.pagopa.pn.radd.bff.generated.openapi.msclient.radd.fsu.v1.api.*;
 import it.pagopa.pn.radd.bff.log.ResponseExchangeFilter;
-import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.api.*;
 import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.*;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
@@ -16,16 +18,20 @@ import reactor.test.StepVerifier;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+
 @SpringBootTest
 @ExtendWith (SpringExtension.class)
+@TestPropertySource(properties = {
+        "AWS_REGION=eu-south-1",
+})
 class PnRaddFsuClientTest {
 
-
+    @Value("${AWS_REGION:eu-south-1}")
+    private static final String AWS_REGION = "eu-south-1";
     private static PnRaddFsuClient pnRaddFsuClient;
 
     @Mock
     private DocumentUploadApi documentUploadApi;
-
     @Mock
     private ActDocumentInquiryApi actDocumentInquiryApi;
 
@@ -44,7 +50,6 @@ class PnRaddFsuClientTest {
 
     @Mock
     private static ResponseExchangeFilter responseExchangeFilter;
-
 
     @BeforeAll
     static void init () {
@@ -117,6 +122,7 @@ class PnRaddFsuClientTest {
         StepVerifier.create(pnRaddFsuClient.documentUpload("uid", documentUploadRequestDto))
                 .expectNext(documentUploadResponseDto);
     }
+
     @Test
     void testActAbortTransaction () {
 

@@ -1,8 +1,8 @@
 package it.pagopa.pn.radd.bff.rest;
 
 import it.pagopa.pn.radd.bff.converter.DocumentConverter;
+import it.pagopa.pn.radd.bff.generated.openapi.server.v1.dto.DocumentResponse;
 import it.pagopa.pn.radd.bff.repository.DocumentRepositoryImpl;
-import it.pagopa.pn.radd.bff.rest.v1.dto.DocumentResponse;
 import it.pagopa.pn.radd.bff.service.DocumentService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

@@ -578,6 +578,7 @@ components:
         operationId:
           type: string
         recipientTaxId:
+          x-field-extra-annotation: "@lombok.ToString.Exclude" # NO EXTERNAL
           type: string
           example: "TNTGTR76E21H751S"
         recipientType:
@@ -585,6 +586,7 @@ components:
           enum: ["PF", "PG"]
           example: "PF"
         delegateTaxId:
+          x-field-extra-annotation: "@lombok.ToString.Exclude" # NO EXTERNAL
           type: string
           example: "RFRGRZ66E21H751B"
         operationDate:
@@ -792,12 +794,14 @@ components:
           type: string
           example: "FBD"
         recipientTaxId:
+          x-field-extra-annotation: "@lombok.ToString.Exclude" # NO EXTERNAL
           type: string
           example: "TNTGTR76E21H751S"
         recipientType:
           type: string
           example: "PF"
         delegateTaxId:
+          x-field-extra-annotation: "@lombok.ToString.Exclude" # NO EXTERNAL
           type: string
           example: "RFRGRZ66E21H751B"
         uid:
@@ -888,12 +892,14 @@ components:
           type: string
           example: "FBD"
         recipientTaxId:
+          x-field-extra-annotation: "@lombok.ToString.Exclude" # NO EXTERNAL
           type: string
           example: "TNTGTR76E21H751S"
         recipientType:
           type: string
           example: "PF"
         delegateTaxId:
+          x-field-extra-annotation: "@lombok.ToString.Exclude" # NO EXTERNAL
           type: string
           example: "RFRGRZ66E21H751B"
         uid:
@@ -946,12 +952,14 @@ components:
           type: string
           example: "FBD"
         recipientTaxId:
+          x-field-extra-annotation: "@lombok.ToString.Exclude" # NO EXTERNAL
           type: string
           example: "TNTGTR76E21H751S"
         recipientType:
           type: string
           example: "PF"
         delegateTaxId:
+          x-field-extra-annotation: "@lombok.ToString.Exclude" # NO EXTERNAL
           type: string
           example: "RFRGRZ66E21H751B"
         uid:
@@ -980,6 +988,7 @@ components:
         type: string
       example:
     recipientTaxId:
+      x-field-extra-annotation: "@lombok.ToString.Exclude" # NO EXTERNAL
       name: recipientTaxId
       description: Codice Fiscale Destinatario
       in: query
@@ -997,6 +1006,7 @@ components:
         enum: ["PF", "PG"]
       example: PF
     delegateTaxId:
+      x-field-extra-annotation: "@lombok.ToString.Exclude" # NO EXTERNAL
       name: delegateTaxId
       description: Codice Fiscale Delegato
       in: query
@@ -1004,6 +1014,7 @@ components:
         type: string
       example: TNTGTR76E21H751S
     taxId:
+      x-field-extra-annotation: "@lombok.ToString.Exclude" # NO EXTERNAL
       name: taxId
       description: Codice Fiscale
       in: path

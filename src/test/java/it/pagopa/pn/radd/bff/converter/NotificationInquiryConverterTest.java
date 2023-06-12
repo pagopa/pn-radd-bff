@@ -1,7 +1,7 @@
 package it.pagopa.pn.radd.bff.converter;
 
+import it.pagopa.pn.radd.bff.generated.openapi.server.v1.dto.*;
 import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.*;
-import it.pagopa.pn.radd.bff.rest.v1.dto.*;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;

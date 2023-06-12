@@ -37,6 +37,23 @@ Resources:
         LogGroupName: !Sub "${ProjectName}-radd-bff"
         LogGroupPrefix: '/aws/ecs'
 
+  PnDocumentReadyTable:
+    Type: AWS::DynamoDB::Table
+    UpdateReplacePolicy: Retain
+    DeletionPolicy: Retain
+    Properties:
+      TableName: !Sub '${ProjectName}-document-ready'
+      AttributeDefinitions:
+        - AttributeName: "fileKey"
+          AttributeType: "S"
+      KeySchema:
+        - AttributeName: "fileKey"
+          KeyType: "HASH"
+      BillingMode: "PAY_PER_REQUEST"
+      TimeToLiveSpecification:
+        AttributeName: expiringAt
+        Enabled: true
+
 Outputs:
   EcsLogGroup:
     Value: !GetAtt PnRaddBffLogGroup.Outputs.LogGroupName

@@ -1,7 +1,7 @@
 package it.pagopa.pn.radd.bff.rest;
 
-import it.pagopa.pn.radd.bff.rest.v1.api.NotificationInquiryApi;
-import it.pagopa.pn.radd.bff.rest.v1.dto.*;
+import it.pagopa.pn.radd.bff.generated.openapi.server.v1.api.*;
+import it.pagopa.pn.radd.bff.generated.openapi.server.v1.dto.*;
 import it.pagopa.pn.radd.bff.service.NotificationInquiryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -23,28 +23,28 @@ public class NotificationInquiryController implements NotificationInquiryApi {
 
 
     @Override
-    public  Mono<ResponseEntity<OperationsActDetailsResponse>> getActPracticesByInternalId(String taxId, Mono<FilterRequest> filterRequest,  final ServerWebExchange exchange) {
+    public  Mono<ResponseEntity<OperationsActDetailsResponse>> getActPracticesByInternalId(String taxId, Mono<FilterRequest> filterRequest, final ServerWebExchange exchange) {
         return notificationInquiryService.getActPracticesByInternalId(taxId, filterRequest)
                 .map(m -> ResponseEntity.status(HttpStatus.OK).body(m))
                 .publishOn(scheduler);
     }
 
     @Override
-    public  Mono<ResponseEntity<OperationsResponse>> getActPracticesByIun(String iun,  final ServerWebExchange exchange) {
+    public  Mono<ResponseEntity<OperationsResponse>> getActPracticesByIun(String iun, final ServerWebExchange exchange) {
         return notificationInquiryService.getActPracticesByIun(iun)
                 .map(m -> ResponseEntity.status(HttpStatus.OK).body(m))
                 .publishOn(scheduler);
     }
 
     @Override
-    public  Mono<ResponseEntity<OperationActResponse>> getActTransactionByOperationId(String operationId,  final ServerWebExchange exchange) {
+    public  Mono<ResponseEntity<OperationActResponse>> getActTransactionByOperationId(String operationId, final ServerWebExchange exchange) {
         return notificationInquiryService.getActTransactionByOperationId(operationId)
                 .map(m -> ResponseEntity.status(HttpStatus.OK).body(m))
                 .publishOn(scheduler);
     }
 
     @Override
-    public  Mono<ResponseEntity<OperationsAorDetailsResponse>> getAorPracticesByInternalId(String taxId, Mono<FilterRequest> filterRequest,  final ServerWebExchange exchange) {
+    public  Mono<ResponseEntity<OperationsAorDetailsResponse>> getAorPracticesByInternalId(String taxId, Mono<FilterRequest> filterRequest, final ServerWebExchange exchange) {
         return notificationInquiryService.getAorPracticesByInternalId(taxId, filterRequest)
                 .map(m -> ResponseEntity.status(HttpStatus.OK).body(m))
                 .publishOn(scheduler);

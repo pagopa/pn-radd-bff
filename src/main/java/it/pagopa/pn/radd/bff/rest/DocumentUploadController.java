@@ -1,8 +1,9 @@
 package it.pagopa.pn.radd.bff.rest;
 
-import it.pagopa.pn.radd.bff.rest.v1.api.DocumentUploadApi;
-import it.pagopa.pn.radd.bff.rest.v1.dto.DocumentUploadRequest;
-import it.pagopa.pn.radd.bff.rest.v1.dto.DocumentUploadResponse;
+
+import it.pagopa.pn.radd.bff.generated.openapi.server.v1.api.DocumentUploadApi;
+import it.pagopa.pn.radd.bff.generated.openapi.server.v1.dto.DocumentUploadRequest;
+import it.pagopa.pn.radd.bff.generated.openapi.server.v1.dto.DocumentUploadResponse;
 import it.pagopa.pn.radd.bff.service.DocumentUploadService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Qualifier;

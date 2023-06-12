@@ -2,8 +2,8 @@ package it.pagopa.pn.radd.bff.service;
 
 import it.pagopa.pn.radd.bff.client.PnRaddFsuClient;
 import it.pagopa.pn.radd.bff.converter.AorInquiryConverter;
+import it.pagopa.pn.radd.bff.generated.openapi.server.v1.dto.AORInquiryResponse;
 import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.AORInquiryResponseDto;
-import it.pagopa.pn.radd.bff.rest.v1.dto.AORInquiryResponse;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;

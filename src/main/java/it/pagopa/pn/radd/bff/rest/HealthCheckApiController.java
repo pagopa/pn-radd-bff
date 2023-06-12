@@ -1,6 +1,6 @@
 package it.pagopa.pn.radd.bff.rest;
 
-import it.pagopa.pn.radd.bff.rest.v1.api.HealthCheckApi;
+import it.pagopa.pn.radd.bff.generated.openapi.server.v1.api.HealthCheckApi;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;

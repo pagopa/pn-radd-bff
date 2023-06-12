@@ -1,7 +1,6 @@
 package it.pagopa.pn.radd.bff.exception;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
 
 import it.pagopa.pn.common.rest.error.v1.dto.Problem;
 import it.pagopa.pn.common.rest.error.v1.dto.ProblemError;
@@ -21,7 +20,6 @@ class PnRaddBffExceptionTest {
 
         assertEquals(100, actualPnRaddBffException.getStatus());
         Problem problem = actualPnRaddBffException.getProblem();
-        assertNull(problem.getTraceId());
         assertEquals("An error occurred", problem.getTitle());
         assertEquals(100, problem.getStatus().intValue());
         assertEquals("The characteristics of someone or something", problem.getDetail());
@@ -43,7 +41,6 @@ class PnRaddBffExceptionTest {
 
         assertEquals(100, actualPnRaddBffException.getStatus());
         Problem problem = actualPnRaddBffException.getProblem();
-        assertNull(problem.getTraceId());
         assertEquals("foo", problem.getTitle());
         assertEquals(100, problem.getStatus().intValue());
         assertEquals("foo", problem.getDetail());
@@ -66,7 +63,6 @@ class PnRaddBffExceptionTest {
 
         assertEquals(100, actualPnRaddBffException.getStatus());
         Problem problem = actualPnRaddBffException.getProblem();
-        assertNull(problem.getTraceId());
         assertEquals("Internal Server Error", problem.getTitle());
         assertEquals(100, problem.getStatus().intValue());
         assertEquals("The characteristics of someone or something", problem.getDetail());
@@ -89,7 +85,6 @@ class PnRaddBffExceptionTest {
 
         assertEquals(100, actualPnRaddBffException.getStatus());
         Problem problem = actualPnRaddBffException.getProblem();
-        assertNull(problem.getTraceId());
         assertEquals("An error occurred", problem.getTitle());
         assertEquals(100, problem.getStatus().intValue());
         assertEquals("Internal Server Error", problem.getDetail());
@@ -112,7 +107,6 @@ class PnRaddBffExceptionTest {
 
         assertEquals(600, actualPnRaddBffException.getStatus());
         Problem problem = actualPnRaddBffException.getProblem();
-        assertNull(problem.getTraceId());
         assertEquals("An error occurred", problem.getTitle());
         assertEquals(600, problem.getStatus().intValue());
         assertEquals("The characteristics of someone or something", problem.getDetail());

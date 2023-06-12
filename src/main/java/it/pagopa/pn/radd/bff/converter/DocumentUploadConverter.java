@@ -1,6 +1,8 @@
 package it.pagopa.pn.radd.bff.converter;
 
-import it.pagopa.pn.radd.bff.rest.v1.dto.*;
+import it.pagopa.pn.radd.bff.generated.openapi.server.v1.dto.DocumentUploadRequest;
+import it.pagopa.pn.radd.bff.generated.openapi.server.v1.dto.DocumentUploadResponse;
+import it.pagopa.pn.radd.bff.generated.openapi.server.v1.dto.ResponseStatus;
 import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.DocumentUploadRequestDto;
 import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.DocumentUploadResponseDto;
 import org.springframework.stereotype.Component;
