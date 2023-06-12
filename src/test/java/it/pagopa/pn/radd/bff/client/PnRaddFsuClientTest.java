@@ -22,12 +22,11 @@ import static org.mockito.Mockito.when;
 @SpringBootTest
 @ExtendWith (SpringExtension.class)
 @TestPropertySource(properties = {
-        "aws.region=${AWS_REGION}",
+        "AWS_REGION=eu-south-1",
 })
 class PnRaddFsuClientTest {
 
     @Value("${AWS_REGION:eu-south-1}")
-
     private static final String AWS_REGION = "eu-south-1";
     private static PnRaddFsuClient pnRaddFsuClient;
 

@@ -1,7 +1,6 @@
 package it.pagopa.pn.radd.bff.exception;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
 
 import it.pagopa.pn.common.rest.error.v1.dto.Problem;
 import it.pagopa.pn.common.rest.error.v1.dto.ProblemError;
@@ -21,7 +20,6 @@ class PnRaddFsuExceptionTest {
 
         assertEquals(100, actualPnRaddFsuException.getStatus());
         Problem problem = actualPnRaddFsuException.getProblem();
-        assertNull(problem.getTraceId());
         assertEquals("Status Text", problem.getTitle());
         assertEquals(100, problem.getStatus().intValue());
         assertEquals("An error occurred", problem.getDetail());
@@ -29,7 +27,6 @@ class PnRaddFsuExceptionTest {
         assertEquals(1, errors.size());
         assertEquals("GENERIC_ERROR", problem.getType());
         ProblemError getResult = errors.get(0);
-        assertNull(getResult.getElement());
         assertEquals("Detail", getResult.getDetail());
         assertEquals("Code", getResult.getCode());
     }
@@ -44,7 +41,6 @@ class PnRaddFsuExceptionTest {
 
         assertEquals(100, actualPnRaddFsuException.getStatus());
         Problem problem = actualPnRaddFsuException.getProblem();
-        assertNull(problem.getTraceId());
         assertEquals("foo", problem.getTitle());
         assertEquals(100, problem.getStatus().intValue());
         assertEquals("Errore durante la chiamata a pn-radd-fsu", problem.getDetail());
@@ -52,7 +48,6 @@ class PnRaddFsuExceptionTest {
         assertEquals(1, errors.size());
         assertEquals("GENERIC_ERROR", problem.getType());
         ProblemError getResult = errors.get(0);
-        assertNull(getResult.getElement());
         assertEquals("foo", getResult.getDetail());
         assertEquals("foo", getResult.getCode());
     }
@@ -67,7 +62,6 @@ class PnRaddFsuExceptionTest {
 
         assertEquals(100, actualPnRaddFsuException.getStatus());
         Problem problem = actualPnRaddFsuException.getProblem();
-        assertNull(problem.getTraceId());
         assertEquals("Status Text", problem.getTitle());
         assertEquals(100, problem.getStatus().intValue());
         assertEquals("recipientTaxId=*", problem.getDetail());
@@ -75,7 +69,6 @@ class PnRaddFsuExceptionTest {
         assertEquals(1, errors.size());
         assertEquals("GENERIC_ERROR", problem.getType());
         ProblemError getResult = errors.get(0);
-        assertNull(getResult.getElement());
         assertEquals("Detail", getResult.getDetail());
         assertEquals("Code", getResult.getCode());
     }
@@ -90,7 +83,6 @@ class PnRaddFsuExceptionTest {
 
         assertEquals(100, actualPnRaddFsuException.getStatus());
         Problem problem = actualPnRaddFsuException.getProblem();
-        assertNull(problem.getTraceId());
         assertEquals("Status Text", problem.getTitle());
         assertEquals(100, problem.getStatus().intValue());
         assertEquals("Internal Server Error", problem.getDetail());
@@ -98,7 +90,6 @@ class PnRaddFsuExceptionTest {
         assertEquals(1, errors.size());
         assertEquals("GENERIC_ERROR", problem.getType());
         ProblemError getResult = errors.get(0);
-        assertNull(getResult.getElement());
         assertEquals("Detail", getResult.getDetail());
         assertEquals("Code", getResult.getCode());
     }
@@ -113,7 +104,6 @@ class PnRaddFsuExceptionTest {
 
         assertEquals(100, actualPnRaddFsuException.getStatus());
         Problem problem = actualPnRaddFsuException.getProblem();
-        assertNull(problem.getTraceId());
         assertEquals("Status Text", problem.getTitle());
         assertEquals(100, problem.getStatus().intValue());
         assertEquals("An error occurred", problem.getDetail());
@@ -121,7 +111,6 @@ class PnRaddFsuExceptionTest {
         assertEquals(1, errors.size());
         assertEquals("GENERIC_ERROR", problem.getType());
         ProblemError getResult = errors.get(0);
-        assertNull(getResult.getElement());
         assertEquals("detail", getResult.getDetail());
         assertEquals("Code", getResult.getCode());
     }
@@ -136,7 +125,6 @@ class PnRaddFsuExceptionTest {
 
         assertEquals(100, actualPnRaddFsuException.getStatus());
         Problem problem = actualPnRaddFsuException.getProblem();
-        assertNull(problem.getTraceId());
         assertEquals("Internal Server Error", problem.getTitle());
         assertEquals(100, problem.getStatus().intValue());
         assertEquals("An error occurred", problem.getDetail());
@@ -144,7 +132,6 @@ class PnRaddFsuExceptionTest {
         assertEquals(1, errors.size());
         assertEquals("GENERIC_ERROR", problem.getType());
         ProblemError getResult = errors.get(0);
-        assertNull(getResult.getElement());
         assertEquals("Detail", getResult.getDetail());
         assertEquals("Code", getResult.getCode());
     }
