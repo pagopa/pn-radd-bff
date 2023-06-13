@@ -230,6 +230,7 @@ Resources:
               - !Ref PnDocumentReadyTableArn
           - Effect: Allow
             Action:
+              - sqs:GetQueueAttributes
               - sqs:GetQueueUrl
               - sqs:ReceiveMessage
             Resource:
