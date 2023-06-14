@@ -7,12 +7,14 @@ import it.pagopa.pn.radd.bff.exception.PnRaddFsuException;
 import it.pagopa.pn.radd.bff.generated.openapi.msclient.data.vault.v1.ApiClient;
 import it.pagopa.pn.radd.bff.generated.openapi.msclient.data.vault.v1.api.RecipientsApi;
 import it.pagopa.pn.radd.bff.generated.openapi.msclient.data.vault.v1.dto.BaseRecipientDto;
+import it.pagopa.pn.radd.bff.generated.openapi.msclient.data.vault.v1.dto.RecipientType;
 import it.pagopa.pn.radd.bff.log.ResponseExchangeFilter;
 
 import lombok.CustomLog;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClientResponseException;
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 import java.util.List;
 
@@ -44,6 +46,12 @@ public class PnDataVaultClient extends CommonBaseClient {
     public Flux<BaseRecipientDto> getRecipientDenominationByInternalId(List<String> internalIds) {
         log.logInvokingExternalService(PnLogger.EXTERNAL_SERVICES.PN_DATA_VAULT, "Getting CF deanonymization by internalId from pn-data-vault");
         return recipientsApi.getRecipientDenominationByInternalId(internalIds)
+                .onErrorMap(WebClientResponseException.class, e -> wrap(ERROR_CODE_PN_DATA_VAULT_RECIPIENT_DENOMINATION, ERROR_MESSAGE_PN_DATA_VAULT_RECIPIENT_DENOMINATION, e));
+    }
+
+    public Mono<String> getAnonymousByTaxId(RecipientType recipientType, String taxId) {
+        log.logInvokingExternalService(PnLogger.EXTERNAL_SERVICES.PN_DATA_VAULT, "CF anonymization by taxId from pn-data-vault");
+        return recipientsApi.ensureRecipientByExternalId(recipientType, taxId)
                 .onErrorMap(WebClientResponseException.class, e -> wrap(ERROR_CODE_PN_DATA_VAULT_RECIPIENT_DENOMINATION, ERROR_MESSAGE_PN_DATA_VAULT_RECIPIENT_DENOMINATION, e));
     }
 

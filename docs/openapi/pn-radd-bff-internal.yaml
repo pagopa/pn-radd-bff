@@ -513,8 +513,14 @@ components:
   schemas:
     FilterRequest:
       description: Campi per poter applicare filtri sui dati a DB
+      required:
+        - recipientType
       type: object
       properties:
+        recipientType:
+          type: string
+          enum: [ "PF", "PG" ]
+          example: "PF"
         from:
           type: string
           format: date-time
