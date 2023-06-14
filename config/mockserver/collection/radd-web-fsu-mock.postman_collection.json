@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "ae1ec7b6-f845-4493-bfbf-5cc03a1604e3",
-		"name": "radd-fsu-mock",
+		"_postman_id": "0373b43d-99a2-47dd-94a1-bfef23b7075f",
+		"name": "radd-web-fsu-mock",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "26143046"
 	},
@@ -15,22 +15,18 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "uid",
+								"key": "x-pagopa-pn-uid",
 								"value": "uid",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:1080/radd-private/api/v1/act/inquiry?recipientTaxId=GNIGNI80A01H501R&recipientType=PF&qrCode=1",
-							"protocol": "http",
+							"raw": "{{BASE_PATH}}/radd-web/act/inquiry?recipientTaxId=GNIGNI80A01H501R&recipientType=PF&qrCode=1",
 							"host": [
-								"localhost"
+								"{{BASE_PATH}}"
 							],
-							"port": "1080",
 							"path": [
-								"radd-private",
-								"api",
-								"v1",
+								"radd-web",
 								"act",
 								"inquiry"
 							],
@@ -58,22 +54,18 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "uid",
+								"key": "x-pagopa-pn-uid",
 								"value": "uid",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:1080/radd-private/api/v1/act/inquiry?recipientTaxId=VIAVIA90A01H501X&recipientType=PF&qrCode=1",
-							"protocol": "http",
+							"raw": "{{BASE_PATH}}/radd-web/act/inquiry?recipientTaxId=VIAVIA90A01H501X&recipientType=PF&qrCode=1",
 							"host": [
-								"localhost"
+								"{{BASE_PATH}}"
 							],
-							"port": "1080",
 							"path": [
-								"radd-private",
-								"api",
-								"v1",
+								"radd-web",
 								"act",
 								"inquiry"
 							],
@@ -104,7 +96,7 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "uid",
+								"key": "x-pagopa-pn-uid",
 								"value": "uid",
 								"type": "text"
 							}
@@ -114,16 +106,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:1080/radd-private/api/v1/act/inquiry?recipientTaxId=PLOMRC01P30L736Y&recipientType=PF&qrCode=1",
-							"protocol": "http",
+							"raw": "{{BASE_PATH}}/radd-web/act/inquiry?recipientTaxId=PLOMRC01P30L736Y&recipientType=PF&qrCode=1",
 							"host": [
-								"localhost"
+								"{{BASE_PATH}}"
 							],
-							"port": "1080",
 							"path": [
-								"radd-private",
-								"api",
-								"v1",
+								"radd-web",
 								"act",
 								"inquiry"
 							],
@@ -154,7 +142,7 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "uid",
+								"key": "x-pagopa-pn-uid",
 								"value": "uid",
 								"type": "text"
 							}
@@ -164,16 +152,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:1080/radd-private/api/v1/act/inquiry?recipientTaxId=TSTGNN80A01F839X&recipientType=PF&qrCode=1",
-							"protocol": "http",
+							"raw": "{{BASE_PATH}}/radd-web/act/inquiry?recipientTaxId=TSTGNN80A01F839X&recipientType=PF&qrCode=1",
 							"host": [
-								"localhost"
+								"{{BASE_PATH}}"
 							],
-							"port": "1080",
 							"path": [
-								"radd-private",
-								"api",
-								"v1",
+								"radd-web",
 								"act",
 								"inquiry"
 							],
@@ -204,7 +188,7 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "uid",
+								"key": "x-pagopa-pn-uid",
 								"value": "uid",
 								"type": "text"
 							}
@@ -214,16 +198,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:1080/radd-private/api/v1/act/inquiry?recipientTaxId=VTOMRC01P30L736Y&recipientType=PF&qrCode=1",
-							"protocol": "http",
+							"raw": "{{BASE_PATH}}/radd-web/act/inquiry?recipientTaxId=VTOMRC01P30L736Y&recipientType=PF&qrCode=1",
 							"host": [
-								"localhost"
+								"{{BASE_PATH}}"
 							],
-							"port": "1080",
 							"path": [
-								"radd-private",
-								"api",
-								"v1",
+								"radd-web",
 								"act",
 								"inquiry"
 							],
@@ -254,7 +234,7 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "uid",
+								"key": "x-pagopa-pn-uid",
 								"value": "uid",
 								"type": "text"
 							}
@@ -264,16 +244,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:1080/radd-private/api/v1/act/inquiry?recipientTaxId=LBOMRC01P30L736Y&recipientType=PF&qrCode=1",
-							"protocol": "http",
+							"raw": "{{BASE_PATH}}/radd-web/act/inquiry?recipientTaxId=LBOMRC01P30L736Y&recipientType=PF&qrCode=1",
 							"host": [
-								"localhost"
+								"{{BASE_PATH}}"
 							],
-							"port": "1080",
 							"path": [
-								"radd-private",
-								"api",
-								"v1",
+								"radd-web",
 								"act",
 								"inquiry"
 							],
@@ -304,7 +280,7 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "uid",
+								"key": "x-pagopa-pn-uid",
 								"value": "uid",
 								"type": "text"
 							}
@@ -314,16 +290,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:1080/radd-private/api/v1/act/inquiry?recipientTaxId=AEDMRC01P30L736Y&recipientType=PF&qrCode=1",
-							"protocol": "http",
+							"raw": "{{BASE_PATH}}/radd-web/act/inquiry?recipientTaxId=AEDMRC01P30L736Y&recipientType=PF&qrCode=1",
 							"host": [
-								"localhost"
+								"{{BASE_PATH}}"
 							],
-							"port": "1080",
 							"path": [
-								"radd-private",
-								"api",
-								"v1",
+								"radd-web",
 								"act",
 								"inquiry"
 							],
@@ -354,7 +326,7 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "uid",
+								"key": "x-pagopa-pn-uid",
 								"value": "uid",
 								"type": "text"
 							}
@@ -364,16 +336,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:1080/radd-private/api/v1/act/inquiry?recipientTaxId=MADMRC01P30L736Y&recipientType=PF&qrCode=1",
-							"protocol": "http",
+							"raw": "{{BASE_PATH}}/radd-web/act/inquiry?recipientTaxId=MADMRC01P30L736Y&recipientType=PF&qrCode=1",
 							"host": [
-								"localhost"
+								"{{BASE_PATH}}"
 							],
-							"port": "1080",
 							"path": [
-								"radd-private",
-								"api",
-								"v1",
+								"radd-web",
 								"act",
 								"inquiry"
 							],
@@ -401,22 +369,18 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "uid",
+								"key": "x-pagopa-pn-uid",
 								"value": "uid",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:1080/radd-private/api/v1/act/inquiry?recipientTaxId=ZZAMRC01P30L736Y&recipientType=PF&qrCode=1",
-							"protocol": "http",
+							"raw": "{{BASE_PATH}}/radd-web/act/inquiry?recipientTaxId=ZZAMRC01P30L736Y&recipientType=PF&qrCode=1",
 							"host": [
-								"localhost"
+								"{{BASE_PATH}}"
 							],
-							"port": "1080",
 							"path": [
-								"radd-private",
-								"api",
-								"v1",
+								"radd-web",
 								"act",
 								"inquiry"
 							],
@@ -447,7 +411,7 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "uid",
+								"key": "x-pagopa-pn-uid",
 								"value": "uid",
 								"type": "text"
 							}
@@ -457,16 +421,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:1080/radd-private/api/v1/act/inquiry?recipientTaxId=GTAMRC01P30L736Y&recipientType=PF&qrCode=1",
-							"protocol": "http",
+							"raw": "{{BASE_PATH}}/radd-web/act/inquiry?recipientTaxId=GTAMRC01P30L736Y&recipientType=PF&qrCode=1",
 							"host": [
-								"localhost"
+								"{{BASE_PATH}}"
 							],
-							"port": "1080",
 							"path": [
-								"radd-private",
-								"api",
-								"v1",
+								"radd-web",
 								"act",
 								"inquiry"
 							],
@@ -497,7 +457,7 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "uid",
+								"key": "x-pagopa-pn-uid",
 								"value": "uid",
 								"type": "text"
 							}
@@ -507,16 +467,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:1080/radd-private/api/v1/act/inquiry?recipientTaxId=ZTLMRC01P30L736Y&recipientType=PF&qrCode=1",
-							"protocol": "http",
+							"raw": "{{BASE_PATH}}/radd-web/act/inquiry?recipientTaxId=ZTLMRC01P30L736Y&recipientType=PF&qrCode=1",
 							"host": [
-								"localhost"
+								"{{BASE_PATH}}"
 							],
-							"port": "1080",
 							"path": [
-								"radd-private",
-								"api",
-								"v1",
+								"radd-web",
 								"act",
 								"inquiry"
 							],
@@ -547,7 +503,7 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "uid",
+								"key": "x-pagopa-pn-uid",
 								"value": "uid",
 								"type": "text"
 							}
@@ -557,16 +513,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:1080/radd-private/api/v1/act/inquiry?recipientTaxId=DAMMRC01P30L736Y&recipientType=PF&qrCode=1",
-							"protocol": "http",
+							"raw": "{{BASE_PATH}}/radd-web/act/inquiry?recipientTaxId=DAMMRC01P30L736Y&recipientType=PF&qrCode=1",
 							"host": [
-								"localhost"
+								"{{BASE_PATH}}"
 							],
-							"port": "1080",
 							"path": [
-								"radd-private",
-								"api",
-								"v1",
+								"radd-web",
 								"act",
 								"inquiry"
 							],
@@ -597,7 +549,7 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "uid",
+								"key": "x-pagopa-pn-uid",
 								"value": "uid",
 								"type": "text"
 							}
@@ -607,16 +559,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:1080/radd-private/api/v1/act/inquiry?recipientTaxId=RADMRC01P30L736Y&recipientType=PF&qrCode=1",
-							"protocol": "http",
+							"raw": "{{BASE_PATH}}/radd-web/act/inquiry?recipientTaxId=RADMRC01P30L736Y&recipientType=PF&qrCode=1",
 							"host": [
-								"localhost"
+								"{{BASE_PATH}}"
 							],
-							"port": "1080",
 							"path": [
-								"radd-private",
-								"api",
-								"v1",
+								"radd-web",
 								"act",
 								"inquiry"
 							],
@@ -644,22 +592,18 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "uid",
+								"key": "x-pagopa-pn-uid",
 								"value": "uid",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:1080/radd-private/api/v1/act/inquiry?recipientTaxId=LNALNI80A01H501T&recipientType=PF&qrCode=1",
-							"protocol": "http",
+							"raw": "{{BASE_PATH}}/radd-web/act/inquiry?recipientTaxId=LNALNI80A01H501T&recipientType=PF&qrCode=1",
 							"host": [
-								"localhost"
+								"{{BASE_PATH}}"
 							],
-							"port": "1080",
 							"path": [
-								"radd-private",
-								"api",
-								"v1",
+								"radd-web",
 								"act",
 								"inquiry"
 							],
@@ -687,22 +631,18 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "uid",
+								"key": "x-pagopa-pn-uid",
 								"value": "uid",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:1080/radd-private/api/v1/act/inquiry?recipientTaxId=PPPPLT80A01H501V&recipientType=PG&qrCode=1",
-							"protocol": "http",
+							"raw": "{{BASE_PATH}}/radd-web/act/inquiry?recipientTaxId=PPPPLT80A01H501V&recipientType=PG&qrCode=1",
 							"host": [
-								"localhost"
+								"{{BASE_PATH}}"
 							],
-							"port": "1080",
 							"path": [
-								"radd-private",
-								"api",
-								"v1",
+								"radd-web",
 								"act",
 								"inquiry"
 							],
@@ -730,22 +670,18 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "uid",
+								"key": "x-pagopa-pn-uid",
 								"value": "uid",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:1080/radd-private/api/v1/act/inquiry?recipientTaxId=BSTGNN80A01F839X&recipientType=PF&qrCode=1",
-							"protocol": "http",
+							"raw": "{{BASE_PATH}}/radd-web/act/inquiry?recipientTaxId=BSTGNN80A01F839X&recipientType=PF&qrCode=1",
 							"host": [
-								"localhost"
+								"{{BASE_PATH}}"
 							],
-							"port": "1080",
 							"path": [
-								"radd-private",
-								"api",
-								"v1",
+								"radd-web",
 								"act",
 								"inquiry"
 							],
@@ -773,22 +709,18 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "uid",
+								"key": "x-pagopa-pn-uid",
 								"value": "uid",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:1080/radd-private/api/v1/act/inquiry?recipientTaxId=RSSSRG80A01F839I&recipientType=PF&qrCode=1",
-							"protocol": "http",
+							"raw": "{{BASE_PATH}}/radd-web/act/inquiry?recipientTaxId=RSSSRG80A01F839I&recipientType=PF&qrCode=1",
 							"host": [
-								"localhost"
+								"{{BASE_PATH}}"
 							],
-							"port": "1080",
 							"path": [
-								"radd-private",
-								"api",
-								"v1",
+								"radd-web",
 								"act",
 								"inquiry"
 							],
@@ -816,22 +748,18 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "uid",
+								"key": "x-pagopa-pn-uid",
 								"value": "uid",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:1080/radd-private/api/v1/act/inquiry?recipientTaxId=BLOMRC01P30L736Y&recipientType=PF&qrCode=1",
-							"protocol": "http",
+							"raw": "{{BASE_PATH}}/radd-web/act/inquiry?recipientTaxId=BLOMRC01P30L736Y&recipientType=PF&qrCode=1",
 							"host": [
-								"localhost"
+								"{{BASE_PATH}}"
 							],
-							"port": "1080",
 							"path": [
-								"radd-private",
-								"api",
-								"v1",
+								"radd-web",
 								"act",
 								"inquiry"
 							],
@@ -859,22 +787,18 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "uid",
+								"key": "x-pagopa-pn-uid",
 								"value": "uid",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:1080/radd-private/api/v1/act/inquiry?recipientTaxId=FNIFNA80A01H501G&recipientType=PG&qrCode=1",
-							"protocol": "http",
+							"raw": "{{BASE_PATH}}/radd-web/act/inquiry?recipientTaxId=FNIFNA80A01H501G&recipientType=PG&qrCode=1",
 							"host": [
-								"localhost"
+								"{{BASE_PATH}}"
 							],
-							"port": "1080",
 							"path": [
-								"radd-private",
-								"api",
-								"v1",
+								"radd-web",
 								"act",
 								"inquiry"
 							],
@@ -902,30 +826,25 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "uid",
+								"key": "x-pagopa-pn-uid",
 								"value": "uid",
-								"type": "text",
-								"disabled": true
+								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:1080/radd-private/api/v1/act/inquiry?recipientTaxId=GNIGNI80A01H501R&recipientType=PF&qrCode=1",
-							"protocol": "http",
+							"raw": "{{BASE_PATH}}/radd-web/act/inquiry?recipientTaxId=VDIVDI80A01H501R&recipientType=PF&qrCode=1",
 							"host": [
-								"localhost"
+								"{{BASE_PATH}}"
 							],
-							"port": "1080",
 							"path": [
-								"radd-private",
-								"api",
-								"v1",
+								"radd-web",
 								"act",
 								"inquiry"
 							],
 							"query": [
 								{
 									"key": "recipientTaxId",
-									"value": "GNIGNI80A01H501R"
+									"value": "VDIVDI80A01H501R"
 								},
 								{
 									"key": "recipientType",
@@ -946,23 +865,18 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "uid",
+								"key": "x-pagopa-pn-uid",
 								"value": "uid",
-								"type": "text",
-								"disabled": true
+								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:1080/radd-private/api/v1/act/inquiry?recipientTaxId=RFNNTR76M06B715E&recipientType=PF&qrCode=1",
-							"protocol": "http",
+							"raw": "{{BASE_PATH}}/radd-web/act/inquiry?recipientTaxId=RFNNTR76M06B715E&recipientType=PF&qrCode=1",
 							"host": [
-								"localhost"
+								"{{BASE_PATH}}"
 							],
-							"port": "1080",
 							"path": [
-								"radd-private",
-								"api",
-								"v1",
+								"radd-web",
 								"act",
 								"inquiry"
 							],
@@ -990,22 +904,18 @@
 						"method": "POST",
 						"header": [
 							{
-								"key": "uid",
+								"key": "x-pagopa-pn-uid",
 								"value": "uid",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:1080/radd-private/api/v1/act/inquiry?recipientTaxId=FRMTTR76M06B715E&recipientType=PF&qrCode=1",
-							"protocol": "http",
+							"raw": "{{BASE_PATH}}/radd-web/act/inquiry?recipientTaxId=FRMTTR76M06B715E&recipientType=PF&qrCode=1",
 							"host": [
-								"localhost"
+								"{{BASE_PATH}}"
 							],
-							"port": "1080",
 							"path": [
-								"radd-private",
-								"api",
-								"v1",
+								"radd-web",
 								"act",
 								"inquiry"
 							],
@@ -1031,18 +941,20 @@
 					"name": "500",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "x-pagopa-pn-uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
 						"url": {
-							"raw": "http://localhost:1080/radd-private/api/v1/act/inquiry?recipientTaxId=CIACIA80A01H501X&recipientType=PF&qrCode=1",
-							"protocol": "http",
+							"raw": "{{BASE_PATH}}/radd-web/act/inquiry?recipientTaxId=CIACIA80A01H501X&recipientType=PF&qrCode=1",
 							"host": [
-								"localhost"
+								"{{BASE_PATH}}"
 							],
-							"port": "1080",
 							"path": [
-								"radd-private",
-								"api",
-								"v1",
+								"radd-web",
 								"act",
 								"inquiry"
 							],
@@ -1075,22 +987,18 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "uid",
+								"key": "x-pagopa-pn-uid",
 								"value": "uid",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:1080/radd-private/api/v1/aor/inquiry?recipientTaxId=GNIGNI80A01H501R&recipientType=PF",
-							"protocol": "http",
+							"raw": "{{BASE_PATH}}/radd-web/aor/inquiry?recipientTaxId=GNIGNI80A01H501R&recipientType=PF",
 							"host": [
-								"localhost"
+								"{{BASE_PATH}}"
 							],
-							"port": "1080",
 							"path": [
-								"radd-private",
-								"api",
-								"v1",
+								"radd-web",
 								"aor",
 								"inquiry"
 							],
@@ -1114,22 +1022,18 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "uid",
+								"key": "x-pagopa-pn-uid",
 								"value": "uid",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:1080/radd-private/api/v1/aor/inquiry?recipientTaxId=VIAVIA90A01H501X&recipientType=PF",
-							"protocol": "http",
+							"raw": "{{BASE_PATH}}/radd-web/aor/inquiry?recipientTaxId=VIAVIA90A01H501X&recipientType=PF",
 							"host": [
-								"localhost"
+								"{{BASE_PATH}}"
 							],
-							"port": "1080",
 							"path": [
-								"radd-private",
-								"api",
-								"v1",
+								"radd-web",
 								"aor",
 								"inquiry"
 							],
@@ -1156,7 +1060,7 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "uid",
+								"key": "x-pagopa-pn-uid",
 								"value": "uid",
 								"type": "text"
 							}
@@ -1166,16 +1070,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:1080/radd-private/api/v1/aor/inquiry?recipientTaxId=PLOMRC01P30L736Y&recipientType=PF",
-							"protocol": "http",
+							"raw": "{{BASE_PATH}}/radd-web/aor/inquiry?recipientTaxId=PLOMRC01P30L736Y&recipientType=PF",
 							"host": [
-								"localhost"
+								"{{BASE_PATH}}"
 							],
-							"port": "1080",
 							"path": [
-								"radd-private",
-								"api",
-								"v1",
+								"radd-web",
 								"aor",
 								"inquiry"
 							],
@@ -1202,7 +1102,7 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "uid",
+								"key": "x-pagopa-pn-uid",
 								"value": "uid",
 								"type": "text"
 							}
@@ -1212,16 +1112,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:1080/radd-private/api/v1/aor/inquiry?recipientTaxId=TSTGNN80A01F839X&recipientType=PF",
-							"protocol": "http",
+							"raw": "{{BASE_PATH}}/radd-web/aor/inquiry?recipientTaxId=TSTGNN80A01F839X&recipientType=PF",
 							"host": [
-								"localhost"
+								"{{BASE_PATH}}"
 							],
-							"port": "1080",
 							"path": [
-								"radd-private",
-								"api",
-								"v1",
+								"radd-web",
 								"aor",
 								"inquiry"
 							],
@@ -1248,7 +1144,7 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "uid",
+								"key": "x-pagopa-pn-uid",
 								"value": "uid",
 								"type": "text"
 							}
@@ -1258,16 +1154,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:1080/radd-private/api/v1/aor/inquiry?recipientTaxId=VTOMRC01P30L736Y&recipientType=PF",
-							"protocol": "http",
+							"raw": "{{BASE_PATH}}/radd-web/aor/inquiry?recipientTaxId=VTOMRC01P30L736Y&recipientType=PF",
 							"host": [
-								"localhost"
+								"{{BASE_PATH}}"
 							],
-							"port": "1080",
 							"path": [
-								"radd-private",
-								"api",
-								"v1",
+								"radd-web",
 								"aor",
 								"inquiry"
 							],
@@ -1294,7 +1186,7 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "uid",
+								"key": "x-pagopa-pn-uid",
 								"value": "uid",
 								"type": "text"
 							}
@@ -1304,16 +1196,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:1080/radd-private/api/v1/aor/inquiry?recipientTaxId=LBOMRC01P30L736Y&recipientType=PF",
-							"protocol": "http",
+							"raw": "{{BASE_PATH}}/radd-web/aor/inquiry?recipientTaxId=LBOMRC01P30L736Y&recipientType=PF",
 							"host": [
-								"localhost"
+								"{{BASE_PATH}}"
 							],
-							"port": "1080",
 							"path": [
-								"radd-private",
-								"api",
-								"v1",
+								"radd-web",
 								"aor",
 								"inquiry"
 							],
@@ -1340,7 +1228,7 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "uid",
+								"key": "x-pagopa-pn-uid",
 								"value": "uid",
 								"type": "text"
 							}
@@ -1350,16 +1238,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:1080/radd-private/api/v1/aor/inquiry?recipientTaxId=AEDMRC01P30L736Y&recipientType=PF",
-							"protocol": "http",
+							"raw": "{{BASE_PATH}}/radd-web/aor/inquiry?recipientTaxId=AEDMRC01P30L736Y&recipientType=PF",
 							"host": [
-								"localhost"
+								"{{BASE_PATH}}"
 							],
-							"port": "1080",
 							"path": [
-								"radd-private",
-								"api",
-								"v1",
+								"radd-web",
 								"aor",
 								"inquiry"
 							],
@@ -1386,7 +1270,7 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "uid",
+								"key": "x-pagopa-pn-uid",
 								"value": "uid",
 								"type": "text"
 							}
@@ -1396,16 +1280,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:1080/radd-private/api/v1/aor/inquiry?recipientTaxId=MADMRC01P30L736Y&recipientType=PF",
-							"protocol": "http",
+							"raw": "{{BASE_PATH}}/radd-web/aor/inquiry?recipientTaxId=MADMRC01P30L736Y&recipientType=PF",
 							"host": [
-								"localhost"
+								"{{BASE_PATH}}"
 							],
-							"port": "1080",
 							"path": [
-								"radd-private",
-								"api",
-								"v1",
+								"radd-web",
 								"aor",
 								"inquiry"
 							],
@@ -1429,22 +1309,18 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "uid",
+								"key": "x-pagopa-pn-uid",
 								"value": "uid",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:1080/radd-private/api/v1/aor/inquiry?recipientTaxId=ZZAMRC01P30L736Y&recipientType=PF",
-							"protocol": "http",
+							"raw": "{{BASE_PATH}}/radd-web/aor/inquiry?recipientTaxId=ZZAMRC01P30L736Y&recipientType=PF",
 							"host": [
-								"localhost"
+								"{{BASE_PATH}}"
 							],
-							"port": "1080",
 							"path": [
-								"radd-private",
-								"api",
-								"v1",
+								"radd-web",
 								"aor",
 								"inquiry"
 							],
@@ -1471,7 +1347,7 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "uid",
+								"key": "x-pagopa-pn-uid",
 								"value": "uid",
 								"type": "text"
 							}
@@ -1481,16 +1357,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:1080/radd-private/api/v1/aor/inquiry?recipientTaxId=GTAMRC01P30L736Y&recipientType=PF",
-							"protocol": "http",
+							"raw": "{{BASE_PATH}}/radd-web/aor/inquiry?recipientTaxId=GTAMRC01P30L736Y&recipientType=PF",
 							"host": [
-								"localhost"
+								"{{BASE_PATH}}"
 							],
-							"port": "1080",
 							"path": [
-								"radd-private",
-								"api",
-								"v1",
+								"radd-web",
 								"aor",
 								"inquiry"
 							],
@@ -1517,7 +1389,7 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "uid",
+								"key": "x-pagopa-pn-uid",
 								"value": "uid",
 								"type": "text"
 							}
@@ -1527,16 +1399,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:1080/radd-private/api/v1/aor/inquiry?recipientTaxId=ZTLMRC01P30L736Y&recipientType=PF",
-							"protocol": "http",
+							"raw": "{{BASE_PATH}}/radd-web/aor/inquiry?recipientTaxId=ZTLMRC01P30L736Y&recipientType=PF",
 							"host": [
-								"localhost"
+								"{{BASE_PATH}}"
 							],
-							"port": "1080",
 							"path": [
-								"radd-private",
-								"api",
-								"v1",
+								"radd-web",
 								"aor",
 								"inquiry"
 							],
@@ -1563,7 +1431,7 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "uid",
+								"key": "x-pagopa-pn-uid",
 								"value": "uid",
 								"type": "text"
 							}
@@ -1573,16 +1441,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:1080/radd-private/api/v1/aor/inquiry?recipientTaxId=DAMMRC01P30L736Y&recipientType=PF",
-							"protocol": "http",
+							"raw": "{{BASE_PATH}}/radd-web/aor/inquiry?recipientTaxId=DAMMRC01P30L736Y&recipientType=PF",
 							"host": [
-								"localhost"
+								"{{BASE_PATH}}"
 							],
-							"port": "1080",
 							"path": [
-								"radd-private",
-								"api",
-								"v1",
+								"radd-web",
 								"aor",
 								"inquiry"
 							],
@@ -1609,7 +1473,7 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "uid",
+								"key": "x-pagopa-pn-uid",
 								"value": "uid",
 								"type": "text"
 							}
@@ -1619,16 +1483,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:1080/radd-private/api/v1/aor/inquiry?recipientTaxId=RADMRC01P30L736Y&recipientType=PF",
-							"protocol": "http",
+							"raw": "{{BASE_PATH}}/radd-web/aor/inquiry?recipientTaxId=RADMRC01P30L736Y&recipientType=PF",
 							"host": [
-								"localhost"
+								"{{BASE_PATH}}"
 							],
-							"port": "1080",
 							"path": [
-								"radd-private",
-								"api",
-								"v1",
+								"radd-web",
 								"aor",
 								"inquiry"
 							],
@@ -1652,22 +1512,18 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "uid",
+								"key": "x-pagopa-pn-uid",
 								"value": "uid",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:1080/radd-private/api/v1/aor/inquiry?recipientTaxId=RSSSRG80A01F839I&recipientType=PF",
-							"protocol": "http",
+							"raw": "{{BASE_PATH}}/radd-web/aor/inquiry?recipientTaxId=RSSSRG80A01F839I&recipientType=PF",
 							"host": [
-								"localhost"
+								"{{BASE_PATH}}"
 							],
-							"port": "1080",
 							"path": [
-								"radd-private",
-								"api",
-								"v1",
+								"radd-web",
 								"aor",
 								"inquiry"
 							],
@@ -1691,22 +1547,18 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "uid",
+								"key": "x-pagopa-pn-uid",
 								"value": "uid",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:1080/radd-private/api/v1/aor/inquiry?recipientTaxId=FNIFNA80A01H501G&recipientType=PG",
-							"protocol": "http",
+							"raw": "{{BASE_PATH}}/radd-web/aor/inquiry?recipientTaxId=FNIFNA80A01H501G&recipientType=PG",
 							"host": [
-								"localhost"
+								"{{BASE_PATH}}"
 							],
-							"port": "1080",
 							"path": [
-								"radd-private",
-								"api",
-								"v1",
+								"radd-web",
 								"aor",
 								"inquiry"
 							],
@@ -1730,22 +1582,18 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "uid",
+								"key": "x-pagopa-pn-uid",
 								"value": "uid",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:1080/radd-private/api/v1/aor/inquiry?recipientTaxId=RFNNTR76M06B715E&recipientType=PG",
-							"protocol": "http",
+							"raw": "{{BASE_PATH}}/radd-web/aor/inquiry?recipientTaxId=RFNNTR76M06B715E&recipientType=PG",
 							"host": [
-								"localhost"
+								"{{BASE_PATH}}"
 							],
-							"port": "1080",
 							"path": [
-								"radd-private",
-								"api",
-								"v1",
+								"radd-web",
 								"aor",
 								"inquiry"
 							],
@@ -1769,30 +1617,25 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "uid",
+								"key": "x-pagopa-pn-uid",
 								"value": "uid",
-								"type": "text",
-								"disabled": true
+								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:1080/radd-private/api/v1/aor/inquiry?recipientTaxId=GNIGNI80A01H501R&recipientType=PF",
-							"protocol": "http",
+							"raw": "{{BASE_PATH}}/radd-web/aor/inquiry?recipientTaxId=VDIVDI80A01H501R&recipientType=PF",
 							"host": [
-								"localhost"
+								"{{BASE_PATH}}"
 							],
-							"port": "1080",
 							"path": [
-								"radd-private",
-								"api",
-								"v1",
+								"radd-web",
 								"aor",
 								"inquiry"
 							],
 							"query": [
 								{
 									"key": "recipientTaxId",
-									"value": "GNIGNI80A01H501R"
+									"value": "VDIVDI80A01H501R"
 								},
 								{
 									"key": "recipientType",
@@ -1809,22 +1652,18 @@
 						"method": "POST",
 						"header": [
 							{
-								"key": "uid",
+								"key": "x-pagopa-pn-uid",
 								"value": "uid",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:1080/radd-private/api/v1/aor/inquiry?recipientTaxId=FRMTTR76M06B715E&recipientType=PF",
-							"protocol": "http",
+							"raw": "{{BASE_PATH}}/radd-web/aor/inquiry?recipientTaxId=FRMTTR76M06B715E&recipientType=PF",
 							"host": [
-								"localhost"
+								"{{BASE_PATH}}"
 							],
-							"port": "1080",
 							"path": [
-								"radd-private",
-								"api",
-								"v1",
+								"radd-web",
 								"aor",
 								"inquiry"
 							],
@@ -1846,18 +1685,20 @@
 					"name": "500",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "x-pagopa-pn-uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
 						"url": {
-							"raw": "http://localhost:1080/radd-private/api/v1/aor/inquiry?recipientTaxId=CIACIA80A01H501X&recipientType=PF",
-							"protocol": "http",
+							"raw": "{{BASE_PATH}}/radd-web/aor/inquiry?recipientTaxId=CIACIA80A01H501X&recipientType=PF",
 							"host": [
-								"localhost"
+								"{{BASE_PATH}}"
 							],
-							"port": "1080",
 							"path": [
-								"radd-private",
-								"api",
-								"v1",
+								"radd-web",
 								"aor",
 								"inquiry"
 							],
@@ -1886,7 +1727,7 @@
 						"method": "POST",
 						"header": [
 							{
-								"key": "uid",
+								"key": "x-pagopa-pn-uid",
 								"value": "uid",
 								"type": "text"
 							}
@@ -1901,16 +1742,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:1080/radd-private/api/v1/documents/upload",
-							"protocol": "http",
+							"raw": "{{BASE_PATH}}/radd-web/documents/upload",
 							"host": [
-								"localhost"
+								"{{BASE_PATH}}"
 							],
-							"port": "1080",
 							"path": [
-								"radd-private",
-								"api",
-								"v1",
+								"radd-web",
 								"documents",
 								"upload"
 							]
@@ -1924,7 +1761,7 @@
 						"method": "POST",
 						"header": [
 							{
-								"key": "uid",
+								"key": "x-pagopa-pn-uid",
 								"value": "uid",
 								"type": "text"
 							}
@@ -1939,16 +1776,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:1080/radd-private/api/v1/documents/upload",
-							"protocol": "http",
+							"raw": "{{BASE_PATH}}/radd-web/documents/upload",
 							"host": [
-								"localhost"
+								"{{BASE_PATH}}"
 							],
-							"port": "1080",
 							"path": [
-								"radd-private",
-								"api",
-								"v1",
+								"radd-web",
 								"documents",
 								"upload"
 							]
@@ -1962,7 +1795,7 @@
 						"method": "POST",
 						"header": [
 							{
-								"key": "uid",
+								"key": "x-pagopa-pn-uid",
 								"value": "uid",
 								"type": "text"
 							}
@@ -1977,16 +1810,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:1080/radd-private/api/v1/documents/upload",
-							"protocol": "http",
+							"raw": "{{BASE_PATH}}/radd-web/documents/upload",
 							"host": [
-								"localhost"
+								"{{BASE_PATH}}"
 							],
-							"port": "1080",
 							"path": [
-								"radd-private",
-								"api",
-								"v1",
+								"radd-web",
 								"documents",
 								"upload"
 							]
@@ -2000,7 +1829,7 @@
 						"method": "POST",
 						"header": [
 							{
-								"key": "uid",
+								"key": "x-pagopa-pn-uid",
 								"value": "uid",
 								"type": "text"
 							}
@@ -2015,16 +1844,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:1080/radd-private/api/v1/documents/upload",
-							"protocol": "http",
+							"raw": "{{BASE_PATH}}/radd-web/documents/upload",
 							"host": [
-								"localhost"
+								"{{BASE_PATH}}"
 							],
-							"port": "1080",
 							"path": [
-								"radd-private",
-								"api",
-								"v1",
+								"radd-web",
 								"documents",
 								"upload"
 							]
@@ -2036,10 +1861,16 @@
 					"name": "401",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "x-pagopa-pn-uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"bundleId\": \"5c5b6d77-1c5a-497e-9f97-1a60c6a04b05\",\r\n    \"contentType\": \"application/zip\",\r\n    \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\"\r\n}",
+							"raw": "{\r\n    \"bundleId\": \"5c5b6d77-1c5a-497e-9f97-1a60c6a04b05\",\r\n    \"contentType\": \"application/zip\",\r\n    \"checksum\": \"914A4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2047,16 +1878,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:1080/radd-private/api/v1/documents/upload",
-							"protocol": "http",
+							"raw": "{{BASE_PATH}}/radd-web/documents/upload",
 							"host": [
-								"localhost"
+								"{{BASE_PATH}}"
 							],
-							"port": "1080",
 							"path": [
-								"radd-private",
-								"api",
-								"v1",
+								"radd-web",
 								"documents",
 								"upload"
 							]
@@ -2073,7 +1900,7 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "uid",
+								"key": "x-pagopa-pn-uid",
 								"value": "uid",
 								"type": "text"
 							}
@@ -2088,16 +1915,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:1080/radd-private/api/v1/documents/upload",
-							"protocol": "http",
+							"raw": "{{BASE_PATH}}/radd-web/documents/upload",
 							"host": [
-								"localhost"
+								"{{BASE_PATH}}"
 							],
-							"port": "1080",
 							"path": [
-								"radd-private",
-								"api",
-								"v1",
+								"radd-web",
 								"documents",
 								"upload"
 							]
@@ -2111,7 +1934,7 @@
 						"method": "POST",
 						"header": [
 							{
-								"key": "uid",
+								"key": "x-pagopa-pn-uid",
 								"value": "uid",
 								"type": "text"
 							}
@@ -2126,16 +1949,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:1080/radd-private/api/v1/documents/upload",
-							"protocol": "http",
+							"raw": "{{BASE_PATH}}/radd-web/documents/upload",
 							"host": [
-								"localhost"
+								"{{BASE_PATH}}"
 							],
-							"port": "1080",
 							"path": [
-								"radd-private",
-								"api",
-								"v1",
+								"radd-web",
 								"documents",
 								"upload"
 							]
@@ -2157,7 +1976,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -2172,16 +1991,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/start",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/start",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"transaction",
 										"start"
@@ -2196,7 +2011,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -2211,16 +2026,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/start",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/start",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"transaction",
 										"start"
@@ -2235,7 +2046,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -2250,16 +2061,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/start",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/start",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"transaction",
 										"start"
@@ -2274,7 +2081,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -2289,16 +2096,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/start",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/start",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"transaction",
 										"start"
@@ -2313,7 +2116,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -2328,16 +2131,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/start",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/start",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"transaction",
 										"start"
@@ -2352,7 +2151,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -2367,16 +2166,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/start",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/start",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"transaction",
 										"start"
@@ -2391,7 +2186,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -2406,16 +2201,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/start",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/start",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"transaction",
 										"start"
@@ -2430,7 +2221,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -2445,16 +2236,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/start",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/start",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"transaction",
 										"start"
@@ -2469,7 +2256,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -2484,16 +2271,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/start",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/start",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"transaction",
 										"start"
@@ -2508,7 +2291,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -2523,16 +2306,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/start",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/start",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"transaction",
 										"start"
@@ -2547,7 +2326,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -2562,16 +2341,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/start",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/start",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"transaction",
 										"start"
@@ -2586,7 +2361,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -2601,16 +2376,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/start",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/start",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"transaction",
 										"start"
@@ -2625,7 +2396,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -2640,16 +2411,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/start",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/start",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"transaction",
 										"start"
@@ -2662,10 +2429,16 @@
 							"name": "401",
 							"request": {
 								"method": "POST",
-								"header": [],
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"9795ea34-e4e9-11ed-b5ea-0242ac120002\",\r\n          \"recipientTaxId\": \"GNIGNI80A01H501R\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\",\r\n          \"qrCode\": \"1a\"\r\n}",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"9795ea34-e4e9-11ed-b5ea-0242ac120002\",\r\n          \"recipientTaxId\": \"VDIVDI80A01H501R\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"914A4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\",\r\n          \"qrCode\": \"1a\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2673,16 +2446,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/start",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/start",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"transaction",
 										"start"
@@ -2697,7 +2466,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -2712,16 +2481,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/start",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/start",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"transaction",
 										"start"
@@ -2739,7 +2504,7 @@
 								"method": "GET",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -2754,16 +2519,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/start",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/start",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"transaction",
 										"start"
@@ -2778,7 +2539,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -2793,16 +2554,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/start",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/start",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"transaction",
 										"start"
@@ -2822,7 +2579,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -2837,16 +2594,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/complete",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/complete",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"transaction",
 										"complete"
@@ -2861,7 +2614,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -2876,16 +2629,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/complete",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/complete",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"transaction",
 										"complete"
@@ -2900,7 +2649,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -2915,16 +2664,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/complete",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/complete",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"transaction",
 										"complete"
@@ -2939,7 +2684,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -2954,16 +2699,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/complete",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/complete",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"transaction",
 										"complete"
@@ -2978,7 +2719,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -2993,16 +2734,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/complete",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/complete",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"transaction",
 										"complete"
@@ -3015,10 +2752,16 @@
 							"name": "401",
 							"request": {
 								"method": "POST",
-								"header": [],
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"operationId\": \"9795ea34-e4e9-11ed-b5ea-0242ac120002\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"raw": "{\r\n          \"operationId\": \"7959ea34-e4e9-11ed-b5ea-0242ac120002\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -3026,16 +2769,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/complete",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/complete",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"transaction",
 										"complete"
@@ -3050,7 +2789,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -3065,16 +2804,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/complete",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/complete",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"transaction",
 										"complete"
@@ -3092,7 +2827,7 @@
 								"method": "GET",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -3107,16 +2842,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/complete",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/complete",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"transaction",
 										"complete"
@@ -3131,7 +2862,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -3146,16 +2877,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/complete",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/complete",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"transaction",
 										"complete"
@@ -3175,7 +2902,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -3190,16 +2917,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/abort",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/abort",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"transaction",
 										"abort"
@@ -3214,7 +2937,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -3229,16 +2952,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/abort",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/abort",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"transaction",
 										"abort"
@@ -3253,7 +2972,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -3268,16 +2987,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/abort",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/abort",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"transaction",
 										"abort"
@@ -3292,7 +3007,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -3307,16 +3022,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/abort",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/abort",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"transaction",
 										"abort"
@@ -3331,7 +3042,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -3346,16 +3057,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/abort",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/abort",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"transaction",
 										"abort"
@@ -3368,10 +3075,16 @@
 							"name": "401",
 							"request": {
 								"method": "POST",
-								"header": [],
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"operationId\": \"8ed10708-e511-11ed-b5ea-0242ac120002\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"raw": "{\r\n          \"operationId\": \"9ap01708-e511-11ed-b5ea-0242ac120002\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -3379,16 +3092,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/abort",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/abort",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"transaction",
 										"abort"
@@ -3403,7 +3112,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -3418,16 +3127,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/abort",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/abort",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"transaction",
 										"abort"
@@ -3445,7 +3150,7 @@
 								"method": "GET",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -3460,16 +3165,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/abort",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/abort",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"transaction",
 										"abort"
@@ -3484,7 +3185,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -3499,16 +3200,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/transaction/abort",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/abort",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"transaction",
 										"abort"
@@ -3533,7 +3230,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -3548,16 +3245,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/start",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/start",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"transaction",
 										"start"
@@ -3572,7 +3265,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -3587,16 +3280,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/start",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/start",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"transaction",
 										"start"
@@ -3611,7 +3300,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -3626,16 +3315,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/start",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/start",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"transaction",
 										"start"
@@ -3650,7 +3335,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -3665,16 +3350,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/start",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/start",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"transaction",
 										"start"
@@ -3689,7 +3370,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -3704,16 +3385,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/start",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/start",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"transaction",
 										"start"
@@ -3728,7 +3405,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -3743,16 +3420,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/start",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/start",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"transaction",
 										"start"
@@ -3767,7 +3440,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -3782,16 +3455,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/start",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/start",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"transaction",
 										"start"
@@ -3806,7 +3475,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -3821,16 +3490,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/start",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/start",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"transaction",
 										"start"
@@ -3845,7 +3510,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -3860,16 +3525,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/start",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/start",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"transaction",
 										"start"
@@ -3884,7 +3545,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -3899,16 +3560,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/start",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/start",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"transaction",
 										"start"
@@ -3923,7 +3580,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -3938,16 +3595,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/start",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/start",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"transaction",
 										"start"
@@ -3962,7 +3615,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -3977,16 +3630,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/start",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/start",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"transaction",
 										"start"
@@ -4001,7 +3650,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -4016,16 +3665,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/start",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/start",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"transaction",
 										"start"
@@ -4038,10 +3683,16 @@
 							"name": "401",
 							"request": {
 								"method": "POST",
-								"header": [],
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"9795ea34-e4e9-11ed-b5ea-0242ac120002\",\r\n          \"recipientTaxId\": \"GNIGNI80A01H501R\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\"\r\n}",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"9795ea34-e4e9-11ed-b5ea-0242ac120002\",\r\n          \"recipientTaxId\": \"VDIVDI80A01H501R\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"914A4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4049,16 +3700,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/start",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/start",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"transaction",
 										"start"
@@ -4073,7 +3720,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -4088,16 +3735,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/start",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/start",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"transaction",
 										"start"
@@ -4115,7 +3758,7 @@
 								"method": "GET",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -4130,16 +3773,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/start",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/start",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"transaction",
 										"start"
@@ -4154,14 +3793,14 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"9795ea34-e4e9-11ed-b5ea-0242ac120002\",\r\n          \"recipientTaxId\": \"CIACIA80A01H501X\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\"\r\n}",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"9795ea34-e4e9-11ed-b5ea-0242ac120002\",\r\n          \"recipientTaxId\": \"VIAVIA90A01H501X\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4169,16 +3808,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/start",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/start",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"transaction",
 										"start"
@@ -4198,7 +3833,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -4213,16 +3848,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/complete",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/complete",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"transaction",
 										"complete"
@@ -4237,7 +3868,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -4252,16 +3883,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/complete",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/complete",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"transaction",
 										"complete"
@@ -4276,7 +3903,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -4291,16 +3918,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/complete",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/complete",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"transaction",
 										"complete"
@@ -4315,7 +3938,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -4330,15 +3953,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/complete",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/v1/aor/transaction/complete",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
+										"radd-web",
 										"v1",
 										"aor",
 										"transaction",
@@ -4352,10 +3972,16 @@
 							"name": "401",
 							"request": {
 								"method": "POST",
-								"header": [],
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"operationId\": \"9795ea34-e4e9-11ed-b5ea-0242ac120002\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"raw": "{\r\n          \"operationId\": \"7959ea34-e4e9-11ed-b5ea-0242ac120002\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4363,16 +3989,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/complete",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/complete",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"transaction",
 										"complete"
@@ -4387,7 +4009,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -4402,16 +4024,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/complete",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/complete",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"transaction",
 										"complete"
@@ -4426,7 +4044,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -4441,16 +4059,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/complete",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/complete",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"transaction",
 										"complete"
@@ -4468,7 +4082,7 @@
 								"method": "GET",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -4483,16 +4097,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/complete",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/complete",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"transaction",
 										"complete"
@@ -4507,7 +4117,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -4522,16 +4132,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/complete",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/complete",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"transaction",
 										"complete"
@@ -4551,7 +4157,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -4566,16 +4172,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/abort",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/abort",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"transaction",
 										"abort"
@@ -4590,7 +4192,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -4605,16 +4207,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/abort",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/abort",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"transaction",
 										"abort"
@@ -4629,7 +4227,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -4644,16 +4242,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/abort",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/abort",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"transaction",
 										"abort"
@@ -4668,7 +4262,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -4683,16 +4277,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/abort",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/abort",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"transaction",
 										"abort"
@@ -4705,10 +4295,16 @@
 							"name": "401",
 							"request": {
 								"method": "POST",
-								"header": [],
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"operationId\": \"8ed10708-e511-11ed-b5ea-0242ac120002\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"raw": "{\r\n          \"operationId\": \"9ap01708-e511-11ed-b5ea-0242ac120002\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4716,16 +4312,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/abort",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/abort",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"transaction",
 										"abort"
@@ -4755,16 +4347,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/abort",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/abort",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"transaction",
 										"abort"
@@ -4779,7 +4367,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -4794,16 +4382,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/abort",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/abort",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"transaction",
 										"abort"
@@ -4821,7 +4405,7 @@
 								"method": "GET",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -4836,16 +4420,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/abort",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/abort",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"transaction",
 										"abort"
@@ -4860,7 +4440,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -4875,16 +4455,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/transaction/abort",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/abort",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"transaction",
 										"abort"
@@ -4909,16 +4485,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/operations/by-id/2bb5c29e0cf411ed861d0242ac120002",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-id/2bb5c29e0cf411ed861d0242ac120002",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"operations",
 										"by-id",
@@ -4959,16 +4531,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/operations/by-id/78c1f2769c8e4ba084a62e778a143d67",
+									"raw": "http://localhost:8080/radd-web/act/operations/by-id/78c1f2769c8e4ba084a62e778a143d67",
 									"protocol": "http",
 									"host": [
 										"localhost"
 									],
-									"port": "1080",
+									"port": "8080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"operations",
 										"by-id",
@@ -6459,12 +6029,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:1080/radd-web/document-ready/PN_RADD_FSU_ATTACHMENT-19703b4070084bb5b79662abd5fec424.zip",
+							"raw": "http://localhost:8080/radd-web/document-ready/PN_RADD_FSU_ATTACHMENT-19703b4070084bb5b79662abd5fec424.zip",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "1080",
+							"port": "8080",
 							"path": [
 								"radd-web",
 								"document-ready",
@@ -6480,7 +6050,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:1080/radd-web/document-ready/PN_RADD_FSU_ATTACHMENT-19703b4070084bb5b79662abd5fec424.zip",
+							"raw": "http://localhost:1080/radd-web/document-ready/PN_RADD_FSU_ATTACHMENT-22703b4070084bb5b79662abd5fec424.zip",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -6489,7 +6059,7 @@
 							"path": [
 								"radd-web",
 								"document-ready",
-								"PN_RADD_FSU_ATTACHMENT-19703b4070084bb5b79662abd5fec424.zip"
+								"PN_RADD_FSU_ATTACHMENT-22703b4070084bb5b79662abd5fec424.zip"
 							]
 						}
 					},
@@ -6501,16 +6071,16 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:1080/radd-web/document-ready/PN_RADD_FSU_ATTACHMENT-21703b4070084bb5b79662abd5fec424.zip",
+							"raw": "http://localhost:8080/radd-web/document-ready/TEST",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "1080",
+							"port": "8080",
 							"path": [
 								"radd-web",
 								"document-ready",
-								"PN_RADD_FSU_ATTACHMENT-21703b4070084bb5b79662abd5fec424.zip"
+								"TEST"
 							]
 						}
 					},
