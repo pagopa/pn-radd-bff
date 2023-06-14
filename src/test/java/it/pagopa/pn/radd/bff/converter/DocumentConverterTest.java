@@ -25,7 +25,7 @@ class DocumentConverterTest {
 		// Arrange
 		DocumentModel documentModel = new DocumentModel();
 		documentModel.setFileKey("File Key");
-		documentModel.setTtl(1L);
+		documentModel.setExpiringAt(1L);
 
 		// Act
 		DocumentResponse actualDocumentModelToResponseResult = documentConverter.documentModelToResponse(documentModel,
