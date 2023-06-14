@@ -42,7 +42,7 @@ public class DocumentRepositoryImpl implements DocumentRepository {
 		log.debug("Inserting data {} in DynamoDB table {}", fileKey, table.tableName());
 		DocumentModel documentModel = new DocumentModel();
 		documentModel.setFileKey(fileKey);
-		documentModel.setTtl(LocalDateTime.now().plusHours(1).toEpochSecond(ZoneOffset.UTC));
+		documentModel.setExpiringAt(LocalDateTime.now().plusHours(1).toEpochSecond(ZoneOffset.UTC));
 		return Mono.fromFuture(table.putItem(documentModel))
 				.map(v -> {
 					log.info("Inserted data in DynamoDB table {}", table.tableName());
