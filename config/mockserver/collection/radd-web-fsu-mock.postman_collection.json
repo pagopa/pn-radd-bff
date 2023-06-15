@@ -4506,16 +4506,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/operations/by-id/67d8a1f225f24c13a05e00a0d8a8aaba",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-id/67d8a1f225f24c13a05e00a0d8a8aaba",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"operations",
 										"by-id",
@@ -4531,12 +4527,10 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8080/radd-web/act/operations/by-id/78c1f2769c8e4ba084a62e778a143d67",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-id/78c1f2769c8e4ba084a62e778a143d67",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "8080",
 									"path": [
 										"radd-web",
 										"act",
@@ -4554,16 +4548,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/operations/by-id/76d9a1f225f24c24a05e00a0d9a9aaba",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-id/76d9a1f225f24c24a05e00a0d9a9aaba",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"operations",
 										"by-id",
@@ -4579,16 +4569,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/operations/by-id/2c12e95533d0444991e8f18bb232a44b",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-id/2c12e95533d0444991e8f18bb232a44b",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"operations",
 										"by-id",
@@ -4604,16 +4590,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/operations/by-id/4926a0b4c4fc4d4f9a5bc5e5f5aefb47",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-id/4926a0b4c4fc4d4f9a5bc5e5f5aefb47",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"operations",
 										"by-id",
@@ -4629,16 +4611,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/operations/by-id/95150da94bc24a52a839628d9f9c37d8",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-id/95150da94bc24a52a839628d9f9c37d8",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"operations",
 										"by-id",
@@ -4654,16 +4632,12 @@
 								"method": "POST",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/operations/by-id/67d8a1f225f24c13a05e00a0d8a8aaba",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-id/67d8a1f225f24c13a05e00a0d8a8aaba",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"operations",
 										"by-id",
@@ -4679,16 +4653,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/operations/by-id/9415a0b4c4fc4d4f9a5bc5e5f5aefb47",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-id/9415a0b4c4fc4d4f9a5bc5e5f5aefb47",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"operations",
 										"by-id",
@@ -4709,16 +4679,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/operations/by-id/2bb5c29e0cf411ed861d0242ac120002",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-id/2bb5c29e0cf411ed861d0242ac120002",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"operations",
 										"by-id",
@@ -4734,16 +4700,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/operations/by-id/67d8a1f225f24c13a05e00a0d8a8aaba",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-id/67d8a1f225f24c13a05e00a0d8a8aaba",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"operations",
 										"by-id",
@@ -4759,16 +4721,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/operations/by-id/78c1f2769c8e4ba084a62e778a143d67",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-id/78c1f2769c8e4ba084a62e778a143d67",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"operations",
 										"by-id",
@@ -4784,16 +4742,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/operations/by-id/76d9a1f225f24c24a05e00a0d9a9aaba",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-id/76d9a1f225f24c24a05e00a0d9a9aaba",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"operations",
 										"by-id",
@@ -4809,16 +4763,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/operations/by-id/2c12e95533d0444991e8f18bb232a44b",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-id/2c12e95533d0444991e8f18bb232a44b",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"operations",
 										"by-id",
@@ -4834,16 +4784,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/operations/by-id/4926a0b4c4fc4d4f9a5bc5e5f5aefb47",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-id/4926a0b4c4fc4d4f9a5bc5e5f5aefb47",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"operations",
 										"by-id",
@@ -4859,16 +4805,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/operations/by-id/95150da94bc24a52a839628d9f9c37d8",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-id/95150da94bc24a52a839628d9f9c37d8",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"operations",
 										"by-id",
@@ -4884,16 +4826,12 @@
 								"method": "POST",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/operations/by-id/67d8a1f225f24c13a05e00a0d8a8aaba",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-id/67d8a1f225f24c13a05e00a0d8a8aaba",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"operations",
 										"by-id",
@@ -4909,16 +4847,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/operations/by-id/9415a0b4c4fc4d4f9a5bc5e5f5aefb47",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-id/9415a0b4c4fc4d4f9a5bc5e5f5aefb47",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"operations",
 										"by-id",
@@ -4939,16 +4873,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/operations/by-iun/LJLH-GNTJ-DVXR-202209-J-1",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-iun/LJLH-GNTJ-DVXR-202209-J-1",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"operations",
 										"by-iun",
@@ -4964,16 +4894,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/operations/by-iun/LXNR-QPMS-OGTW-202209-K-1",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-iun/LXNR-QPMS-OGTW-202209-K-1",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"operations",
 										"by-iun",
@@ -4989,16 +4915,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/operations/by-iun/BVMK-NSRI-HFOL-202209-N-1",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-iun/BVMK-NSRI-HFOL-202209-N-1",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"operations",
 										"by-iun",
@@ -5014,16 +4936,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/operations/by-iun/GKMK-SPNV-BFYT-202209-F-1",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-iun/GKMK-SPNV-BFYT-202209-F-1",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"operations",
 										"by-iun",
@@ -5039,16 +4957,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/operations/by-iun/RJLM-QGXC-HPZD-202209-G-1",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-iun/RJLM-QGXC-HPZD-202209-G-1",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"operations",
 										"by-iun",
@@ -5064,16 +4978,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/operations/by-iun/4FZEB-JKRA-COGW-202209-I-1",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-iun/4FZEB-JKRA-COGW-202209-I-1",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"operations",
 										"by-iun",
@@ -5089,16 +4999,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/operations/by-iun/JTXA-EQYU-CRZG-202209-O-1",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-iun/JTXA-EQYU-CRZG-202209-O-1",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"operations",
 										"by-iun",
@@ -5114,16 +5020,12 @@
 								"method": "POST",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/operations/by-iun/NXPT-VWUD-LAIY-202209-H-1",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-iun/NXPT-VWUD-LAIY-202209-H-1",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"operations",
 										"by-iun",
@@ -5139,16 +5041,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/operations/by-iun/MTIS-UYFH-DPVC-202209-J-1",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-iun/MTIS-UYFH-DPVC-202209-J-1",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"operations",
 										"by-iun",
@@ -5169,16 +5067,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/operations/by-iun/LJLH-GNTJ-DVXR-202209-J-1",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-iun/LJLH-GNTJ-DVXR-202209-J-1",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"operations",
 										"by-iun",
@@ -5194,16 +5088,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/operations/by-iun/LXNR-QPMS-OGTW-202209-K-1",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-iun/LXNR-QPMS-OGTW-202209-K-1",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"operations",
 										"by-iun",
@@ -5219,16 +5109,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/operations/by-iun/BVMK-NSRI-HFOL-202209-N-1",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-iun/BVMK-NSRI-HFOL-202209-N-1",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"operations",
 										"by-iun",
@@ -5244,16 +5130,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/operations/by-iun/GKMK-SPNV-BFYT-202209-F-1",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-iun/GKMK-SPNV-BFYT-202209-F-1",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"operations",
 										"by-iun",
@@ -5269,16 +5151,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/operations/by-iun/RJLM-QGXC-HPZD-202209-G-1",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-iun/RJLM-QGXC-HPZD-202209-G-1",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"operations",
 										"by-iun",
@@ -5294,16 +5172,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/operations/by-iun/4FZEB-JKRA-COGW-202209-I-1",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-iun/4FZEB-JKRA-COGW-202209-I-1",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"operations",
 										"by-iun",
@@ -5319,16 +5193,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/operations/by-iun/JTXA-EQYU-CRZG-202209-O-1",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-iun/JTXA-EQYU-CRZG-202209-O-1",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"operations",
 										"by-iun",
@@ -5344,16 +5214,12 @@
 								"method": "POST",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/operations/by-iun/NXPT-VWUD-LAIY-202209-H-1",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-iun/NXPT-VWUD-LAIY-202209-H-1",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"operations",
 										"by-iun",
@@ -5369,16 +5235,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/operations/by-iun/MTIS-UYFH-DPVC-202209-J-1",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-iun/MTIS-UYFH-DPVC-202209-J-1",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"operations",
 										"by-iun",
@@ -5408,16 +5270,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/operations/by-internalId/PF-4fc75df3-0913-407e-bdaa-e50329708b7d",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-internalId/PF-4fc75df3-0913-407e-bdaa-e50329708b7d",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"operations",
 										"by-internalId",
@@ -5442,16 +5300,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/operations/by-internalId/PF-d0556f95-6de8-4a92-aa2e-5479f6a1d6d7",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-internalId/PF-d0556f95-6de8-4a92-aa2e-5479f6a1d6d7",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"operations",
 										"by-internalId",
@@ -5476,16 +5330,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/operations/by-internalId/PF-e6c22e6b-1276-44a6-a50a-5c0e4639425d",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-internalId/PF-e6c22e6b-1276-44a6-a50a-5c0e4639425d",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"operations",
 										"by-internalId",
@@ -5510,16 +5360,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/operations/by-internalId/PF-1f994c71-e5d5-4e5c-a9a9-23ebad4d30d2",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-internalId/PF-1f994c71-e5d5-4e5c-a9a9-23ebad4d30d2",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"operations",
 										"by-internalId",
@@ -5544,16 +5390,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/operations/by-internalId/PF-06c64ca7-8b20-4b7f-9b6a-11f91315b89c",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-internalId/PF-06c64ca7-8b20-4b7f-9b6a-11f91315b89c",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"operations",
 										"by-internalId",
@@ -5578,16 +5420,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/operations/by-internalId/PF-5c584ee7-09e8-4027-b1f9-c19a9a8e79b1",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-internalId/PF-5c584ee7-09e8-4027-b1f9-c19a9a8e79b1",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"operations",
 										"by-internalId",
@@ -5612,16 +5450,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/operations/by-internalId/PG-81a2f2dc-5109-4659-b9a8-8e52ce89a03a",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-internalId/PG-81a2f2dc-5109-4659-b9a8-8e52ce89a03a",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"operations",
 										"by-internalId",
@@ -5649,16 +5483,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/operations/by-internalId/PG-4fa4e3a8-19f2-46e3-ba81-9f1aebbc44ec",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-internalId/PG-4fa4e3a8-19f2-46e3-ba81-9f1aebbc44ec",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"operations",
 										"by-internalId",
@@ -5683,16 +5513,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/act/operations/by-internalId/PF-a5068d34-2677-4bfa-b0b9-945f0d37d7c5",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-internalId/PF-a5068d34-2677-4bfa-b0b9-945f0d37d7c5",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"act",
 										"operations",
 										"by-internalId",
@@ -5722,16 +5548,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/operations/by-internalId/PF-4fc75df3-0913-407e-bdaa-e50329708b7d",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-internalId/PF-4fc75df3-0913-407e-bdaa-e50329708b7d",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"operations",
 										"by-internalId",
@@ -5756,16 +5578,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/operations/by-internalId/PF-d0556f95-6de8-4a92-aa2e-5479f6a1d6d7",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-internalId/PF-d0556f95-6de8-4a92-aa2e-5479f6a1d6d7",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"operations",
 										"by-internalId",
@@ -5790,16 +5608,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/operations/by-internalId/PF-e6c22e6b-1276-44a6-a50a-5c0e4639425d",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-internalId/PF-e6c22e6b-1276-44a6-a50a-5c0e4639425d",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"operations",
 										"by-internalId",
@@ -5824,16 +5638,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/operations/by-internalId/PF-1f994c71-e5d5-4e5c-a9a9-23ebad4d30d2",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-internalId/PF-1f994c71-e5d5-4e5c-a9a9-23ebad4d30d2",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"operations",
 										"by-internalId",
@@ -5858,16 +5668,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/operations/by-internalId/PF-06c64ca7-8b20-4b7f-9b6a-11f91315b89c",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-internalId/PF-06c64ca7-8b20-4b7f-9b6a-11f91315b89c",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"operations",
 										"by-internalId",
@@ -5892,16 +5698,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/operations/by-internalId/PF-5c584ee7-09e8-4027-b1f9-c19a9a8e79b1",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-internalId/PF-5c584ee7-09e8-4027-b1f9-c19a9a8e79b1",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"operations",
 										"by-internalId",
@@ -5929,16 +5731,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/operations/by-internalId/PG-4fa4e3a8-19f2-46e3-ba81-9f1aebbc44ec",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-internalId/PG-4fa4e3a8-19f2-46e3-ba81-9f1aebbc44ec",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"operations",
 										"by-internalId",
@@ -5963,16 +5761,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/operations/by-internalId/PG-81a2f2dc-5109-4659-b9a8-8e52ce89a03a",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-internalId/PG-81a2f2dc-5109-4659-b9a8-8e52ce89a03a",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"operations",
 										"by-internalId",
@@ -5997,16 +5791,12 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:1080/radd-private/api/v1/aor/operations/by-internalId/PF-a5068d34-2677-4bfa-b0b9-945f0d37d7c5",
-									"protocol": "http",
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-internalId/PF-a5068d34-2677-4bfa-b0b9-945f0d37d7c5",
 									"host": [
-										"localhost"
+										"{{BASE_PATH}}"
 									],
-									"port": "1080",
 									"path": [
-										"radd-private",
-										"api",
-										"v1",
+										"radd-web",
 										"aor",
 										"operations",
 										"by-internalId",
@@ -6029,12 +5819,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/radd-web/document-ready/PN_RADD_FSU_ATTACHMENT-19703b4070084bb5b79662abd5fec424.zip",
-							"protocol": "http",
+							"raw": "{{BASE_PATH}}/radd-web/document-ready/PN_RADD_FSU_ATTACHMENT-19703b4070084bb5b79662abd5fec424.zip",
 							"host": [
-								"localhost"
+								"{{BASE_PATH}}"
 							],
-							"port": "8080",
 							"path": [
 								"radd-web",
 								"document-ready",
@@ -6050,12 +5838,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:1080/radd-web/document-ready/PN_RADD_FSU_ATTACHMENT-22703b4070084bb5b79662abd5fec424.zip",
-							"protocol": "http",
+							"raw": "{{BASE_PATH}}/radd-web/document-ready/PN_RADD_FSU_ATTACHMENT-22703b4070084bb5b79662abd5fec424.zip",
 							"host": [
-								"localhost"
+								"{{BASE_PATH}}"
 							],
-							"port": "1080",
 							"path": [
 								"radd-web",
 								"document-ready",
@@ -6071,12 +5857,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/radd-web/document-ready/TEST",
-							"protocol": "http",
+							"raw": "{{BASE_PATH}}/radd-web/document-ready/TEST",
 							"host": [
-								"localhost"
+								"{{BASE_PATH}}"
 							],
-							"port": "8080",
 							"path": [
 								"radd-web",
 								"document-ready",
@@ -6092,12 +5876,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:1080/radd-web/document-ready/PN_RADD_FSU_ATTACHMENT-20703b4070084bb5b79662abd5fec424.zip",
-							"protocol": "http",
+							"raw": "{{BASE_PATH}}/radd-web/document-ready/PN_RADD_FSU_ATTACHMENT-20703b4070084bb5b79662abd5fec424.zip",
 							"host": [
-								"localhost"
+								"{{BASE_PATH}}"
 							],
-							"port": "1080",
 							"path": [
 								"radd-web",
 								"document-ready",

@@ -1,8 +1,10 @@
 package it.pagopa.pn.radd.bff.service;
 
+import it.pagopa.pn.radd.bff.client.PnDataVaultClient;
 import it.pagopa.pn.radd.bff.client.PnRaddFsuClient;
 import it.pagopa.pn.radd.bff.converter.NotificationInquiryConverter;
 import it.pagopa.pn.radd.bff.exception.PnRaddBffException;
+import it.pagopa.pn.radd.bff.generated.openapi.msclient.data.vault.v1.dto.RecipientType;
 import it.pagopa.pn.radd.bff.generated.openapi.server.v1.dto.*;
 import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.OperationActResponseDto;
 import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.OperationAorResponseDto;
@@ -23,11 +25,14 @@ import java.util.stream.Stream;
 import static it.pagopa.pn.radd.bff.exception.PnRaddBffExceptionCodes.*;
 
 @Component
+@lombok.CustomLog
 @RequiredArgsConstructor
 public class NotificationInquiryService {
 
 
     private final PnRaddFsuClient pnRaddFsuClient;
+
+    private final PnDataVaultClient pnDataVaultClient;
 
     private final DataVaultService dataVaultService;
 
@@ -35,10 +40,11 @@ public class NotificationInquiryService {
 
     public Mono<OperationsActDetailsResponse> getActPracticesByInternalId(String taxId, Mono<FilterRequest> filterRequest) {
         return filterRequest.map(notificationInquiryConverter::filterRequestToDto)
-                .flatMap(t -> pnRaddFsuClient.getActPracticesByInternalId(taxId, t))
+                .flatMap(t -> filterRequest.flatMap(filterRequest1 -> pnDataVaultClient.getAnonymousByTaxId(RecipientType.fromValue(filterRequest1.getRecipientType().getValue()), taxId)
+                                .doOnNext(log::info))
+                        .flatMap(anonymousTaxId -> pnRaddFsuClient.getActPracticesByInternalId(anonymousTaxId, t)))
                 .map(notificationInquiryConverter::operationsActDetailsDtoToResponse);
     }
-
     public  Mono<OperationsResponse> getActPracticesByIun(String iun) {
         return pnRaddFsuClient.getActPracticesByIun(iun)
                 .flatMap(operationsResponseDto -> {

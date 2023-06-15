@@ -1,7 +1,6 @@
 package it.pagopa.pn.radd.bff.converter;
 
 import it.pagopa.pn.radd.bff.generated.openapi.msclient.data.vault.v1.dto.BaseRecipientDto;
-import it.pagopa.pn.radd.bff.generated.openapi.msclient.data.vault.v1.dto.RecipientType;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -20,5 +19,8 @@ public class DataVaultConverter {
                 .collect(Collectors
                        .toMap(BaseRecipientDto::getInternalId, BaseRecipientDto::getTaxId)
                );
+    }
+    public String mapToAnonymizedTaxId(String taxId) {
+        return taxId;
     }
 }

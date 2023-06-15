@@ -17,8 +17,8 @@ La configurazione del mock server è fatta tramite file json nella cartella _con
 
 #### actDocumentInquiry
 
-Path: `/radd-private/api/v1/act/inquiry`
-Path servizio reale: `/radd-web/act/inquiry`
+Path target fsu: `/radd-private/api/v1/act/inquiry`
+Path : `/radd-web/act/inquiry`
 
 Use cases:
 

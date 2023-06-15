@@ -185,7 +185,6 @@ public class NotificationInquiryConverter {
         FilterRequestDto filterRequestDto = new FilterRequestDto();
         filterRequestDto.setFrom(filterRequest.getFrom().toInstant().atOffset(ZoneOffset.UTC));
         filterRequestDto.setTo(filterRequest.getTo().toInstant().atOffset(ZoneOffset.UTC));
-
         return filterRequestDto;
     }
 
