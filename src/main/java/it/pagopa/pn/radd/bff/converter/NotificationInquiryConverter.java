@@ -183,9 +183,13 @@ public class NotificationInquiryConverter {
 
     public FilterRequestDto filterRequestToDto(FilterRequest filterRequest) {
         FilterRequestDto filterRequestDto = new FilterRequestDto();
-        filterRequestDto.setFrom(filterRequest.getFrom().toInstant().atOffset(ZoneOffset.UTC));
-        filterRequestDto.setTo(filterRequest.getTo().toInstant().atOffset(ZoneOffset.UTC));
 
+        if(filterRequest.getFrom() != null) {
+            filterRequestDto.setFrom(filterRequest.getFrom().toInstant().atOffset(ZoneOffset.UTC));
+        }
+        if(filterRequest.getTo() != null) {
+            filterRequestDto.setTo(filterRequest.getTo().toInstant().atOffset(ZoneOffset.UTC));
+        }
         return filterRequestDto;
     }
 

@@ -17,7 +17,7 @@ public class DocumentModel {
 	private String fileKey;
 
 	@Getter (onMethod = @__ ({
-			@DynamoDbAttribute (DocumentConstant.TTL)
+			@DynamoDbAttribute (DocumentConstant.EXPIRING_AT)
 	}))
-	private long ttl;
+	private long expiringAt;
 }
