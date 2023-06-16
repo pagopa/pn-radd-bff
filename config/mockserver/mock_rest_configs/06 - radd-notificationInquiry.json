@@ -733,7 +733,7 @@
       "method": "POST",
       "path": "/radd-private/api/v1/act/operations/by-internalId/{internalId}",
       "pathParameters": {
-        "internalId": "123e4567-e89b-12d3-a456-426655440000"
+        "internalId": "PF-123e4567-e89b-12d3-a456-426655440000|PG-123e4567-e89b-12d3-a456-426655440000"
       }
     },
     "httpResponse": {
@@ -969,7 +969,7 @@
       "method": "POST",
       "path": "/radd-private/api/v1/aor/operations/by-internalId/{internalId}",
       "pathParameters": {
-        "internalId": "123e4567-e89b-12d3-a456-426655440000"
+        "internalId": "PF-123e4567-e89b-12d3-a456-426655440000|PG-123e4567-e89b-12d3-a456-426655440000"
       }
     },
     "httpResponse": {
