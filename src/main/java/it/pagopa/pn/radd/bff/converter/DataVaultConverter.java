@@ -20,4 +20,7 @@ public class DataVaultConverter {
                        .toMap(BaseRecipientDto::getInternalId, BaseRecipientDto::getTaxId)
                );
     }
+    public String mapToAnonymizedTaxId(String taxId) {
+        return taxId;
+    }
 }

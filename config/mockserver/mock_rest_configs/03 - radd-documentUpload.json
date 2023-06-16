@@ -90,6 +90,14 @@
       "headers": {
         "Content-Type": [
           "application/json"
+        ],
+        "uid": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^.*$"
+            }
+          }
         ]
       },
       "body": {
@@ -97,7 +105,7 @@
         "json": {
           "bundleId": "${json-unit.regex}(^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$)",
           "contentType": "application/zip",
-          "checksum": "708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560"
+          "checksum": "914A4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560"
         }
       }
     },

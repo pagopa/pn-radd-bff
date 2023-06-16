@@ -944,9 +944,19 @@
     "httpRequest": {
       "method": "GET",
       "path": "/radd-private/api/v1/act/inquiry",
+        "headers": {
+            "uid": [
+            {
+                "schema": {
+                "type": "string",
+                "pattern": "^.*$"
+                }
+            }
+            ]
+        },
       "queryStringParameters": {
         "recipientTaxId": [
-          "GNIGNI80A01H501R"
+          "VDIVDI80A01H501R"
         ],
         "recipientType": [
           {
@@ -975,6 +985,16 @@
     "httpRequest": {
       "method": "POST|DELETE|HEAD",
       "path": "/radd-private/api/v1/act/inquiry",
+        "headers": {
+            "uid": [
+            {
+                "schema": {
+                "type": "string",
+                "pattern": "^.*$"
+                }
+            }
+            ]
+        },
       "queryStringParameters": {
         "recipientTaxId": [
           "FRMTTR76M06B715E"
@@ -1006,6 +1026,16 @@
     "httpRequest": {
       "method": "GET",
       "path": "/radd-private/api/v1/act/inquiry",
+        "headers": {
+            "uid": [
+            {
+                "schema": {
+                "type": "string",
+                "pattern": "^.*$"
+                }
+            }
+            ]
+        },
       "queryStringParameters": {
         "recipientTaxId": [
           "CIACIA80A01H501X"
@@ -1037,6 +1067,16 @@
     "httpRequest": {
       "method": "GET",
       "path": "/radd-private/api/v1/act/inquiry",
+        "headers": {
+            "uid": [
+            {
+                "schema": {
+                "type": "string",
+                "pattern": "^.*$"
+                }
+            }
+            ]
+        },
       "queryStringParameters": {
         "recipientTaxId": [
           "RFNNTR76M06B715E"

@@ -1,0 +1,5895 @@
+{
+	"info": {
+		"_postman_id": "0373b43d-99a2-47dd-94a1-bfef23b7075f",
+		"name": "radd-web-fsu-mock",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26143046"
+	},
+	"item": [
+		{
+			"name": "actDocumentInquiry",
+			"item": [
+				{
+					"name": "200 OK",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-pagopa-pn-uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_PATH}}/radd-web/act/inquiry?recipientTaxId=GNIGNI80A01H501R&recipientType=PF&qrCode=1",
+							"host": [
+								"{{BASE_PATH}}"
+							],
+							"path": [
+								"radd-web",
+								"act",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "GNIGNI80A01H501R"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								},
+								{
+									"key": "qrCode",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 OK (startTransaction 500)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-pagopa-pn-uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_PATH}}/radd-web/act/inquiry?recipientTaxId=VIAVIA90A01H501X&recipientType=PF&qrCode=1",
+							"host": [
+								"{{BASE_PATH}}"
+							],
+							"path": [
+								"radd-web",
+								"act",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "VIAVIA90A01H501X"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								},
+								{
+									"key": "qrCode",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 OK (startTransaction KO)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-pagopa-pn-uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{BASE_PATH}}/radd-web/act/inquiry?recipientTaxId=PLOMRC01P30L736Y&recipientType=PF&qrCode=1",
+							"host": [
+								"{{BASE_PATH}}"
+							],
+							"path": [
+								"radd-web",
+								"act",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "PLOMRC01P30L736Y"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								},
+								{
+									"key": "qrCode",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 OK (startTransaction Not Ready)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-pagopa-pn-uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{BASE_PATH}}/radd-web/act/inquiry?recipientTaxId=TSTGNN80A01F839X&recipientType=PF&qrCode=1",
+							"host": [
+								"{{BASE_PATH}}"
+							],
+							"path": [
+								"radd-web",
+								"act",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "TSTGNN80A01F839X"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								},
+								{
+									"key": "qrCode",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 OK (completeTransaction KO)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-pagopa-pn-uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{BASE_PATH}}/radd-web/act/inquiry?recipientTaxId=VTOMRC01P30L736Y&recipientType=PF&qrCode=1",
+							"host": [
+								"{{BASE_PATH}}"
+							],
+							"path": [
+								"radd-web",
+								"act",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "VTOMRC01P30L736Y"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								},
+								{
+									"key": "qrCode",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 OK (completeTransaction transazione inesistente)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-pagopa-pn-uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{BASE_PATH}}/radd-web/act/inquiry?recipientTaxId=LBOMRC01P30L736Y&recipientType=PF&qrCode=1",
+							"host": [
+								"{{BASE_PATH}}"
+							],
+							"path": [
+								"radd-web",
+								"act",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "LBOMRC01P30L736Y"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								},
+								{
+									"key": "qrCode",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 OK (completeTransaction transazione già completata)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-pagopa-pn-uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{BASE_PATH}}/radd-web/act/inquiry?recipientTaxId=AEDMRC01P30L736Y&recipientType=PF&qrCode=1",
+							"host": [
+								"{{BASE_PATH}}"
+							],
+							"path": [
+								"radd-web",
+								"act",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "AEDMRC01P30L736Y"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								},
+								{
+									"key": "qrCode",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 OK (completeTransaction 500)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-pagopa-pn-uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{BASE_PATH}}/radd-web/act/inquiry?recipientTaxId=MADMRC01P30L736Y&recipientType=PF&qrCode=1",
+							"host": [
+								"{{BASE_PATH}}"
+							],
+							"path": [
+								"radd-web",
+								"act",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "MADMRC01P30L736Y"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								},
+								{
+									"key": "qrCode",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 OK (abortTransaction OK)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-pagopa-pn-uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_PATH}}/radd-web/act/inquiry?recipientTaxId=ZZAMRC01P30L736Y&recipientType=PF&qrCode=1",
+							"host": [
+								"{{BASE_PATH}}"
+							],
+							"path": [
+								"radd-web",
+								"act",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "ZZAMRC01P30L736Y"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								},
+								{
+									"key": "qrCode",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 OK (abortTransaction KO)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-pagopa-pn-uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{BASE_PATH}}/radd-web/act/inquiry?recipientTaxId=GTAMRC01P30L736Y&recipientType=PF&qrCode=1",
+							"host": [
+								"{{BASE_PATH}}"
+							],
+							"path": [
+								"radd-web",
+								"act",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "GTAMRC01P30L736Y"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								},
+								{
+									"key": "qrCode",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 OK (abortTransaction transazione inesistente)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-pagopa-pn-uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{BASE_PATH}}/radd-web/act/inquiry?recipientTaxId=ZTLMRC01P30L736Y&recipientType=PF&qrCode=1",
+							"host": [
+								"{{BASE_PATH}}"
+							],
+							"path": [
+								"radd-web",
+								"act",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "ZTLMRC01P30L736Y"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								},
+								{
+									"key": "qrCode",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 OK (abortTransaction transazione già completata)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-pagopa-pn-uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{BASE_PATH}}/radd-web/act/inquiry?recipientTaxId=DAMMRC01P30L736Y&recipientType=PF&qrCode=1",
+							"host": [
+								"{{BASE_PATH}}"
+							],
+							"path": [
+								"radd-web",
+								"act",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "DAMMRC01P30L736Y"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								},
+								{
+									"key": "qrCode",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 OK (abortTransaction 500)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-pagopa-pn-uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{BASE_PATH}}/radd-web/act/inquiry?recipientTaxId=RADMRC01P30L736Y&recipientType=PF&qrCode=1",
+							"host": [
+								"{{BASE_PATH}}"
+							],
+							"path": [
+								"radd-web",
+								"act",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "RADMRC01P30L736Y"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								},
+								{
+									"key": "qrCode",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 qrCode/CF non validi",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-pagopa-pn-uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_PATH}}/radd-web/act/inquiry?recipientTaxId=LNALNI80A01H501T&recipientType=PF&qrCode=1",
+							"host": [
+								"{{BASE_PATH}}"
+							],
+							"path": [
+								"radd-web",
+								"act",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "LNALNI80A01H501T"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								},
+								{
+									"key": "qrCode",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 Documenti non più disponibili",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-pagopa-pn-uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_PATH}}/radd-web/act/inquiry?recipientTaxId=PPPPLT80A01H501V&recipientType=PG&qrCode=1",
+							"host": [
+								"{{BASE_PATH}}"
+							],
+							"path": [
+								"radd-web",
+								"act",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "PPPPLT80A01H501V"
+								},
+								{
+									"key": "recipientType",
+									"value": "PG"
+								},
+								{
+									"key": "qrCode",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 Stampa già eseguita",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-pagopa-pn-uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_PATH}}/radd-web/act/inquiry?recipientTaxId=BSTGNN80A01F839X&recipientType=PF&qrCode=1",
+							"host": [
+								"{{BASE_PATH}}"
+							],
+							"path": [
+								"radd-web",
+								"act",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "BSTGNN80A01F839X"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								},
+								{
+									"key": "qrCode",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 Documenti già scaricati",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-pagopa-pn-uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_PATH}}/radd-web/act/inquiry?recipientTaxId=RSSSRG80A01F839I&recipientType=PF&qrCode=1",
+							"host": [
+								"{{BASE_PATH}}"
+							],
+							"path": [
+								"radd-web",
+								"act",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "RSSSRG80A01F839I"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								},
+								{
+									"key": "qrCode",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 KO",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-pagopa-pn-uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_PATH}}/radd-web/act/inquiry?recipientTaxId=BLOMRC01P30L736Y&recipientType=PF&qrCode=1",
+							"host": [
+								"{{BASE_PATH}}"
+							],
+							"path": [
+								"radd-web",
+								"act",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "BLOMRC01P30L736Y"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								},
+								{
+									"key": "qrCode",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-pagopa-pn-uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_PATH}}/radd-web/act/inquiry?recipientTaxId=FNIFNA80A01H501G&recipientType=PG&qrCode=1",
+							"host": [
+								"{{BASE_PATH}}"
+							],
+							"path": [
+								"radd-web",
+								"act",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "FNIFNA80A01H501G"
+								},
+								{
+									"key": "recipientType",
+									"value": "PG"
+								},
+								{
+									"key": "qrCode",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "401",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-pagopa-pn-uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_PATH}}/radd-web/act/inquiry?recipientTaxId=VDIVDI80A01H501R&recipientType=PF&qrCode=1",
+							"host": [
+								"{{BASE_PATH}}"
+							],
+							"path": [
+								"radd-web",
+								"act",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "VDIVDI80A01H501R"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								},
+								{
+									"key": "qrCode",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "403",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-pagopa-pn-uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_PATH}}/radd-web/act/inquiry?recipientTaxId=RFNNTR76M06B715E&recipientType=PF&qrCode=1",
+							"host": [
+								"{{BASE_PATH}}"
+							],
+							"path": [
+								"radd-web",
+								"act",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "RFNNTR76M06B715E"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								},
+								{
+									"key": "qrCode",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "405",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-pagopa-pn-uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_PATH}}/radd-web/act/inquiry?recipientTaxId=FRMTTR76M06B715E&recipientType=PF&qrCode=1",
+							"host": [
+								"{{BASE_PATH}}"
+							],
+							"path": [
+								"radd-web",
+								"act",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "FRMTTR76M06B715E"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								},
+								{
+									"key": "qrCode",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "500",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-pagopa-pn-uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_PATH}}/radd-web/act/inquiry?recipientTaxId=CIACIA80A01H501X&recipientType=PF&qrCode=1",
+							"host": [
+								"{{BASE_PATH}}"
+							],
+							"path": [
+								"radd-web",
+								"act",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "CIACIA80A01H501X"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								},
+								{
+									"key": "qrCode",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "aorDocumentInquiry",
+			"item": [
+				{
+					"name": "200 OK",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-pagopa-pn-uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_PATH}}/radd-web/aor/inquiry?recipientTaxId=GNIGNI80A01H501R&recipientType=PF",
+							"host": [
+								"{{BASE_PATH}}"
+							],
+							"path": [
+								"radd-web",
+								"aor",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "GNIGNI80A01H501R"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 OK (startTransaction 500)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-pagopa-pn-uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_PATH}}/radd-web/aor/inquiry?recipientTaxId=VIAVIA90A01H501X&recipientType=PF",
+							"host": [
+								"{{BASE_PATH}}"
+							],
+							"path": [
+								"radd-web",
+								"aor",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "VIAVIA90A01H501X"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 OK (startTransaction KO)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-pagopa-pn-uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{BASE_PATH}}/radd-web/aor/inquiry?recipientTaxId=PLOMRC01P30L736Y&recipientType=PF",
+							"host": [
+								"{{BASE_PATH}}"
+							],
+							"path": [
+								"radd-web",
+								"aor",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "PLOMRC01P30L736Y"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 OK (startTransaction Not Ready)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-pagopa-pn-uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{BASE_PATH}}/radd-web/aor/inquiry?recipientTaxId=TSTGNN80A01F839X&recipientType=PF",
+							"host": [
+								"{{BASE_PATH}}"
+							],
+							"path": [
+								"radd-web",
+								"aor",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "TSTGNN80A01F839X"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 OK (completeTransaction KO)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-pagopa-pn-uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{BASE_PATH}}/radd-web/aor/inquiry?recipientTaxId=VTOMRC01P30L736Y&recipientType=PF",
+							"host": [
+								"{{BASE_PATH}}"
+							],
+							"path": [
+								"radd-web",
+								"aor",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "VTOMRC01P30L736Y"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 OK (completeTransaction transazione inesistente)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-pagopa-pn-uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{BASE_PATH}}/radd-web/aor/inquiry?recipientTaxId=LBOMRC01P30L736Y&recipientType=PF",
+							"host": [
+								"{{BASE_PATH}}"
+							],
+							"path": [
+								"radd-web",
+								"aor",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "LBOMRC01P30L736Y"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 OK (completeTransaction transazione già completata)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-pagopa-pn-uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{BASE_PATH}}/radd-web/aor/inquiry?recipientTaxId=AEDMRC01P30L736Y&recipientType=PF",
+							"host": [
+								"{{BASE_PATH}}"
+							],
+							"path": [
+								"radd-web",
+								"aor",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "AEDMRC01P30L736Y"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 OK (completeTransaction 500)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-pagopa-pn-uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{BASE_PATH}}/radd-web/aor/inquiry?recipientTaxId=MADMRC01P30L736Y&recipientType=PF",
+							"host": [
+								"{{BASE_PATH}}"
+							],
+							"path": [
+								"radd-web",
+								"aor",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "MADMRC01P30L736Y"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 OK (abortTransaction OK)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-pagopa-pn-uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_PATH}}/radd-web/aor/inquiry?recipientTaxId=ZZAMRC01P30L736Y&recipientType=PF",
+							"host": [
+								"{{BASE_PATH}}"
+							],
+							"path": [
+								"radd-web",
+								"aor",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "ZZAMRC01P30L736Y"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 OK (abortTransaction KO)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-pagopa-pn-uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{BASE_PATH}}/radd-web/aor/inquiry?recipientTaxId=GTAMRC01P30L736Y&recipientType=PF",
+							"host": [
+								"{{BASE_PATH}}"
+							],
+							"path": [
+								"radd-web",
+								"aor",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "GTAMRC01P30L736Y"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 OK (abortTransaction transazione inesistente)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-pagopa-pn-uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{BASE_PATH}}/radd-web/aor/inquiry?recipientTaxId=ZTLMRC01P30L736Y&recipientType=PF",
+							"host": [
+								"{{BASE_PATH}}"
+							],
+							"path": [
+								"radd-web",
+								"aor",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "ZTLMRC01P30L736Y"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 OK (abortTransaction transazione già completata)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-pagopa-pn-uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{BASE_PATH}}/radd-web/aor/inquiry?recipientTaxId=DAMMRC01P30L736Y&recipientType=PF",
+							"host": [
+								"{{BASE_PATH}}"
+							],
+							"path": [
+								"radd-web",
+								"aor",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "DAMMRC01P30L736Y"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 OK (abortTransaction 500)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-pagopa-pn-uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{BASE_PATH}}/radd-web/aor/inquiry?recipientTaxId=RADMRC01P30L736Y&recipientType=PF",
+							"host": [
+								"{{BASE_PATH}}"
+							],
+							"path": [
+								"radd-web",
+								"aor",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "RADMRC01P30L736Y"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 KO",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-pagopa-pn-uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_PATH}}/radd-web/aor/inquiry?recipientTaxId=RSSSRG80A01F839I&recipientType=PF",
+							"host": [
+								"{{BASE_PATH}}"
+							],
+							"path": [
+								"radd-web",
+								"aor",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "RSSSRG80A01F839I"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-pagopa-pn-uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_PATH}}/radd-web/aor/inquiry?recipientTaxId=FNIFNA80A01H501G&recipientType=PG",
+							"host": [
+								"{{BASE_PATH}}"
+							],
+							"path": [
+								"radd-web",
+								"aor",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "FNIFNA80A01H501G"
+								},
+								{
+									"key": "recipientType",
+									"value": "PG"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "403",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-pagopa-pn-uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_PATH}}/radd-web/aor/inquiry?recipientTaxId=RFNNTR76M06B715E&recipientType=PG",
+							"host": [
+								"{{BASE_PATH}}"
+							],
+							"path": [
+								"radd-web",
+								"aor",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "RFNNTR76M06B715E"
+								},
+								{
+									"key": "recipientType",
+									"value": "PG"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "401",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-pagopa-pn-uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_PATH}}/radd-web/aor/inquiry?recipientTaxId=VDIVDI80A01H501R&recipientType=PF",
+							"host": [
+								"{{BASE_PATH}}"
+							],
+							"path": [
+								"radd-web",
+								"aor",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "VDIVDI80A01H501R"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "405",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-pagopa-pn-uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_PATH}}/radd-web/aor/inquiry?recipientTaxId=FRMTTR76M06B715E&recipientType=PF",
+							"host": [
+								"{{BASE_PATH}}"
+							],
+							"path": [
+								"radd-web",
+								"aor",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "FRMTTR76M06B715E"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "500",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-pagopa-pn-uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{BASE_PATH}}/radd-web/aor/inquiry?recipientTaxId=CIACIA80A01H501X&recipientType=PF",
+							"host": [
+								"{{BASE_PATH}}"
+							],
+							"path": [
+								"radd-web",
+								"aor",
+								"inquiry"
+							],
+							"query": [
+								{
+									"key": "recipientTaxId",
+									"value": "CIACIA80A01H501X"
+								},
+								{
+									"key": "recipientType",
+									"value": "PF"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "documentUpload",
+			"item": [
+				{
+					"name": "200 OK",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-pagopa-pn-uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bundleId\": \"5c5b6d77-1c5a-497e-9f97-1a60c6a04b05\",\r\n    \"contentType\": \"application/zip\",\r\n    \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_PATH}}/radd-web/documents/upload",
+							"host": [
+								"{{BASE_PATH}}"
+							],
+							"path": [
+								"radd-web",
+								"documents",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 KO",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-pagopa-pn-uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bundleId\": \"5c5b6d77-1c5a-497e-9f97-1a60c6a04b05\",\r\n    \"contentType\": \"application/zip\",\r\n    \"checksum\": \"259D8BCEFFA054E79AB740847D6B8FAF1C92067E1F27CBEBCAD2C07D9B962A34\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_PATH}}/radd-web/documents/upload",
+							"host": [
+								"{{BASE_PATH}}"
+							],
+							"path": [
+								"radd-web",
+								"documents",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-pagopa-pn-uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bundleId\": \"5c5b6d77-1c5a-497e-9f97-1a60c6a04b05\",\r\n    \"contentType\": \"application/zip\",\r\n    \"checksum\": \"A932E7C87F471C1EE7A5E17F0EC746F628CF0D94F06CA5E12AF5D8173C3F694B\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_PATH}}/radd-web/documents/upload",
+							"host": [
+								"{{BASE_PATH}}"
+							],
+							"path": [
+								"radd-web",
+								"documents",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "403",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-pagopa-pn-uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bundleId\": \"5c5b6d77-1c5a-497e-9f97-1a60c6a04b05\",\r\n    \"contentType\": \"application/zip\",\r\n    \"checksum\": \"L122E7C87F471C1EE7A5E17F0EC746F628CF0D94F06CA5E12AF5D8173C3F694B\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_PATH}}/radd-web/documents/upload",
+							"host": [
+								"{{BASE_PATH}}"
+							],
+							"path": [
+								"radd-web",
+								"documents",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "401",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-pagopa-pn-uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bundleId\": \"5c5b6d77-1c5a-497e-9f97-1a60c6a04b05\",\r\n    \"contentType\": \"application/zip\",\r\n    \"checksum\": \"914A4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_PATH}}/radd-web/documents/upload",
+							"host": [
+								"{{BASE_PATH}}"
+							],
+							"path": [
+								"radd-web",
+								"documents",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "405",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-pagopa-pn-uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bundleId\": \"5c5b6d77-1c5a-497e-9f97-1a60c6a04b05\",\r\n    \"contentType\": \"application/zip\",\r\n    \"checksum\": \"F61FC75C4D4B3A4A4D4E273F08A6E8C299372DFD873A814ED6B92159D7A9F9F1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_PATH}}/radd-web/documents/upload",
+							"host": [
+								"{{BASE_PATH}}"
+							],
+							"path": [
+								"radd-web",
+								"documents",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "500",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-pagopa-pn-uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bundleId\": \"5c5b6d77-1c5a-497e-9f97-1a60c6a04b05\",\r\n    \"contentType\": \"application/zip\",\r\n    \"checksum\": \"C6F02E6D8FBB89A2516F20D44729E6821E0D6E997C2D187E6D0C03353D8721D8\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_PATH}}/radd-web/documents/upload",
+							"host": [
+								"{{BASE_PATH}}"
+							],
+							"path": [
+								"radd-web",
+								"documents",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "actTransactionManagement",
+			"item": [
+				{
+					"name": "startTransaction",
+					"item": [
+						{
+							"name": "200 OK",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"9795ea34-e4e9-11ed-b5ea-0242ac120002\",\r\n          \"recipientTaxId\": \"GNIGNI80A01H501R\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\",\r\n          \"qrCode\": \"1a\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/start",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 OK (completeTransaction KO)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"4d4c70e7-8a69-4a60-b2e2-0a36b8d17bc5\",\r\n          \"recipientTaxId\": \"VTOMRC01P30L736Y\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\",\r\n          \"qrCode\": \"1a\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/start",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 OK (completeTransaction transazione inesistente)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"9da7a31a-c29c-4760-91b8-7d2f59d27734\",\r\n          \"recipientTaxId\": \"LBOMRC01P30L736Y\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\",\r\n          \"qrCode\": \"1a\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/start",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 OK (completeTransaction transazione già completata)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"6ee9f7d9-6b3e-431a-a39f-70f098b66002\",\r\n          \"recipientTaxId\": \"AEDMRC01P30L736Y\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\",\r\n          \"qrCode\": \"1a\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/start",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 OK (completeTransaction 500)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"70d5f0c2-0c5c-4745-b5a5-5b0fb15d694d\",\r\n          \"recipientTaxId\": \"MADMRC01P30L736Y\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\",\r\n          \"qrCode\": \"1a\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/start",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 OK (abortTransaction OK)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"8ed10708-e511-11ed-b5ea-0242ac120002\",\r\n          \"recipientTaxId\": \"ZZAMRC01P30L736Y\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\",\r\n          \"qrCode\": \"1a\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/start",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 OK (abortTransaction KO)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"8ed0f8da-e511-11ed-b5ea-0242ac120002\",\r\n          \"recipientTaxId\": \"GTAMRC01P30L736Y\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\",\r\n          \"qrCode\": \"1a\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/start",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 OK (abortTransaction transazione inesistente)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"8ed1024e-e511-11ed-b5ea-0242ac120002\",\r\n          \"recipientTaxId\": \"ZTLMRC01P30L736Y\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\",\r\n          \"qrCode\": \"1a\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/start",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 OK (abortTransaction transazione già completata)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"8ed10442-e511-11ed-b5ea-0242ac120002\",\r\n          \"recipientTaxId\": \"DAMMRC01P30L736Y\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\",\r\n          \"qrCode\": \"1a\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/start",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 OK (abortTransaction 500)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"8ed105dc-e511-11ed-b5ea-0242ac120002\",\r\n          \"recipientTaxId\": \"RADMRC01P30L736Y\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\",\r\n          \"qrCode\": \"1a\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/start",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 KO",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"bfcbb315-0e0b-444a-8798-3e3e54d639c1\",\r\n          \"recipientTaxId\": \"PLOMRC01P30L736Y\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\",\r\n          \"qrCode\": \"2b\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/start",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 NotReady",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"a2204380-e4f5-11ed-b5ea-0242ac120002\",\r\n          \"recipientTaxId\": \"TSTGNN80A01F839X\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\",\r\n          \"qrCode\": \"1a\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/start",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "400",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"e8eafbf7-05d1-4c92-89b8-28b3d3d3f537\",\r\n          \"recipientTaxId\": \"FNIFNA80A01H501G\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\",\r\n          \"qrCode\": \"4e\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/start",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "401",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"9795ea34-e4e9-11ed-b5ea-0242ac120002\",\r\n          \"recipientTaxId\": \"VDIVDI80A01H501R\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"914A4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\",\r\n          \"qrCode\": \"1a\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/start",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "403",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"16f4b4c4-4d06-4e0e-b2a9-b9b1149de7c4\",\r\n          \"recipientTaxId\": \"RFNNTR76M06B715E\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\",\r\n          \"qrCode\": \"4e\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/start",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "405",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"2f08e4f4-8934-4b8a-8ec3-c3eb7e3a4c4d\",\r\n          \"recipientTaxId\": \"FRMTTR76M06B715E\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\",\r\n          \"qrCode\": \"4e\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/start",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "500",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"9795ea34-e4e9-11ed-b5ea-0242ac120002\",\r\n          \"recipientTaxId\": \"VIAVIA90A01H501X\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\",\r\n          \"qrCode\": \"1a\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/start",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "completeTransaction",
+					"item": [
+						{
+							"name": "200 OK",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"9795ea34-e4e9-11ed-b5ea-0242ac120002\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/complete",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"transaction",
+										"complete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 KO",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"4d4c70e7-8a69-4a60-b2e2-0a36b8d17bc5\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/complete",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"transaction",
+										"complete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 Transazione inesistente",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"9da7a31a-c29c-4760-91b8-7d2f59d27734\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/complete",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"transaction",
+										"complete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 Transazione già completata",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"6ee9f7d9-6b3e-431a-a39f-70f098b66002\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/complete",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"transaction",
+										"complete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "400",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"c447c68d-6d22-4c95-9f2b-f53f8d9392ee\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/complete",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"transaction",
+										"complete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "401",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"7959ea34-e4e9-11ed-b5ea-0242ac120002\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/complete",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"transaction",
+										"complete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "403",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"f59f05e6-9d88-4c7d-9bb3-75c9828f9995\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/complete",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"transaction",
+										"complete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "405",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"76e3d28f-70e4-4d2b-b4f1-cad4c4f20a0e\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/complete",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"transaction",
+										"complete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "500",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"70d5f0c2-0c5c-4745-b5a5-5b0fb15d694d\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/complete",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"transaction",
+										"complete"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "abortTransaction",
+					"item": [
+						{
+							"name": "200 OK",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"8ed10708-e511-11ed-b5ea-0242ac120002\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/abort",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"transaction",
+										"abort"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 KO",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"8ed0f8da-e511-11ed-b5ea-0242ac120002\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/abort",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"transaction",
+										"abort"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 Transazione inesistente",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"8ed1024e-e511-11ed-b5ea-0242ac120002\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/abort",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"transaction",
+										"abort"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 Transazione già completata",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"8ed10442-e511-11ed-b5ea-0242ac120002\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/abort",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"transaction",
+										"abort"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "400",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"8ed10ae6-e511-11ed-b5ea-0242ac120002\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/abort",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"transaction",
+										"abort"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "401",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"9ap01708-e511-11ed-b5ea-0242ac120002\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/abort",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"transaction",
+										"abort"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "403",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"8ed1083e-e511-11ed-b5ea-0242ac120002\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/abort",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"transaction",
+										"abort"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "405",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"8ed109c4-e511-11ed-b5ea-0242ac120002\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/abort",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"transaction",
+										"abort"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "500",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"8ed105dc-e511-11ed-b5ea-0242ac120002\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/transaction/abort",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"transaction",
+										"abort"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "aorTransactionManagement",
+			"item": [
+				{
+					"name": "startTransaction",
+					"item": [
+						{
+							"name": "200 OK",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"9795ea34-e4e9-11ed-b5ea-0242ac120002\",\r\n          \"recipientTaxId\": \"GNIGNI80A01H501R\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/start",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 OK (completeTransaction KO)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"4d4c70e7-8a69-4a60-b2e2-0a36b8d17bc5\",\r\n          \"recipientTaxId\": \"VTOMRC01P30L736Y\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/start",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 OK (completeTransaction transazione inesistente)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"9da7a31a-c29c-4760-91b8-7d2f59d27734\",\r\n          \"recipientTaxId\": \"LBOMRC01P30L736Y\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/start",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 OK (completeTransaction transazione già completata)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"6ee9f7d9-6b3e-431a-a39f-70f098b66002\",\r\n          \"recipientTaxId\": \"AEDMRC01P30L736Y\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/start",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 OK (completeTransaction 500)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"70d5f0c2-0c5c-4745-b5a5-5b0fb15d694d\",\r\n          \"recipientTaxId\": \"MADMRC01P30L736Y\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/start",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 OK (abortTransaction OK)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"8ed10708-e511-11ed-b5ea-0242ac120002\",\r\n          \"recipientTaxId\": \"ZZAMRC01P30L736Y\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/start",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 OK (abortTransaction KO)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"8ed0f8da-e511-11ed-b5ea-0242ac120002\",\r\n          \"recipientTaxId\": \"GTAMRC01P30L736Y\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/start",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 OK (abortTransaction transazione inesistente)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"8ed1024e-e511-11ed-b5ea-0242ac120002\",\r\n          \"recipientTaxId\": \"ZTLMRC01P30L736Y\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/start",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 OK (abortTransaction transazione già completata)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"8ed10442-e511-11ed-b5ea-0242ac120002\",\r\n          \"recipientTaxId\": \"DAMMRC01P30L736Y\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/start",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 OK (abortTransaction 500)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"8ed105dc-e511-11ed-b5ea-0242ac120002\",\r\n          \"recipientTaxId\": \"RADMRC01P30L736Y\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/start",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 KO",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n         \t \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"bfcbb315-0e0b-444a-8798-3e3e54d639c1\",\r\n          \"recipientTaxId\": \"PLOMRC01P30L736Y\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/start",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 NotReady",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"a2204380-e4f5-11ed-b5ea-0242ac120002\",\r\n          \"recipientTaxId\": \"TSTGNN80A01F839X\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/start",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "400",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"e8eafbf7-05d1-4c92-89b8-28b3d3d3f537\",\r\n          \"recipientTaxId\": \"FNIFNA80A01H501G\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/start",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "401",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"9795ea34-e4e9-11ed-b5ea-0242ac120002\",\r\n          \"recipientTaxId\": \"VDIVDI80A01H501R\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"914A4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/start",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "403",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"16f4b4c4-4d06-4e0e-b2a9-b9b1149de7c4\",\r\n          \"recipientTaxId\": \"RFNNTR76M06B715E\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/start",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "405",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"2f08e4f4-8934-4b8a-8ec3-c3eb7e3a4c4d\",\r\n          \"recipientTaxId\": \"FRMTTR76M06B715E\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/start",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "500",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"9795ea34-e4e9-11ed-b5ea-0242ac120002\",\r\n          \"recipientTaxId\": \"VIAVIA90A01H501X\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/start",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"transaction",
+										"start"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "completeTransaction",
+					"item": [
+						{
+							"name": "200 OK",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"9795ea34-e4e9-11ed-b5ea-0242ac120002\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/complete",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"transaction",
+										"complete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 KO",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"4d4c70e7-8a69-4a60-b2e2-0a36b8d17bc5\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/complete",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"transaction",
+										"complete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 Transazione inesistente",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"9da7a31a-c29c-4760-91b8-7d2f59d27734\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/complete",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"transaction",
+										"complete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 Transazione già completata",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"6ee9f7d9-6b3e-431a-a39f-70f098b66002\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/v1/aor/transaction/complete",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"v1",
+										"aor",
+										"transaction",
+										"complete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "401",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"7959ea34-e4e9-11ed-b5ea-0242ac120002\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/complete",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"transaction",
+										"complete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "400",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"c447c68d-6d22-4c95-9f2b-f53f8d9392ee\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/complete",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"transaction",
+										"complete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "403",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"f59f05e6-9d88-4c7d-9bb3-75c9828f9995\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/complete",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"transaction",
+										"complete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "405",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"76e3d28f-70e4-4d2b-b4f1-cad4c4f20a0e\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/complete",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"transaction",
+										"complete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "500",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"70d5f0c2-0c5c-4745-b5a5-5b0fb15d694d\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/complete",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"transaction",
+										"complete"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "abortTransaction",
+					"item": [
+						{
+							"name": "200 OK",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"8ed10708-e511-11ed-b5ea-0242ac120002\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/abort",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"transaction",
+										"abort"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 KO",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"8ed0f8da-e511-11ed-b5ea-0242ac120002\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/abort",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"transaction",
+										"abort"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 Transazione inesistente",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"8ed1024e-e511-11ed-b5ea-0242ac120002\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/abort",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"transaction",
+										"abort"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 Transazione già completata",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"8ed10442-e511-11ed-b5ea-0242ac120002\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/abort",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"transaction",
+										"abort"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "401",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"9ap01708-e511-11ed-b5ea-0242ac120002\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/abort",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"transaction",
+										"abort"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "400",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"8ed10ae6-e511-11ed-b5ea-0242ac120002\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/abort",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"transaction",
+										"abort"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "403",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"8ed1083e-e511-11ed-b5ea-0242ac120002\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/abort",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"transaction",
+										"abort"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "405",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"8ed109c4-e511-11ed-b5ea-0242ac120002\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/abort",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"transaction",
+										"abort"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "500",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-pagopa-pn-uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n          \"operationId\": \"8ed105dc-e511-11ed-b5ea-0242ac120002\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/transaction/abort",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"transaction",
+										"abort"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "notificationInquiry",
+			"item": [
+				{
+					"name": "operationAct",
+					"item": [
+						{
+							"name": "200 OK",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-id/2bb5c29e0cf411ed861d0242ac120002",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"operations",
+										"by-id",
+										"2bb5c29e0cf411ed861d0242ac120002"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 KO",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-id/67d8a1f225f24c13a05e00a0d8a8aaba",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"operations",
+										"by-id",
+										"67d8a1f225f24c13a05e00a0d8a8aaba"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 Nessun elemento associato",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-id/78c1f2769c8e4ba084a62e778a143d67",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"operations",
+										"by-id",
+										"78c1f2769c8e4ba084a62e778a143d67"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "401",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-id/76d9a1f225f24c24a05e00a0d9a9aaba",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"operations",
+										"by-id",
+										"76d9a1f225f24c24a05e00a0d9a9aaba"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "400",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-id/2c12e95533d0444991e8f18bb232a44b",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"operations",
+										"by-id",
+										"2c12e95533d0444991e8f18bb232a44b"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "403",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-id/4926a0b4c4fc4d4f9a5bc5e5f5aefb47",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"operations",
+										"by-id",
+										"4926a0b4c4fc4d4f9a5bc5e5f5aefb47"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "404",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-id/95150da94bc24a52a839628d9f9c37d8",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"operations",
+										"by-id",
+										"95150da94bc24a52a839628d9f9c37d8"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "405",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-id/67d8a1f225f24c13a05e00a0d8a8aaba",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"operations",
+										"by-id",
+										"67d8a1f225f24c13a05e00a0d8a8aaba"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "500",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-id/9415a0b4c4fc4d4f9a5bc5e5f5aefb47",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"operations",
+										"by-id",
+										"9415a0b4c4fc4d4f9a5bc5e5f5aefb47"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "operationAor",
+					"item": [
+						{
+							"name": "200 OK",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-id/2bb5c29e0cf411ed861d0242ac120002",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"operations",
+										"by-id",
+										"2bb5c29e0cf411ed861d0242ac120002"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 KO",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-id/67d8a1f225f24c13a05e00a0d8a8aaba",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"operations",
+										"by-id",
+										"67d8a1f225f24c13a05e00a0d8a8aaba"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 Nessun elemento associato",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-id/78c1f2769c8e4ba084a62e778a143d67",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"operations",
+										"by-id",
+										"78c1f2769c8e4ba084a62e778a143d67"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "401",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-id/76d9a1f225f24c24a05e00a0d9a9aaba",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"operations",
+										"by-id",
+										"76d9a1f225f24c24a05e00a0d9a9aaba"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "400",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-id/2c12e95533d0444991e8f18bb232a44b",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"operations",
+										"by-id",
+										"2c12e95533d0444991e8f18bb232a44b"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "403",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-id/4926a0b4c4fc4d4f9a5bc5e5f5aefb47",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"operations",
+										"by-id",
+										"4926a0b4c4fc4d4f9a5bc5e5f5aefb47"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "404",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-id/95150da94bc24a52a839628d9f9c37d8",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"operations",
+										"by-id",
+										"95150da94bc24a52a839628d9f9c37d8"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "405",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-id/67d8a1f225f24c13a05e00a0d8a8aaba",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"operations",
+										"by-id",
+										"67d8a1f225f24c13a05e00a0d8a8aaba"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "500",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-id/9415a0b4c4fc4d4f9a5bc5e5f5aefb47",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"operations",
+										"by-id",
+										"9415a0b4c4fc4d4f9a5bc5e5f5aefb47"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "operationsAct",
+					"item": [
+						{
+							"name": "200 OK",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-iun/LJLH-GNTJ-DVXR-202209-J-1",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"operations",
+										"by-iun",
+										"LJLH-GNTJ-DVXR-202209-J-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 KO",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-iun/LXNR-QPMS-OGTW-202209-K-1",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"operations",
+										"by-iun",
+										"LXNR-QPMS-OGTW-202209-K-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 Nessun elemento associato",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-iun/BVMK-NSRI-HFOL-202209-N-1",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"operations",
+										"by-iun",
+										"BVMK-NSRI-HFOL-202209-N-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "401",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-iun/GKMK-SPNV-BFYT-202209-F-1",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"operations",
+										"by-iun",
+										"GKMK-SPNV-BFYT-202209-F-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "400",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-iun/RJLM-QGXC-HPZD-202209-G-1",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"operations",
+										"by-iun",
+										"RJLM-QGXC-HPZD-202209-G-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "403",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-iun/4FZEB-JKRA-COGW-202209-I-1",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"operations",
+										"by-iun",
+										"4FZEB-JKRA-COGW-202209-I-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "404",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-iun/JTXA-EQYU-CRZG-202209-O-1",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"operations",
+										"by-iun",
+										"JTXA-EQYU-CRZG-202209-O-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "405",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-iun/NXPT-VWUD-LAIY-202209-H-1",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"operations",
+										"by-iun",
+										"NXPT-VWUD-LAIY-202209-H-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "500",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-iun/MTIS-UYFH-DPVC-202209-J-1",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"operations",
+										"by-iun",
+										"MTIS-UYFH-DPVC-202209-J-1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "operationsAor",
+					"item": [
+						{
+							"name": "200 OK",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-iun/LJLH-GNTJ-DVXR-202209-J-1",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"operations",
+										"by-iun",
+										"LJLH-GNTJ-DVXR-202209-J-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 KO",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-iun/LXNR-QPMS-OGTW-202209-K-1",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"operations",
+										"by-iun",
+										"LXNR-QPMS-OGTW-202209-K-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 Nessun elemento associato",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-iun/BVMK-NSRI-HFOL-202209-N-1",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"operations",
+										"by-iun",
+										"BVMK-NSRI-HFOL-202209-N-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "401",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-iun/GKMK-SPNV-BFYT-202209-F-1",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"operations",
+										"by-iun",
+										"GKMK-SPNV-BFYT-202209-F-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "400",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-iun/RJLM-QGXC-HPZD-202209-G-1",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"operations",
+										"by-iun",
+										"RJLM-QGXC-HPZD-202209-G-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "403",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-iun/4FZEB-JKRA-COGW-202209-I-1",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"operations",
+										"by-iun",
+										"4FZEB-JKRA-COGW-202209-I-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "404",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-iun/JTXA-EQYU-CRZG-202209-O-1",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"operations",
+										"by-iun",
+										"JTXA-EQYU-CRZG-202209-O-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "405",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-iun/NXPT-VWUD-LAIY-202209-H-1",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"operations",
+										"by-iun",
+										"NXPT-VWUD-LAIY-202209-H-1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "500",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-iun/MTIS-UYFH-DPVC-202209-J-1",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"operations",
+										"by-iun",
+										"MTIS-UYFH-DPVC-202209-J-1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "operationsActDetails",
+					"item": [
+						{
+							"name": "200 OK",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-internalId/PF-4fc75df3-0913-407e-bdaa-e50329708b7d",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"operations",
+										"by-internalId",
+										"PF-4fc75df3-0913-407e-bdaa-e50329708b7d"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 KO",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-internalId/PF-d0556f95-6de8-4a92-aa2e-5479f6a1d6d7",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"operations",
+										"by-internalId",
+										"PF-d0556f95-6de8-4a92-aa2e-5479f6a1d6d7"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 Nessun Elemento Associato",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-internalId/PF-e6c22e6b-1276-44a6-a50a-5c0e4639425d",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"operations",
+										"by-internalId",
+										"PF-e6c22e6b-1276-44a6-a50a-5c0e4639425d"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "400",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-internalId/PF-1f994c71-e5d5-4e5c-a9a9-23ebad4d30d2",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"operations",
+										"by-internalId",
+										"PF-1f994c71-e5d5-4e5c-a9a9-23ebad4d30d2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "401",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-internalId/PF-06c64ca7-8b20-4b7f-9b6a-11f91315b89c",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"operations",
+										"by-internalId",
+										"PF-06c64ca7-8b20-4b7f-9b6a-11f91315b89c"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "403",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-internalId/PF-5c584ee7-09e8-4027-b1f9-c19a9a8e79b1",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"operations",
+										"by-internalId",
+										"PF-5c584ee7-09e8-4027-b1f9-c19a9a8e79b1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "404",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-internalId/PG-81a2f2dc-5109-4659-b9a8-8e52ce89a03a",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"operations",
+										"by-internalId",
+										"PG-81a2f2dc-5109-4659-b9a8-8e52ce89a03a"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "405",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-internalId/PG-4fa4e3a8-19f2-46e3-ba81-9f1aebbc44ec",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"operations",
+										"by-internalId",
+										"PG-4fa4e3a8-19f2-46e3-ba81-9f1aebbc44ec"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "500",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-internalId/PF-a5068d34-2677-4bfa-b0b9-945f0d37d7c5",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"act",
+										"operations",
+										"by-internalId",
+										"PF-a5068d34-2677-4bfa-b0b9-945f0d37d7c5"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "operationsAorDetails",
+					"item": [
+						{
+							"name": "200 OK",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-internalId/PF-4fc75df3-0913-407e-bdaa-e50329708b7d",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"operations",
+										"by-internalId",
+										"PF-4fc75df3-0913-407e-bdaa-e50329708b7d"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 KO",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-internalId/PF-d0556f95-6de8-4a92-aa2e-5479f6a1d6d7",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"operations",
+										"by-internalId",
+										"PF-d0556f95-6de8-4a92-aa2e-5479f6a1d6d7"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "200 Nessun Elemento Associato",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-internalId/PF-e6c22e6b-1276-44a6-a50a-5c0e4639425d",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"operations",
+										"by-internalId",
+										"PF-e6c22e6b-1276-44a6-a50a-5c0e4639425d"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "400",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-internalId/PF-1f994c71-e5d5-4e5c-a9a9-23ebad4d30d2",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"operations",
+										"by-internalId",
+										"PF-1f994c71-e5d5-4e5c-a9a9-23ebad4d30d2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "401",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-internalId/PF-06c64ca7-8b20-4b7f-9b6a-11f91315b89c",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"operations",
+										"by-internalId",
+										"PF-06c64ca7-8b20-4b7f-9b6a-11f91315b89c"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "403",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-internalId/PF-5c584ee7-09e8-4027-b1f9-c19a9a8e79b1",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"operations",
+										"by-internalId",
+										"PF-5c584ee7-09e8-4027-b1f9-c19a9a8e79b1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "405",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-internalId/PG-4fa4e3a8-19f2-46e3-ba81-9f1aebbc44ec",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"operations",
+										"by-internalId",
+										"PG-4fa4e3a8-19f2-46e3-ba81-9f1aebbc44ec"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "404",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-internalId/PG-81a2f2dc-5109-4659-b9a8-8e52ce89a03a",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"operations",
+										"by-internalId",
+										"PG-81a2f2dc-5109-4659-b9a8-8e52ce89a03a"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "500",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-internalId/PF-a5068d34-2677-4bfa-b0b9-945f0d37d7c5",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"operations",
+										"by-internalId",
+										"PF-a5068d34-2677-4bfa-b0b9-945f0d37d7c5"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "DocumentReady",
+			"item": [
+				{
+					"name": "200 OK",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_PATH}}/radd-web/document-ready/PN_RADD_FSU_ATTACHMENT-19703b4070084bb5b79662abd5fec424.zip",
+							"host": [
+								"{{BASE_PATH}}"
+							],
+							"path": [
+								"radd-web",
+								"document-ready",
+								"PN_RADD_FSU_ATTACHMENT-19703b4070084bb5b79662abd5fec424.zip"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "404",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_PATH}}/radd-web/document-ready/PN_RADD_FSU_ATTACHMENT-22703b4070084bb5b79662abd5fec424.zip",
+							"host": [
+								"{{BASE_PATH}}"
+							],
+							"path": [
+								"radd-web",
+								"document-ready",
+								"PN_RADD_FSU_ATTACHMENT-22703b4070084bb5b79662abd5fec424.zip"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "500",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_PATH}}/radd-web/document-ready/TEST",
+							"host": [
+								"{{BASE_PATH}}"
+							],
+							"path": [
+								"radd-web",
+								"document-ready",
+								"TEST"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 KO",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_PATH}}/radd-web/document-ready/PN_RADD_FSU_ATTACHMENT-20703b4070084bb5b79662abd5fec424.zip",
+							"host": [
+								"{{BASE_PATH}}"
+							],
+							"path": [
+								"radd-web",
+								"document-ready",
+								"PN_RADD_FSU_ATTACHMENT-20703b4070084bb5b79662abd5fec424.zip"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

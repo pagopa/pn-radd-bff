@@ -14,15 +14,17 @@ La configurazione del mock server è fatta tramite file json nella cartella _con
 
 ### Mock per RADD
 
+
 #### actDocumentInquiry
 
 Path: `/radd-private/api/v1/act/inquiry`
+Path: `/radd-web/act/inquiry`
 
 Use cases:
 
 | recipientTaxId   | Status Code | Valido                                              |
 |------------------|-------------|-----------------------------------------------------|
-| GNIGNI80A01H501R | 401         |                                                     |
+| VDIVDI80A01H501R | 401         |                                                     |
 | FNIFNA80A01H501G | 400         |                                                     |
 | FRMTTR76M06B715E | 405         |                                                     |
 | RFNNTR76M06B715E | 403         |                                                     |
@@ -49,12 +51,13 @@ Use cases:
 ### aorDocumentInquiry
 
 Path: `/radd-private/api/v1/aor/inquiry`
+Path: `/radd-web/aor/inquiry`
 
 Use cases:
 
 | recipientTaxId   | Status Code | Valido                                              |
 |------------------|-------------|-----------------------------------------------------|
-| GNIGNI80A01H501R | 401         |                                                     |
+| VDIVDI80A01H501R | 401         |                                                     |
 | FNIFNA80A01H501G | 400         |                                                     |
 | FRMTTR76M06B715E | 405         |                                                     |
 | RFNNTR76M06B715E | 403         |                                                     |
@@ -78,12 +81,13 @@ Use cases:
 ### documentUpload
 
 Path: `/radd-private/api/v1/documents/upload`
+Path servizio reale: `/radd-web/documents/upload`
 
 Use cases:
 
 | Checksum                                                         | Status Code | Valido |
 |------------------------------------------------------------------|-------------|--------|
-| 708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560 | 401         |        |
+| 914A4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560 | 401         |        |
 | A932E7C87F471C1EE7A5E17F0EC746F628CF0D94F06CA5E12AF5D8173C3F694B | 400         |        |
 | L122E7C87F471C1EE7A5E17F0EC746F628CF0D94F06CA5E12AF5D8173C3F694B | 403         |        |
 | F61FC75C4D4B3A4A4D4E273F08A6E8C299372DFD873A814ED6B92159D7A9F9F1 | 405         |        |
@@ -96,12 +100,13 @@ Use cases:
 ### startTransaction
 
 Path: `/radd-private/api/v1/act/transaction/start`
+Path: `/radd-web/act/transaction/start`
 
 Use cases:
 
 | recipientTaxId   | Status Code | Valido                                              |
 |------------------|-------------|-----------------------------------------------------|
-| GNIGNI80A01H501R | 401         |                                                     |
+| VDIVDI80A01H501R | 401         |                                                     |
 | FNIFNA80A01H501G | 400         |                                                     |
 | FRMTTR76M06B715E | 405         |                                                     |
 | RFNNTR76M06B715E | 403         |                                                     |
@@ -121,12 +126,13 @@ Use cases:
 ### completeTransaction
 
 Path: `/radd-private/api/v1/act/transaction/complete`
+Path servizio reale: `/radd-web/act/transaction/complete`
 
 Use cases:
 
 | operationId                          | Status Code | Valido                     |
 |--------------------------------------|-------------|----------------------------|
-| 9795ea34-e4e9-11ed-b5ea-0242ac120002 | 401         |                            |
+| 7959ea34-e4e9-11ed-b5ea-0242ac120002 | 401         |                            |
 | c447c68d-6d22-4c95-9f2b-f53f8d9392ee | 400         |                            |
 | 76e3d28f-70e4-4d2b-b4f1-cad4c4f20a0e | 405         |                            |
 | f59f05e6-9d88-4c7d-9bb3-75c9828f9995 | 403         |                            |
@@ -139,12 +145,13 @@ Use cases:
 ### abortTransaction
 
 Path: `/radd-private/api/v1/act/transaction/abort`
+Path: `/radd-web/act/transaction/abort`
 
 Use cases:
 
 | operationId                          | Status Code | Valido                     |
 |--------------------------------------|-------------|----------------------------|
-| 8ed10708-e511-11ed-b5ea-0242ac120002 | 401         |                            |
+| 9ap01708-e511-11ed-b5ea-0242ac120002 | 401         |                            |
 | 8ed10ae6-e511-11ed-b5ea-0242ac120002 | 400         |                            |
 | 8ed109c4-e511-11ed-b5ea-0242ac120002 | 405         |                            |
 | 8ed1083e-e511-11ed-b5ea-0242ac120002 | 403         |                            |
@@ -158,12 +165,13 @@ Use cases:
 ### startTransaction
 
 Path: `/radd-private/api/v1/aor/transaction/start`
+Path: `/radd-web/aor/transaction/start`
 
 Use cases:
 
 | recipientTaxId   | Status Code | Valido                                              |
 |------------------|-------------|-----------------------------------------------------|
-| GNIGNI80A01H501R | 401         |                                                     |
+| VDIVDI80A01H501R | 401         |                                                     |
 | FNIFNA80A01H501G | 400         |                                                     |
 | FRMTTR76M06B715E | 405         |                                                     |
 | RFNNTR76M06B715E | 403         |                                                     |
@@ -183,12 +191,13 @@ Use cases:
 ### completeTransaction
 
 Path: `/radd-private/api/v1/aor/transaction/complete`
+Path: `/radd-web/aor/transaction/complete`
 
 Use cases:
 
 | operationId                          | Status Code | Valido                     |
 |--------------------------------------|-------------|----------------------------|
-| 9795ea34-e4e9-11ed-b5ea-0242ac120002 | 401         |                            |
+| 7959ea34-e4e9-11ed-b5ea-0242ac120002 | 401         |                            |
 | c447c68d-6d22-4c95-9f2b-f53f8d9392ee | 400         |                            |
 | 76e3d28f-70e4-4d2b-b4f1-cad4c4f20a0e | 405         |                            |
 | f59f05e6-9d88-4c7d-9bb3-75c9828f9995 | 403         |                            |
@@ -201,12 +210,13 @@ Use cases:
 ### abortTransaction
 
 Path: `/radd-private/api/v1/aor/transaction/abort`
+Path: `/radd-web/aor/transaction/abort`
 
 Use cases:
 
 | operationId                          | Status Code | Valido                     |
 |--------------------------------------|-------------|----------------------------|
-| 8ed10708-e511-11ed-b5ea-0242ac120002 | 401         |                            |
+| 9ap01708-e511-11ed-b5ea-0242ac120002 | 401         |                            |
 | 8ed10ae6-e511-11ed-b5ea-0242ac120002 | 400         |                            |
 | 8ed109c4-e511-11ed-b5ea-0242ac120002 | 405         |                            |
 | 8ed1083e-e511-11ed-b5ea-0242ac120002 | 403         |                            |
@@ -221,6 +231,7 @@ Use cases:
 ### operationAct
 
 Path: `/radd-private/api/v1/act/operations/by-id/{operationId}`
+Path: `/radd-web/act/operations/by-id/{operationId}`
 
 Use cases:
 
@@ -239,6 +250,7 @@ Use cases:
 ### operationAor
 
 Path: `/radd-private/api/v1/aor/operations/by-id/{operationId}`
+Path: `/radd-web/aor/operations/by-id/{operationId}`
 
 Use cases:
 
@@ -257,6 +269,7 @@ Use cases:
 ### operationsAct
 
 Path: `/radd-private/api/v1/act/operations/by-iun/`
+Path: `/radd-web/act/operations/by-iun/`
 
 Use cases:
 
@@ -275,6 +288,7 @@ Use cases:
 ### operationsAor
 
 Path: `/radd-private/api/v1/aor/operations/by-iun/`
+Path: `/radd-web/aor/operations/by-iun/`
 
 Use cases:
 
@@ -293,6 +307,7 @@ Use cases:
 ### operationsActDetails
 
 Path: `/radd-private/api/v1/act/operations/by-internalId/{internalId}`
+Path: `/radd-web/act/operations/by-internalId/{internalId}`
 
 Use cases:
 
@@ -311,6 +326,7 @@ Use cases:
 ### operationsAorDetails
 
 Path: `/radd-private/api/v1/aor/operations/by-internalId/{internalId}`
+Path: `/radd-web/aor/operations/by-internalId/{internalId}`
 
 Use cases:
 

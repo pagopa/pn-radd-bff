@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "ae1ec7b6-f845-4493-bfbf-5cc03a1604e3",
-		"name": "radd-fsu-mock",
+		"name": "radd-private-fsu-mock",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "26143046"
 	},
@@ -904,12 +904,11 @@
 							{
 								"key": "uid",
 								"value": "uid",
-								"type": "text",
-								"disabled": true
+								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:1080/radd-private/api/v1/act/inquiry?recipientTaxId=GNIGNI80A01H501R&recipientType=PF&qrCode=1",
+							"raw": "http://localhost:1080/radd-private/api/v1/act/inquiry?recipientTaxId=VDIVDI80A01H501R&recipientType=PF&qrCode=1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -925,7 +924,7 @@
 							"query": [
 								{
 									"key": "recipientTaxId",
-									"value": "GNIGNI80A01H501R"
+									"value": "VDIVDI80A01H501R"
 								},
 								{
 									"key": "recipientType",
@@ -948,8 +947,7 @@
 							{
 								"key": "uid",
 								"value": "uid",
-								"type": "text",
-								"disabled": true
+								"type": "text"
 							}
 						],
 						"url": {
@@ -1031,7 +1029,13 @@
 					"name": "500",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "http://localhost:1080/radd-private/api/v1/act/inquiry?recipientTaxId=CIACIA80A01H501X&recipientType=PF&qrCode=1",
 							"protocol": "http",
@@ -1771,12 +1775,11 @@
 							{
 								"key": "uid",
 								"value": "uid",
-								"type": "text",
-								"disabled": true
+								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:1080/radd-private/api/v1/aor/inquiry?recipientTaxId=GNIGNI80A01H501R&recipientType=PF",
+							"raw": "http://localhost:1080/radd-private/api/v1/aor/inquiry?recipientTaxId=VDIVDI80A01H501R&recipientType=PF",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1792,7 +1795,7 @@
 							"query": [
 								{
 									"key": "recipientTaxId",
-									"value": "GNIGNI80A01H501R"
+									"value": "VDIVDI80A01H501R"
 								},
 								{
 									"key": "recipientType",
@@ -1846,7 +1849,13 @@
 					"name": "500",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "http://localhost:1080/radd-private/api/v1/aor/inquiry?recipientTaxId=CIACIA80A01H501X&recipientType=PF",
 							"protocol": "http",
@@ -1886,7 +1895,7 @@
 						"method": "POST",
 						"header": [
 							{
-								"key": "uid",
+								"key": "x-pagopa-pn-uid",
 								"value": "uid",
 								"type": "text"
 							}
@@ -2036,10 +2045,16 @@
 					"name": "401",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "uid",
+								"value": "uid",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"bundleId\": \"5c5b6d77-1c5a-497e-9f97-1a60c6a04b05\",\r\n    \"contentType\": \"application/zip\",\r\n    \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\"\r\n}",
+							"raw": "{\r\n    \"bundleId\": \"5c5b6d77-1c5a-497e-9f97-1a60c6a04b05\",\r\n    \"contentType\": \"application/zip\",\r\n    \"checksum\": \"914A4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2157,7 +2172,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -2662,10 +2677,16 @@
 							"name": "401",
 							"request": {
 								"method": "POST",
-								"header": [],
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"9795ea34-e4e9-11ed-b5ea-0242ac120002\",\r\n          \"recipientTaxId\": \"GNIGNI80A01H501R\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\",\r\n          \"qrCode\": \"1a\"\r\n}",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"9795ea34-e4e9-11ed-b5ea-0242ac120002\",\r\n          \"recipientTaxId\": \"VDIVDI80A01H501R\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\",\r\n          \"qrCode\": \"1a\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2822,7 +2843,7 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "uid",
+										"key": "x-pagopa-pn-uid",
 										"value": "uid",
 										"type": "text"
 									}
@@ -3015,10 +3036,16 @@
 							"name": "401",
 							"request": {
 								"method": "POST",
-								"header": [],
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"operationId\": \"9795ea34-e4e9-11ed-b5ea-0242ac120002\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"raw": "{\r\n          \"operationId\": \"7959ea34-e4e9-11ed-b5ea-0242ac120002\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -3368,10 +3395,16 @@
 							"name": "401",
 							"request": {
 								"method": "POST",
-								"header": [],
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"operationId\": \"8ed10708-e511-11ed-b5ea-0242ac120002\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"raw": "{\r\n          \"operationId\": \"9ap01708-e511-11ed-b5ea-0242ac120002\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4041,7 +4074,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"9795ea34-e4e9-11ed-b5ea-0242ac120002\",\r\n          \"recipientTaxId\": \"GNIGNI80A01H501R\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\"\r\n}",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"9795ea34-e4e9-11ed-b5ea-0242ac120002\",\r\n          \"recipientTaxId\": \"VDIVDI80A01H501R\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4161,7 +4194,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"9795ea34-e4e9-11ed-b5ea-0242ac120002\",\r\n          \"recipientTaxId\": \"CIACIA80A01H501X\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\"\r\n}",
+									"raw": "{\r\n          \"versionToken\": \"string\",\r\n          \"fileKey\": \"string\",\r\n          \"operationId\": \"9795ea34-e4e9-11ed-b5ea-0242ac120002\",\r\n          \"recipientTaxId\": \"VIAVIA90A01H501X\",\r\n          \"recipientType\": \"PF\",\r\n          \"delegateTaxId\": \"RFRGRZ66E21H751B\",\r\n          \"operationDate\": \"2023-04-19T11:44:28Z\",\r\n          \"checksum\": \"708F4C8216F30FA6007F8E2F316ECC935D94057202FC5D8008BCCC118EA12560\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4352,10 +4385,16 @@
 							"name": "401",
 							"request": {
 								"method": "POST",
-								"header": [],
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"operationId\": \"9795ea34-e4e9-11ed-b5ea-0242ac120002\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"raw": "{\r\n          \"operationId\": \"7959ea34-e4e9-11ed-b5ea-0242ac120002\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -4705,10 +4744,16 @@
 							"name": "401",
 							"request": {
 								"method": "POST",
-								"header": [],
+								"header": [
+									{
+										"key": "uid",
+										"value": "uid",
+										"type": "text"
+									}
+								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n          \"operationId\": \"8ed10708-e511-11ed-b5ea-0242ac120002\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
+									"raw": "{\r\n          \"operationId\": \"9ap01708-e511-11ed-b5ea-0242ac120002\",\r\n          \"reason\": \"abort\",\r\n          \"operationDate\": \"2022-06-21T11:44:28Z\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -6459,12 +6504,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:1080/radd-web/document-ready/PN_RADD_FSU_ATTACHMENT-19703b4070084bb5b79662abd5fec424.zip",
+							"raw": "http://localhost:8080/radd-web/document-ready/PN_RADD_FSU_ATTACHMENT-19703b4070084bb5b79662abd5fec424.zip",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "1080",
+							"port": "8080",
 							"path": [
 								"radd-web",
 								"document-ready",
@@ -6480,7 +6525,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:1080/radd-web/document-ready/PN_RADD_FSU_ATTACHMENT-19703b4070084bb5b79662abd5fec424.zip",
+							"raw": "http://localhost:1080/radd-web/document-ready/PN_RADD_FSU_ATTACHMENT-22703b4070084bb5b79662abd5fec424.zip",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -6489,7 +6534,7 @@
 							"path": [
 								"radd-web",
 								"document-ready",
-								"PN_RADD_FSU_ATTACHMENT-19703b4070084bb5b79662abd5fec424.zip"
+								"PN_RADD_FSU_ATTACHMENT-22703b4070084bb5b79662abd5fec424.zip"
 							]
 						}
 					},
@@ -6501,16 +6546,16 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:1080/radd-web/document-ready/PN_RADD_FSU_ATTACHMENT-21703b4070084bb5b79662abd5fec424.zip",
+							"raw": "http://localhost:8080/radd-web/document-ready/TEST",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "1080",
+							"port": "8080",
 							"path": [
 								"radd-web",
 								"document-ready",
-								"PN_RADD_FSU_ATTACHMENT-21703b4070084bb5b79662abd5fec424.zip"
+								"TEST"
 							]
 						}
 					},
