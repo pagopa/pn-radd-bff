@@ -22,7 +22,7 @@ public class DataVaultService {
                 .collectList()
                 .map(dataVaultConverter::mapToBaseRecipient);
     }
-    public Mono<String> getAnonymizedTaxId(RecipientType recipientType,String taxId) {
+    public Mono<String> getAnonymousByTaxId(RecipientType recipientType,String taxId) {
         return pnDataVaultClient.getAnonymousByTaxId(recipientType,taxId)
                 .map(dataVaultConverter::mapToAnonymizedTaxId);
     }

@@ -8,13 +8,16 @@ import it.pagopa.pn.radd.bff.generated.openapi.msclient.data.vault.v1.dto.BaseRe
 import it.pagopa.pn.radd.bff.generated.openapi.msclient.data.vault.v1.dto.RecipientType;
 import it.pagopa.pn.radd.bff.log.ResponseExchangeFilter;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 import reactor.core.scheduler.Scheduler;
 import reactor.test.StepVerifier;
 
@@ -22,9 +25,10 @@ import java.util.List;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
+
 @SpringBootTest
-@ExtendWith(SpringExtension.class)
-@TestPropertySource(properties = {
+@ExtendWith (SpringExtension.class)
+@TestPropertySource (properties = {
         "AWS_REGION=eu-south-1",
         "PN_RADD_BFF_DYNAMODB_TABLENAME_PN_DOCUMENT=test"
 })
@@ -47,7 +51,7 @@ class PnDataVaultClientTest {
     private static ResponseExchangeFilter responseExchangeFilter;
 
     @Mock
-    private  Scheduler scheduler;
+    private Scheduler scheduler;
 
     @BeforeAll
     static void init () {
@@ -58,7 +62,7 @@ class PnDataVaultClientTest {
     }
 
     @Test
-    void testGetRecipientDenominationByInternalId() {
+    void testGetRecipientDenominationByInternalId () {
         BaseRecipientDto baseRecipientDto = new BaseRecipientDto();
 
         baseRecipientDto.setRecipientType(RecipientType.PF);
@@ -71,6 +75,17 @@ class PnDataVaultClientTest {
 
         StepVerifier.create(pnDataVaultClient.getRecipientDenominationByInternalId(List.of("InternalId")))
                 .expectNext(baseRecipientDto);
+    }
+
+    /**
+     * Method under test: {@link PnDataVaultClient#getAnonymousByTaxId(RecipientType, String)}
+     */
+    @Test
+    void testGetAnonymousByTaxId () {
+        when(recipientsApi.ensureRecipientByExternalId(any(), any()))
+                .thenReturn(Mono.just("AnonymousTaxId"));
+        StepVerifier.create(pnDataVaultClient.getAnonymousByTaxId(RecipientType.PF, "TaxId"))
+                .expectNext("AnonymousTaxId");
     }
 }
 

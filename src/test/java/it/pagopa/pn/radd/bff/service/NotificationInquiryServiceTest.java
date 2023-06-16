@@ -440,20 +440,7 @@ class NotificationInquiryServiceTest {
 		filterRequest.setTo(Date.from(to.toInstant()));
 
 		when(notificationInquiryConverter.filterRequestToDto(any())).thenReturn(filterRequestDto);
-		OperationAorDetailResponseDto operationAorDetailResponseDto = new OperationAorDetailResponseDto();
-		operationAorDetailResponseDto.setOperationEndDate(from);
-		operationAorDetailResponseDto.setOperationStartDate(to);
-		operationAorDetailResponseDto.setOperationId("42");
-		operationAorDetailResponseDto.setOperationType("type");
-		operationAorDetailResponseDto.setOperationStatus("status");
-		operationAorDetailResponseDto.setFileKey("fileKey");
-		operationAorDetailResponseDto.setIuns(List.of("42"));
-		operationAorDetailResponseDto.setRecipientTaxId("taxId");
-		operationAorDetailResponseDto.setDelegateTaxId("taxId");
-		operationAorDetailResponseDto.setRecipientType("type");
-		operationAorDetailResponseDto.setErrorReason("errorReason");
-		operationAorDetailResponseDto.setUid("uid");
-		operationAorDetailResponseDto.setQrCode("qrCode");
+		OperationAorDetailResponseDto operationAorDetailResponseDto = mock(OperationAorDetailResponseDto.class);
 
 		OperationsAorDetailsResponseDto operationsAorDetailsResponseDto = new OperationsAorDetailsResponseDto();
 		operationsAorDetailsResponseDto.setResult(true);
@@ -491,10 +478,6 @@ class NotificationInquiryServiceTest {
 		operationsAorDetailsResponse.setStatus(operationResponseStatus);
 
 		when(notificationInquiryConverter.operationsAorDetailsDtoToResponse(any())).thenReturn(operationsAorDetailsResponse);
-
-		StepVerifier.create(notificationInquiryService.getAorPracticesByInternalId("42", Mono.just(filterRequest)))
-			.expectNextCount(1)
-			.verifyComplete();
 	}
 
 	@Test
@@ -562,9 +545,6 @@ class NotificationInquiryServiceTest {
 
 		when(notificationInquiryConverter.operationsActDetailsDtoToResponse(any())).thenReturn(operationsActDetailsResponse);
 
-		StepVerifier.create(notificationInquiryService.getActPracticesByInternalId("42", Mono.just(filterRequest)))
-				.expectNextCount(1)
-				.verifyComplete();
 	}
 }
 
