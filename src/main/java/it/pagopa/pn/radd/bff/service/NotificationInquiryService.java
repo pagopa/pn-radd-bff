@@ -1,6 +1,5 @@
 package it.pagopa.pn.radd.bff.service;
 
-import it.pagopa.pn.radd.bff.client.PnDataVaultClient;
 import it.pagopa.pn.radd.bff.client.PnRaddFsuClient;
 import it.pagopa.pn.radd.bff.converter.NotificationInquiryConverter;
 import it.pagopa.pn.radd.bff.exception.PnRaddBffException;
@@ -41,7 +40,11 @@ public class NotificationInquiryService {
         return filterRequest.flatMap(filterRequest1 -> {
                     FilterRequestDto filterRequestDto = notificationInquiryConverter.filterRequestToDto(filterRequest1);
                     return dataVaultService.getAnonymousByTaxId(RecipientType.fromValue(filterRequest1.getRecipientType().getValue()), taxId)
-                            .flatMap(anonymizedTaxId -> pnRaddFsuClient.getActPracticesByInternalId(anonymizedTaxId, filterRequestDto));})
+                            .flatMap(anonymousTaxId -> {
+                                anonymousTaxId = filterRequest1.getRecipientType().toString() +"-"+ anonymousTaxId;
+                                return pnRaddFsuClient.getActPracticesByInternalId(anonymousTaxId, filterRequestDto);
+                            });
+                })
                 .map(notificationInquiryConverter::operationsActDetailsDtoToResponse);
     }
     public  Mono<OperationsResponse> getActPracticesByIun(String iun) {
@@ -82,12 +85,15 @@ public class NotificationInquiryService {
                         .map(deanonymizedTaxIds -> Tuples.of(operationActResponseDto, deanonymizedTaxIds)))
                 .map(resultToFinalConverter -> notificationInquiryConverter.operationActDtoToResponse(resultToFinalConverter.getT1(), resultToFinalConverter.getT2()));
     }
-
     public Mono<OperationsAorDetailsResponse> getAorPracticesByInternalId(String taxId, Mono<FilterRequest> filterRequest) {
         return filterRequest.flatMap(filterRequest1 -> {
                     FilterRequestDto filterRequestDto = notificationInquiryConverter.filterRequestToDto(filterRequest1);
                     return dataVaultService.getAnonymousByTaxId(RecipientType.fromValue(filterRequest1.getRecipientType().getValue()), taxId)
-                            .flatMap(anonymizedTaxId -> pnRaddFsuClient.getAorPracticesByInternalId(anonymizedTaxId, filterRequestDto));})
+                            .flatMap(anonymousTaxId -> {
+                                anonymousTaxId = filterRequest1.getRecipientType().toString() +"-"+ anonymousTaxId;
+                                return pnRaddFsuClient.getAorPracticesByInternalId(anonymousTaxId, filterRequestDto);
+                            });
+                })
                 .map(notificationInquiryConverter::operationsAorDetailsDtoToResponse);
     }
 
