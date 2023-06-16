@@ -66,9 +66,9 @@
         "regex": "^([A-Z]{6}[0-9]{2}[A-Z]{1}[0-9]{2}[A-Z]{1}[0-9]{3}[A-Z]{1})|([0-9]{10}[5-9]{1})$"
       }
     },
-    "httpResponse": {
-      "statusCode": 200,
-      "body": "123e4567-e89b-12d3-a456-426655440000"
+    "httpResponseTemplate": {
+      "templateType": "VELOCITY",
+      "template": "{\"statusCode\": 200, \"body\":\"$!request.pathParameters['recipientType'][0]-123e4567-e89b-12d3-a456-426655440000\"}"
     }
   }
 ]
