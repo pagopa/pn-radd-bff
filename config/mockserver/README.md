@@ -17,8 +17,8 @@ La configurazione del mock server è fatta tramite file json nella cartella _con
 
 #### actDocumentInquiry
 
-Path target fsu: `/radd-private/api/v1/act/inquiry`
-Path : `/radd-web/act/inquiry`
+Path: `/radd-private/api/v1/act/inquiry`
+Path: `/radd-web/act/inquiry`
 
 Use cases:
 
@@ -51,7 +51,7 @@ Use cases:
 ### aorDocumentInquiry
 
 Path: `/radd-private/api/v1/aor/inquiry`
-Path servizio reale: `/radd-web/aor/inquiry`
+Path: `/radd-web/aor/inquiry`
 
 Use cases:
 
@@ -100,7 +100,7 @@ Use cases:
 ### startTransaction
 
 Path: `/radd-private/api/v1/act/transaction/start`
-Path servizio reale: `/radd-web/act/transaction/start`
+Path: `/radd-web/act/transaction/start`
 
 Use cases:
 
@@ -145,7 +145,7 @@ Use cases:
 ### abortTransaction
 
 Path: `/radd-private/api/v1/act/transaction/abort`
-Path servizio reale: `/radd-web/act/transaction/abort`
+Path: `/radd-web/act/transaction/abort`
 
 Use cases:
 
@@ -165,7 +165,7 @@ Use cases:
 ### startTransaction
 
 Path: `/radd-private/api/v1/aor/transaction/start`
-Path servizio reale: `/radd-web/aor/transaction/start`
+Path: `/radd-web/aor/transaction/start`
 
 Use cases:
 
@@ -191,7 +191,7 @@ Use cases:
 ### completeTransaction
 
 Path: `/radd-private/api/v1/aor/transaction/complete`
-Path servizio reale: `/radd-web/aor/transaction/complete`
+Path: `/radd-web/aor/transaction/complete`
 
 Use cases:
 
@@ -210,7 +210,7 @@ Use cases:
 ### abortTransaction
 
 Path: `/radd-private/api/v1/aor/transaction/abort`
-Path servizio reale: `/radd-web/aor/transaction/abort`
+Path: `/radd-web/aor/transaction/abort`
 
 Use cases:
 
@@ -231,7 +231,7 @@ Use cases:
 ### operationAct
 
 Path: `/radd-private/api/v1/act/operations/by-id/{operationId}`
-Path servizio reale: `/radd-web/act/operations/by-id/{operationId}`
+Path: `/radd-web/act/operations/by-id/{operationId}`
 
 Use cases:
 
@@ -250,7 +250,7 @@ Use cases:
 ### operationAor
 
 Path: `/radd-private/api/v1/aor/operations/by-id/{operationId}`
-Path servizio reale: `/radd-web/aor/operations/by-id/{operationId}`
+Path: `/radd-web/aor/operations/by-id/{operationId}`
 
 Use cases:
 
@@ -269,7 +269,7 @@ Use cases:
 ### operationsAct
 
 Path: `/radd-private/api/v1/act/operations/by-iun/`
-Path servizio reale: `/radd-web/act/operations/by-iun/`
+Path: `/radd-web/act/operations/by-iun/`
 
 Use cases:
 
@@ -288,7 +288,7 @@ Use cases:
 ### operationsAor
 
 Path: `/radd-private/api/v1/aor/operations/by-iun/`
-Path servizio reale: `/radd-web/aor/operations/by-iun/`
+Path: `/radd-web/aor/operations/by-iun/`
 
 Use cases:
 
@@ -307,7 +307,7 @@ Use cases:
 ### operationsActDetails
 
 Path: `/radd-private/api/v1/act/operations/by-internalId/{internalId}`
-Path servizio reale: `/radd-web/act/operations/by-internalId/{internalId}`
+Path: `/radd-web/act/operations/by-internalId/{internalId}`
 
 Use cases:
 
@@ -326,7 +326,7 @@ Use cases:
 ### operationsAorDetails
 
 Path: `/radd-private/api/v1/aor/operations/by-internalId/{internalId}`
-Path servizio reale: `/radd-web/aor/operations/by-internalId/{internalId}`
+Path: `/radd-web/aor/operations/by-internalId/{internalId}`
 
 Use cases:
 
