@@ -15,59 +15,68 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.*;
 
-@ContextConfiguration(classes = {DataVaultConverter.class})
-@ExtendWith(SpringExtension.class)
+@ContextConfiguration (classes = {DataVaultConverter.class})
+@ExtendWith (SpringExtension.class)
 class DataVaultConverterTest {
-    @Autowired
-    private DataVaultConverter dataVaultConverter;
+	@Autowired
+	private DataVaultConverter dataVaultConverter;
 
-    /**
-     * Method under test: {@link DataVaultConverter#mapToBaseRecipient(List)}
-     */
-    @Test
-    void testMapToBaseRecipient() {
-        assertTrue(dataVaultConverter.mapToBaseRecipient(new ArrayList<>()).isEmpty());
-    }
+	/**
+	 * Method under test: {@link DataVaultConverter#mapToBaseRecipient(List)}
+	 */
+	@Test
+	void testMapToBaseRecipient () {
+		assertTrue(dataVaultConverter.mapToBaseRecipient(new ArrayList<>()).isEmpty());
+	}
 
-    /**
-     * Method under test: {@link DataVaultConverter#mapToBaseRecipient(List)}
-     */
-    @Test
-    void testMapToBaseRecipient2() {
-        ArrayList<BaseRecipientDto> baseRecipientDtoList = new ArrayList<>();
-        baseRecipientDtoList.add(new BaseRecipientDto());
-        assertTrue(dataVaultConverter.mapToBaseRecipient(baseRecipientDtoList).isEmpty());
-    }
+	/**
+	 * Method under test: {@link DataVaultConverter#mapToBaseRecipient(List)}
+	 */
+	@Test
+	void testMapToBaseRecipient2 () {
+		ArrayList<BaseRecipientDto> baseRecipientDtoList = new ArrayList<>();
+		baseRecipientDtoList.add(new BaseRecipientDto());
+		assertTrue(dataVaultConverter.mapToBaseRecipient(baseRecipientDtoList).isEmpty());
+	}
 
-    /**
-     * Method under test: {@link DataVaultConverter#mapToBaseRecipient(List)}
-     */
-    @Test
-    void testMapToBaseRecipient3() {
-        ArrayList<BaseRecipientDto> baseRecipientDtoList = new ArrayList<>();
-        baseRecipientDtoList.add(new BaseRecipientDto());
-        baseRecipientDtoList.add(new BaseRecipientDto());
-        assertTrue(dataVaultConverter.mapToBaseRecipient(baseRecipientDtoList).isEmpty());
-    }
+	/**
+	 * Method under test: {@link DataVaultConverter#mapToBaseRecipient(List)}
+	 */
+	@Test
+	void testMapToBaseRecipient3 () {
+		ArrayList<BaseRecipientDto> baseRecipientDtoList = new ArrayList<>();
+		baseRecipientDtoList.add(new BaseRecipientDto());
+		baseRecipientDtoList.add(new BaseRecipientDto());
+		assertTrue(dataVaultConverter.mapToBaseRecipient(baseRecipientDtoList).isEmpty());
+	}
 
 
-    /**
-     * Method under test: {@link DataVaultConverter#mapToBaseRecipient(List)}
-     */
-    @Test
-    void testMapToBaseRecipient5() {
-        BaseRecipientDto baseRecipientDtoDto = mock(BaseRecipientDto.class);
-        when(baseRecipientDtoDto.getInternalId()).thenReturn("42");
-        when(baseRecipientDtoDto.getTaxId()).thenReturn("42");
+	/**
+	 * Method under test: {@link DataVaultConverter#mapToBaseRecipient(List)}
+	 */
+	@Test
+	void testMapToBaseRecipient5 () {
+		BaseRecipientDto baseRecipientDtoDto = mock(BaseRecipientDto.class);
+		when(baseRecipientDtoDto.getInternalId()).thenReturn("42");
+		when(baseRecipientDtoDto.getTaxId()).thenReturn("42");
 
-        ArrayList<BaseRecipientDto> baseRecipientDtoList = new ArrayList<>();
-        baseRecipientDtoList.add(baseRecipientDtoDto);
-        Map<String, String> actualMapToBaseRecipientResult = dataVaultConverter.mapToBaseRecipient(baseRecipientDtoList);
-        assertEquals(1, actualMapToBaseRecipientResult.size());
-        assertEquals("42", actualMapToBaseRecipientResult.get("42"));
-        verify(baseRecipientDtoDto).getInternalId();
-        verify(baseRecipientDtoDto, atLeast(1)).getTaxId();
-    }
+		ArrayList<BaseRecipientDto> baseRecipientDtoList = new ArrayList<>();
+		baseRecipientDtoList.add(baseRecipientDtoDto);
+		Map<String, String> actualMapToBaseRecipientResult = dataVaultConverter.mapToBaseRecipient(baseRecipientDtoList);
+		assertEquals(1, actualMapToBaseRecipientResult.size());
+		assertEquals("42", actualMapToBaseRecipientResult.get("42"));
+		verify(baseRecipientDtoDto).getInternalId();
+		verify(baseRecipientDtoDto, atLeast(1)).getTaxId();
+	}
+
+	/**
+	 * Method under test: {@link DataVaultConverter#mapToAnonymizedTaxId(String)}
+	 */
+	@Test
+	void testMapToAnonymizedTaxId () {
+		// Arrange, Act and Assert
+		assertEquals("42", dataVaultConverter.mapToAnonymizedTaxId("42"));
+	}
 
 }
 
