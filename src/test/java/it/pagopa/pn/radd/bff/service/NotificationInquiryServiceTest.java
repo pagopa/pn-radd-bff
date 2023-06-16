@@ -13,6 +13,7 @@ import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -39,26 +40,48 @@ class NotificationInquiryServiceTest {
 
 	@Test
 	void testGetActPracticesByInternalId(){
-		when(pnRaddFsuClient.getActPracticesByInternalId(any(),any()))
-				.thenReturn((Mono<OperationsActDetailsResponseDto>) mock(Mono.class));
-		OperationsActDetailsResponse operationsActDetailsResponse = mock(OperationsActDetailsResponse.class);
-		when(notificationInquiryConverter.operationsActDetailsDtoToResponse(any()))
-				.thenReturn(operationsActDetailsResponse);
-		FilterRequest filterRequest = mock(FilterRequest.class);
+		OperationsActDetailsResponseDto operationsActDetailsResponseDto = new OperationsActDetailsResponseDto();
+		operationsActDetailsResponseDto.setResult(true);
+		operationsActDetailsResponseDto.setElements(new ArrayList<>());
+		operationsActDetailsResponseDto.setStatus(null);
+
+		FilterRequest filterRequest = new FilterRequest();
+		filterRequest.setRecipientType(FilterRequest.RecipientTypeEnum.PF);
+
+		OperationsActDetailsResponse operationsActDetailsResponse = new OperationsActDetailsResponse();
+		operationsActDetailsResponse.setElements(new ArrayList<>());
+		operationsActDetailsResponse.setResult(true);
+		operationsActDetailsResponse.setStatus(null);
+
+		when(dataVaultService.getAnonymousByTaxId(any(),any())).thenReturn(Mono.just("abc"));
+		when(pnRaddFsuClient.getActPracticesByInternalId(any(),any())).thenReturn(Mono.just(operationsActDetailsResponseDto));
+		when(notificationInquiryConverter.operationsActDetailsDtoToResponse(any())).thenReturn(operationsActDetailsResponse);
+
 		StepVerifier.create(notificationInquiryService.getActPracticesByInternalId("taxId",Mono.just(filterRequest)))
-				.expectNext(operationsActDetailsResponse);
+				.expectNext(operationsActDetailsResponse).verifyComplete();
 	}
 
 	@Test
 	void testGetAorPracticesByInternalId(){
-		when(pnRaddFsuClient.getAorPracticesByInternalId(any(),any()))
-				.thenReturn((Mono<OperationsAorDetailsResponseDto>) mock(Mono.class));
-		OperationsAorDetailsResponse operationsAorDetailsResponse = mock(OperationsAorDetailsResponse.class);
-		when(notificationInquiryConverter.operationsAorDetailsDtoToResponse(any()))
-				.thenReturn(operationsAorDetailsResponse);
-		FilterRequest filterRequest = mock(FilterRequest.class);
+		OperationsAorDetailsResponseDto operationsActDetailsResponseDto = new OperationsAorDetailsResponseDto();
+		operationsActDetailsResponseDto.setResult(true);
+		operationsActDetailsResponseDto.setElements(new ArrayList<>());
+		operationsActDetailsResponseDto.setStatus(null);
+
+		FilterRequest filterRequest = new FilterRequest();
+		filterRequest.setRecipientType(FilterRequest.RecipientTypeEnum.PF);
+
+		OperationsAorDetailsResponse operationsActDetailsResponse = new OperationsAorDetailsResponse();
+		operationsActDetailsResponse.setElements(new ArrayList<>());
+		operationsActDetailsResponse.setResult(true);
+		operationsActDetailsResponse.setStatus(null);
+
+		when(dataVaultService.getAnonymousByTaxId(any(),any())).thenReturn(Mono.just("abc"));
+		when(pnRaddFsuClient.getAorPracticesByInternalId(any(),any())).thenReturn(Mono.just(operationsActDetailsResponseDto));
+		when(notificationInquiryConverter.operationsAorDetailsDtoToResponse(any())).thenReturn(operationsActDetailsResponse);
+
 		StepVerifier.create(notificationInquiryService.getAorPracticesByInternalId("taxId",Mono.just(filterRequest)))
-				.expectNext(operationsAorDetailsResponse);
+				.expectNext(operationsActDetailsResponse).verifyComplete();
 	}
 
 
