@@ -9,26 +9,29 @@ import java.util.regex.Pattern;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class MaskDataUtils {
 
-    private static final Pattern URI_TAX_ID = Pattern.compile("(recipientTaxId)=([^&]*)");
-    private static final Pattern TAX_ID = Pattern.compile("(recipientTaxId)\\s*:\\s*([A-Z]{6}\\d{2}[A-Z]\\d{2}[A-Z]\\d{3}[A-Z])");
-    private static final Pattern CF_PATTERN = Pattern.compile("/[A-Z]{6}\\d{2}[A-Z]\\d{2}[A-Z]\\d{3}[A-Z]/");
+    private static final Pattern URI_TAX_ID_1 = Pattern.compile("(recipientTaxId)=([^&]*)");
+    private static final Pattern URI_TAX_ID_2 = Pattern.compile("(/by-internalId/)([^-]{2}(?!-).*)");
 
-    public static String maskData(String data) {
+
+    private static final Pattern DATA_VAULT_ANONYMIZATION_TAX_ID = Pattern.compile("()(^(?!\\{|PG-|PF-).*)");
+
+    private static final Pattern BODY_TAX_ID = Pattern.compile("(\"recipientTaxId\"|\"delegateTaxId\")\\s*:\\s*\"(.*?)\"");
+
+    public static String maskUri (String data) {
         if (data == null) {
             return null;
         }
-
-        data = maskMatcher(CF_PATTERN, data);
+        data = maskMatcher(URI_TAX_ID_2, data);
+        data = maskMatcher(URI_TAX_ID_1, data);
 
         return data;
     }
-    public static String maskInfo(String data) {
+    public static String maskBody(String data) {
         if (data == null) {
             return null;
         }
-
-        data = maskMatcher(URI_TAX_ID, data);
-        data = maskMatcher(TAX_ID, data);
+        data = maskMatcher(DATA_VAULT_ANONYMIZATION_TAX_ID, data);
+        data = maskMatcher(BODY_TAX_ID, data);
 
         return data;
     }
@@ -46,28 +49,7 @@ public class MaskDataUtils {
     }
 
     private static String mask(String unmasked) {
-        if (unmasked.contains(",")) {
-            return maskAddress(unmasked);
-        } else if (unmasked.contains("@")) {
-            return maskEmailAddress(unmasked);
-        } else {
-            return maskString(unmasked);
-        }
-    }
-
-    private static String maskAddress(String strAddress) {
-        String[] parts = strAddress.split(",");
-        StringBuilder masked = new StringBuilder();
-        for (String part : parts) {
-            masked.append(maskString(part)).append(",");
-        }
-        return masked.substring(0, masked.length() - 1);
-    }
-
-    private static String maskEmailAddress(String strEmail) {
-        String[] parts = strEmail.split("@");
-        String strId = maskString(parts[0]);
-        return strId + "@" + parts[1];
+        return maskString(unmasked);
     }
 
     public static String maskString(String strText) {

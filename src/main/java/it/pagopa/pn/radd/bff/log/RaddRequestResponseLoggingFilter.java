@@ -1,20 +1,20 @@
 package it.pagopa.pn.radd.bff.log;
 
 import it.pagopa.pn.radd.bff.utils.MaskDataUtils;
+import lombok.CustomLog;
 import lombok.extern.slf4j.Slf4j;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.server.reactive.ServerHttpRequest;
-import org.springframework.http.server.reactive.ServerHttpResponse;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
 import org.springframework.web.server.WebFilter;
 import org.springframework.web.server.WebFilterChain;
 import reactor.core.publisher.Mono;
 
-@Slf4j
+@CustomLog
 @Component
 public class RaddRequestResponseLoggingFilter implements WebFilter {
 
@@ -33,7 +33,6 @@ public class RaddRequestResponseLoggingFilter implements WebFilter {
     @Override
     public @NotNull Mono<Void> filter(ServerWebExchange exchange, @NotNull WebFilterChain chain) {
         final ServerHttpRequest httpRequest = exchange.getRequest();
-      //  final ServerHttpResponse httpResponse = exchange.getResponse();
 
         if (httpRequest.getPath().toString().equals(healthCheckPath)) {
             log.trace("skip log request/response for HealthCheck path");
@@ -41,8 +40,7 @@ public class RaddRequestResponseLoggingFilter implements WebFilter {
         }
 
         final HttpMethod httpMethod = httpRequest.getMethod();
-        final String maskedURI = MaskDataUtils.maskInfo(httpRequest.getURI().toString());
-        //final String maskedBody = MaskDataUtils.maskData(httpResponse.);
+        final String maskedURI = MaskDataUtils.maskUri(httpRequest.getURI().toString());
 
         long startTime = System.currentTimeMillis();
 
@@ -57,9 +55,9 @@ public class RaddRequestResponseLoggingFilter implements WebFilter {
 
         return chain.filter(webExchangeDecorator)
                 .doOnTerminate(() -> {
-                    var body = webExchangeDecorator.getResponse().getCapturedBody();
+                    String body = webExchangeDecorator.getResponse().getCapturedBody();
                     var elapsed = System.currentTimeMillis() - startTime;
-                    log.info(LOG_RESPONSE_OK, httpMethod, maskedURI, body, elapsed);
+                    log.info(LOG_RESPONSE_OK, httpMethod, maskedURI, MaskDataUtils.maskBody(body), elapsed);
                 });
     }
 }

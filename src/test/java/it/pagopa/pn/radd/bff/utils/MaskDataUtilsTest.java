@@ -7,17 +7,17 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 
 class MaskDataUtilsTest {
 	/**
-	 * Method under test: {@link MaskDataUtils#maskInfo(String)}
+	 * Method under test: {@link MaskDataUtils#maskUri(String)}
 	 */
 	@Test
 	void testMaskInfo () {
 		// Arrange, Act and Assert
-		assertEquals("Data", MaskDataUtils.maskInfo("Data"));
-		assertEquals("recipientTaxId=*", MaskDataUtils.maskInfo("recipientTaxId=U"));
-		assertNull(MaskDataUtils.maskInfo(null));
-		assertEquals("recipientTaxId=U*************d=U", MaskDataUtils.maskInfo("recipientTaxId=UrecipientTaxId=U"));
-		assertEquals("recipientTaxId=*", MaskDataUtils.maskInfo("recipientTaxId=U,"));
-		assertEquals("recipientTaxId=*@recipientTaxId=U", MaskDataUtils.maskInfo("recipientTaxId=U@recipientTaxId=U"));
+		assertEquals("Data", MaskDataUtils.maskUri("Data"));
+		assertEquals("recipientTaxId=*", MaskDataUtils.maskUri("recipientTaxId=U"));
+		assertNull(MaskDataUtils.maskUri(null));
+		assertEquals("recipientTaxId=U*************d=U", MaskDataUtils.maskUri("recipientTaxId=UrecipientTaxId=U"));
+		assertEquals("recipientTaxId=*", MaskDataUtils.maskUri("recipientTaxId=U,"));
+		assertEquals("recipientTaxId=*@recipientTaxId=U", MaskDataUtils.maskUri("recipientTaxId=U@recipientTaxId=U"));
 	}
 
 	/**

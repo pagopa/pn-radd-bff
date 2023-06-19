@@ -24,7 +24,7 @@ public class RaddWebExceptionLogging extends PnErrorWebExceptionHandler {
         final ServerHttpRequest httpRequest = exchange.getRequest();
 
         final HttpMethod httpMethod = httpRequest.getMethod();
-        final String maskedURI = MaskDataUtils.maskInfo(httpRequest.getURI().toString());
+        final String maskedURI = MaskDataUtils.maskUri(httpRequest.getURI().toString());
 
         RaddWebExchangeDecorator webExchangeDecorator = new RaddWebExchangeDecorator(exchange, maskedURI);
 
