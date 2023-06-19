@@ -18,9 +18,11 @@ public class RaddRequestDecorator extends ServerHttpRequestDecorator {
     private final StringBuilder body = new StringBuilder();
     private final String maskedURI;
 
+
     public RaddRequestDecorator(ServerHttpRequest delegate, String maskedURI) {
         super(delegate);
         this.maskedURI = maskedURI;
+
     }
 
     @Override

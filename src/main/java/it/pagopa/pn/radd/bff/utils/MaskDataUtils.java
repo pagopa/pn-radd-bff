@@ -17,8 +17,8 @@ public class MaskDataUtils {
         if (data == null) {
             return null;
         }
-        data = maskMatcher(TAX_ID, data);
-        data = maskMatcher(URI_TAX_ID, data);
+
+        data = maskMatcher(CF_PATTERN, data);
 
         return data;
     }
@@ -27,6 +27,7 @@ public class MaskDataUtils {
             return null;
         }
 
+        data = maskMatcher(URI_TAX_ID, data);
         data = maskMatcher(TAX_ID, data);
 
         return data;

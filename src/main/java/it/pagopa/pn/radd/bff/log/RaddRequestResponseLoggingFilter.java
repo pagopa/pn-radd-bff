@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.server.reactive.ServerHttpRequest;
+import org.springframework.http.server.reactive.ServerHttpResponse;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
 import org.springframework.web.server.WebFilter;
@@ -32,6 +33,7 @@ public class RaddRequestResponseLoggingFilter implements WebFilter {
     @Override
     public @NotNull Mono<Void> filter(ServerWebExchange exchange, @NotNull WebFilterChain chain) {
         final ServerHttpRequest httpRequest = exchange.getRequest();
+      //  final ServerHttpResponse httpResponse = exchange.getResponse();
 
         if (httpRequest.getPath().toString().equals(healthCheckPath)) {
             log.trace("skip log request/response for HealthCheck path");
@@ -40,6 +42,7 @@ public class RaddRequestResponseLoggingFilter implements WebFilter {
 
         final HttpMethod httpMethod = httpRequest.getMethod();
         final String maskedURI = MaskDataUtils.maskInfo(httpRequest.getURI().toString());
+        //final String maskedBody = MaskDataUtils.maskData(httpResponse.);
 
         long startTime = System.currentTimeMillis();
 
