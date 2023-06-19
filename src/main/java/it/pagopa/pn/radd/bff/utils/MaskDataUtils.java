@@ -10,13 +10,24 @@ import java.util.regex.Pattern;
 public class MaskDataUtils {
 
     private static final Pattern URI_TAX_ID = Pattern.compile("(recipientTaxId)=([^&]*)");
+    private static final Pattern TAX_ID = Pattern.compile("(recipientTaxId)\\s*:\\s*([A-Z]{6}\\d{2}[A-Z]\\d{2}[A-Z]\\d{3}[A-Z])");
+    private static final Pattern CF_PATTERN = Pattern.compile("/[A-Z]{6}\\d{2}[A-Z]\\d{2}[A-Z]\\d{3}[A-Z]/");
 
+    public static String maskData(String data) {
+        if (data == null) {
+            return null;
+        }
+        data = maskMatcher(TAX_ID, data);
+        data = maskMatcher(URI_TAX_ID, data);
+
+        return data;
+    }
     public static String maskInfo(String data) {
         if (data == null) {
             return null;
         }
 
-        data = maskMatcher(URI_TAX_ID, data);
+        data = maskMatcher(TAX_ID, data);
 
         return data;
     }
@@ -76,4 +87,5 @@ public class MaskDataUtils {
         String sbMaskString = maskChar.repeat(Math.max(0, maskLength));
         return strText.substring(0, start) + sbMaskString + strText.substring(start + maskLength);
     }
+
 }
