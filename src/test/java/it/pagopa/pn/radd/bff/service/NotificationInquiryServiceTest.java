@@ -55,7 +55,8 @@ class NotificationInquiryServiceTest {
 
 		when(dataVaultService.getAnonymousByTaxId(any(),any())).thenReturn(Mono.just("abc"));
 		when(pnRaddFsuClient.getActPracticesByInternalId(any(),any())).thenReturn(Mono.just(operationsActDetailsResponseDto));
-		when(notificationInquiryConverter.operationsActDetailsDtoToResponse(any())).thenReturn(operationsActDetailsResponse);
+		when(notificationInquiryConverter.operationsActDetailsDtoToResponse(any(), any(), any())).thenReturn(operationsActDetailsResponse);
+		when(dataVaultService.getRecipientDenominationByInternalId(any())).thenReturn(Mono.just(Map.of("", "")));
 
 		StepVerifier.create(notificationInquiryService.getActPracticesByInternalId("taxId",Mono.just(filterRequest)))
 				.expectNext(operationsActDetailsResponse).verifyComplete();
@@ -78,8 +79,8 @@ class NotificationInquiryServiceTest {
 
 		when(dataVaultService.getAnonymousByTaxId(any(),any())).thenReturn(Mono.just("abc"));
 		when(pnRaddFsuClient.getAorPracticesByInternalId(any(),any())).thenReturn(Mono.just(operationsActDetailsResponseDto));
-		when(notificationInquiryConverter.operationsAorDetailsDtoToResponse(any())).thenReturn(operationsActDetailsResponse);
-
+		when(notificationInquiryConverter.operationsAorDetailsDtoToResponse(any(), any(), any())).thenReturn(operationsActDetailsResponse);
+		when(dataVaultService.getRecipientDenominationByInternalId(any())).thenReturn(Mono.just(Map.of("", "")));
 		StepVerifier.create(notificationInquiryService.getAorPracticesByInternalId("taxId",Mono.just(filterRequest)))
 				.expectNext(operationsActDetailsResponse).verifyComplete();
 	}
@@ -448,126 +449,6 @@ class NotificationInquiryServiceTest {
 		notificationInquiryService.getAorTransactionByOperationId("42");
 
 		verify(pnRaddFsuClient).getAorTransactionByOperationId(any());
-	}
-
-	@Test
-	void testGetAorPracticesByInternalId2 () {
-
-		FilterRequestDto filterRequestDto = new FilterRequestDto();
-		OffsetDateTime from = OffsetDateTime.now();
-		OffsetDateTime to = OffsetDateTime.now();
-		filterRequestDto.setFrom(from);
-		filterRequestDto.setTo(to);
-		FilterRequest filterRequest = new FilterRequest();
-		filterRequest.setFrom(Date.from(from.toInstant()));
-		filterRequest.setTo(Date.from(to.toInstant()));
-
-		when(notificationInquiryConverter.filterRequestToDto(any())).thenReturn(filterRequestDto);
-		OperationAorDetailResponseDto operationAorDetailResponseDto = mock(OperationAorDetailResponseDto.class);
-
-		OperationsAorDetailsResponseDto operationsAorDetailsResponseDto = new OperationsAorDetailsResponseDto();
-		operationsAorDetailsResponseDto.setResult(true);
-		operationsAorDetailsResponseDto.setElements(List.of(operationAorDetailResponseDto));
-
-		OperationResponseStatusDto operationResponseStatusDto = new OperationResponseStatusDto();
-		operationResponseStatusDto.setCode(OperationResponseStatusDto.CodeEnum.NUMBER_0);
-		operationResponseStatusDto.setMessage("message");
-		operationsAorDetailsResponseDto.setStatus(operationResponseStatusDto);
-
-		when(pnRaddFsuClient.getAorPracticesByInternalId(any(), any())).thenReturn(Mono.just(operationsAorDetailsResponseDto));
-
-		OperationAorDetailResponse operationAorDetailResponse = new OperationAorDetailResponse();
-		operationAorDetailResponse.setOperationEndDate(Date.from(from.toInstant()));
-		operationAorDetailResponse.setOperationStartDate(Date.from(to.toInstant()));
-		operationAorDetailResponse.setOperationId("42");
-		operationAorDetailResponse.setOperationType("type");
-		operationAorDetailResponse.setOperationStatus("status");
-		operationAorDetailResponse.setFileKey("fileKey");
-		operationAorDetailResponse.setIuns(List.of("42"));
-		operationAorDetailResponse.setRecipientTaxId("taxId");
-		operationAorDetailResponse.setDelegateTaxId("taxId");
-		operationAorDetailResponse.setRecipientType("type");
-		operationAorDetailResponse.setErrorReason("errorReason");
-		operationAorDetailResponse.setUid("uid");
-		operationAorDetailResponse.setQrCode("qrCode");
-
-		OperationsAorDetailsResponse operationsAorDetailsResponse = new OperationsAorDetailsResponse();
-		operationsAorDetailsResponse.setResult(true);
-		operationsAorDetailsResponse.setElements(List.of(operationAorDetailResponse));
-
-		OperationResponseStatus operationResponseStatus = new OperationResponseStatus();
-		operationResponseStatus.setCode(OperationResponseStatus.CodeEnum.NUMBER_0);
-		operationResponseStatus.setMessage("message");
-		operationsAorDetailsResponse.setStatus(operationResponseStatus);
-
-		when(notificationInquiryConverter.operationsAorDetailsDtoToResponse(any())).thenReturn(operationsAorDetailsResponse);
-	}
-
-	@Test
-	void testGetActPracticesByInternalId2 () {
-
-		FilterRequestDto filterRequestDto = new FilterRequestDto();
-		OffsetDateTime from = OffsetDateTime.now();
-		OffsetDateTime to = OffsetDateTime.now();
-		filterRequestDto.setFrom(from);
-		filterRequestDto.setTo(to);
-		FilterRequest filterRequest = new FilterRequest();
-		filterRequest.setFrom(Date.from(from.toInstant()));
-		filterRequest.setTo(Date.from(to.toInstant()));
-
-		when(notificationInquiryConverter.filterRequestToDto(any())).thenReturn(filterRequestDto);
-		OperationActDetailResponseDto operationActDetailResponseDto = new OperationActDetailResponseDto();
-		operationActDetailResponseDto.setOperationEndDate(from);
-		operationActDetailResponseDto.setOperationStartDate(to);
-		operationActDetailResponseDto.setOperationId("42");
-		operationActDetailResponseDto.setOperationType("type");
-		operationActDetailResponseDto.setOperationStatus("status");
-		operationActDetailResponseDto.setFileKey("fileKey");
-		operationActDetailResponseDto.setIun("42");
-		operationActDetailResponseDto.setRecipientTaxId("taxId");
-		operationActDetailResponseDto.setDelegateTaxId("taxId");
-		operationActDetailResponseDto.setRecipientType("type");
-		operationActDetailResponseDto.setErrorReason("errorReason");
-		operationActDetailResponseDto.setUid("uid");
-		operationActDetailResponseDto.setQrCode("qrCode");
-
-		OperationsActDetailsResponseDto operationsActDetailsResponseDto = new OperationsActDetailsResponseDto();
-		operationsActDetailsResponseDto.setResult(true);
-		operationsActDetailsResponseDto.setElements(List.of(operationActDetailResponseDto));
-
-		OperationResponseStatusDto operationResponseStatusDto = new OperationResponseStatusDto();
-		operationResponseStatusDto.setCode(OperationResponseStatusDto.CodeEnum.NUMBER_0);
-		operationResponseStatusDto.setMessage("message");
-		operationsActDetailsResponseDto.setStatus(operationResponseStatusDto);
-
-		when(pnRaddFsuClient.getActPracticesByInternalId(any(), any())).thenReturn(Mono.just(operationsActDetailsResponseDto));
-
-		OperationActDetailResponse operationActDetailResponse = new OperationActDetailResponse();
-		operationActDetailResponse.setOperationEndDate(Date.from(from.toInstant()));
-		operationActDetailResponse.setOperationStartDate(Date.from(to.toInstant()));
-		operationActDetailResponse.setOperationId("42");
-		operationActDetailResponse.setOperationType("type");
-		operationActDetailResponse.setOperationStatus("status");
-		operationActDetailResponse.setFileKey("fileKey");
-		operationActDetailResponse.setIun("42");
-		operationActDetailResponse.setRecipientTaxId("taxId");
-		operationActDetailResponse.setDelegateTaxId("taxId");
-		operationActDetailResponse.setRecipientType("type");
-		operationActDetailResponse.setErrorReason("errorReason");
-		operationActDetailResponse.setUid("uid");
-		operationActDetailResponse.setQrCode("qrCode");
-
-		OperationsActDetailsResponse operationsActDetailsResponse = new OperationsActDetailsResponse();
-		operationsActDetailsResponse.setResult(true);
-		operationsActDetailsResponse.setElements(List.of(operationActDetailResponse));
-
-		OperationResponseStatus operationResponseStatus = new OperationResponseStatus();
-		operationResponseStatus.setCode(OperationResponseStatus.CodeEnum.NUMBER_0);
-		operationResponseStatus.setMessage("message");
-		operationsActDetailsResponse.setStatus(operationResponseStatus);
-
-		when(notificationInquiryConverter.operationsActDetailsDtoToResponse(any())).thenReturn(operationsActDetailsResponse);
-
 	}
 }
 
