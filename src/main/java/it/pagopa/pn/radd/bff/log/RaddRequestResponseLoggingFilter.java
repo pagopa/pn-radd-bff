@@ -1,7 +1,7 @@
 package it.pagopa.pn.radd.bff.log;
 
 import it.pagopa.pn.radd.bff.utils.MaskDataUtils;
-import lombok.extern.slf4j.Slf4j;
+import lombok.CustomLog;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
@@ -13,7 +13,7 @@ import org.springframework.web.server.WebFilter;
 import org.springframework.web.server.WebFilterChain;
 import reactor.core.publisher.Mono;
 
-@Slf4j
+@CustomLog
 @Component
 public class RaddRequestResponseLoggingFilter implements WebFilter {
 
@@ -39,7 +39,7 @@ public class RaddRequestResponseLoggingFilter implements WebFilter {
         }
 
         final HttpMethod httpMethod = httpRequest.getMethod();
-        final String maskedURI = MaskDataUtils.maskInfo(httpRequest.getURI().toString());
+        final String maskedURI = MaskDataUtils.maskUri(httpRequest.getURI().toString());
 
         long startTime = System.currentTimeMillis();
 
@@ -54,9 +54,9 @@ public class RaddRequestResponseLoggingFilter implements WebFilter {
 
         return chain.filter(webExchangeDecorator)
                 .doOnTerminate(() -> {
-                    var body = webExchangeDecorator.getResponse().getCapturedBody();
+                    String body = webExchangeDecorator.getResponse().getCapturedBody();
                     var elapsed = System.currentTimeMillis() - startTime;
-                    log.info(LOG_RESPONSE_OK, httpMethod, maskedURI, body, elapsed);
+                    log.info(LOG_RESPONSE_OK, httpMethod, maskedURI, MaskDataUtils.maskBody(body), elapsed);
                 });
     }
 }

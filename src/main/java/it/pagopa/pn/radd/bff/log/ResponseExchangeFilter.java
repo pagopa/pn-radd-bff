@@ -1,6 +1,7 @@
 package it.pagopa.pn.radd.bff.log;
 
-import lombok.extern.slf4j.Slf4j;
+import it.pagopa.pn.radd.bff.utils.MaskDataUtils;
+import lombok.CustomLog;
 import org.jetbrains.annotations.NotNull;
 import org.reactivestreams.Publisher;
 import org.springframework.core.io.buffer.DataBuffer;
@@ -11,7 +12,7 @@ import reactor.core.publisher.Mono;
 
 import java.nio.charset.StandardCharsets;
 
-@Slf4j
+@CustomLog
 @Component
 public class ResponseExchangeFilter implements ExchangeFilterFunction {
 
@@ -35,17 +36,17 @@ public class ResponseExchangeFilter implements ExchangeFilterFunction {
     public void logResponseBody(long startTime, String body, ClientResponse response, ClientRequest request) {
         long duration = System.currentTimeMillis() - startTime;
         log.info("Response HTTP from {} {} {} - body: {} - timelapse: {}ms",
-                request.url(),
+                MaskDataUtils.maskUri(request.url().toString()),
                 response.statusCode().value(),
                 response.statusCode().name(),
-                body,
+                MaskDataUtils.maskBody(body),
                 duration);
     }
 
     public void logResponseBody(long startTime, WebClientResponseException exception, ClientRequest request) {
         long duration = System.currentTimeMillis() - startTime;
         log.info("Response HTTP from {} {} {} - body: {} - timelapse: {}ms",
-                request.url(),
+                MaskDataUtils.maskUri(request.url().toString()),
                 exception.getStatusCode().value(),
                 exception.getStatusCode().name(),
                 exception.getResponseBodyAsString(),
@@ -67,8 +68,8 @@ public class ResponseExchangeFilter implements ExchangeFilterFunction {
     public void logRequestBody(DataBuffer dataBuffer, ClientRequest request) {
         log.info("Request HTTP {} to: {} - body: {}",
                 request.method().name(),
-                request.url(),
-                dataBuffer.toString(StandardCharsets.UTF_8));
+                MaskDataUtils.maskUri(request.url().toString()),
+                MaskDataUtils.maskBody(dataBuffer.toString(StandardCharsets.UTF_8)));
     }
 
 }

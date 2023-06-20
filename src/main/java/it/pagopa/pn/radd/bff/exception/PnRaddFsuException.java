@@ -18,7 +18,7 @@ public class PnRaddFsuException extends PnRuntimeException {
 
     private static String mask(String message) {
         if (message != null) {
-            return MaskDataUtils.maskInfo(message);
+            return MaskDataUtils.maskUri(message);
         }
         return "Errore durante la chiamata a pn-radd-fsu";
     }

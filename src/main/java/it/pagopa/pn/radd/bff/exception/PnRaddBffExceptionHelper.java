@@ -72,9 +72,9 @@ public class PnRaddBffExceptionHelper extends ExceptionHelper {
         tryEnrichTraceIdIfMissing(problem);
 
         if (problem.getStatus() >= 500) {
-            log.error(LOG_MSG, problem.getStatus(), MaskDataUtils.maskInfo(throwable.getMessage()), problem);
+            log.error(LOG_MSG, problem.getStatus(), MaskDataUtils.maskUri(throwable.getMessage()), problem);
         } else {
-            log.warn(LOG_MSG, problem.getStatus(), MaskDataUtils.maskInfo(throwable.getMessage()), problem);
+            log.warn(LOG_MSG, problem.getStatus(), MaskDataUtils.maskUri(throwable.getMessage()), problem);
         }
 
         return offuscate(problem);
