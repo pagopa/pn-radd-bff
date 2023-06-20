@@ -139,7 +139,7 @@ public class NotificationInquiryConverter {
     }
 
 
-    public OperationsAorDetailsResponse operationsAorDetailsDtoToResponse(OperationsAorDetailsResponseDto operationsAorDetailsResponseDto) {
+    public OperationsAorDetailsResponse operationsAorDetailsDtoToResponse(OperationsAorDetailsResponseDto operationsAorDetailsResponseDto, String taxId, Map<String, String> deanonymizedDelegateTaxIds) {
         OperationsAorDetailsResponse operationsAorDetailsResponse = new OperationsAorDetailsResponse();
 
         List<OperationAorDetailResponse> listOperationAorDetailResponse = new ArrayList<>();
@@ -151,7 +151,8 @@ public class NotificationInquiryConverter {
                 operationAorDetailResponse.setOperationStatus(t.getOperationStatus());
                 operationAorDetailResponse.setFileKey(t.getFileKey());
                 operationAorDetailResponse.setOperationType(t.getOperationType());
-                operationAorDetailResponse.setDelegateTaxId(t.getDelegateTaxId());
+                if(t.getDelegateTaxId() != null)
+                    operationAorDetailResponse.setDelegateTaxId(deanonymizedDelegateTaxIds.get(t.getDelegateTaxId()));
                 operationAorDetailResponse.setIuns(t.getIuns());
                 operationAorDetailResponse.setQrCode(t.getQrCode());
                 operationAorDetailResponse.setErrorReason(t.getErrorReason());
@@ -161,7 +162,7 @@ public class NotificationInquiryConverter {
                     operationAorDetailResponse.setOperationEndDate(new Date(t.getOperationEndDate().toInstant().toEpochMilli()));
                 if(t.getOperationStartDate()!=null)
                     operationAorDetailResponse.setOperationStartDate(new Date(t.getOperationStartDate().toInstant().toEpochMilli()));
-                operationAorDetailResponse.setRecipientTaxId(t.getRecipientTaxId());
+                operationAorDetailResponse.setRecipientTaxId(taxId);
 
                 listOperationAorDetailResponse.add(operationAorDetailResponse);
             });
@@ -275,7 +276,7 @@ public class NotificationInquiryConverter {
         return operationActResponse;
     }
 
-    public OperationsActDetailsResponse operationsActDetailsDtoToResponse(OperationsActDetailsResponseDto operationsActDetailsResponseDto) {
+    public OperationsActDetailsResponse operationsActDetailsDtoToResponse(OperationsActDetailsResponseDto operationsActDetailsResponseDto, String taxId, Map<String, String> deanonymizedDelegateTaxIds) {
         OperationsActDetailsResponse operationsActDetailsResponse = new OperationsActDetailsResponse();
 
         List<OperationActDetailResponse> listOperationActDetailResponse = new ArrayList<>();
@@ -287,7 +288,8 @@ public class NotificationInquiryConverter {
                 operationActDetailResponse.setOperationStatus(t.getOperationStatus());
                 operationActDetailResponse.setFileKey(t.getFileKey());
                 operationActDetailResponse.setOperationType(t.getOperationType());
-                operationActDetailResponse.setDelegateTaxId(t.getDelegateTaxId());
+                if (t.getDelegateTaxId() != null)
+                    operationActDetailResponse.setDelegateTaxId(deanonymizedDelegateTaxIds.get(t.getDelegateTaxId()));
                 operationActDetailResponse.setIun(t.getIun());
                 operationActDetailResponse.setQrCode(t.getQrCode());
                 operationActDetailResponse.setErrorReason(t.getErrorReason());
@@ -297,7 +299,7 @@ public class NotificationInquiryConverter {
                     operationActDetailResponse.setOperationEndDate(new Date(t.getOperationEndDate().toInstant().toEpochMilli()));
                 if(t.getOperationStartDate()!=null)
                     operationActDetailResponse.setOperationStartDate(new Date(t.getOperationStartDate().toInstant().toEpochMilli()));
-                operationActDetailResponse.setRecipientTaxId(t.getRecipientTaxId());
+                operationActDetailResponse.setRecipientTaxId(taxId);
 
                 listOperationActDetailResponse.add(operationActDetailResponse);
             });

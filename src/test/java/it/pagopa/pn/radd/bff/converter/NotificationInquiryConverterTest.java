@@ -502,7 +502,7 @@ class NotificationInquiryConverterTest {
     }
 
     /**
-     * Method under test: {@link NotificationInquiryConverter#operationsAorDetailsDtoToResponse(OperationsAorDetailsResponseDto)}
+     * Method under test: {@link NotificationInquiryConverter#operationsAorDetailsDtoToResponse(OperationsAorDetailsResponseDto, String, Map)}
      */
     @Test
     void testOperationsAorDetailsDtoToResponse() {
@@ -518,7 +518,7 @@ class NotificationInquiryConverterTest {
 
         operationResponseStatusDto.code(OperationResponseStatusDto.CodeEnum.NUMBER_1);
         OperationsAorDetailsResponse actualOperationsAorDetailsDtoToResponseResult = notificationInquiryConverter
-                .operationsAorDetailsDtoToResponse(operationsAorDetailsResponseDto);
+                .operationsAorDetailsDtoToResponse(operationsAorDetailsResponseDto, "taxId", Map.of("", ""));
         assertTrue(actualOperationsAorDetailsDtoToResponseResult.getResult());
         OperationResponseStatus status = actualOperationsAorDetailsDtoToResponseResult.getStatus();
         assertNull(status.getMessage());
@@ -526,31 +526,31 @@ class NotificationInquiryConverterTest {
     }
 
     /**
-     * Method under test: {@link NotificationInquiryConverter#operationsAorDetailsDtoToResponse(OperationsAorDetailsResponseDto)}
+     * Method under test: {@link NotificationInquiryConverter#operationsAorDetailsDtoToResponse(OperationsAorDetailsResponseDto, String, Map)}
      */
     @Test
     void testOperationsAorDetailsDtoToResponse2() {
         OperationsAorDetailsResponse actualOperationsAorDetailsDtoToResponseResult = notificationInquiryConverter
-                .operationsAorDetailsDtoToResponse(new OperationsAorDetailsResponseDto());
+                .operationsAorDetailsDtoToResponse(new OperationsAorDetailsResponseDto(), "taxId", Map.of("", ""));
         assertTrue(actualOperationsAorDetailsDtoToResponseResult.getElements().isEmpty());
         assertNull(actualOperationsAorDetailsDtoToResponseResult.getResult());
     }
 
     /**
-     * Method under test: {@link NotificationInquiryConverter#operationsAorDetailsDtoToResponse(OperationsAorDetailsResponseDto)}
+     * Method under test: {@link NotificationInquiryConverter#operationsAorDetailsDtoToResponse(OperationsAorDetailsResponseDto, String, Map)}
      */
     @Test
     void testOperationsAorDetailsDtoToResponse3() {
         OperationsAorDetailsResponseDto operationsAorDetailsResponseDto = new OperationsAorDetailsResponseDto();
         operationsAorDetailsResponseDto.addElementsItem(new OperationAorDetailResponseDto());
         OperationsAorDetailsResponse actualOperationsAorDetailsDtoToResponseResult = notificationInquiryConverter
-                .operationsAorDetailsDtoToResponse(operationsAorDetailsResponseDto);
+                .operationsAorDetailsDtoToResponse(operationsAorDetailsResponseDto, null, Map.of("", ""));
         assertEquals(1, actualOperationsAorDetailsDtoToResponseResult.getElements().size());
         assertNull(actualOperationsAorDetailsDtoToResponseResult.getResult());
     }
 
     /**
-     * Method under test: {@link NotificationInquiryConverter#operationsAorDetailsDtoToResponse(OperationsAorDetailsResponseDto)}
+     * Method under test: {@link NotificationInquiryConverter#operationsAorDetailsDtoToResponse(OperationsAorDetailsResponseDto, String, Map)}
      */
     @Test
     void testOperationsAorDetailsDtoToResponse4() {
@@ -558,13 +558,13 @@ class NotificationInquiryConverterTest {
         ArrayList<OperationAorDetailResponseDto> elements = new ArrayList<>();
         operationsAorDetailsResponseDto.elements(elements);
         OperationsAorDetailsResponse actualOperationsAorDetailsDtoToResponseResult = notificationInquiryConverter
-                .operationsAorDetailsDtoToResponse(operationsAorDetailsResponseDto);
+                .operationsAorDetailsDtoToResponse(operationsAorDetailsResponseDto, "taxId", Map.of("", ""));
         assertEquals(elements, actualOperationsAorDetailsDtoToResponseResult.getElements());
         assertNull(actualOperationsAorDetailsDtoToResponseResult.getResult());
     }
 
     /**
-     * Method under test: {@link NotificationInquiryConverter#operationsAorDetailsDtoToResponse(OperationsAorDetailsResponseDto)}
+     * Method under test: {@link NotificationInquiryConverter#operationsAorDetailsDtoToResponse(OperationsAorDetailsResponseDto, String, Map)}
      */
     @Test
     void testOperationsAorDetailsDtoToResponse6() {
@@ -574,7 +574,7 @@ class NotificationInquiryConverterTest {
         ArrayList<OperationAorDetailResponseDto> operationAorDetailResponseDtoList = new ArrayList<>();
         when(operationsAorDetailsResponseDto.getElements()).thenReturn(operationAorDetailResponseDtoList);
         OperationsAorDetailsResponse actualOperationsAorDetailsDtoToResponseResult = notificationInquiryConverter
-                .operationsAorDetailsDtoToResponse(operationsAorDetailsResponseDto);
+                .operationsAorDetailsDtoToResponse(operationsAorDetailsResponseDto, "taxId", Map.of("", ""));
         assertEquals(operationAorDetailResponseDtoList, actualOperationsAorDetailsDtoToResponseResult.getElements());
         assertTrue(actualOperationsAorDetailsDtoToResponseResult.getResult());
         assertNull(actualOperationsAorDetailsDtoToResponseResult.getStatus().getMessage());
@@ -584,7 +584,7 @@ class NotificationInquiryConverterTest {
     }
 
     /**
-     * Method under test: {@link NotificationInquiryConverter#operationsAorDetailsDtoToResponse(OperationsAorDetailsResponseDto)}
+     * Method under test: {@link NotificationInquiryConverter#operationsAorDetailsDtoToResponse(OperationsAorDetailsResponseDto, String, Map)}
      */
     @Test
     void testOperationsAorDetailsDtoToResponse7() {
@@ -597,7 +597,7 @@ class NotificationInquiryConverterTest {
         ArrayList<OperationAorDetailResponseDto> operationAorDetailResponseDtoList = new ArrayList<>();
         when(operationsAorDetailsResponseDto.getElements()).thenReturn(operationAorDetailResponseDtoList);
         OperationsAorDetailsResponse actualOperationsAorDetailsDtoToResponseResult = notificationInquiryConverter
-                .operationsAorDetailsDtoToResponse(operationsAorDetailsResponseDto);
+                .operationsAorDetailsDtoToResponse(operationsAorDetailsResponseDto, "taxId", Map.of("", ""));
         assertEquals(operationAorDetailResponseDtoList, actualOperationsAorDetailsDtoToResponseResult.getElements());
         assertTrue(actualOperationsAorDetailsDtoToResponseResult.getResult());
         OperationResponseStatus status = actualOperationsAorDetailsDtoToResponseResult.getStatus();
@@ -611,7 +611,7 @@ class NotificationInquiryConverterTest {
     }
 
     /**
-     * Method under test: {@link NotificationInquiryConverter#operationsAorDetailsDtoToResponse(OperationsAorDetailsResponseDto)}
+     * Method under test: {@link NotificationInquiryConverter#operationsAorDetailsDtoToResponse(OperationsAorDetailsResponseDto, String, Map)}
      */
     @Test
     void testOperationsAorDetailsDtoToResponse8() {
@@ -626,7 +626,7 @@ class NotificationInquiryConverterTest {
         when(operationsAorDetailsResponseDto.getResult()).thenReturn(true);
         when(operationsAorDetailsResponseDto.getElements()).thenReturn(operationAorDetailResponseDtoList);
         OperationsAorDetailsResponse actualOperationsAorDetailsDtoToResponseResult = notificationInquiryConverter
-                .operationsAorDetailsDtoToResponse(operationsAorDetailsResponseDto);
+                .operationsAorDetailsDtoToResponse(operationsAorDetailsResponseDto, "taxId", Map.of("", ""));
         assertEquals(1, actualOperationsAorDetailsDtoToResponseResult.getElements().size());
         assertTrue(actualOperationsAorDetailsDtoToResponseResult.getResult());
         OperationResponseStatus status = actualOperationsAorDetailsDtoToResponseResult.getStatus();
@@ -640,7 +640,7 @@ class NotificationInquiryConverterTest {
     }
 
     /**
-     * Method under test: {@link NotificationInquiryConverter#operationsAorDetailsDtoToResponse(OperationsAorDetailsResponseDto)}
+     * Method under test: {@link NotificationInquiryConverter#operationsAorDetailsDtoToResponse(OperationsAorDetailsResponseDto, String, Map)}
      */
     @Test
     void testOperationsAorDetailsDtoToResponse9() {
@@ -656,7 +656,7 @@ class NotificationInquiryConverterTest {
         when(operationsAorDetailsResponseDto.getResult()).thenReturn(true);
         when(operationsAorDetailsResponseDto.getElements()).thenReturn(operationAorDetailResponseDtoList);
         OperationsAorDetailsResponse actualOperationsAorDetailsDtoToResponseResult = notificationInquiryConverter
-                .operationsAorDetailsDtoToResponse(operationsAorDetailsResponseDto);
+                .operationsAorDetailsDtoToResponse(operationsAorDetailsResponseDto, "taxId", Map.of("", ""));
         assertEquals(2, actualOperationsAorDetailsDtoToResponseResult.getElements().size());
         assertTrue(actualOperationsAorDetailsDtoToResponseResult.getResult());
         OperationResponseStatus status = actualOperationsAorDetailsDtoToResponseResult.getStatus();
@@ -670,7 +670,7 @@ class NotificationInquiryConverterTest {
     }
 
     /**
-     * Method under test: {@link NotificationInquiryConverter#operationsAorDetailsDtoToResponse(OperationsAorDetailsResponseDto)}
+     * Method under test: {@link NotificationInquiryConverter#operationsAorDetailsDtoToResponse(OperationsAorDetailsResponseDto, String, Map)}
      */
     @Test
     void testOperationsAorDetailsDtoToResponse11() {
@@ -701,7 +701,7 @@ class NotificationInquiryConverterTest {
         when(operationsAorDetailsResponseDto.getResult()).thenReturn(true);
         when(operationsAorDetailsResponseDto.getElements()).thenReturn(operationAorDetailResponseDtoList);
         OperationsAorDetailsResponse actualOperationsAorDetailsDtoToResponseResult = notificationInquiryConverter
-                .operationsAorDetailsDtoToResponse(operationsAorDetailsResponseDto);
+                .operationsAorDetailsDtoToResponse(operationsAorDetailsResponseDto, "taxId", Map.of("", ""));
         assertEquals(1, actualOperationsAorDetailsDtoToResponseResult.getElements().size());
         assertTrue(actualOperationsAorDetailsDtoToResponseResult.getResult());
         OperationResponseStatus status = actualOperationsAorDetailsDtoToResponseResult.getStatus();
@@ -712,14 +712,13 @@ class NotificationInquiryConverterTest {
         verify(operationsAorDetailsResponseDto, atLeast(1)).getElements();
         verify(operationResponseStatusDto, atLeast(1)).getCode();
         verify(operationResponseStatusDto).getMessage();
-        verify(operationAorDetailResponseDto).getDelegateTaxId();
+        verify(operationAorDetailResponseDto, times(2)).getDelegateTaxId();
         verify(operationAorDetailResponseDto).getErrorReason();
         verify(operationAorDetailResponseDto).getFileKey();
         verify(operationAorDetailResponseDto).getOperationId();
         verify(operationAorDetailResponseDto).getOperationStatus();
         verify(operationAorDetailResponseDto).getOperationType();
         verify(operationAorDetailResponseDto).getQrCode();
-        verify(operationAorDetailResponseDto).getRecipientTaxId();
         verify(operationAorDetailResponseDto).getRecipientType();
         verify(operationAorDetailResponseDto).getUid();
         verify(operationAorDetailResponseDto, atLeast(1)).getOperationEndDate();
@@ -1588,31 +1587,31 @@ class NotificationInquiryConverterTest {
     }
 
     /**
-     * Method under test: {@link NotificationInquiryConverter#operationsActDetailsDtoToResponse(OperationsActDetailsResponseDto)}
+     * Method under test: {@link NotificationInquiryConverter#operationsActDetailsDtoToResponse(OperationsActDetailsResponseDto, String, Map)}
      */
     @Test
     void testOperationsActDetailsDtoToResponse() {
         OperationsActDetailsResponse actualOperationsActDetailsDtoToResponseResult = notificationInquiryConverter
-                .operationsActDetailsDtoToResponse(new OperationsActDetailsResponseDto());
+                .operationsActDetailsDtoToResponse(new OperationsActDetailsResponseDto(), "taxId", Map.of("", ""));
         assertTrue(actualOperationsActDetailsDtoToResponseResult.getElements().isEmpty());
         assertNull(actualOperationsActDetailsDtoToResponseResult.getResult());
     }
 
     /**
-     * Method under test: {@link NotificationInquiryConverter#operationsActDetailsDtoToResponse(OperationsActDetailsResponseDto)}
+     * Method under test: {@link NotificationInquiryConverter#operationsActDetailsDtoToResponse(OperationsActDetailsResponseDto, String, Map)}
      */
     @Test
     void testOperationsActDetailsDtoToResponse2() {
         OperationsActDetailsResponseDto operationsActDetailsResponseDto = new OperationsActDetailsResponseDto();
         operationsActDetailsResponseDto.addElementsItem(new OperationActDetailResponseDto());
         OperationsActDetailsResponse actualOperationsActDetailsDtoToResponseResult = notificationInquiryConverter
-                .operationsActDetailsDtoToResponse(operationsActDetailsResponseDto);
+                .operationsActDetailsDtoToResponse(operationsActDetailsResponseDto, "taxId", Map.of("", ""));
         assertEquals(1, actualOperationsActDetailsDtoToResponseResult.getElements().size());
         assertNull(actualOperationsActDetailsDtoToResponseResult.getResult());
     }
 
     /**
-     * Method under test: {@link NotificationInquiryConverter#operationsActDetailsDtoToResponse(OperationsActDetailsResponseDto)}
+     * Method under test: {@link NotificationInquiryConverter#operationsActDetailsDtoToResponse(OperationsActDetailsResponseDto, String, Map)}
      */
     @Test
     void testOperationsActDetailsDtoToResponse3() {
@@ -1620,14 +1619,14 @@ class NotificationInquiryConverterTest {
         ArrayList<OperationActDetailResponseDto> elements = new ArrayList<>();
         operationsActDetailsResponseDto.elements(elements);
         OperationsActDetailsResponse actualOperationsActDetailsDtoToResponseResult = notificationInquiryConverter
-                .operationsActDetailsDtoToResponse(operationsActDetailsResponseDto);
+                .operationsActDetailsDtoToResponse(operationsActDetailsResponseDto, "taxId", Map.of("", ""));
         assertEquals(elements, actualOperationsActDetailsDtoToResponseResult.getElements());
         assertNull(actualOperationsActDetailsDtoToResponseResult.getResult());
     }
 
 
     /**
-     * Method under test: {@link NotificationInquiryConverter#operationsActDetailsDtoToResponse(OperationsActDetailsResponseDto)}
+     * Method under test: {@link NotificationInquiryConverter#operationsActDetailsDtoToResponse(OperationsActDetailsResponseDto, String, Map)}
      */
     @Test
     void testOperationsActDetailsDtoToResponse5() {
@@ -1637,7 +1636,7 @@ class NotificationInquiryConverterTest {
         ArrayList<OperationActDetailResponseDto> operationActDetailResponseDtoList = new ArrayList<>();
         when(operationsActDetailsResponseDto.getElements()).thenReturn(operationActDetailResponseDtoList);
         OperationsActDetailsResponse actualOperationsActDetailsDtoToResponseResult = notificationInquiryConverter
-                .operationsActDetailsDtoToResponse(operationsActDetailsResponseDto);
+                .operationsActDetailsDtoToResponse(operationsActDetailsResponseDto, "taxId", Map.of("", ""));
         assertEquals(operationActDetailResponseDtoList, actualOperationsActDetailsDtoToResponseResult.getElements());
         assertTrue(actualOperationsActDetailsDtoToResponseResult.getResult());
         assertNull(actualOperationsActDetailsDtoToResponseResult.getStatus().getMessage());
@@ -1647,7 +1646,7 @@ class NotificationInquiryConverterTest {
     }
 
     /**
-     * Method under test: {@link NotificationInquiryConverter#operationsActDetailsDtoToResponse(OperationsActDetailsResponseDto)}
+     * Method under test: {@link NotificationInquiryConverter#operationsActDetailsDtoToResponse(OperationsActDetailsResponseDto, String, Map)}
      */
     @Test
     void testOperationsActDetailsDtoToResponse6() {
@@ -1660,7 +1659,7 @@ class NotificationInquiryConverterTest {
         ArrayList<OperationActDetailResponseDto> operationActDetailResponseDtoList = new ArrayList<>();
         when(operationsActDetailsResponseDto.getElements()).thenReturn(operationActDetailResponseDtoList);
         OperationsActDetailsResponse actualOperationsActDetailsDtoToResponseResult = notificationInquiryConverter
-                .operationsActDetailsDtoToResponse(operationsActDetailsResponseDto);
+                .operationsActDetailsDtoToResponse(operationsActDetailsResponseDto, "taxId", Map.of("", ""));
         assertEquals(operationActDetailResponseDtoList, actualOperationsActDetailsDtoToResponseResult.getElements());
         assertTrue(actualOperationsActDetailsDtoToResponseResult.getResult());
         OperationResponseStatus status = actualOperationsActDetailsDtoToResponseResult.getStatus();
@@ -1674,7 +1673,7 @@ class NotificationInquiryConverterTest {
     }
 
     /**
-     * Method under test: {@link NotificationInquiryConverter#operationsActDetailsDtoToResponse(OperationsActDetailsResponseDto)}
+     * Method under test: {@link NotificationInquiryConverter#operationsActDetailsDtoToResponse(OperationsActDetailsResponseDto, String, Map)}
      */
     @Test
     void testOperationsActDetailsDtoToResponse7() {
@@ -1689,7 +1688,7 @@ class NotificationInquiryConverterTest {
         when(operationsActDetailsResponseDto.getResult()).thenReturn(true);
         when(operationsActDetailsResponseDto.getElements()).thenReturn(operationActDetailResponseDtoList);
         OperationsActDetailsResponse actualOperationsActDetailsDtoToResponseResult = notificationInquiryConverter
-                .operationsActDetailsDtoToResponse(operationsActDetailsResponseDto);
+                .operationsActDetailsDtoToResponse(operationsActDetailsResponseDto, "taxId", Map.of("", ""));
         assertEquals(1, actualOperationsActDetailsDtoToResponseResult.getElements().size());
         assertTrue(actualOperationsActDetailsDtoToResponseResult.getResult());
         OperationResponseStatus status = actualOperationsActDetailsDtoToResponseResult.getStatus();
@@ -1703,7 +1702,7 @@ class NotificationInquiryConverterTest {
     }
 
     /**
-     * Method under test: {@link NotificationInquiryConverter#operationsActDetailsDtoToResponse(OperationsActDetailsResponseDto)}
+     * Method under test: {@link NotificationInquiryConverter#operationsActDetailsDtoToResponse(OperationsActDetailsResponseDto, String, Map)}
      */
     @Test
     void testOperationsActDetailsDtoToResponse8() {
@@ -1719,7 +1718,7 @@ class NotificationInquiryConverterTest {
         when(operationsActDetailsResponseDto.getResult()).thenReturn(true);
         when(operationsActDetailsResponseDto.getElements()).thenReturn(operationActDetailResponseDtoList);
         OperationsActDetailsResponse actualOperationsActDetailsDtoToResponseResult = notificationInquiryConverter
-                .operationsActDetailsDtoToResponse(operationsActDetailsResponseDto);
+                .operationsActDetailsDtoToResponse(operationsActDetailsResponseDto, "taxId", Map.of("", ""));
         assertEquals(2, actualOperationsActDetailsDtoToResponseResult.getElements().size());
         assertTrue(actualOperationsActDetailsDtoToResponseResult.getResult());
         OperationResponseStatus status = actualOperationsActDetailsDtoToResponseResult.getStatus();
@@ -1734,7 +1733,7 @@ class NotificationInquiryConverterTest {
 
 
     /**
-     * Method under test: {@link NotificationInquiryConverter#operationsActDetailsDtoToResponse(OperationsActDetailsResponseDto)}
+     * Method under test: {@link NotificationInquiryConverter#operationsActDetailsDtoToResponse(OperationsActDetailsResponseDto, String, Map)}
      */
     @Test
     void testOperationsActDetailsDtoToResponse10() {
@@ -1765,7 +1764,7 @@ class NotificationInquiryConverterTest {
         when(operationsActDetailsResponseDto.getResult()).thenReturn(true);
         when(operationsActDetailsResponseDto.getElements()).thenReturn(operationActDetailResponseDtoList);
         OperationsActDetailsResponse actualOperationsActDetailsDtoToResponseResult = notificationInquiryConverter
-                .operationsActDetailsDtoToResponse(operationsActDetailsResponseDto);
+                .operationsActDetailsDtoToResponse(operationsActDetailsResponseDto, "taxId", Map.of("", ""));
         assertEquals(1, actualOperationsActDetailsDtoToResponseResult.getElements().size());
         assertTrue(actualOperationsActDetailsDtoToResponseResult.getResult());
         OperationResponseStatus status = actualOperationsActDetailsDtoToResponseResult.getStatus();
@@ -1776,7 +1775,7 @@ class NotificationInquiryConverterTest {
         verify(operationsActDetailsResponseDto, atLeast(1)).getElements();
         verify(operationResponseStatusDto, atLeast(1)).getCode();
         verify(operationResponseStatusDto).getMessage();
-        verify(operationActDetailResponseDto).getDelegateTaxId();
+        verify(operationActDetailResponseDto, times(2)).getDelegateTaxId();
         verify(operationActDetailResponseDto).getErrorReason();
         verify(operationActDetailResponseDto).getFileKey();
         verify(operationActDetailResponseDto).getIun();
@@ -1784,7 +1783,6 @@ class NotificationInquiryConverterTest {
         verify(operationActDetailResponseDto).getOperationStatus();
         verify(operationActDetailResponseDto).getOperationType();
         verify(operationActDetailResponseDto).getQrCode();
-        verify(operationActDetailResponseDto).getRecipientTaxId();
         verify(operationActDetailResponseDto).getRecipientType();
         verify(operationActDetailResponseDto).getUid();
         verify(operationActDetailResponseDto, atLeast(1)).getOperationEndDate();
