@@ -11,10 +11,7 @@ public class MaskDataUtils {
 
     private static final Pattern URI_TAX_ID_1 = Pattern.compile("(recipientTaxId)=([^&]*)");
     private static final Pattern URI_TAX_ID_2 = Pattern.compile("(/by-internalId/)([^-]{2}(?!-).*)");
-
-
-    private static final Pattern DATA_VAULT_ANONYMIZATION_TAX_ID = Pattern.compile("()(^(?!\\{|PG-|PF-).*)");
-
+    private static final Pattern DATA_VAULT_ANONYMIZATION_TAX_ID = Pattern.compile("(^)(^(?!\\{|PG-|PF-).*)");
     private static final Pattern BODY_TAX_ID = Pattern.compile("(\"recipientTaxId\"|\"delegateTaxId\")\\s*:\\s*\"(.*?)\"");
 
     public static String maskUri (String data) {
@@ -70,5 +67,4 @@ public class MaskDataUtils {
         String sbMaskString = maskChar.repeat(Math.max(0, maskLength));
         return strText.substring(0, start) + sbMaskString + strText.substring(start + maskLength);
     }
-
 }
