@@ -97,7 +97,12 @@ public class NotificationInquiryService {
     public Mono<OperationActResponse> getActTransactionByOperationId(String operationId) {
         return pnRaddFsuClient.getActTransactionByOperationId(operationId)
                 .flatMap(operationActResponseDto -> Mono.just(taxIdsActMapBuilder(operationActResponseDto))
-                        .flatMap(dataVaultService::getRecipientDenominationByInternalId)
+                        .flatMap(v -> {
+                            if(v.isEmpty()) {
+                                return Mono.just(v);
+                            }
+                            return dataVaultService.getRecipientDenominationByInternalId(v);
+                        })
                         .map(deanonymizedTaxIds -> Tuples.of(operationActResponseDto, deanonymizedTaxIds)))
                 .map(resultToFinalConverter -> notificationInquiryConverter.operationActDtoToResponse(resultToFinalConverter.getT1(), resultToFinalConverter.getT2()));
     }
@@ -183,7 +188,12 @@ public class NotificationInquiryService {
     public Mono<OperationAorResponse> getAorTransactionByOperationId(String operationId) {
         return pnRaddFsuClient.getAorTransactionByOperationId(operationId)
                 .flatMap(operationAorResponseDto -> Mono.just(taxIdsAorMapBuilder(operationAorResponseDto))
-                        .flatMap(dataVaultService::getRecipientDenominationByInternalId)
+                        .flatMap(v -> {
+                            if(v.isEmpty()) {
+                                return Mono.just(v);
+                            }
+                            return dataVaultService.getRecipientDenominationByInternalId(v);
+                        })
                         .map(deanonymizedTaxIds -> Tuples.of(operationAorResponseDto, deanonymizedTaxIds)))
                 .map(resultToFinalConverter -> notificationInquiryConverter.operationAorDtoToResponse(resultToFinalConverter.getT1(), resultToFinalConverter.getT2()));
     }

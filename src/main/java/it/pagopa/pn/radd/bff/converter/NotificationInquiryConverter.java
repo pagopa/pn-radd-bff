@@ -220,13 +220,13 @@ public class NotificationInquiryConverter {
                 operationAorDetailResponse.setOperationStartDate(new Date(operationAorDetailResponseDto.getOperationStartDate().toInstant().toEpochMilli()));
 
             operationAorResponse.setElement(operationAorDetailResponse);
-            OperationResponseStatusDto operationResponseStatusDto = operationAorResponseDto.getStatus();
-            if (operationResponseStatusDto != null) {
-                if (operationResponseStatusDto.getCode() != null) {
-                    operationResponseStatus.setCode(OperationResponseStatus.CodeEnum.fromValue(operationResponseStatusDto.getCode().getValue()));
-                }
-                operationResponseStatus.setMessage(operationResponseStatusDto.getMessage());
+        }
+        OperationResponseStatusDto operationResponseStatusDto = operationAorResponseDto.getStatus();
+        if (operationResponseStatusDto != null) {
+            if (operationResponseStatusDto.getCode() != null) {
+                operationResponseStatus.setCode(OperationResponseStatus.CodeEnum.fromValue(operationResponseStatusDto.getCode().getValue()));
             }
+            operationResponseStatus.setMessage(operationResponseStatusDto.getMessage());
         }
         operationAorResponse.setStatus(operationResponseStatus);
         operationAorResponse.setResult(operationAorResponseDto.getResult());
@@ -263,13 +263,13 @@ public class NotificationInquiryConverter {
                 operationActDetailResponse.setOperationStartDate(new Date(operationActDetailResponseDto.getOperationStartDate().toInstant().toEpochMilli()));
 
             operationActResponse.setElement(operationActDetailResponse);
-            OperationResponseStatusDto operationResponseStatusDto = operationActResponseDto.getStatus();
-            if (operationResponseStatusDto != null) {
-                if (operationResponseStatusDto.getCode() != null) {
-                    operationResponseStatus.setCode(OperationResponseStatus.CodeEnum.fromValue(operationResponseStatusDto.getCode().getValue()));
-                }
-                operationResponseStatus.setMessage(operationResponseStatusDto.getMessage());
+        }
+        OperationResponseStatusDto operationResponseStatusDto = operationActResponseDto.getStatus();
+        if (operationResponseStatusDto != null) {
+            if (operationResponseStatusDto.getCode() != null) {
+                operationResponseStatus.setCode(OperationResponseStatus.CodeEnum.fromValue(operationResponseStatusDto.getCode().getValue()));
             }
+            operationResponseStatus.setMessage(operationResponseStatusDto.getMessage());
         }
         operationActResponse.setStatus(operationResponseStatus);
         operationActResponse.setResult(operationActResponseDto.getResult());

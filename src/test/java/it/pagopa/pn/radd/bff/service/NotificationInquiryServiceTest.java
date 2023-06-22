@@ -477,6 +477,24 @@ class NotificationInquiryServiceTest {
 				.expectNext(operationActResponse)
 				.verifyComplete();
 	}
+
+	@Test
+	void testGetActTransactionByOperationId2 () {
+		// Arrange
+		OperationActResponseDto operationActResponseDto = new OperationActResponseDto();
+		operationActResponseDto.setResult(true);
+
+		when(pnRaddFsuClient.getActTransactionByOperationId(any())).thenReturn(Mono.just(operationActResponseDto));
+
+		OperationActResponse operationActResponse = new OperationActResponse();
+		operationActResponse.setResult(true);
+
+		when(notificationInquiryConverter.operationActDtoToResponse(any(), any())).thenReturn(operationActResponse);
+
+		StepVerifier.create(notificationInquiryService.getActTransactionByOperationId("42"))
+				.expectNext(operationActResponse)
+				.verifyComplete();
+	}
 	@Test
 	void testGetAorTransactionByOperationId2 () {
 		// Arrange
@@ -522,6 +540,24 @@ class NotificationInquiryServiceTest {
 		operationAorDetailResponse.setUid("uid");
 		operationAorDetailResponse.setQrCode("qrCode");
 		operationAorResponse.setElement(operationAorDetailResponse);
+
+		when(notificationInquiryConverter.operationAorDtoToResponse(any(), any())).thenReturn(operationAorResponse);
+
+		StepVerifier.create(notificationInquiryService.getAorTransactionByOperationId("42"))
+				.expectNext(operationAorResponse)
+				.verifyComplete();
+	}
+
+	@Test
+	void testGetAorTransactionByOperationId3 () {
+		// Arrange
+		OperationAorResponseDto operationAorResponseDto = new OperationAorResponseDto();
+		operationAorResponseDto.setResult(true);
+
+		when(pnRaddFsuClient.getAorTransactionByOperationId(any())).thenReturn(Mono.just(operationAorResponseDto));
+
+		OperationAorResponse operationAorResponse = new OperationAorResponse();
+		operationAorResponse.setResult(true);
 
 		when(notificationInquiryConverter.operationAorDtoToResponse(any(), any())).thenReturn(operationAorResponse);
 
