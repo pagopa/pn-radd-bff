@@ -11,9 +11,18 @@ Per avviare in locale il mockserver utilizzare il comando `docker-compose mockse
 ## Mock-server configuration
 
 La configurazione del mock server è fatta tramite file json nella cartella _config/Mockserver/mock_rest_configs_.
+#### Postman_Environment
+
+{{BASE_PATH}}: http://localhost:8080
+
+Le environment sono presenti nella cartella _config/Mockserver/postman_environment.
+Per utilizzare un environment bisogna importarlo in postman e selezionarlo.
 
 ### Mock per RADD
 
+#### Path
+Il path /radd-private/api/v1/.. punta a radd-fsu mockato.
+Il path /radd-web/.. punta al radd-bff.
 
 #### actDocumentInquiry
 
@@ -311,17 +320,17 @@ Path: `/radd-web/act/operations/by-internalId/{internalId}`
 
 Use cases:
 
-| InternalId                              | Status Code | Valido                    |
-|-----------------------------------------|-------------|---------------------------|
-| PF-06c64ca7-8b20-4b7f-9b6a-11f91315b89c | 401         |                           |
-| PF-1f994c71-e5d5-4e5c-a9a9-23ebad4d30d2 | 400         |                           |
-| PG-4fa4e3a8-19f2-46e3-ba81-9f1aebbc44ec | 405         |                           |
-| PF-5c584ee7-09e8-4027-b1f9-c19a9a8e79b1 | 403         |                           |
-| PG-81a2f2dc-5109-4659-b9a8-8e52ce89a03a | 404         |                           |
-| PF-a5068d34-2677-4bfa-b0b9-945f0d37d7c5 | 500         |                           |
-| TNTGTR76E21H751S                        | 200         | OK                        |
-| RFRGRZ66E21H751B                        | 200         | KO                        |
-| GTAMRC01P30L736Y                        | 200         | Nessun Elemento Associato |
+| InternalId          | Status Code | Valido                    |
+|---------------------|-------------|---------------------------|
+| PF-RSSMRA80A01H501X | 401         |                           |
+| PF-BNCMRA79R03A944W | 400         |                           |
+| PG-FRRPLA92C65G923D | 405         |                           |
+| PF-VRNGPP85M45F839C | 403         |                           |
+| PG-BLLFBA81T06H703L | 404         |                           |
+| PF-MRCGPP75R51C921F | 500         |                           |
+| PF-TNTGTR76E21H751S | 200         | OK                        |
+| PF-RFRGRZ66E21H751B | 200         | KO                        |
+| PF-GTAMRC01P30L736Y | 200         | Nessun Elemento Associato |
 
 ### operationsAorDetails
 
@@ -330,17 +339,17 @@ Path: `/radd-web/aor/operations/by-internalId/{internalId}`
 
 Use cases:
 
-| InternalId                              | Status Code | Valido                    |
-|-----------------------------------------|-------------|---------------------------|
-| PF-06c64ca7-8b20-4b7f-9b6a-11f91315b89c | 401         |                           |
-| PF-1f994c71-e5d5-4e5c-a9a9-23ebad4d30d2 | 400         |                           |
-| PG-4fa4e3a8-19f2-46e3-ba81-9f1aebbc44ec | 405         |                           |
-| PF-5c584ee7-09e8-4027-b1f9-c19a9a8e79b1 | 403         |                           |
-| PG-81a2f2dc-5109-4659-b9a8-8e52ce89a03a | 404         |                           |
-| PF-a5068d34-2677-4bfa-b0b9-945f0d37d7c5 | 500         |                           |
-| TNTGTR76E21H751S                        | 200         | OK                        |
-| RFRGRZ66E21H751B                        | 200         | KO                        |
-| GTAMRC01P30L736Y                        | 200         | Nessun Elemento Associato |
+| InternalId          | Status Code | Valido                    |
+|---------------------|-------------|---------------------------|
+| PF-RSSMRA80A01H501X | 401         |                           |
+| PF-BNCMRA79R03A944W | 400         |                           |
+| PG-FRRPLA92C65G923D | 405         |                           |
+| PF-VRNGPP85M45F839C | 403         |                           |
+| PG-BLLFBA81T06H703L | 404         |                           |
+| PF-MRCGPP75R51C921F | 500         |                           |
+| PF-TNTGTR76E21H751S | 200         | OK                        |
+| PF-RFRGRZ66E21H751B | 200         | KO                        |
+| PF-GTAMRC01P30L736Y | 200         | Nessun Elemento Associato |
 
 ### document-ready
 

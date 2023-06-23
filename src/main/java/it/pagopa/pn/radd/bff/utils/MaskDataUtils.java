@@ -11,6 +11,9 @@ public class MaskDataUtils {
 
     private static final Pattern URI_TAX_ID_1 = Pattern.compile("(recipientTaxId)=([^&]*)");
     private static final Pattern URI_TAX_ID_2 = Pattern.compile("(/by-internalId/)([^-]{2}(?!-).*)");
+    private static final Pattern URI_DATA_VAULT = Pattern.compile("(/internal\\?internalId)=(.*)");
+    private static final Pattern DATA_VAULT_JSON_RESPONSE_1 = Pattern.compile("(\"taxId\"\\s*:\\s*\")(.*?)(\")");
+    private static final Pattern DATA_VAULT_JSON_RESPONSE_2 = Pattern.compile("(\"internalId\"\\s*:\\s*\")(.*?)(\")");
     private static final Pattern DATA_VAULT_ANONYMIZATION_TAX_ID = Pattern.compile("(^)(^(?!\\{|PG-|PF-).*)");
     private static final Pattern BODY_TAX_ID = Pattern.compile("(\"recipientTaxId\"|\"delegateTaxId\")\\s*:\\s*\"(.*?)\"");
 
@@ -20,6 +23,7 @@ public class MaskDataUtils {
         }
         data = maskMatcher(URI_TAX_ID_2, data);
         data = maskMatcher(URI_TAX_ID_1, data);
+        data = maskMatcher(URI_DATA_VAULT, data);
 
         return data;
     }
@@ -29,6 +33,8 @@ public class MaskDataUtils {
         }
         data = maskMatcher(DATA_VAULT_ANONYMIZATION_TAX_ID, data);
         data = maskMatcher(BODY_TAX_ID, data);
+        data = maskMatcher(DATA_VAULT_JSON_RESPONSE_1, data);
+        data = maskMatcher(DATA_VAULT_JSON_RESPONSE_2, data);
 
         return data;
     }
