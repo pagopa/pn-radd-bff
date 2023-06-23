@@ -6,11 +6,13 @@ da utilizzare in ambienti di test o per mimare il servizio reale prima che quest
 Documentazione su https://www.mock-server.com/
 
 ## Avviare il mock-sever in locale
+
 Per avviare in locale il mockserver utilizzare il comando `docker-compose mockserver up`
 
 ## Mock-server configuration
 
 La configurazione del mock server è fatta tramite file json nella cartella _config/Mockserver/mock_rest_configs_.
+
 #### Postman_Environment
 
 {{BASE_PATH}}: http://localhost:8080
@@ -21,6 +23,7 @@ Per utilizzare un environment bisogna importarlo in postman e selezionarlo.
 ### Mock per RADD
 
 #### Path
+
 Il path /radd-private/api/v1/.. punta a radd-fsu mockato.
 Il path /radd-web/.. punta al radd-bff.
 
@@ -53,7 +56,7 @@ Use cases:
 | DAMMRC01P30L736Y | 200         | OK (abortTransaction Transazione Già Completata)    |
 | RADMRC01P30L736Y | 200         | OK (abortTransaction 500)                           |
 | LNALNI80A01H501T | 200         | QrCode/CF non valido/i                              |
- | PPPPLT80A01H501V | 200         | Documenti non più disponibili                       | 
+| PPPPLT80A01H501V | 200         | Documenti non più disponibili                       | 
 | BSTGNN80A01F839X | 200         | Stampa già eseguita                                 |
 | BLOMRC01P30L736Y | 200         | KO                                                  |
 
@@ -85,7 +88,6 @@ Use cases:
 | ZTLMRC01P30L736Y | 200         | OK (abortTransaction Transazione Inesistente)       |
 | DAMMRC01P30L736Y | 200         | OK (abortTransaction Transazione Già Completata)    |
 | RADMRC01P30L736Y | 200         | OK (abortTransaction 500)                           |
-
 
 ### documentUpload
 
@@ -171,6 +173,7 @@ Use cases:
 | 8ed10442-e511-11ed-b5ea-0242ac120002 | 200         | Transazione già completata |
 
 ## aorTransactionManagement
+
 ### startTransaction
 
 Path: `/radd-private/api/v1/aor/transaction/start`
@@ -235,8 +238,8 @@ Use cases:
 | 8ed1024e-e511-11ed-b5ea-0242ac120002 | 200         | Transazione inesistente    |
 | 8ed10442-e511-11ed-b5ea-0242ac120002 | 200         | Transazione già completata |
 
-
 ## notificationInquiry
+
 ### operationAct
 
 Path: `/radd-private/api/v1/act/operations/by-id/{operationId}`
@@ -244,17 +247,17 @@ Path: `/radd-web/act/operations/by-id/{operationId}`
 
 Use cases:
 
-| operationId                      | Status Code | Valido                     |
-|----------------------------------|-------------|----------------------------|
-| 76d9a1f225f24c24a05e00a0d9a9aaba | 401         |                            |
-| 2c12e95533d0444991e8f18bb232a44b | 400         |                            |
-| 4926a0b4c4fc4d4f9a5bc5e5f5aefb47 | 403         |                            |
-| 95150da94bc24a52a839628d9f9c37d8 | 404         |                            |
-| 12550da94bc24a52a839628d9f9c37d8 | 405         |                            |
-| 9415a0b4c4fc4d4f9a5bc5e5f5aefb47 | 500         |                            |
-| 2bb5c29e0cf411ed861d0242ac120002 | 200         | OK                         |
-| 67d8a1f225f24c13a05e00a0d8a8aaba | 200         | KO                         |
-| 78c1f2769c8e4ba084a62e778a143d67 | 200         | Nessun elemento associato  |
+| operationId                      | Status Code | Valido                    |
+|----------------------------------|-------------|---------------------------|
+| 76d9a1f225f24c24a05e00a0d9a9aaba | 401         |                           |
+| 2c12e95533d0444991e8f18bb232a44b | 400         |                           |
+| 4926a0b4c4fc4d4f9a5bc5e5f5aefb47 | 403         |                           |
+| 95150da94bc24a52a839628d9f9c37d8 | 404         |                           |
+| 12550da94bc24a52a839628d9f9c37d8 | 405         |                           |
+| 9415a0b4c4fc4d4f9a5bc5e5f5aefb47 | 500         |                           |
+| 2bb5c29e0cf411ed861d0242ac120002 | 200         | OK                        |
+| 67d8a1f225f24c13a05e00a0d8a8aaba | 200         | KO                        |
+| 78c1f2769c8e4ba084a62e778a143d67 | 200         | Nessun elemento associato |
 
 ### operationAor
 
@@ -263,17 +266,17 @@ Path: `/radd-web/aor/operations/by-id/{operationId}`
 
 Use cases:
 
-| operationId                      | Status Code | Valido                     |
-|----------------------------------|-------------|----------------------------|
-| 76d9a1f225f24c24a05e00a0d9a9aaba | 401         |                            |
-| 2c12e95533d0444991e8f18bb232a44b | 400         |                            |
-| 4926a0b4c4fc4d4f9a5bc5e5f5aefb47 | 403         |                            |
-| 95150da94bc24a52a839628d9f9c37d8 | 404         |                            |
-| 12550da94bc24a52a839628d9f9c37d8 | 405         |                            |
-| 9415a0b4c4fc4d4f9a5bc5e5f5aefb47 | 500         |                            |
-| 2bb5c29e0cf411ed861d0242ac120002 | 200         | OK                         |
-| 67d8a1f225f24c13a05e00a0d8a8aaba | 200         | KO                         |
-| 78c1f2769c8e4ba084a62e778a143d67 | 200         | Nessun elemento associato  |
+| operationId                      | Status Code | Valido                    |
+|----------------------------------|-------------|---------------------------|
+| 76d9a1f225f24c24a05e00a0d9a9aaba | 401         |                           |
+| 2c12e95533d0444991e8f18bb232a44b | 400         |                           |
+| 4926a0b4c4fc4d4f9a5bc5e5f5aefb47 | 403         |                           |
+| 95150da94bc24a52a839628d9f9c37d8 | 404         |                           |
+| 12550da94bc24a52a839628d9f9c37d8 | 405         |                           |
+| 9415a0b4c4fc4d4f9a5bc5e5f5aefb47 | 500         |                           |
+| 2bb5c29e0cf411ed861d0242ac120002 | 200         | OK                        |
+| 67d8a1f225f24c13a05e00a0d8a8aaba | 200         | KO                        |
+| 78c1f2769c8e4ba084a62e778a143d67 | 200         | Nessun elemento associato |
 
 ### operationsAct
 
@@ -318,7 +321,7 @@ Use cases:
 Path: `/radd-private/api/v1/act/operations/by-internalId/{internalId}`
 Path: `/radd-web/act/operations/by-internalId/{internalId}`
 
-Use cases:
+Use cases for pn-radd-fsu:
 
 | InternalId          | Status Code | Valido                    |
 |---------------------|-------------|---------------------------|
@@ -331,18 +334,32 @@ Use cases:
 | PF-TNTGTR76E21H751S | 200         | OK                        |
 | PF-RFRGRZ66E21H751B | 200         | KO                        |
 | PF-GTAMRC01P30L736Y | 200         | Nessun Elemento Associato |
+
+Use cases for pn-radd-bff:
+
+| InternalId       | Status Code | Valido                    |
+|------------------|-------------|---------------------------|
+| RSSMRA80A01H501X | 401         |                           |
+| BNCMRA79R03A944W | 400         |                           |
+| FRRPLA92C65G923D | 405         |                           |
+| VRNGPP85M45F839C | 403         |                           |
+| BLLFBA81T06H703L | 404         |                           |
+| MRCGPP75R51C921F | 500         |                           |
+| TNTGTR76E21H751S | 200         | OK                        |
+| RFRGRZ66E21H751B | 200         | KO                        |
+| GTAMRC01P30L736Y | 200         | Nessun Elemento Associato |
 
 ### operationsAorDetails
 
 Path: `/radd-private/api/v1/aor/operations/by-internalId/{internalId}`
 Path: `/radd-web/aor/operations/by-internalId/{internalId}`
 
-Use cases:
+Use cases for pn-radd-fsu:
 
 | InternalId          | Status Code | Valido                    |
 |---------------------|-------------|---------------------------|
 | PF-RSSMRA80A01H501X | 401         |                           |
-| PF-BNCMRA79R03A944W | 400         |                           |
+| PF-RSSPLA83L41D761G | 400         |                           |
 | PG-FRRPLA92C65G923D | 405         |                           |
 | PF-VRNGPP85M45F839C | 403         |                           |
 | PG-BLLFBA81T06H703L | 404         |                           |
@@ -350,6 +367,20 @@ Use cases:
 | PF-TNTGTR76E21H751S | 200         | OK                        |
 | PF-RFRGRZ66E21H751B | 200         | KO                        |
 | PF-GTAMRC01P30L736Y | 200         | Nessun Elemento Associato |
+
+Use cases for pn-radd-bff:
+
+| InternalId       | Status Code | Valido                    |
+|------------------|-------------|---------------------------|
+| RSSMRA80A01H501X | 401         |                           |
+| RSSPLA83L41D761G | 400         |                           |
+| FRRPLA92C65G923D | 405         |                           |
+| VRNGPP85M45F839C | 403         |                           |
+| BLLFBA81T06H703L | 404         |                           |
+| MRCGPP75R51C921F | 500         |                           |
+| TNTGTR76E21H751S | 200         | OK                        |
+| RFRGRZ66E21H751B | 200         | KO                        |
+| GTAMRC01P30L736Y | 200         | Nessun Elemento Associato |
 
 ### document-ready
 
@@ -359,7 +390,5 @@ Use cases:
 
 | fileKey                                                     | Status Code | Valido |
 |-------------------------------------------------------------|-------------|--------|
-| PN_RADD_FSU_ATTACHMENT-21703b4070084bb5b79662abd5fec424.zip | 500         |        |
-| PN_RADD_FSU_ATTACHMENT-22703b4070084bb5b79662abd5fec424.zip | 404         |        |
 | PN_RADD_FSU_ATTACHMENT-19703b4070084bb5b79662abd5fec424.zip | 200         | OK     |
 | PN_RADD_FSU_ATTACHMENT-20703b4070084bb5b79662abd5fec424.zip | 200         | KO     |

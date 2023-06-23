@@ -19,9 +19,9 @@
             "operationId": "asd1234",
             "fileKey": "FL-23-KKL",
             "qrCode": "FBD",
-            "recipientTaxId": "TNTGTR76E21H751S",
+            "recipientTaxId": "PF-TNTGTR76E21H751S",
             "recipientType": "PF",
-            "delegateTaxId": "RFRGRZ66E21H751B",
+            "delegateTaxId": "PF-RFRGRZ66E21H751B",
             "uid": "uddHHHw123mk",
             "operationStartDate": "2017-07-21T17:32:28Z",
             "operationEndDate": "2017-07-21T18:00:28Z",
@@ -182,9 +182,9 @@
             "operationId": "asd1234",
             "fileKey": "FL-23-KKL",
             "qrCode": "FBD",
-            "recipientTaxId": "TNTGTR76E21H751S",
+            "recipientTaxId": "PF-TNTGTR76E21H751S",
             "recipientType": "PF",
-            "delegateTaxId": "RFRGRZ66E21H751B",
+            "delegateTaxId": "PF-RFRGRZ66E21H751B",
             "uid": "uddHHHw123mk",
             "operationStartDate": "2017-07-21T17:32:28Z",
             "operationEndDate": "2017-07-21T18:00:28Z",
@@ -361,9 +361,7 @@
       "body": {
         "type": "JSON",
         "json": {
-          "operationIds": [
-            "2bb5c29e0cf411ed861d0242ac120002"
-          ],
+          "operationIds":null,
           "result": false,
           "status": {
             "code": 1,
@@ -512,9 +510,7 @@
       "body": {
         "type": "JSON",
         "json": {
-          "operationIds": [
-            "2bb5c29e0cf411ed861d0242ac120002"
-          ],
+          "operationIds":null,
           "result": false,
           "status": {
             "code": 1,
@@ -588,7 +584,7 @@
   },
   {
     "httpRequest": {
-      "method": "POST|DELETE|HEAD",
+      "method": "GET",
       "path": "/radd-private/api/v1/aor/operations/by-iun/{iun}",
       "pathParameters": {
         "iun": "FZEB-JKRA-COGW-202209-I-1"
@@ -630,7 +626,7 @@
       "method": "POST",
       "path": "/radd-private/api/v1/act/operations/by-internalId/{internalId}",
       "pathParameters": {
-        "internalId": "TNTGTR76E21H751S"
+        "internalId": "PF-TNTGTR76E21H751S"
       }
     },
     "httpResponse": {
@@ -646,9 +642,9 @@
               "operationId": "asd1234",
               "fileKey": "FL-23-KKL",
               "qrCode": "FBD",
-              "recipientTaxId": "TNTGTR76E21H751S",
+              "recipientTaxId": "PF-TNTGTR76E21H751S",
               "recipientType": "PF",
-              "delegateTaxId": "RFRGRZ66E21H751B",
+              "delegateTaxId": "PF-RFRGRZ66E21H751B",
               "uid": "uddHHHw123mk",
               "operationStartDate": "2017-07-21T17:32:28Z",
               "operationEndDate": "2017-07-21T18:00:28Z",
@@ -685,9 +681,9 @@
               "operationId": "asd1234",
               "fileKey": "FL-23-KKL",
               "qrCode": "FBD",
-              "recipientTaxId": "TNTGTR76E21H751S",
+              "recipientTaxId": "PF-TNTGTR76E21H751S",
               "recipientType": "PF",
-              "delegateTaxId": "RFRGRZ66E21H751B",
+              "delegateTaxId": "PF-RFRGRZ66E21H751B",
               "uid": "uddHHHw123mk",
               "operationStartDate": "2017-07-21T17:32:28Z",
               "operationEndDate": "2017-07-21T18:00:28Z",
@@ -708,7 +704,7 @@
       "method": "POST",
       "path": "/radd-private/api/v1/act/operations/by-internalId/{internalId}",
       "pathParameters": {
-        "internalId": "RFRGRZ66E21H751B"
+        "internalId": "PF-RFRGRZ66E21H751B"
       }
     },
     "httpResponse": {
@@ -731,7 +727,7 @@
       "method": "POST",
       "path": "/radd-private/api/v1/act/operations/by-internalId/{internalId}",
       "pathParameters": {
-        "internalId": "GTAMRC01P30L736Y"
+        "internalId": "PF-GTAMRC01P30L736Y"
       }
     },
     "httpResponse": {
@@ -754,7 +750,7 @@
       "method": "POST",
       "path": "/radd-private/api/v1/act/operations/by-internalId/{internalId}",
       "pathParameters": {
-        "internalId": "PF-1f994c71-e5d5-4e5c-a9a9-23ebad4d30d2"
+        "internalId": "PF-RSSPLA83L41D761G"
       }
     },
     "httpResponseTemplate": {
@@ -767,7 +763,7 @@
       "method": "POST",
       "path": "/radd-private/api/v1/act/operations/by-internalId/{internalId}",
       "pathParameters": {
-        "internalId": "PF-06c64ca7-8b20-4b7f-9b6a-11f91315b89c"
+        "internalId": "PF-RSSMRA80A01H501X"
       }
     },
     "httpResponseTemplate": {
@@ -780,7 +776,7 @@
       "method": "POST",
       "path": "/radd-private/api/v1/act/operations/by-internalId/{internalId}",
       "pathParameters": {
-        "internalId": "PF-5c584ee7-09e8-4027-b1f9-c19a9a8e79b1"
+        "internalId": "PF-VRNGPP85M45F839C"
       }
     },
     "httpResponseTemplate": {
@@ -793,7 +789,7 @@
       "method": "POST",
       "path": "/radd-private/api/v1/act/operations/by-internalId/{internalId}",
       "pathParameters": {
-        "internalId": "PG-81a2f2dc-5109-4659-b9a8-8e52ce89a03a"
+        "internalId": "PG-BLLFBA81T06H703L"
       }
     },
     "httpResponseTemplate": {
@@ -806,7 +802,7 @@
       "method": "POST",
       "path": "/radd-private/api/v1/act/operations/by-internalId/{internalId}",
       "pathParameters": {
-        "internalId": "PF-a5068d34-2677-4bfa-b0b9-945f0d37d7c5"
+        "internalId": "PF-MRCGPP75R51C921F"
       }
     },
     "httpResponseTemplate": {
@@ -819,7 +815,7 @@
       "method": "GET|DELETE",
       "path": "/radd-private/api/v1/act/operations/by-internalId/{internalId}",
       "pathParameters": {
-        "internalId": "PG-4fa4e3a8-19f2-46e3-ba81-9f1aebbc44ec"
+        "internalId": "PG-FRRPLA92C65G923D"
       }
     },
     "httpResponseTemplate": {
@@ -832,7 +828,7 @@
       "method": "POST",
       "path": "/radd-private/api/v1/aor/operations/by-internalId/{internalId}",
       "pathParameters": {
-        "internalId": "TNTGTR76E21H751S"
+        "internalId": "PF-TNTGTR76E21H751S"
       }
     },
     "httpResponse": {
@@ -850,9 +846,9 @@
               "operationId": "asd1234",
               "fileKey": "FL-23-KKL",
               "qrCode": "FBD",
-              "recipientTaxId": "TNTGTR76E21H751S",
+              "recipientTaxId": "PF-TNTGTR76E21H751S",
               "recipientType": "PF",
-              "delegateTaxId": "RFRGRZ66E21H751B",
+              "delegateTaxId": "PF-RFRGRZ66E21H751B",
               "uid": "uddHHHw123mk",
               "operationStartDate": "2017-07-21T17:32:28Z",
               "operationEndDate": "2017-07-21T18:00:28Z",
@@ -891,9 +887,9 @@
               "operationId": "asd1234",
               "fileKey": "FL-23-KKL",
               "qrCode": "FBD",
-              "recipientTaxId": "TNTGTR76E21H751S",
+              "recipientTaxId": "PF-TNTGTR76E21H751S",
               "recipientType": "PF",
-              "delegateTaxId": "RFRGRZ66E21H751B",
+              "delegateTaxId": "PF-RFRGRZ66E21H751B",
               "uid": "uddHHHw123mk",
               "operationStartDate": "2017-07-21T17:32:28Z",
               "operationEndDate": "2017-07-21T18:00:28Z",
@@ -914,7 +910,7 @@
       "method": "POST",
       "path": "/radd-private/api/v1/aor/operations/by-internalId/{internalId}",
       "pathParameters": {
-        "internalId": "RFRGRZ66E21H751B"
+        "internalId": "PF-RFRGRZ66E21H751B"
       }
     },
     "httpResponse": {
@@ -937,7 +933,7 @@
       "method": "POST",
       "path": "/radd-private/api/v1/aor/operations/by-internalId/{internalId}",
       "pathParameters": {
-        "internalId": "GTAMRC01P30L736Y"
+        "internalId": "PF-GTAMRC01P30L736Y"
       }
     },
     "httpResponse": {
@@ -960,7 +956,7 @@
       "method": "POST",
       "path": "/radd-private/api/v1/aor/operations/by-internalId/{internalId}",
       "pathParameters": {
-        "internalId": "PF-1f994c71-e5d5-4e5c-a9a9-23ebad4d30d2"
+        "internalId": "PF-RSSPLA83L41D761G"
       }
     },
     "httpResponseTemplate": {
@@ -973,7 +969,7 @@
       "method": "POST",
       "path": "/radd-private/api/v1/aor/operations/by-internalId/{internalId}",
       "pathParameters": {
-        "internalId": "PF-06c64ca7-8b20-4b7f-9b6a-11f91315b89c"
+        "internalId": "PF-RSSMRA80A01H501X"
       }
     },
     "httpResponseTemplate": {
@@ -986,7 +982,7 @@
       "method": "POST",
       "path": "/radd-private/api/v1/aor/operations/by-internalId/{internalId}",
       "pathParameters": {
-        "internalId": "PF-5c584ee7-09e8-4027-b1f9-c19a9a8e79b1"
+        "internalId": "PF-VRNGPP85M45F839C"
       }
     },
     "httpResponseTemplate": {
@@ -999,7 +995,7 @@
       "method": "POST",
       "path": "/radd-private/api/v1/aor/operations/by-internalId/{internalId}",
       "pathParameters": {
-        "internalId": "PG-81a2f2dc-5109-4659-b9a8-8e52ce89a03a"
+        "internalId": "PG-BLLFBA81T06H703L"
       }
     },
     "httpResponseTemplate": {
@@ -1012,7 +1008,7 @@
       "method": "POST",
       "path": "/radd-private/api/v1/aor/operations/by-internalId/{internalId}",
       "pathParameters": {
-        "internalId": "PF-a5068d34-2677-4bfa-b0b9-945f0d37d7c5"
+        "internalId": "PF-MRCGPP75R51C921F"
       }
     },
     "httpResponseTemplate": {
@@ -1025,7 +1021,7 @@
       "method": "GET|DELETE",
       "path": "/radd-private/api/v1/aor/operations/by-internalId/{internalId}",
       "pathParameters": {
-        "internalId": "PG-4fa4e3a8-19f2-46e3-ba81-9f1aebbc44ec"
+        "internalId": "PG-FRRPLA92C65G923D"
       }
     },
     "httpResponseTemplate": {
