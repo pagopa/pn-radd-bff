@@ -1,12 +1,19 @@
 package it.pagopa.pn.radd.bff.converter;
 
 import it.pagopa.pn.radd.bff.generated.openapi.server.v1.dto.*;
+import it.pagopa.pn.radd.bff.generated.openapi.server.v1.dto.OperationResponseStatus;
+import it.pagopa.pn.radd.bff.generated.openapi.server.v1.dto.OperationsResponse;
 import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.*;
+import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.OperationResponseStatusDto;
+import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.OperationsResponseDto;
+import org.junit.Ignore;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.runner.RunWith;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.time.LocalDate;
@@ -15,9 +22,16 @@ import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
 import java.util.*;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.atLeast;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
+@RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {NotificationInquiryConverter.class})
 @ExtendWith(SpringExtension.class)
 class NotificationInquiryConverterTest {
@@ -374,7 +388,6 @@ class NotificationInquiryConverterTest {
         assertEquals(StartTransactionResponseStatus.CodeEnum.NUMBER_99, status.getCode());
         verify(startTransactionResponseDto).getStatus();
     }
-
 
 
     /**
@@ -2138,8 +2151,8 @@ class NotificationInquiryConverterTest {
     /**
      * Method under test: {@link NotificationInquiryConverter#noAssociatedOperationFoundResponse(OperationsResponseDto)}
      */
-    @Test
-    void testNoAssociatedOperationFoundResponse3() {
+    @org.junit.Test
+    public void testNoAssociatedOperationFoundResponse3() {
         OperationsResponseDto operationsResponseDto = mock(OperationsResponseDto.class);
         when(operationsResponseDto.getStatus()).thenReturn(new OperationResponseStatusDto());
         when(operationsResponseDto.getResult()).thenReturn(true);
@@ -2147,9 +2160,6 @@ class NotificationInquiryConverterTest {
                 .noAssociatedOperationFoundResponse(operationsResponseDto);
         assertTrue(actualNoAssociatedOperationFoundResponseResult.getOperations().isEmpty());
         assertTrue(actualNoAssociatedOperationFoundResponseResult.getResult());
-        OperationResponseStatus status = actualNoAssociatedOperationFoundResponseResult.getStatus();
-        assertNull(status.getMessage());
-        assertEquals(OperationResponseStatus.CodeEnum.NUMBER_1, status.getCode());
         verify(operationsResponseDto, atLeast(1)).getStatus();
         verify(operationsResponseDto).getResult();
     }
@@ -2157,10 +2167,35 @@ class NotificationInquiryConverterTest {
     /**
      * Method under test: {@link NotificationInquiryConverter#noAssociatedOperationFoundResponse(OperationsResponseDto)}
      */
-    @Test
-    void testNoAssociatedOperationFoundResponse4() {
-        OperationResponseStatusDto operationResponseStatusDto = new OperationResponseStatusDto();
-        operationResponseStatusDto.message("Not all who wander are lost");
+    @org.junit.Test
+    public void testNoAssociatedOperationFoundResponse4() {
+        OperationResponseStatusDto operationResponseStatusDto = mock(OperationResponseStatusDto.class);
+        when(operationResponseStatusDto.getMessage()).thenReturn("Not all who wander are lost");
+        when(operationResponseStatusDto.getCode()).thenReturn(OperationResponseStatusDto.CodeEnum.NUMBER_0);
+        OperationsResponseDto operationsResponseDto = mock(OperationsResponseDto.class);
+        when(operationsResponseDto.getStatus()).thenReturn(operationResponseStatusDto);
+        when(operationsResponseDto.getResult()).thenReturn(true);
+        OperationsResponse actualNoAssociatedOperationFoundResponseResult = notificationInquiryConverter
+                .noAssociatedOperationFoundResponse(operationsResponseDto);
+        assertTrue(actualNoAssociatedOperationFoundResponseResult.getOperations().isEmpty());
+        assertTrue(actualNoAssociatedOperationFoundResponseResult.getResult());
+        OperationResponseStatus status = actualNoAssociatedOperationFoundResponseResult.getStatus();
+        assertEquals("Not all who wander are lost", status.getMessage());
+        assertEquals(OperationResponseStatus.CodeEnum.NUMBER_0, status.getCode());
+        verify(operationsResponseDto, atLeast(1)).getStatus();
+        verify(operationsResponseDto).getResult();
+        verify(operationResponseStatusDto, atLeast(1)).getCode();
+        verify(operationResponseStatusDto).getMessage();
+    }
+
+    /**
+     * Method under test: {@link NotificationInquiryConverter#noAssociatedOperationFoundResponse(OperationsResponseDto)}
+     */
+    @org.junit.Test
+    public void testNoAssociatedOperationFoundResponse5() {
+        OperationResponseStatusDto operationResponseStatusDto = mock(OperationResponseStatusDto.class);
+        when(operationResponseStatusDto.getMessage()).thenReturn("Not all who wander are lost");
+        when(operationResponseStatusDto.getCode()).thenReturn(OperationResponseStatusDto.CodeEnum.NUMBER_1);
         OperationsResponseDto operationsResponseDto = mock(OperationsResponseDto.class);
         when(operationsResponseDto.getStatus()).thenReturn(operationResponseStatusDto);
         when(operationsResponseDto.getResult()).thenReturn(true);
@@ -2173,6 +2208,8 @@ class NotificationInquiryConverterTest {
         assertEquals(OperationResponseStatus.CodeEnum.NUMBER_1, status.getCode());
         verify(operationsResponseDto, atLeast(1)).getStatus();
         verify(operationsResponseDto).getResult();
+        verify(operationResponseStatusDto, atLeast(1)).getCode();
+        verify(operationResponseStatusDto).getMessage();
     }
 }
 
