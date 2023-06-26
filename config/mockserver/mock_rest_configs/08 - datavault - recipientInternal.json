@@ -5,30 +5,13 @@
       "path": "/datavault-private/v1/recipients/internal",
       "queryStringParameters": {
         "internalId": [
-          "TNTGTR76E21H751S",
-          "RFRGRZ66E21H751B"
+          ".*"
         ]
       }
     },
-    "httpResponse": {
-      "statusCode": 200,
-      "body": {
-        "type": "JSON",
-        "json": [
-          {
-            "internalId": "TNTGTR76E21H751S",
-            "taxId": "CGNNMO01T10A944Q",
-            "recipientType": "PF",
-            "denomination": "PagoP.A. S.p.A."
-          },
-          {
-            "internalId": "RFRGRZ66E21H751B",
-            "taxId": "STTMCL97S17G203T",
-            "recipientType": "PF",
-            "denomination": "PagoP.A. S.p.A."
-          }
-        ]
-      }
+    "httpResponseTemplate": {
+      "templateType": "VELOCITY",
+      "template": "#set($List = $request.queryStringParameters.internalId)\n{\n \"statusCode\": 200,\n \"body\":  [\n #foreach($id in $List)\n {\n \"internalId\": \"$id\",\n #set($el = $id.split('-')) \"taxId\": \"$el.get(1)\",\n \"recipientType\":\"$el.get(0)\",\n \"denomination\": \"PagoP.A. S.p.A.\" }\n #if($velocityCount != $List.size()),#end\n #end\n ]\n}"
     }
   },
   {
@@ -68,7 +51,7 @@
     },
     "httpResponseTemplate": {
       "templateType": "VELOCITY",
-      "template": "{\"statusCode\": 200, \"body\":\"$!request.pathParameters['recipientType'][0]-123e4567-e89b-12d3-a456-426655440000\"}"
+      "template": "{\"statusCode\": 200, \"body\":\"$!request.pathParameters['recipientType'][0]-$!request.body\"}"
     }
   }
 ]

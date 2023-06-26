@@ -12,10 +12,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.util.function.Tuples;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -40,8 +37,17 @@ public class NotificationInquiryService {
                     return dataVaultService.getAnonymousByTaxId(RecipientType.fromValue(filterRequest1.getRecipientType().getValue()), taxId)
                             .flatMap(anonymousTaxId -> pnRaddFsuClient.getActPracticesByInternalId(anonymousTaxId, filterRequestDto));
                 })
-                .flatMap(response -> dataVaultService.getRecipientDenominationByInternalId(delegateTaxIdActMapBuilder(response))
-                        .map(deanonymizedTaxIds -> Tuples.of(response, deanonymizedTaxIds)))
+                .flatMap(response -> {
+                    if(response.getElements() != null && !response.getElements().isEmpty()) {
+                        Map<String, String> delegateTaxIdMap = delegateTaxIdActMapBuilder(response);
+                        if(!delegateTaxIdMap.isEmpty()) {
+                            return dataVaultService.getRecipientDenominationByInternalId(delegateTaxIdMap)
+                                    .map(deanonymizedTaxIds -> Tuples.of(response, deanonymizedTaxIds));
+                        }
+                    }
+                    Map<String, String> emptyMap = new HashMap<>();
+                    return Mono.just(Tuples.of(response, emptyMap));
+                })
                 .map(toConverter -> notificationInquiryConverter.operationsActDetailsDtoToResponse(toConverter.getT1(), taxId, toConverter.getT2()));
     }
 
@@ -60,7 +66,7 @@ public class NotificationInquiryService {
     public Mono<OperationsResponse> getActPracticesByIun(String iun) {
         return pnRaddFsuClient.getActPracticesByIun(iun)
                 .flatMap(operationsResponseDto -> {
-                    if (operationsResponseDto.getOperationIds() != null && operationsResponseDto.getOperationIds().isEmpty())
+                    if (operationsResponseDto.getOperationIds() == null || operationsResponseDto.getOperationIds().isEmpty())
                         return Mono.just(notificationInquiryConverter.noAssociatedOperationFoundResponse(operationsResponseDto));
                     return Flux.fromStream(operationsResponseDto.getOperationIds().stream())
                             .flatMap(pnRaddFsuClient::getActTransactionByOperationId)
@@ -91,7 +97,12 @@ public class NotificationInquiryService {
     public Mono<OperationActResponse> getActTransactionByOperationId(String operationId) {
         return pnRaddFsuClient.getActTransactionByOperationId(operationId)
                 .flatMap(operationActResponseDto -> Mono.just(taxIdsActMapBuilder(operationActResponseDto))
-                        .flatMap(dataVaultService::getRecipientDenominationByInternalId)
+                        .flatMap(v -> {
+                            if(v.isEmpty()) {
+                                return Mono.just(v);
+                            }
+                            return dataVaultService.getRecipientDenominationByInternalId(v);
+                        })
                         .map(deanonymizedTaxIds -> Tuples.of(operationActResponseDto, deanonymizedTaxIds)))
                 .map(resultToFinalConverter -> notificationInquiryConverter.operationActDtoToResponse(resultToFinalConverter.getT1(), resultToFinalConverter.getT2()));
     }
@@ -103,8 +114,17 @@ public class NotificationInquiryService {
                             .flatMap(anonymousTaxId ->
                                     pnRaddFsuClient.getAorPracticesByInternalId(anonymousTaxId, filterRequestDto));
                 })
-                .flatMap(response -> dataVaultService.getRecipientDenominationByInternalId(delegateTaxIdAorMapBuilder(response))
-                        .map(deanonymizedTaxIds -> Tuples.of(response, deanonymizedTaxIds)))
+                .flatMap(response -> {
+                    if(response.getElements() != null && !response.getElements().isEmpty()) {
+                        Map<String, String> delegateTaxIdMap = delegateTaxIdAorMapBuilder(response);
+                        if(!delegateTaxIdMap.isEmpty()) {
+                            return dataVaultService.getRecipientDenominationByInternalId(delegateTaxIdMap)
+                                    .map(deanonymizedTaxIds -> Tuples.of(response, deanonymizedTaxIds));
+                        }
+                    }
+                    Map<String, String> emptyMap = new HashMap<>();
+                    return Mono.just(Tuples.of(response, emptyMap));
+                })
                 .map(toConverter -> notificationInquiryConverter.operationsAorDetailsDtoToResponse(toConverter.getT1(), taxId, toConverter.getT2()));
     }
 
@@ -123,7 +143,7 @@ public class NotificationInquiryService {
     public Mono<OperationsResponse> getAorPracticesByIun(String iun) {
         return pnRaddFsuClient.getAorPracticesByIun(iun)
                 .flatMap(operationsResponseDto -> {
-                    if (operationsResponseDto.getOperationIds() != null && operationsResponseDto.getOperationIds().isEmpty())
+                    if (operationsResponseDto.getOperationIds() == null || operationsResponseDto.getOperationIds().isEmpty())
                         return Mono.just(notificationInquiryConverter.noAssociatedOperationFoundResponse(operationsResponseDto));
                     return Flux.fromStream(operationsResponseDto.getOperationIds().stream())
                             .flatMap(pnRaddFsuClient::getAorTransactionByOperationId)
@@ -168,7 +188,12 @@ public class NotificationInquiryService {
     public Mono<OperationAorResponse> getAorTransactionByOperationId(String operationId) {
         return pnRaddFsuClient.getAorTransactionByOperationId(operationId)
                 .flatMap(operationAorResponseDto -> Mono.just(taxIdsAorMapBuilder(operationAorResponseDto))
-                        .flatMap(dataVaultService::getRecipientDenominationByInternalId)
+                        .flatMap(v -> {
+                            if(v.isEmpty()) {
+                                return Mono.just(v);
+                            }
+                            return dataVaultService.getRecipientDenominationByInternalId(v);
+                        })
                         .map(deanonymizedTaxIds -> Tuples.of(operationAorResponseDto, deanonymizedTaxIds)))
                 .map(resultToFinalConverter -> notificationInquiryConverter.operationAorDtoToResponse(resultToFinalConverter.getT1(), resultToFinalConverter.getT2()));
     }
@@ -178,7 +203,7 @@ public class NotificationInquiryService {
         if (operationAorResponseDto.getElement() != null && operationAorResponseDto.getElement().getRecipientTaxId() != null) {
             taxIdsMap.put(operationAorResponseDto.getElement().getRecipientTaxId(), operationAorResponseDto.getElement().getRecipientTaxId());
         }
-        if (operationAorResponseDto.getElement().getDelegateTaxId() != null) {
+        if (operationAorResponseDto.getElement() != null && operationAorResponseDto.getElement().getDelegateTaxId() != null) {
             taxIdsMap.put(operationAorResponseDto.getElement().getDelegateTaxId(), operationAorResponseDto.getElement().getDelegateTaxId());
         }
         return taxIdsMap;
@@ -189,7 +214,7 @@ public class NotificationInquiryService {
         if (operationActResponseDto.getElement() != null && operationActResponseDto.getElement().getRecipientTaxId() != null) {
             taxIdsMap.put(operationActResponseDto.getElement().getRecipientTaxId(), operationActResponseDto.getElement().getRecipientTaxId());
         }
-        if (operationActResponseDto.getElement().getDelegateTaxId() != null) {
+        if (operationActResponseDto.getElement() != null && operationActResponseDto.getElement().getDelegateTaxId() != null) {
             taxIdsMap.put(operationActResponseDto.getElement().getDelegateTaxId(), operationActResponseDto.getElement().getDelegateTaxId());
         }
         return taxIdsMap;

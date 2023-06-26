@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "0373b43d-99a2-47dd-94a1-bfef23b7075f",
+		"_postman_id": "3629e2b1-5776-4d55-8ad4-6db2a09f553f",
 		"name": "radd-web-fsu-mock",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "26143046"
+		"_exporter_id": "25870172"
 	},
 	"item": [
 		{
@@ -5172,7 +5172,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-iun/4FZEB-JKRA-COGW-202209-I-1",
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-iun/FZEB-JKRA-COGW-202209-I-1",
 									"host": [
 										"{{BASE_PATH}}"
 									],
@@ -5181,7 +5181,7 @@
 										"aor",
 										"operations",
 										"by-iun",
-										"4FZEB-JKRA-COGW-202209-I-1"
+										"FZEB-JKRA-COGW-202209-I-1"
 									]
 								}
 							},
@@ -5262,7 +5262,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
+									"raw": "{\r\n    \"recipientType\": \"PF\",\r\n    \"from\": \"2023-06-15T13:43:34.809Z\",\r\n    \"to\": \"2023-06-15T13:43:34.809Z\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -5270,7 +5270,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-internalId/PF-4fc75df3-0913-407e-bdaa-e50329708b7d",
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-internalId/TNTGTR76E21H751S",
 									"host": [
 										"{{BASE_PATH}}"
 									],
@@ -5279,7 +5279,7 @@
 										"act",
 										"operations",
 										"by-internalId",
-										"PF-4fc75df3-0913-407e-bdaa-e50329708b7d"
+										"TNTGTR76E21H751S"
 									]
 								}
 							},
@@ -5292,7 +5292,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
+									"raw": "{\r\n\"recipientType\":\"PF\",\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -5300,7 +5300,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-internalId/PF-d0556f95-6de8-4a92-aa2e-5479f6a1d6d7",
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-internalId/RFRGRZ66E21H751B",
 									"host": [
 										"{{BASE_PATH}}"
 									],
@@ -5309,7 +5309,7 @@
 										"act",
 										"operations",
 										"by-internalId",
-										"PF-d0556f95-6de8-4a92-aa2e-5479f6a1d6d7"
+										"RFRGRZ66E21H751B"
 									]
 								}
 							},
@@ -5322,7 +5322,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
+									"raw": "{\r\n\"recipientType\":\"PF\",\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -5330,7 +5330,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-internalId/PF-e6c22e6b-1276-44a6-a50a-5c0e4639425d",
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-internalId/GTAMRC01P30L736Y",
 									"host": [
 										"{{BASE_PATH}}"
 									],
@@ -5339,7 +5339,7 @@
 										"act",
 										"operations",
 										"by-internalId",
-										"PF-e6c22e6b-1276-44a6-a50a-5c0e4639425d"
+										"GTAMRC01P30L736Y"
 									]
 								}
 							},
@@ -5352,7 +5352,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
+									"raw": "{\r\n\"recipientType\":\"PF\",\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -5360,7 +5360,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-internalId/PF-1f994c71-e5d5-4e5c-a9a9-23ebad4d30d2",
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-internalId/RSSPLA83L41D761G",
 									"host": [
 										"{{BASE_PATH}}"
 									],
@@ -5369,7 +5369,7 @@
 										"act",
 										"operations",
 										"by-internalId",
-										"PF-1f994c71-e5d5-4e5c-a9a9-23ebad4d30d2"
+										"RSSPLA83L41D761G"
 									]
 								}
 							},
@@ -5382,7 +5382,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
+									"raw": "{\r\n\"recipientType\":\"PF\",\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -5390,7 +5390,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-internalId/PF-06c64ca7-8b20-4b7f-9b6a-11f91315b89c",
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-internalId/RSSMRA80A01H501X",
 									"host": [
 										"{{BASE_PATH}}"
 									],
@@ -5399,7 +5399,7 @@
 										"act",
 										"operations",
 										"by-internalId",
-										"PF-06c64ca7-8b20-4b7f-9b6a-11f91315b89c"
+										"RSSMRA80A01H501X"
 									]
 								}
 							},
@@ -5412,7 +5412,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
+									"raw": "{\r\n\"recipientType\":\"PF\",\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -5420,7 +5420,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-internalId/PF-5c584ee7-09e8-4027-b1f9-c19a9a8e79b1",
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-internalId/VRNGPP85M45F839C",
 									"host": [
 										"{{BASE_PATH}}"
 									],
@@ -5429,7 +5429,7 @@
 										"act",
 										"operations",
 										"by-internalId",
-										"PF-5c584ee7-09e8-4027-b1f9-c19a9a8e79b1"
+										"VRNGPP85M45F839C"
 									]
 								}
 							},
@@ -5442,7 +5442,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
+									"raw": "{\r\n\"recipientType\":\"PG\",\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -5450,7 +5450,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-internalId/PG-81a2f2dc-5109-4659-b9a8-8e52ce89a03a",
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-internalId/BLLFBA81T06H703L",
 									"host": [
 										"{{BASE_PATH}}"
 									],
@@ -5459,7 +5459,7 @@
 										"act",
 										"operations",
 										"by-internalId",
-										"PG-81a2f2dc-5109-4659-b9a8-8e52ce89a03a"
+										"BLLFBA81T06H703L"
 									]
 								}
 							},
@@ -5475,7 +5475,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
+									"raw": "{\r\n\"recipientType\":\"PG\",\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -5483,7 +5483,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-internalId/PG-4fa4e3a8-19f2-46e3-ba81-9f1aebbc44ec",
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-internalId/FRRPLA92C65G923D",
 									"host": [
 										"{{BASE_PATH}}"
 									],
@@ -5492,7 +5492,7 @@
 										"act",
 										"operations",
 										"by-internalId",
-										"PG-4fa4e3a8-19f2-46e3-ba81-9f1aebbc44ec"
+										"FRRPLA92C65G923D"
 									]
 								}
 							},
@@ -5505,7 +5505,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
+									"raw": "{\r\n\"recipientType\":\"PF\",\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -5513,7 +5513,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-internalId/PF-a5068d34-2677-4bfa-b0b9-945f0d37d7c5",
+									"raw": "{{BASE_PATH}}/radd-web/act/operations/by-internalId/MRCGPP75R51C921F",
 									"host": [
 										"{{BASE_PATH}}"
 									],
@@ -5522,7 +5522,7 @@
 										"act",
 										"operations",
 										"by-internalId",
-										"PF-a5068d34-2677-4bfa-b0b9-945f0d37d7c5"
+										"MRCGPP75R51C921F"
 									]
 								}
 							},
@@ -5540,7 +5540,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
+									"raw": "{\r\n    \"recipientType\": \"PF\",\r\n    \"from\": \"2023-06-15T13:43:34.809Z\",\r\n    \"to\": \"2023-06-15T13:43:34.809Z\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -5548,16 +5548,18 @@
 									}
 								},
 								"url": {
-									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-internalId/PF-4fc75df3-0913-407e-bdaa-e50329708b7d",
+									"raw": "http://localhost:8080/radd-web/aor/operations/by-internalId/TNTGTR76E21H751S",
+									"protocol": "http",
 									"host": [
-										"{{BASE_PATH}}"
+										"localhost"
 									],
+									"port": "8080",
 									"path": [
 										"radd-web",
 										"aor",
 										"operations",
 										"by-internalId",
-										"PF-4fc75df3-0913-407e-bdaa-e50329708b7d"
+										"TNTGTR76E21H751S"
 									]
 								}
 							},
@@ -5570,7 +5572,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
+									"raw": "{\r\n\"recipientType\":\"PF\",\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -5578,7 +5580,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-internalId/PF-d0556f95-6de8-4a92-aa2e-5479f6a1d6d7",
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-internalId/RFRGRZ66E21H751B",
 									"host": [
 										"{{BASE_PATH}}"
 									],
@@ -5587,7 +5589,7 @@
 										"aor",
 										"operations",
 										"by-internalId",
-										"PF-d0556f95-6de8-4a92-aa2e-5479f6a1d6d7"
+										"RFRGRZ66E21H751B"
 									]
 								}
 							},
@@ -5600,7 +5602,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
+									"raw": "{\r\n\"recipientType\":\"PF\",\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -5608,7 +5610,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-internalId/PF-e6c22e6b-1276-44a6-a50a-5c0e4639425d",
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-internalId/GTAMRC01P30L736Y",
 									"host": [
 										"{{BASE_PATH}}"
 									],
@@ -5617,7 +5619,7 @@
 										"aor",
 										"operations",
 										"by-internalId",
-										"PF-e6c22e6b-1276-44a6-a50a-5c0e4639425d"
+										"GTAMRC01P30L736Y"
 									]
 								}
 							},
@@ -5630,7 +5632,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
+									"raw": "{\r\n\"recipientType\":\"PF\",\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -5638,7 +5640,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-internalId/PF-1f994c71-e5d5-4e5c-a9a9-23ebad4d30d2",
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-internalId/RSSPLA83L41D761G",
 									"host": [
 										"{{BASE_PATH}}"
 									],
@@ -5647,7 +5649,7 @@
 										"aor",
 										"operations",
 										"by-internalId",
-										"PF-1f994c71-e5d5-4e5c-a9a9-23ebad4d30d2"
+										"RSSPLA83L41D761G"
 									]
 								}
 							},
@@ -5660,7 +5662,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
+									"raw": "{\r\n\"recipientType\":\"PF\",\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -5668,7 +5670,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-internalId/PF-06c64ca7-8b20-4b7f-9b6a-11f91315b89c",
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-internalId/RSSMRA80A01H501X",
 									"host": [
 										"{{BASE_PATH}}"
 									],
@@ -5677,7 +5679,7 @@
 										"aor",
 										"operations",
 										"by-internalId",
-										"PF-06c64ca7-8b20-4b7f-9b6a-11f91315b89c"
+										"RSSMRA80A01H501X"
 									]
 								}
 							},
@@ -5690,7 +5692,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
+									"raw": "{\r\n\"recipientType\":\"PF\",\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -5698,7 +5700,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-internalId/PF-5c584ee7-09e8-4027-b1f9-c19a9a8e79b1",
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-internalId/VRNGPP85M45F839C",
 									"host": [
 										"{{BASE_PATH}}"
 									],
@@ -5707,7 +5709,37 @@
 										"aor",
 										"operations",
 										"by-internalId",
-										"PF-5c584ee7-09e8-4027-b1f9-c19a9a8e79b1"
+										"VRNGPP85M45F839C"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "404",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"recipientType\":\"PG\",\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-internalId/BLLFBA81T06H703L",
+									"host": [
+										"{{BASE_PATH}}"
+									],
+									"path": [
+										"radd-web",
+										"aor",
+										"operations",
+										"by-internalId",
+										"BLLFBA81T06H703L"
 									]
 								}
 							},
@@ -5723,7 +5755,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
+									"raw": "{\r\n\"recipientType\":\"PG\",\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -5731,7 +5763,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-internalId/PG-4fa4e3a8-19f2-46e3-ba81-9f1aebbc44ec",
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-internalId/FRRPLA92C65G923D",
 									"host": [
 										"{{BASE_PATH}}"
 									],
@@ -5740,37 +5772,7 @@
 										"aor",
 										"operations",
 										"by-internalId",
-										"PG-4fa4e3a8-19f2-46e3-ba81-9f1aebbc44ec"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "404",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-internalId/PG-81a2f2dc-5109-4659-b9a8-8e52ce89a03a",
-									"host": [
-										"{{BASE_PATH}}"
-									],
-									"path": [
-										"radd-web",
-										"aor",
-										"operations",
-										"by-internalId",
-										"PG-81a2f2dc-5109-4659-b9a8-8e52ce89a03a"
+										"FRRPLA92C65G923D"
 									]
 								}
 							},
@@ -5783,7 +5785,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
+									"raw": "{\r\n\"recipientType\":\"PF\",\r\n\"from\": \"2023-04-21T13:11:13.038Z\",\r\n\"to\": \"2023-04-21T13:11:13.038Z\"\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -5791,7 +5793,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-internalId/PF-a5068d34-2677-4bfa-b0b9-945f0d37d7c5",
+									"raw": "{{BASE_PATH}}/radd-web/aor/operations/by-internalId/MRCGPP75R51C921F",
 									"host": [
 										"{{BASE_PATH}}"
 									],
@@ -5800,7 +5802,7 @@
 										"aor",
 										"operations",
 										"by-internalId",
-										"PF-a5068d34-2677-4bfa-b0b9-945f0d37d7c5"
+										"MRCGPP75R51C921F"
 									]
 								}
 							},
@@ -5827,44 +5829,6 @@
 								"radd-web",
 								"document-ready",
 								"PN_RADD_FSU_ATTACHMENT-19703b4070084bb5b79662abd5fec424.zip"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "404",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{BASE_PATH}}/radd-web/document-ready/PN_RADD_FSU_ATTACHMENT-22703b4070084bb5b79662abd5fec424.zip",
-							"host": [
-								"{{BASE_PATH}}"
-							],
-							"path": [
-								"radd-web",
-								"document-ready",
-								"PN_RADD_FSU_ATTACHMENT-22703b4070084bb5b79662abd5fec424.zip"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "500",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{BASE_PATH}}/radd-web/document-ready/TEST",
-							"host": [
-								"{{BASE_PATH}}"
-							],
-							"path": [
-								"radd-web",
-								"document-ready",
-								"TEST"
 							]
 						}
 					},

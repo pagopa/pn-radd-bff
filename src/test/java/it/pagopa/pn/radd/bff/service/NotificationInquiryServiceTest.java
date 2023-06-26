@@ -42,7 +42,10 @@ class NotificationInquiryServiceTest {
 	void testGetActPracticesByInternalId(){
 		OperationsActDetailsResponseDto operationsActDetailsResponseDto = new OperationsActDetailsResponseDto();
 		operationsActDetailsResponseDto.setResult(true);
-		operationsActDetailsResponseDto.setElements(new ArrayList<>());
+		OperationActDetailResponseDto operationActDetailResponseDto = new OperationActDetailResponseDto();
+		operationActDetailResponseDto.setDelegateTaxId("delegateTaxId");
+		operationActDetailResponseDto.setRecipientTaxId("recipientTaxId");
+		operationsActDetailsResponseDto.setElements(List.of(operationActDetailResponseDto));
 		operationsActDetailsResponseDto.setStatus(null);
 
 		FilterRequest filterRequest = new FilterRequest();
@@ -50,6 +53,7 @@ class NotificationInquiryServiceTest {
 
 		OperationsActDetailsResponse operationsActDetailsResponse = new OperationsActDetailsResponse();
 		operationsActDetailsResponse.setElements(new ArrayList<>());
+
 		operationsActDetailsResponse.setResult(true);
 		operationsActDetailsResponse.setStatus(null);
 
@@ -61,13 +65,38 @@ class NotificationInquiryServiceTest {
 		StepVerifier.create(notificationInquiryService.getActPracticesByInternalId("taxId",Mono.just(filterRequest)))
 				.expectNext(operationsActDetailsResponse).verifyComplete();
 	}
+	@Test
+	void testGetActPracticesByInternalId2(){
+		OperationsActDetailsResponseDto operationsActDetailsResponseDto = new OperationsActDetailsResponseDto();
+		operationsActDetailsResponseDto.setResult(true);
+		operationsActDetailsResponseDto.setElements(null);
+		operationsActDetailsResponseDto.setStatus(null);
+
+		FilterRequest filterRequest = new FilterRequest();
+		filterRequest.setRecipientType(FilterRequest.RecipientTypeEnum.PF);
+
+		OperationsActDetailsResponse operationsActDetailsResponse = new OperationsActDetailsResponse();
+		operationsActDetailsResponse.setElements(null);
+		operationsActDetailsResponse.setResult(true);
+		operationsActDetailsResponse.setStatus(null);
+
+		when(dataVaultService.getAnonymousByTaxId(any(),any())).thenReturn(Mono.just("abc"));
+		when(pnRaddFsuClient.getActPracticesByInternalId(any(),any())).thenReturn(Mono.just(operationsActDetailsResponseDto));
+		when(notificationInquiryConverter.operationsActDetailsDtoToResponse(any(), any(), any())).thenReturn(operationsActDetailsResponse);
+
+		StepVerifier.create(notificationInquiryService.getActPracticesByInternalId("taxId",Mono.just(filterRequest)))
+				.expectNext(operationsActDetailsResponse).verifyComplete();
+	}
 
 	@Test
 	void testGetAorPracticesByInternalId(){
-		OperationsAorDetailsResponseDto operationsActDetailsResponseDto = new OperationsAorDetailsResponseDto();
-		operationsActDetailsResponseDto.setResult(true);
-		operationsActDetailsResponseDto.setElements(new ArrayList<>());
-		operationsActDetailsResponseDto.setStatus(null);
+		OperationsAorDetailsResponseDto operationsAorDetailsResponseDto = new OperationsAorDetailsResponseDto();
+		operationsAorDetailsResponseDto.setResult(true);
+		OperationAorDetailResponseDto operationAorDetailResponseDto = new OperationAorDetailResponseDto();
+		operationAorDetailResponseDto.setDelegateTaxId("delegateTaxId");
+		operationAorDetailResponseDto.setRecipientTaxId("recipientTaxId");
+		operationsAorDetailsResponseDto.setElements(List.of(operationAorDetailResponseDto));
+		operationsAorDetailsResponseDto.setStatus(null);
 
 		FilterRequest filterRequest = new FilterRequest();
 		filterRequest.setRecipientType(FilterRequest.RecipientTypeEnum.PF);
@@ -78,13 +107,35 @@ class NotificationInquiryServiceTest {
 		operationsActDetailsResponse.setStatus(null);
 
 		when(dataVaultService.getAnonymousByTaxId(any(),any())).thenReturn(Mono.just("abc"));
-		when(pnRaddFsuClient.getAorPracticesByInternalId(any(),any())).thenReturn(Mono.just(operationsActDetailsResponseDto));
+		when(pnRaddFsuClient.getAorPracticesByInternalId(any(),any())).thenReturn(Mono.just(operationsAorDetailsResponseDto));
 		when(notificationInquiryConverter.operationsAorDetailsDtoToResponse(any(), any(), any())).thenReturn(operationsActDetailsResponse);
 		when(dataVaultService.getRecipientDenominationByInternalId(any())).thenReturn(Mono.just(Map.of("", "")));
 		StepVerifier.create(notificationInquiryService.getAorPracticesByInternalId("taxId",Mono.just(filterRequest)))
 				.expectNext(operationsActDetailsResponse).verifyComplete();
 	}
 
+	@Test
+	void testGetAorPracticesByInternalId2(){
+		OperationsAorDetailsResponseDto operationsAorDetailsResponseDto = new OperationsAorDetailsResponseDto();
+		operationsAorDetailsResponseDto.setResult(true);
+		operationsAorDetailsResponseDto.setElements(null);
+		operationsAorDetailsResponseDto.setStatus(null);
+
+		FilterRequest filterRequest = new FilterRequest();
+		filterRequest.setRecipientType(FilterRequest.RecipientTypeEnum.PF);
+
+		OperationsAorDetailsResponse operationsAorDetailsResponse = new OperationsAorDetailsResponse();
+		operationsAorDetailsResponse.setElements(null);
+		operationsAorDetailsResponse.setResult(true);
+		operationsAorDetailsResponse.setStatus(null);
+
+		when(dataVaultService.getAnonymousByTaxId(any(),any())).thenReturn(Mono.just("abc"));
+		when(pnRaddFsuClient.getAorPracticesByInternalId(any(),any())).thenReturn(Mono.just(operationsAorDetailsResponseDto));
+		when(notificationInquiryConverter.operationsAorDetailsDtoToResponse(any(), any(), any())).thenReturn(operationsAorDetailsResponse);
+
+		StepVerifier.create(notificationInquiryService.getAorPracticesByInternalId("taxId",Mono.just(filterRequest)))
+				.expectNext(operationsAorDetailsResponse).verifyComplete();
+	}
 
 	@Test
 	void testGetAorPracticesByIun() {
@@ -209,6 +260,27 @@ class NotificationInquiryServiceTest {
 				.expectError()
 				.verify();
 	}
+
+	@Test
+	void testGetAorPracticesByIun3() {
+
+		OperationsResponseDto operationsResponseDto = new OperationsResponseDto();
+		operationsResponseDto.setOperationIds(null);
+		operationsResponseDto.setResult(true);
+
+		OperationResponseStatusDto operationResponseStatusDto = new OperationResponseStatusDto();
+		operationResponseStatusDto.setCode(OperationResponseStatusDto.CodeEnum.NUMBER_0);
+		operationResponseStatusDto.setMessage("message");
+		operationsResponseDto.setStatus(null);
+
+		when(pnRaddFsuClient.getAorPracticesByIun(any())).thenReturn(Mono.just(operationsResponseDto));
+
+		OperationsResponse operationsResponse = mock(OperationsResponse.class);
+		when(notificationInquiryConverter.noAssociatedOperationFoundResponse(any())).thenReturn(operationsResponse);
+		StepVerifier.create(notificationInquiryService.getAorPracticesByIun("iun"))
+				.expectNext(operationsResponse)
+				.verifyComplete();
+	}
 	@Test
 	void testGetActPracticesByIun() {
 
@@ -329,6 +401,27 @@ class NotificationInquiryServiceTest {
 		StepVerifier.create(notificationInquiryService.getActPracticesByIun("iun"))
 				.expectError().verify();
 	}
+
+	@Test
+	void testGetActPracticesByIun3() {
+
+		OperationsResponseDto operationsResponseDto = new OperationsResponseDto();
+		operationsResponseDto.setOperationIds(null);
+		operationsResponseDto.setResult(true);
+
+		OperationResponseStatusDto operationResponseStatusDto = new OperationResponseStatusDto();
+		operationResponseStatusDto.setCode(OperationResponseStatusDto.CodeEnum.NUMBER_0);
+		operationResponseStatusDto.setMessage("message");
+		operationsResponseDto.setStatus(null);
+
+		when(pnRaddFsuClient.getActPracticesByIun(any())).thenReturn(Mono.just(operationsResponseDto));
+
+		OperationsResponse operationsResponse = mock(OperationsResponse.class);
+		when(notificationInquiryConverter.noAssociatedOperationFoundResponse(any())).thenReturn(operationsResponse);
+		StepVerifier.create(notificationInquiryService.getActPracticesByIun("iun"))
+				.expectNext(operationsResponse)
+				.verifyComplete();
+	}
 	/**
 	 * Method under test: {@link NotificationInquiryService#getActTransactionByOperationId(String)}
 	 */
@@ -384,6 +477,24 @@ class NotificationInquiryServiceTest {
 				.expectNext(operationActResponse)
 				.verifyComplete();
 	}
+
+	@Test
+	void testGetActTransactionByOperationId2 () {
+		// Arrange
+		OperationActResponseDto operationActResponseDto = new OperationActResponseDto();
+		operationActResponseDto.setResult(true);
+
+		when(pnRaddFsuClient.getActTransactionByOperationId(any())).thenReturn(Mono.just(operationActResponseDto));
+
+		OperationActResponse operationActResponse = new OperationActResponse();
+		operationActResponse.setResult(true);
+
+		when(notificationInquiryConverter.operationActDtoToResponse(any(), any())).thenReturn(operationActResponse);
+
+		StepVerifier.create(notificationInquiryService.getActTransactionByOperationId("42"))
+				.expectNext(operationActResponse)
+				.verifyComplete();
+	}
 	@Test
 	void testGetAorTransactionByOperationId2 () {
 		// Arrange
@@ -429,6 +540,24 @@ class NotificationInquiryServiceTest {
 		operationAorDetailResponse.setUid("uid");
 		operationAorDetailResponse.setQrCode("qrCode");
 		operationAorResponse.setElement(operationAorDetailResponse);
+
+		when(notificationInquiryConverter.operationAorDtoToResponse(any(), any())).thenReturn(operationAorResponse);
+
+		StepVerifier.create(notificationInquiryService.getAorTransactionByOperationId("42"))
+				.expectNext(operationAorResponse)
+				.verifyComplete();
+	}
+
+	@Test
+	void testGetAorTransactionByOperationId3 () {
+		// Arrange
+		OperationAorResponseDto operationAorResponseDto = new OperationAorResponseDto();
+		operationAorResponseDto.setResult(true);
+
+		when(pnRaddFsuClient.getAorTransactionByOperationId(any())).thenReturn(Mono.just(operationAorResponseDto));
+
+		OperationAorResponse operationAorResponse = new OperationAorResponse();
+		operationAorResponse.setResult(true);
 
 		when(notificationInquiryConverter.operationAorDtoToResponse(any(), any())).thenReturn(operationAorResponse);
 
