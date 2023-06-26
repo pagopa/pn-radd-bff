@@ -1,6 +1,6 @@
 {
   "Parameters" : {
-    "AmplifyCorsDomain": "https://develop.d19zh2gqugqm5d.amplifyapp.com/",
+    "AmplifyCorsDomain": "https://develop.dsd2y68dbsoga.amplifyapp.com/",
     "PnSafeStorageToPnRaddBffQueueName": "pn-safestore_to_radd",
     "PnRaddBffDynamoDbTableNamePnDocument": "pn-document-ready"
   }
