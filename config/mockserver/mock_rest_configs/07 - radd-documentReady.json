@@ -4,23 +4,6 @@
       "method": "GET",
       "path": "/radd-web/document-ready/{fileKey}",
       "pathParameters":
-        {
-          "fileKey": ["PN_RADD_FSU_ATTACHMENT-19703b4070084bb5b79662abd5fec424.zip"]
-        }
-    },
-    "httpResponse": {
-      "statusCode": 200,
-      "body": {
-        "fileKey": "PN_RADD_FSU_ATTACHMENT-19703b4070084bb5b79662abd5fec424.zip",
-        "ready:": true
-      }
-    }
-  },
-  {
-    "httpRequest": {
-      "method": "GET",
-      "path": "/radd-web/document-ready/{fileKey}",
-      "pathParameters":
       {
         "fileKey": ["PN_RADD_FSU_ATTACHMENT-20703b4070084bb5b79662abd5fec424.zip"]
       }
@@ -31,6 +14,20 @@
         "fileKey": "PN_RADD_FSU_ATTACHMENT-20703b4070084bb5b79662abd5fec424.zip",
         "ready:": false
       }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "GET",
+      "path": "/radd-web/document-ready/{fileKey}",
+      "pathParameters":
+      {
+        "fileKey": ".*"
+      }
+    },
+    "httpResponseTemplate": {
+      "templateType": "VELOCITY",
+      "template": "{\"statusCode\": 200, \"body\":{ \"fileKey\": \"$!request.pathParameters['fileKey'][0]\", \"ready\":true}}"
     }
   }
 ]
