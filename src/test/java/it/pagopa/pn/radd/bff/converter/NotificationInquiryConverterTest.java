@@ -6,14 +6,11 @@ import it.pagopa.pn.radd.bff.generated.openapi.server.v1.dto.OperationsResponse;
 import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.*;
 import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.OperationResponseStatusDto;
 import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.OperationsResponseDto;
-import org.junit.Ignore;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.junit.runner.RunWith;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.time.LocalDate;
@@ -22,8 +19,6 @@ import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
 import java.util.*;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 import static org.mockito.Mockito.atLeast;
@@ -31,7 +26,6 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-@RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {NotificationInquiryConverter.class})
 @ExtendWith(SpringExtension.class)
 class NotificationInquiryConverterTest {
@@ -2151,7 +2145,7 @@ class NotificationInquiryConverterTest {
     /**
      * Method under test: {@link NotificationInquiryConverter#noAssociatedOperationFoundResponse(OperationsResponseDto)}
      */
-    @org.junit.Test
+    @Test
     public void testNoAssociatedOperationFoundResponse3() {
         OperationsResponseDto operationsResponseDto = mock(OperationsResponseDto.class);
         when(operationsResponseDto.getStatus()).thenReturn(new OperationResponseStatusDto());
@@ -2167,7 +2161,7 @@ class NotificationInquiryConverterTest {
     /**
      * Method under test: {@link NotificationInquiryConverter#noAssociatedOperationFoundResponse(OperationsResponseDto)}
      */
-    @org.junit.Test
+    @Test
     public void testNoAssociatedOperationFoundResponse4() {
         OperationResponseStatusDto operationResponseStatusDto = mock(OperationResponseStatusDto.class);
         when(operationResponseStatusDto.getMessage()).thenReturn("Not all who wander are lost");
@@ -2191,7 +2185,7 @@ class NotificationInquiryConverterTest {
     /**
      * Method under test: {@link NotificationInquiryConverter#noAssociatedOperationFoundResponse(OperationsResponseDto)}
      */
-    @org.junit.Test
+    @Test
     public void testNoAssociatedOperationFoundResponse5() {
         OperationResponseStatusDto operationResponseStatusDto = mock(OperationResponseStatusDto.class);
         when(operationResponseStatusDto.getMessage()).thenReturn("Not all who wander are lost");
