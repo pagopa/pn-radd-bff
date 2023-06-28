@@ -24,10 +24,7 @@ import org.springframework.stereotype.Component;
 
 
 import java.time.ZoneOffset;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Component
 public class NotificationInquiryConverter {
@@ -165,6 +162,7 @@ public class NotificationInquiryConverter {
                 operationAorDetailResponse.setRecipientTaxId(taxId);
 
                 listOperationAorDetailResponse.add(operationAorDetailResponse);
+                listOperationAorDetailResponse.sort(Comparator.comparing(OperationAorDetailResponse::getOperationStartDate).reversed());
             });
         }
 
@@ -181,7 +179,6 @@ public class NotificationInquiryConverter {
         operationsAorDetailsResponse.setResult(operationsAorDetailsResponseDto.getResult());
         return operationsAorDetailsResponse;
     }
-
     public FilterRequestDto filterRequestToDto(FilterRequest filterRequest) {
         FilterRequestDto filterRequestDto = new FilterRequestDto();
 
@@ -302,6 +299,7 @@ public class NotificationInquiryConverter {
                 operationActDetailResponse.setRecipientTaxId(taxId);
 
                 listOperationActDetailResponse.add(operationActDetailResponse);
+                listOperationActDetailResponse.sort(Comparator.comparing(OperationActDetailResponse::getOperationStartDate).reversed());
             });
         }
 
@@ -404,12 +402,10 @@ public class NotificationInquiryConverter {
         OperationsResponse operationsResponse = new OperationsResponse();
         operationsResponse.setOperations(new ArrayList<>());
         operationsResponse.setResult(operationsResponseDto.getResult());
-        if (operationsResponseDto.getStatus() != null) {
-            if (operationsResponseDto.getStatus().getCode() != null) {
+        if (operationsResponseDto.getStatus() != null && operationsResponseDto.getStatus().getCode() != null) {
                 operationsResponse.setStatus(new OperationResponseStatus()
                         .code(OperationResponseStatus.CodeEnum.fromValue(operationsResponseDto.getStatus().getCode().getValue()))
                         .message(operationsResponseDto.getStatus().getMessage()));
-            }
         }
         return operationsResponse;
     }

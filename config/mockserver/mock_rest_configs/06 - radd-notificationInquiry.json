@@ -621,51 +621,13 @@
       "template": "{\"statusCode\":500,\"body\":{\"timestamp\":\"$date.iso\",\"status\":\"500\",\"error\":\"Internal Server Error\",\"path\":\"/radd-private/api/v1/aor/operations/by-iun/{iun}\",\"requestId\": \"e2e7fdb9-4\"}}"
     }
   },
+
   {
     "httpRequest": {
       "method": "POST",
       "path": "/radd-private/api/v1/act/operations/by-internalId/{internalId}",
       "pathParameters": {
         "internalId": "PF-TNTGTR76E21H751S"
-      }
-    },
-    "httpResponse": {
-      "statusCode": 200,
-      "body": {
-        "type": "JSON",
-        "json": {
-          "elements": [
-            {
-              "operationStatus": "COMPLETED",
-              "operationType": "ACT",
-              "iun": "LJLH-GNTJ-DVXR-202209-J-1",
-              "operationId": "asd1234",
-              "fileKey": "FL-23-KKL",
-              "qrCode": "FBD",
-              "recipientTaxId": "PF-TNTGTR76E21H751S",
-              "recipientType": "PF",
-              "delegateTaxId": "PF-RFRGRZ66E21H751B",
-              "uid": "uddHHHw123mk",
-              "operationStartDate": "2017-07-21T17:32:28Z",
-              "operationEndDate": "2017-07-21T18:00:28Z",
-              "errorReason": "Error"
-            }
-          ],
-          "result": true,
-          "status": {
-            "code": 0,
-            "message": "OK"
-          }
-        }
-      }
-    }
-  },
-  {
-    "httpRequest": {
-      "method": "POST",
-      "path": "/radd-private/api/v1/act/operations/by-internalId/{internalId}",
-      "pathParameters": {
-        "internalId": "PF-123e4567-e89b-12d3-a456-426655440000|PG-123e4567-e89b-12d3-a456-426655440000"
       }
     },
     "httpResponse": {
@@ -882,6 +844,36 @@
               "uid": "uddHHHw123mk",
               "operationStartDate": "2017-07-21T17:32:28Z",
               "operationEndDate": "2017-07-21T18:00:28Z",
+              "errorReason": "Error"
+            },
+            {
+              "operationStatus": "COMPLETED",
+              "operationType": "ACT",
+              "iun": "LJLH-GNTJ-DVXR-202209-J-1",
+              "operationId": "asd1234",
+              "fileKey": "FL-23-KKL",
+              "qrCode": "FBD",
+              "recipientTaxId": "PF-TNTGTR76E21H751S",
+              "recipientType": "PF",
+              "delegateTaxId": "PF-RFRGRZ66E21H751B",
+              "uid": "uddHHHw123mk",
+              "operationStartDate": "2018-07-21T17:32:28Z",
+              "operationEndDate": "2018-07-21T18:00:28Z",
+              "errorReason": "Error"
+            },
+            {
+              "operationStatus": "COMPLETED",
+              "operationType": "ACT",
+              "iun": "LJLH-GNTJ-DVXR-202209-J-1",
+              "operationId": "asd1234",
+              "fileKey": "FL-23-KKL",
+              "qrCode": "FBD",
+              "recipientTaxId": "PF-TNTGTR76E21H751S",
+              "recipientType": "PF",
+              "delegateTaxId": "PF-RFRGRZ66E21H751B",
+              "uid": "uddHHHw123mk",
+              "operationStartDate": "2019-07-21T17:32:28Z",
+              "operationEndDate": "2019-07-21T18:00:28Z",
               "errorReason": "Error"
             }
           ],
