@@ -688,6 +688,36 @@
               "operationStartDate": "2017-07-21T17:32:28Z",
               "operationEndDate": "2017-07-21T18:00:28Z",
               "errorReason": "Error"
+            },
+            {
+              "operationStatus": "COMPLETED",
+              "operationType": "ACT",
+              "iun": "LJLH-GNTJ-DVXR-202209-J-1",
+              "operationId": "asd1234",
+              "fileKey": "FL-23-KKL",
+              "qrCode": "FBD",
+              "recipientTaxId": "PF-TNTGTR76E21H751S",
+              "recipientType": "PF",
+              "delegateTaxId": "PF-RFRGRZ66E21H751B",
+              "uid": "uddHHHw123mk",
+              "operationStartDate": "2018-07-21T17:32:28Z",
+              "operationEndDate": "2018-07-21T18:00:28Z",
+              "errorReason": "Error"
+            },
+            {
+              "operationStatus": "COMPLETED",
+              "operationType": "ACT",
+              "iun": "LJLH-GNTJ-DVXR-202209-J-1",
+              "operationId": "asd1234",
+              "fileKey": "FL-23-KKL",
+              "qrCode": "FBD",
+              "recipientTaxId": "PF-TNTGTR76E21H751S",
+              "recipientType": "PF",
+              "delegateTaxId": "PF-RFRGRZ66E21H751B",
+              "uid": "uddHHHw123mk",
+              "operationStartDate": "2019-07-21T17:32:28Z",
+              "operationEndDate": "2019-07-21T18:00:28Z",
+              "errorReason": "Error"
             }
           ],
           "result": true,
