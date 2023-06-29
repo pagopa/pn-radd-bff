@@ -331,14 +331,16 @@ public class NotificationInquiryConverter {
             }
             operationResponseStatus.setMessage(operationResponseStatusDto.getMessage());
         }
-
+        sortDate(operationsDetailsResponses);
         operationsResponse.setResult(result);
         operationsResponse.setStatus(operationResponseStatus);
         operationsResponse.setOperations(deanonymizeTaxIds(operationsDetailsResponses, deanonymizedTaxIds));
 
         return operationsResponse;
     }
-
+    private void sortDate (List<OperationsDetailsResponse> operationsDetailsResponses) {
+        operationsDetailsResponses.sort(Comparator.comparing(OperationsDetailsResponse::getOperationStartDate).reversed());
+    }
     private List<OperationsDetailsResponse> deanonymizeTaxIds(List<OperationsDetailsResponse> operationsDetailsResponses, Map<String, String> deanonymizedTaxIds) {
         operationsDetailsResponses.forEach(response -> {
             response.setRecipientTaxId(deanonymizedTaxIds.get(response.getRecipientTaxId()));
@@ -369,9 +371,7 @@ public class NotificationInquiryConverter {
                 operationsDetailsResponse.setOperationStartDate(new Date(operationAorDetailResponseDto.getOperationStartDate().toInstant().toEpochMilli()));
         }
         return operationsDetailsResponse;
-
     }
-
     public OperationsDetailsResponse enrichActData(OperationActResponseDto operationActResponseDto) {
         OperationsDetailsResponse operationsDetailsResponse = new OperationsDetailsResponse();
 
@@ -397,7 +397,6 @@ public class NotificationInquiryConverter {
         }
         return operationsDetailsResponse;
     }
-
     public OperationsResponse noAssociatedOperationFoundResponse(OperationsResponseDto operationsResponseDto) {
         OperationsResponse operationsResponse = new OperationsResponse();
         operationsResponse.setOperations(new ArrayList<>());
