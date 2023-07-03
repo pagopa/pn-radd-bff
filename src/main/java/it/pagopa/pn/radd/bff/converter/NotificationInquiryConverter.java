@@ -24,10 +24,7 @@ import org.springframework.stereotype.Component;
 
 
 import java.time.ZoneOffset;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Component
 public class NotificationInquiryConverter {
@@ -165,6 +162,7 @@ public class NotificationInquiryConverter {
                 operationAorDetailResponse.setRecipientTaxId(taxId);
 
                 listOperationAorDetailResponse.add(operationAorDetailResponse);
+                listOperationAorDetailResponse.sort(Comparator.comparing(OperationAorDetailResponse::getOperationStartDate).reversed());
             });
         }
 
@@ -181,7 +179,6 @@ public class NotificationInquiryConverter {
         operationsAorDetailsResponse.setResult(operationsAorDetailsResponseDto.getResult());
         return operationsAorDetailsResponse;
     }
-
     public FilterRequestDto filterRequestToDto(FilterRequest filterRequest) {
         FilterRequestDto filterRequestDto = new FilterRequestDto();
 
@@ -302,6 +299,7 @@ public class NotificationInquiryConverter {
                 operationActDetailResponse.setRecipientTaxId(taxId);
 
                 listOperationActDetailResponse.add(operationActDetailResponse);
+                listOperationActDetailResponse.sort(Comparator.comparing(OperationActDetailResponse::getOperationStartDate).reversed());
             });
         }
 
@@ -333,14 +331,16 @@ public class NotificationInquiryConverter {
             }
             operationResponseStatus.setMessage(operationResponseStatusDto.getMessage());
         }
-
+        sortDate(operationsDetailsResponses);
         operationsResponse.setResult(result);
         operationsResponse.setStatus(operationResponseStatus);
         operationsResponse.setOperations(deanonymizeTaxIds(operationsDetailsResponses, deanonymizedTaxIds));
 
         return operationsResponse;
     }
-
+    private void sortDate (List<OperationsDetailsResponse> operationsDetailsResponses) {
+        operationsDetailsResponses.sort(Comparator.comparing(OperationsDetailsResponse::getOperationStartDate).reversed());
+    }
     private List<OperationsDetailsResponse> deanonymizeTaxIds(List<OperationsDetailsResponse> operationsDetailsResponses, Map<String, String> deanonymizedTaxIds) {
         operationsDetailsResponses.forEach(response -> {
             response.setRecipientTaxId(deanonymizedTaxIds.get(response.getRecipientTaxId()));
@@ -371,9 +371,7 @@ public class NotificationInquiryConverter {
                 operationsDetailsResponse.setOperationStartDate(new Date(operationAorDetailResponseDto.getOperationStartDate().toInstant().toEpochMilli()));
         }
         return operationsDetailsResponse;
-
     }
-
     public OperationsDetailsResponse enrichActData(OperationActResponseDto operationActResponseDto) {
         OperationsDetailsResponse operationsDetailsResponse = new OperationsDetailsResponse();
 
@@ -399,17 +397,14 @@ public class NotificationInquiryConverter {
         }
         return operationsDetailsResponse;
     }
-
     public OperationsResponse noAssociatedOperationFoundResponse(OperationsResponseDto operationsResponseDto) {
         OperationsResponse operationsResponse = new OperationsResponse();
         operationsResponse.setOperations(new ArrayList<>());
         operationsResponse.setResult(operationsResponseDto.getResult());
-        if (operationsResponseDto.getStatus() != null) {
-            if (operationsResponseDto.getStatus().getCode() != null) {
+        if (operationsResponseDto.getStatus() != null && operationsResponseDto.getStatus().getCode() != null) {
                 operationsResponse.setStatus(new OperationResponseStatus()
                         .code(OperationResponseStatus.CodeEnum.fromValue(operationsResponseDto.getStatus().getCode().getValue()))
                         .message(operationsResponseDto.getStatus().getMessage()));
-            }
         }
         return operationsResponse;
     }

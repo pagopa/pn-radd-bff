@@ -1,11 +1,7 @@
 package it.pagopa.pn.radd.bff.converter;
 
 import it.pagopa.pn.radd.bff.generated.openapi.server.v1.dto.*;
-import it.pagopa.pn.radd.bff.generated.openapi.server.v1.dto.OperationResponseStatus;
-import it.pagopa.pn.radd.bff.generated.openapi.server.v1.dto.OperationsResponse;
 import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.*;
-import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.OperationResponseStatusDto;
-import it.pagopa.pn.radd.bff.msclient.generated.radd.fsu.v1.dto.OperationsResponseDto;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
@@ -21,13 +17,9 @@ import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
-import static org.mockito.Mockito.atLeast;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
 
-@ContextConfiguration(classes = {NotificationInquiryConverter.class})
-@ExtendWith(SpringExtension.class)
+@ContextConfiguration (classes = {NotificationInquiryConverter.class})
+@ExtendWith (SpringExtension.class)
 class NotificationInquiryConverterTest {
     @Autowired
     private NotificationInquiryConverter notificationInquiryConverter;
@@ -37,7 +29,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#abortTransactionRequestToDto(AbortTransactionRequest)}
      */
     @Test
-    void testAbortTransactionRequestToDto2() {
+    void testAbortTransactionRequestToDto2 () {
         AbortTransactionRequest abortTransactionRequest = new AbortTransactionRequest();
         abortTransactionRequest
                 .operationDate(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
@@ -51,7 +43,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#abortTransactionRequestToDto(AbortTransactionRequest)}
      */
     @Test
-    void testAbortTransactionRequestToDto4() {
+    void testAbortTransactionRequestToDto4 () {
         AbortTransactionRequest abortTransactionRequest = mock(AbortTransactionRequest.class);
         when(abortTransactionRequest.getOperationId()).thenReturn("42");
         when(abortTransactionRequest.getReason()).thenReturn("Just cause");
@@ -71,7 +63,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#abortTransactionDtoToResponse(AbortTransactionResponseDto)}
      */
     @Test
-    void testAbortTransactionDtoToResponse3() {
+    void testAbortTransactionDtoToResponse3 () {
         TransactionResponseStatusDto status = new TransactionResponseStatusDto();
         status.code(TransactionResponseStatusDto.CodeEnum.NUMBER_0);
 
@@ -88,7 +80,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#abortTransactionDtoToResponse(AbortTransactionResponseDto)}
      */
     @Test
-    void testAbortTransactionDtoToResponse4() {
+    void testAbortTransactionDtoToResponse4 () {
         TransactionResponseStatusDto status = new TransactionResponseStatusDto();
         status.setCode(TransactionResponseStatusDto.CodeEnum.NUMBER_0);
 
@@ -105,7 +97,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#abortTransactionDtoToResponse(AbortTransactionResponseDto)}
      */
     @Test
-    void testAbortTransactionDtoToResponse5() {
+    void testAbortTransactionDtoToResponse5 () {
         AbortTransactionResponseDto abortTransactionResponseDto = mock(AbortTransactionResponseDto.class);
         when(abortTransactionResponseDto.getStatus()).thenReturn(new TransactionResponseStatusDto());
         assertNull(notificationInquiryConverter.abortTransactionDtoToResponse(abortTransactionResponseDto)
@@ -118,7 +110,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#abortTransactionDtoToResponse(AbortTransactionResponseDto)}
      */
     @Test
-    void testAbortTransactionDtoToResponse6() {
+    void testAbortTransactionDtoToResponse6 () {
         TransactionResponseStatusDto transactionResponseStatusDto = mock(TransactionResponseStatusDto.class);
         when(transactionResponseStatusDto.getCode()).thenReturn(TransactionResponseStatusDto.CodeEnum.NUMBER_0);
         when(transactionResponseStatusDto.getMessage()).thenReturn("Not all who wander are lost");
@@ -138,7 +130,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#abortTransactionDtoToResponse(AbortTransactionResponseDto)}
      */
     @Test
-    void testAbortTransactionDtoToResponse7() {
+    void testAbortTransactionDtoToResponse7 () {
         TransactionResponseStatusDto transactionResponseStatusDto = new TransactionResponseStatusDto();
         transactionResponseStatusDto.code(TransactionResponseStatusDto.CodeEnum.NUMBER_0);
         AbortTransactionResponseDto abortTransactionResponseDto = mock(AbortTransactionResponseDto.class);
@@ -155,7 +147,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#abortTransactionDtoToResponse(AbortTransactionResponseDto)}
      */
     @Test
-    void testAbortTransactionDtoToResponse8() {
+    void testAbortTransactionDtoToResponse8 () {
         TransactionResponseStatusDto transactionResponseStatusDto = new TransactionResponseStatusDto();
         transactionResponseStatusDto.code(TransactionResponseStatusDto.CodeEnum.NUMBER_1);
         AbortTransactionResponseDto abortTransactionResponseDto = mock(AbortTransactionResponseDto.class);
@@ -173,7 +165,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#completeTransactionRequestToDto(CompleteTransactionRequest)}
      */
     @Test
-    void testCompleteTransactionRequestToDto2() {
+    void testCompleteTransactionRequestToDto2 () {
         CompleteTransactionRequest completeTransactionRequest = new CompleteTransactionRequest();
         completeTransactionRequest
                 .operationDate(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
@@ -186,7 +178,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#completeTransactionRequestToDto(CompleteTransactionRequest)}
      */
     @Test
-    void testCompleteTransactionRequestToDto4() {
+    void testCompleteTransactionRequestToDto4 () {
         CompleteTransactionRequest completeTransactionRequest = mock(CompleteTransactionRequest.class);
         when(completeTransactionRequest.getOperationId()).thenReturn("42");
         when(completeTransactionRequest.getOperationDate())
@@ -202,7 +194,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#completeTransactionDtoToResponse(CompleteTransactionResponseDto)}
      */
     @Test
-    void testCompleteTransactionDtoToResponse3() {
+    void testCompleteTransactionDtoToResponse3 () {
         TransactionResponseStatusDto status = new TransactionResponseStatusDto();
         status.code(TransactionResponseStatusDto.CodeEnum.NUMBER_0);
 
@@ -219,7 +211,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#completeTransactionDtoToResponse(CompleteTransactionResponseDto)}
      */
     @Test
-    void testCompleteTransactionDtoToResponse4() {
+    void testCompleteTransactionDtoToResponse4 () {
         CompleteTransactionResponseDto completeTransactionResponseDto = mock(CompleteTransactionResponseDto.class);
         when(completeTransactionResponseDto.getStatus()).thenReturn(new TransactionResponseStatusDto());
         assertNull(notificationInquiryConverter.completeTransactionDtoToResponse(completeTransactionResponseDto)
@@ -232,7 +224,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#completeTransactionDtoToResponse(CompleteTransactionResponseDto)}
      */
     @Test
-    void testCompleteTransactionDtoToResponse5() {
+    void testCompleteTransactionDtoToResponse5 () {
         TransactionResponseStatusDto transactionResponseStatusDto = mock(TransactionResponseStatusDto.class);
         when(transactionResponseStatusDto.getCode()).thenReturn(TransactionResponseStatusDto.CodeEnum.NUMBER_0);
         when(transactionResponseStatusDto.getMessage()).thenReturn("Not all who wander are lost");
@@ -252,7 +244,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#completeTransactionDtoToResponse(CompleteTransactionResponseDto)}
      */
     @Test
-    void testCompleteTransactionDtoToResponse6() {
+    void testCompleteTransactionDtoToResponse6 () {
         TransactionResponseStatusDto transactionResponseStatusDto = new TransactionResponseStatusDto();
         transactionResponseStatusDto.code(TransactionResponseStatusDto.CodeEnum.NUMBER_1);
         CompleteTransactionResponseDto completeTransactionResponseDto = mock(CompleteTransactionResponseDto.class);
@@ -269,7 +261,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#startTransactionDtoToResponse(StartTransactionResponseDto)}
      */
     @Test
-    void testStartTransactionDtoToResponse() {
+    void testStartTransactionDtoToResponse () {
         assertNull(
                 notificationInquiryConverter.startTransactionDtoToResponse(new StartTransactionResponseDto()).getUrlList());
     }
@@ -279,7 +271,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#startTransactionDtoToResponse(StartTransactionResponseDto)}
      */
     @Test
-    void testStartTransactionDtoToResponse3() {
+    void testStartTransactionDtoToResponse3 () {
         StartTransactionResponseStatusDto status = new StartTransactionResponseStatusDto();
         status.code(StartTransactionResponseStatusDto.CodeEnum.NUMBER_0);
 
@@ -297,7 +289,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#startTransactionDtoToResponse(StartTransactionResponseDto)}
      */
     @Test
-    void testStartTransactionDtoToResponse4() {
+    void testStartTransactionDtoToResponse4 () {
         StartTransactionResponseStatusDto status = new StartTransactionResponseStatusDto();
         status.setCode(StartTransactionResponseStatusDto.CodeEnum.NUMBER_0);
 
@@ -315,7 +307,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#startTransactionDtoToResponse(StartTransactionResponseDto)}
      */
     @Test
-    void testStartTransactionDtoToResponse5() {
+    void testStartTransactionDtoToResponse5 () {
         StartTransactionResponseDto startTransactionResponseDto = mock(StartTransactionResponseDto.class);
         when(startTransactionResponseDto.getStatus()).thenReturn(new StartTransactionResponseStatusDto());
         StartTransactionResponse actualStartTransactionDtoToResponseResult = notificationInquiryConverter
@@ -329,7 +321,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#startTransactionDtoToResponse(StartTransactionResponseDto)}
      */
     @Test
-    void testStartTransactionDtoToResponse6() {
+    void testStartTransactionDtoToResponse6 () {
         StartTransactionResponseStatusDto startTransactionResponseStatusDto = mock(
                 StartTransactionResponseStatusDto.class);
         when(startTransactionResponseStatusDto.getCode()).thenReturn(StartTransactionResponseStatusDto.CodeEnum.NUMBER_0);
@@ -351,7 +343,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#startTransactionDtoToResponse(StartTransactionResponseDto)}
      */
     @Test
-    void testStartTransactionDtoToResponse7() {
+    void testStartTransactionDtoToResponse7 () {
         StartTransactionResponseStatusDto startTransactionResponseStatusDto = new StartTransactionResponseStatusDto();
         startTransactionResponseStatusDto.code(StartTransactionResponseStatusDto.CodeEnum.NUMBER_0);
         StartTransactionResponseDto startTransactionResponseDto = mock(StartTransactionResponseDto.class);
@@ -369,7 +361,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#startTransactionDtoToResponse(StartTransactionResponseDto)}
      */
     @Test
-    void testStartTransactionDtoToResponse8() {
+    void testStartTransactionDtoToResponse8 () {
         StartTransactionResponseStatusDto startTransactionResponseStatusDto = new StartTransactionResponseStatusDto();
         startTransactionResponseStatusDto.code(StartTransactionResponseStatusDto.CodeEnum.NUMBER_99);
         StartTransactionResponseDto startTransactionResponseDto = mock(StartTransactionResponseDto.class);
@@ -388,7 +380,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#actStartTransactionRequestToDto(ActStartTransactionRequest)}
      */
     @Test
-    void testActStartTransactionRequestToDto5() {
+    void testActStartTransactionRequestToDto5 () {
         ActStartTransactionRequest actStartTransactionRequest = new ActStartTransactionRequest();
         actStartTransactionRequest
                 .operationDate(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
@@ -410,12 +402,12 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#actStartTransactionRequestToDto(ActStartTransactionRequest)}
      */
     @Test
-    void testActStartTransactionRequestToDto6() {
+    void testActStartTransactionRequestToDto6 () {
         ActStartTransactionRequest actStartTransactionRequest = mock(ActStartTransactionRequest.class);
         when(actStartTransactionRequest.getOperationId()).thenReturn("42");
         when(actStartTransactionRequest.getOperationDate())
                 .thenReturn(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
-        when(actStartTransactionRequest.recipientType(Mockito.<ActStartTransactionRequest.RecipientTypeEnum>any()))
+        when(actStartTransactionRequest.recipientType(Mockito.any()))
                 .thenReturn(new ActStartTransactionRequest());
         when(actStartTransactionRequest.getRecipientType()).thenReturn(ActStartTransactionRequest.RecipientTypeEnum.PF);
         when(actStartTransactionRequest.getChecksum()).thenReturn("Checksum");
@@ -436,7 +428,7 @@ class NotificationInquiryConverterTest {
         assertEquals("42", actualActStartTransactionRequestToDtoResult.getOperationId());
         assertEquals("File Key", actualActStartTransactionRequestToDtoResult.getFileKey());
         assertEquals("42", actualActStartTransactionRequestToDtoResult.getDelegateTaxId());
-        verify(actStartTransactionRequest).recipientType(Mockito.<ActStartTransactionRequest.RecipientTypeEnum>any());
+        verify(actStartTransactionRequest).recipientType(Mockito.any());
         verify(actStartTransactionRequest).getRecipientType();
         verify(actStartTransactionRequest).getChecksum();
         verify(actStartTransactionRequest).getDelegateTaxId();
@@ -452,7 +444,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#aorStartTransactionRequestToDto(AorStartTransactionRequest)}
      */
     @Test
-    void testAorStartTransactionRequestToDto5() {
+    void testAorStartTransactionRequestToDto5 () {
         AorStartTransactionRequest aorStartTransactionRequest = new AorStartTransactionRequest();
         aorStartTransactionRequest
                 .operationDate(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
@@ -473,7 +465,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#aorStartTransactionRequestToDto(AorStartTransactionRequest)}
      */
     @Test
-    void testAorStartTransactionRequestToDto6() {
+    void testAorStartTransactionRequestToDto6 () {
         AorStartTransactionRequest aorStartTransactionRequest = mock(AorStartTransactionRequest.class);
         when(aorStartTransactionRequest.getOperationId()).thenReturn("42");
         when(aorStartTransactionRequest.getRecipientTaxId()).thenReturn("42");
@@ -512,7 +504,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#operationsAorDetailsDtoToResponse(OperationsAorDetailsResponseDto, String, Map)}
      */
     @Test
-    void testOperationsAorDetailsDtoToResponse() {
+    void testOperationsAorDetailsDtoToResponse () {
         OperationsAorDetailsResponseDto operationsAorDetailsResponseDto = new OperationsAorDetailsResponseDto();
         OperationAorDetailResponseDto operationAorDetailResponseDto = new OperationAorDetailResponseDto();
         OperationResponseStatusDto operationResponseStatusDto = new OperationResponseStatusDto();
@@ -536,7 +528,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#operationsAorDetailsDtoToResponse(OperationsAorDetailsResponseDto, String, Map)}
      */
     @Test
-    void testOperationsAorDetailsDtoToResponse2() {
+    void testOperationsAorDetailsDtoToResponse2 () {
         OperationsAorDetailsResponse actualOperationsAorDetailsDtoToResponseResult = notificationInquiryConverter
                 .operationsAorDetailsDtoToResponse(new OperationsAorDetailsResponseDto(), "taxId", Map.of("", ""));
         assertTrue(actualOperationsAorDetailsDtoToResponseResult.getElements().isEmpty());
@@ -547,7 +539,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#operationsAorDetailsDtoToResponse(OperationsAorDetailsResponseDto, String, Map)}
      */
     @Test
-    void testOperationsAorDetailsDtoToResponse3() {
+    void testOperationsAorDetailsDtoToResponse3 () {
         OperationsAorDetailsResponseDto operationsAorDetailsResponseDto = new OperationsAorDetailsResponseDto();
         operationsAorDetailsResponseDto.addElementsItem(new OperationAorDetailResponseDto());
         OperationsAorDetailsResponse actualOperationsAorDetailsDtoToResponseResult = notificationInquiryConverter
@@ -560,7 +552,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#operationsAorDetailsDtoToResponse(OperationsAorDetailsResponseDto, String, Map)}
      */
     @Test
-    void testOperationsAorDetailsDtoToResponse4() {
+    void testOperationsAorDetailsDtoToResponse4 () {
         OperationsAorDetailsResponseDto operationsAorDetailsResponseDto = new OperationsAorDetailsResponseDto();
         ArrayList<OperationAorDetailResponseDto> elements = new ArrayList<>();
         operationsAorDetailsResponseDto.elements(elements);
@@ -574,7 +566,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#operationsAorDetailsDtoToResponse(OperationsAorDetailsResponseDto, String, Map)}
      */
     @Test
-    void testOperationsAorDetailsDtoToResponse6() {
+    void testOperationsAorDetailsDtoToResponse6 () {
         OperationsAorDetailsResponseDto operationsAorDetailsResponseDto = mock(OperationsAorDetailsResponseDto.class);
         when(operationsAorDetailsResponseDto.getStatus()).thenReturn(new OperationResponseStatusDto());
         when(operationsAorDetailsResponseDto.getResult()).thenReturn(true);
@@ -594,7 +586,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#operationsAorDetailsDtoToResponse(OperationsAorDetailsResponseDto, String, Map)}
      */
     @Test
-    void testOperationsAorDetailsDtoToResponse7() {
+    void testOperationsAorDetailsDtoToResponse7 () {
         OperationResponseStatusDto operationResponseStatusDto = mock(OperationResponseStatusDto.class);
         when(operationResponseStatusDto.getCode()).thenReturn(OperationResponseStatusDto.CodeEnum.NUMBER_0);
         when(operationResponseStatusDto.getMessage()).thenReturn("Not all who wander are lost");
@@ -621,7 +613,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#operationsAorDetailsDtoToResponse(OperationsAorDetailsResponseDto, String, Map)}
      */
     @Test
-    void testOperationsAorDetailsDtoToResponse8() {
+    void testOperationsAorDetailsDtoToResponse8 () {
         OperationResponseStatusDto operationResponseStatusDto = mock(OperationResponseStatusDto.class);
         when(operationResponseStatusDto.getCode()).thenReturn(OperationResponseStatusDto.CodeEnum.NUMBER_0);
         when(operationResponseStatusDto.getMessage()).thenReturn("Not all who wander are lost");
@@ -645,42 +637,11 @@ class NotificationInquiryConverterTest {
         verify(operationResponseStatusDto, atLeast(1)).getCode();
         verify(operationResponseStatusDto).getMessage();
     }
-
     /**
      * Method under test: {@link NotificationInquiryConverter#operationsAorDetailsDtoToResponse(OperationsAorDetailsResponseDto, String, Map)}
      */
     @Test
-    void testOperationsAorDetailsDtoToResponse9() {
-        OperationResponseStatusDto operationResponseStatusDto = mock(OperationResponseStatusDto.class);
-        when(operationResponseStatusDto.getCode()).thenReturn(OperationResponseStatusDto.CodeEnum.NUMBER_0);
-        when(operationResponseStatusDto.getMessage()).thenReturn("Not all who wander are lost");
-
-        ArrayList<OperationAorDetailResponseDto> operationAorDetailResponseDtoList = new ArrayList<>();
-        operationAorDetailResponseDtoList.add(new OperationAorDetailResponseDto());
-        operationAorDetailResponseDtoList.add(new OperationAorDetailResponseDto());
-        OperationsAorDetailsResponseDto operationsAorDetailsResponseDto = mock(OperationsAorDetailsResponseDto.class);
-        when(operationsAorDetailsResponseDto.getStatus()).thenReturn(operationResponseStatusDto);
-        when(operationsAorDetailsResponseDto.getResult()).thenReturn(true);
-        when(operationsAorDetailsResponseDto.getElements()).thenReturn(operationAorDetailResponseDtoList);
-        OperationsAorDetailsResponse actualOperationsAorDetailsDtoToResponseResult = notificationInquiryConverter
-                .operationsAorDetailsDtoToResponse(operationsAorDetailsResponseDto, "taxId", Map.of("", ""));
-        assertEquals(2, actualOperationsAorDetailsDtoToResponseResult.getElements().size());
-        assertTrue(actualOperationsAorDetailsDtoToResponseResult.getResult());
-        OperationResponseStatus status = actualOperationsAorDetailsDtoToResponseResult.getStatus();
-        assertEquals("Not all who wander are lost", status.getMessage());
-        assertEquals(OperationResponseStatus.CodeEnum.NUMBER_0, status.getCode());
-        verify(operationsAorDetailsResponseDto).getStatus();
-        verify(operationsAorDetailsResponseDto).getResult();
-        verify(operationsAorDetailsResponseDto, atLeast(1)).getElements();
-        verify(operationResponseStatusDto, atLeast(1)).getCode();
-        verify(operationResponseStatusDto).getMessage();
-    }
-
-    /**
-     * Method under test: {@link NotificationInquiryConverter#operationsAorDetailsDtoToResponse(OperationsAorDetailsResponseDto, String, Map)}
-     */
-    @Test
-    void testOperationsAorDetailsDtoToResponse11() {
+    void testOperationsAorDetailsDtoToResponse11 () {
         OperationResponseStatusDto operationResponseStatusDto = mock(OperationResponseStatusDto.class);
         when(operationResponseStatusDto.getCode()).thenReturn(OperationResponseStatusDto.CodeEnum.NUMBER_0);
         when(operationResponseStatusDto.getMessage()).thenReturn("Not all who wander are lost");
@@ -737,12 +698,12 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#filterRequestToDto(FilterRequest)}
      */
     @Test
-    void testFilterRequestToDto3() {
+    void testFilterRequestToDto3 () {
         FilterRequest filterRequest = mock(FilterRequest.class);
         when(filterRequest.getTo())
                 .thenReturn(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
-        when(filterRequest.from(Mockito.<Date>any())).thenReturn(new FilterRequest());
-        when(filterRequest.to(Mockito.<Date>any())).thenReturn(new FilterRequest());
+        when(filterRequest.from(Mockito.any())).thenReturn(new FilterRequest());
+        when(filterRequest.to(Mockito.any())).thenReturn(new FilterRequest());
         when(filterRequest.getFrom())
                 .thenReturn(Date.from(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant()));
         FilterRequestDto actualFilterRequestToDtoResult = notificationInquiryConverter.filterRequestToDto(filterRequest);
@@ -756,7 +717,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#filterRequestToDto(FilterRequest)}
      */
     @Test
-    void testFilterRequestToDto4() {
+    void testFilterRequestToDto4 () {
         java.sql.Date from = mock(java.sql.Date.class);
         when(from.toInstant()).thenReturn(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant());
 
@@ -773,7 +734,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#filterRequestToDto(FilterRequest)}
      */
     @Test
-    void testFilterRequestToDto5() {
+    void testFilterRequestToDto5 () {
         // Arrange
         java.sql.Date from = mock(java.sql.Date.class);
         when(from.toInstant()).thenReturn(LocalDate.of(1970, 1, 1).atStartOfDay().atZone(ZoneOffset.UTC).toInstant());
@@ -796,7 +757,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#operationAorDtoToResponse(OperationAorResponseDto, Map)}
      */
     @Test
-    void testOperationAorDtoToResponse() {
+    void testOperationAorDtoToResponse () {
         OperationAorResponseDto operationAorResponseDto = new OperationAorResponseDto();
         assertNull(
                 notificationInquiryConverter.operationAorDtoToResponse(operationAorResponseDto, new HashMap<>()).getResult());
@@ -806,7 +767,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#operationAorDtoToResponse(OperationAorResponseDto, Map)}
      */
     @Test
-    void testOperationAorDtoToResponse2() {
+    void testOperationAorDtoToResponse2 () {
         // Arrange
         OperationAorResponseDto operationAorResponseDto = new OperationAorResponseDto();
         OperationAorDetailResponseDto operationAorDetailResponseDto = new OperationAorDetailResponseDto();
@@ -840,7 +801,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#operationAorDtoToResponse(OperationAorResponseDto, Map)}
      */
     @Test
-    void testOperationAorDtoToResponse3() {
+    void testOperationAorDtoToResponse3 () {
         OperationAorResponseDto operationAorResponseDto = new OperationAorResponseDto();
         operationAorResponseDto.element(new OperationAorDetailResponseDto());
         OperationAorResponse actualOperationAorDtoToResponseResult = notificationInquiryConverter
@@ -863,7 +824,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#operationAorDtoToResponse(OperationAorResponseDto, Map)}
      */
     @Test
-    void testOperationAorDtoToResponse5() {
+    void testOperationAorDtoToResponse5 () {
         OperationAorResponseDto operationAorResponseDto = mock(OperationAorResponseDto.class);
         when(operationAorResponseDto.getStatus()).thenReturn(new OperationResponseStatusDto());
         when(operationAorResponseDto.getElement()).thenReturn(new OperationAorDetailResponseDto());
@@ -890,7 +851,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#operationAorDtoToResponse(OperationAorResponseDto, Map)}
      */
     @Test
-    void testOperationAorDtoToResponse6() {
+    void testOperationAorDtoToResponse6 () {
         OperationAorResponseDto operationAorResponseDto = mock(OperationAorResponseDto.class);
         when(operationAorResponseDto.getStatus()).thenReturn(null);
         when(operationAorResponseDto.getElement()).thenReturn(new OperationAorDetailResponseDto());
@@ -916,7 +877,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#operationAorDtoToResponse(OperationAorResponseDto, Map)}
      */
     @Test
-    void testOperationAorDtoToResponse7() {
+    void testOperationAorDtoToResponse7 () {
         OperationAorDetailResponseDto operationAorDetailResponseDto = mock(OperationAorDetailResponseDto.class);
         when(operationAorDetailResponseDto.getDelegateTaxId()).thenReturn("42");
         when(operationAorDetailResponseDto.getErrorReason()).thenReturn("An error occurred");
@@ -939,7 +900,7 @@ class NotificationInquiryConverterTest {
         OperationAorResponseDto operationAorResponseDto = mock(OperationAorResponseDto.class);
         when(operationAorResponseDto.getStatus()).thenReturn(operationResponseStatusDto);
         when(operationAorResponseDto.getResult()).thenReturn(true);
-        doNothing().when(operationAorResponseDto).setStatus(Mockito.<OperationResponseStatusDto>any());
+        doNothing().when(operationAorResponseDto).setStatus(Mockito.any());
         when(operationAorResponseDto.getElement()).thenReturn(operationAorDetailResponseDto);
         OperationAorResponse actualOperationAorDtoToResponseResult = notificationInquiryConverter
                 .operationAorDtoToResponse(operationAorResponseDto, new HashMap<>());
@@ -954,7 +915,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#operationAorDtoToResponse(OperationAorResponseDto, Map)}
      */
     @Test
-    void testOperationAorDtoToResponse8() {
+    void testOperationAorDtoToResponse8 () {
         OperationAorDetailResponseDto operationAorDetailResponseDto = mock(OperationAorDetailResponseDto.class);
         when(operationAorDetailResponseDto.getDelegateTaxId()).thenReturn("42");
         when(operationAorDetailResponseDto.getErrorReason()).thenReturn("An error occurred");
@@ -977,7 +938,7 @@ class NotificationInquiryConverterTest {
         OperationAorResponseDto operationAorResponseDto = mock(OperationAorResponseDto.class);
         when(operationAorResponseDto.getStatus()).thenReturn(operationResponseStatusDto);
         when(operationAorResponseDto.getResult()).thenReturn(true);
-        doNothing().when(operationAorResponseDto).setStatus(Mockito.<OperationResponseStatusDto>any());
+        doNothing().when(operationAorResponseDto).setStatus(Mockito.any());
         when(operationAorResponseDto.getElement()).thenReturn(operationAorDetailResponseDto);
 
         HashMap<String, String> denominations = new HashMap<>();
@@ -996,7 +957,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#operationAorDtoToResponse(OperationAorResponseDto, Map)}
      */
     @Test
-    void testOperationAorDtoToResponse9() {
+    void testOperationAorDtoToResponse9 () {
         OperationResponseStatusDto operationResponseStatusDto = mock(OperationResponseStatusDto.class);
         when(operationResponseStatusDto.getCode()).thenReturn(OperationResponseStatusDto.CodeEnum.NUMBER_0);
         when(operationResponseStatusDto.getMessage()).thenReturn("Not all who wander are lost");
@@ -1031,7 +992,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#operationAorDtoToResponse(OperationAorResponseDto, Map)}
      */
     @Test
-    void testOperationAorDtoToResponse10() {
+    void testOperationAorDtoToResponse10 () {
         OperationAorDetailResponseDto operationAorDetailResponseDto = mock(OperationAorDetailResponseDto.class);
         when(operationAorDetailResponseDto.getDelegateTaxId()).thenReturn("42");
         when(operationAorDetailResponseDto.getErrorReason()).thenReturn("An error occurred");
@@ -1054,7 +1015,7 @@ class NotificationInquiryConverterTest {
         OperationAorResponseDto operationAorResponseDto = mock(OperationAorResponseDto.class);
         when(operationAorResponseDto.getStatus()).thenReturn(operationResponseStatusDto);
         when(operationAorResponseDto.getResult()).thenReturn(false);
-        doNothing().when(operationAorResponseDto).setStatus(Mockito.<OperationResponseStatusDto>any());
+        doNothing().when(operationAorResponseDto).setStatus(Mockito.any());
         when(operationAorResponseDto.getElement()).thenReturn(operationAorDetailResponseDto);
         OperationAorResponse actualOperationAorDtoToResponseResult = notificationInquiryConverter
                 .operationAorDtoToResponse(operationAorResponseDto, new HashMap<>());
@@ -1070,7 +1031,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#operationAorDtoToResponse(OperationAorResponseDto, Map)}
      */
     @Test
-    void testOperationAorDtoToResponse11() {
+    void testOperationAorDtoToResponse11 () {
         OperationAorDetailResponseDto operationAorDetailResponseDto = mock(OperationAorDetailResponseDto.class);
         when(operationAorDetailResponseDto.getDelegateTaxId()).thenReturn("42");
         when(operationAorDetailResponseDto.getErrorReason()).thenReturn("An error occurred");
@@ -1093,7 +1054,7 @@ class NotificationInquiryConverterTest {
         OperationAorResponseDto operationAorResponseDto = mock(OperationAorResponseDto.class);
         when(operationAorResponseDto.getStatus()).thenReturn(operationResponseStatusDto);
         when(operationAorResponseDto.getResult()).thenReturn(false);
-        doNothing().when(operationAorResponseDto).setStatus(Mockito.<OperationResponseStatusDto>any());
+        doNothing().when(operationAorResponseDto).setStatus(Mockito.any());
         when(operationAorResponseDto.getElement()).thenReturn(operationAorDetailResponseDto);
 
         HashMap<String, String> denominations = new HashMap<>();
@@ -1112,7 +1073,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#operationAorDtoToResponse(OperationAorResponseDto, Map)}
      */
     @Test
-    void testOperationAorDtoToResponse12() {
+    void testOperationAorDtoToResponse12 () {
         OperationAorDetailResponseDto operationAorDetailResponseDto = mock(OperationAorDetailResponseDto.class);
         when(operationAorDetailResponseDto.getDelegateTaxId()).thenReturn("42");
         when(operationAorDetailResponseDto.getErrorReason()).thenReturn("An error occurred");
@@ -1155,7 +1116,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#operationAorDtoToResponse(OperationAorResponseDto, Map)}
      */
     @Test
-    void testOperationAorDtoToResponse13() {
+    void testOperationAorDtoToResponse13 () {
         OperationAorDetailResponseDto operationAorDetailResponseDto = mock(OperationAorDetailResponseDto.class);
         when(operationAorDetailResponseDto.getDelegateTaxId()).thenReturn("42");
         when(operationAorDetailResponseDto.getErrorReason()).thenReturn("An error occurred");
@@ -1210,7 +1171,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#operationActDtoToResponse(OperationActResponseDto, Map)}
      */
     @Test
-    void testOperationActDtoToResponse() {
+    void testOperationActDtoToResponse () {
         OperationActResponseDto operationActResponseDto = new OperationActResponseDto();
         assertNull(
                 notificationInquiryConverter.operationActDtoToResponse(operationActResponseDto, new HashMap<>()).getResult());
@@ -1221,7 +1182,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#operationActDtoToResponse(OperationActResponseDto, Map)}
      */
     @Test
-    void testOperationActDtoToResponse2() {
+    void testOperationActDtoToResponse2 () {
         OperationActResponseDto operationActResponseDto = new OperationActResponseDto();
         operationActResponseDto.element(new OperationActDetailResponseDto());
         OperationActResponse actualOperationActDtoToResponseResult = notificationInquiryConverter
@@ -1245,7 +1206,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#operationActDtoToResponse(OperationActResponseDto, Map)}
      */
     @Test
-    void testOperationActDtoToResponse4() {
+    void testOperationActDtoToResponse4 () {
         OperationActResponseDto operationActResponseDto = mock(OperationActResponseDto.class);
         when(operationActResponseDto.getStatus()).thenReturn(new OperationResponseStatusDto());
         when(operationActResponseDto.getResult()).thenReturn(true);
@@ -1272,14 +1233,14 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#operationActDtoToResponse(OperationActResponseDto, Map)}
      */
     @Test
-    void testOperationActDtoToResponse5() {
+    void testOperationActDtoToResponse5 () {
         OperationResponseStatusDto operationResponseStatusDto = mock(OperationResponseStatusDto.class);
         when(operationResponseStatusDto.getCode()).thenReturn(OperationResponseStatusDto.CodeEnum.NUMBER_0);
         when(operationResponseStatusDto.getMessage()).thenReturn("Not all who wander are lost");
         OperationActResponseDto operationActResponseDto = mock(OperationActResponseDto.class);
         when(operationActResponseDto.getStatus()).thenReturn(operationResponseStatusDto);
         when(operationActResponseDto.getResult()).thenReturn(true);
-        doNothing().when(operationActResponseDto).setStatus(Mockito.<OperationResponseStatusDto>any());
+        doNothing().when(operationActResponseDto).setStatus(Mockito.any());
         when(operationActResponseDto.getElement()).thenReturn(new OperationActDetailResponseDto());
         OperationActResponse actualOperationActDtoToResponseResult = notificationInquiryConverter
                 .operationActDtoToResponse(operationActResponseDto, new HashMap<>());
@@ -1305,14 +1266,14 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#operationActDtoToResponse(OperationActResponseDto, Map)}
      */
     @Test
-    void testOperationActDtoToResponse6() {
+    void testOperationActDtoToResponse6 () {
         OperationResponseStatusDto operationResponseStatusDto = mock(OperationResponseStatusDto.class);
         when(operationResponseStatusDto.getCode()).thenReturn(OperationResponseStatusDto.CodeEnum.NUMBER_0);
         when(operationResponseStatusDto.getMessage()).thenReturn("Not all who wander are lost");
         OperationActResponseDto operationActResponseDto = mock(OperationActResponseDto.class);
         when(operationActResponseDto.getStatus()).thenReturn(operationResponseStatusDto);
         when(operationActResponseDto.getResult()).thenReturn(false);
-        doNothing().when(operationActResponseDto).setStatus(Mockito.<OperationResponseStatusDto>any());
+        doNothing().when(operationActResponseDto).setStatus(Mockito.any());
         when(operationActResponseDto.getElement()).thenReturn(new OperationActDetailResponseDto());
         OperationActResponse actualOperationActDtoToResponseResult = notificationInquiryConverter
                 .operationActDtoToResponse(operationActResponseDto, new HashMap<>());
@@ -1338,7 +1299,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#operationActDtoToResponse(OperationActResponseDto, Map)}
      */
     @Test
-    void testOperationActDtoToResponse7() {
+    void testOperationActDtoToResponse7 () {
         OperationActDetailResponseDto operationActDetailResponseDto = mock(OperationActDetailResponseDto.class);
         when(operationActDetailResponseDto.getDelegateTaxId()).thenReturn("42");
         when(operationActDetailResponseDto.getErrorReason()).thenReturn("An error occurred");
@@ -1361,7 +1322,7 @@ class NotificationInquiryConverterTest {
         OperationActResponseDto operationActResponseDto = mock(OperationActResponseDto.class);
         when(operationActResponseDto.getStatus()).thenReturn(operationResponseStatusDto);
         when(operationActResponseDto.getResult()).thenReturn(false);
-        doNothing().when(operationActResponseDto).setStatus(Mockito.<OperationResponseStatusDto>any());
+        doNothing().when(operationActResponseDto).setStatus(Mockito.any());
         when(operationActResponseDto.getElement()).thenReturn(operationActDetailResponseDto);
         OperationActResponse actualOperationActDtoToResponseResult = notificationInquiryConverter
                 .operationActDtoToResponse(operationActResponseDto, new HashMap<>());
@@ -1376,7 +1337,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#operationActDtoToResponse(OperationActResponseDto, Map)}
      */
     @Test
-    void testOperationActDtoToResponse8() {
+    void testOperationActDtoToResponse8 () {
         OperationActDetailResponseDto operationActDetailResponseDto = mock(OperationActDetailResponseDto.class);
         when(operationActDetailResponseDto.getDelegateTaxId()).thenReturn("42");
         when(operationActDetailResponseDto.getErrorReason()).thenReturn("An error occurred");
@@ -1399,7 +1360,7 @@ class NotificationInquiryConverterTest {
         OperationActResponseDto operationActResponseDto = mock(OperationActResponseDto.class);
         when(operationActResponseDto.getStatus()).thenReturn(operationResponseStatusDto);
         when(operationActResponseDto.getResult()).thenReturn(false);
-        doNothing().when(operationActResponseDto).setStatus(Mockito.<OperationResponseStatusDto>any());
+        doNothing().when(operationActResponseDto).setStatus(Mockito.any());
         when(operationActResponseDto.getElement()).thenReturn(operationActDetailResponseDto);
 
         HashMap<String, String> deanonymizedTaxIds = new HashMap<>();
@@ -1418,7 +1379,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#operationActDtoToResponse(OperationActResponseDto, Map)}
      */
     @Test
-    void testOperationActDtoToResponse9() {
+    void testOperationActDtoToResponse9 () {
         OperationActResponseDto operationActResponseDto = mock(OperationActResponseDto.class);
         when(operationActResponseDto.getStatus()).thenReturn(new OperationResponseStatusDto());
         when(operationActResponseDto.getElement()).thenReturn(new OperationActDetailResponseDto());
@@ -1446,7 +1407,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#operationActDtoToResponse(OperationActResponseDto, Map)}
      */
     @Test
-    void testOperationActDtoToResponse10() {
+    void testOperationActDtoToResponse10 () {
         OperationActResponseDto operationActResponseDto = mock(OperationActResponseDto.class);
         when(operationActResponseDto.getStatus()).thenReturn(null);
         when(operationActResponseDto.getElement()).thenReturn(new OperationActDetailResponseDto());
@@ -1473,7 +1434,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#operationActDtoToResponse(OperationActResponseDto, Map)}
      */
     @Test
-    void testOperationActDtoToResponse11() {
+    void testOperationActDtoToResponse11 () {
         OperationResponseStatusDto operationResponseStatusDto = mock(OperationResponseStatusDto.class);
         when(operationResponseStatusDto.getCode()).thenReturn(OperationResponseStatusDto.CodeEnum.NUMBER_0);
         when(operationResponseStatusDto.getMessage()).thenReturn("Not all who wander are lost");
@@ -1508,7 +1469,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#operationActDtoToResponse(OperationActResponseDto, Map)}
      */
     @Test
-    void testOperationActDtoToResponse12() {
+    void testOperationActDtoToResponse12 () {
         OperationActDetailResponseDto operationActDetailResponseDto = mock(OperationActDetailResponseDto.class);
         when(operationActDetailResponseDto.getDelegateTaxId()).thenReturn("42");
         when(operationActDetailResponseDto.getErrorReason()).thenReturn("An error occurred");
@@ -1550,7 +1511,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#operationActDtoToResponse(OperationActResponseDto, Map)}
      */
     @Test
-    void testOperationActDtoToResponse13() {
+    void testOperationActDtoToResponse13 () {
         OperationActDetailResponseDto operationActDetailResponseDto = mock(OperationActDetailResponseDto.class);
         when(operationActDetailResponseDto.getDelegateTaxId()).thenReturn("42");
         when(operationActDetailResponseDto.getErrorReason()).thenReturn("An error occurred");
@@ -1597,7 +1558,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#operationsActDetailsDtoToResponse(OperationsActDetailsResponseDto, String, Map)}
      */
     @Test
-    void testOperationsActDetailsDtoToResponse() {
+    void testOperationsActDetailsDtoToResponse () {
         OperationsActDetailsResponse actualOperationsActDetailsDtoToResponseResult = notificationInquiryConverter
                 .operationsActDetailsDtoToResponse(new OperationsActDetailsResponseDto(), "taxId", Map.of("", ""));
         assertTrue(actualOperationsActDetailsDtoToResponseResult.getElements().isEmpty());
@@ -1608,7 +1569,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#operationsActDetailsDtoToResponse(OperationsActDetailsResponseDto, String, Map)}
      */
     @Test
-    void testOperationsActDetailsDtoToResponse2() {
+    void testOperationsActDetailsDtoToResponse2 () {
         OperationsActDetailsResponseDto operationsActDetailsResponseDto = new OperationsActDetailsResponseDto();
         operationsActDetailsResponseDto.addElementsItem(new OperationActDetailResponseDto());
         OperationsActDetailsResponse actualOperationsActDetailsDtoToResponseResult = notificationInquiryConverter
@@ -1621,7 +1582,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#operationsActDetailsDtoToResponse(OperationsActDetailsResponseDto, String, Map)}
      */
     @Test
-    void testOperationsActDetailsDtoToResponse3() {
+    void testOperationsActDetailsDtoToResponse3 () {
         OperationsActDetailsResponseDto operationsActDetailsResponseDto = new OperationsActDetailsResponseDto();
         ArrayList<OperationActDetailResponseDto> elements = new ArrayList<>();
         operationsActDetailsResponseDto.elements(elements);
@@ -1631,12 +1592,29 @@ class NotificationInquiryConverterTest {
         assertNull(actualOperationsActDetailsDtoToResponseResult.getResult());
     }
 
+    /**
+     * Method under test: {@link NotificationInquiryConverter#operationsActDetailsDtoToResponse(OperationsActDetailsResponseDto, String, Map)}
+     */
+    @Test
+    void testOperationsActDetailsDtoToResponse4 () {
+        // Arrange
+        OperationsActDetailsResponseDto operationsActDetailsResponseDto = new OperationsActDetailsResponseDto();
+
+        // Act
+        OperationsActDetailsResponse actualOperationsActDetailsDtoToResponseResult = notificationInquiryConverter
+                .operationsActDetailsDtoToResponse(operationsActDetailsResponseDto, "42", new HashMap<>());
+
+        // Assert
+        assertTrue(actualOperationsActDetailsDtoToResponseResult.getElements().isEmpty());
+        assertNull(actualOperationsActDetailsDtoToResponseResult.getResult());
+    }
+
 
     /**
      * Method under test: {@link NotificationInquiryConverter#operationsActDetailsDtoToResponse(OperationsActDetailsResponseDto, String, Map)}
      */
     @Test
-    void testOperationsActDetailsDtoToResponse5() {
+    void testOperationsActDetailsDtoToResponse5 () {
         OperationsActDetailsResponseDto operationsActDetailsResponseDto = mock(OperationsActDetailsResponseDto.class);
         when(operationsActDetailsResponseDto.getStatus()).thenReturn(new OperationResponseStatusDto());
         when(operationsActDetailsResponseDto.getResult()).thenReturn(true);
@@ -1656,7 +1634,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#operationsActDetailsDtoToResponse(OperationsActDetailsResponseDto, String, Map)}
      */
     @Test
-    void testOperationsActDetailsDtoToResponse6() {
+    void testOperationsActDetailsDtoToResponse6 () {
         OperationResponseStatusDto operationResponseStatusDto = mock(OperationResponseStatusDto.class);
         when(operationResponseStatusDto.getCode()).thenReturn(OperationResponseStatusDto.CodeEnum.NUMBER_0);
         when(operationResponseStatusDto.getMessage()).thenReturn("Not all who wander are lost");
@@ -1683,7 +1661,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#operationsActDetailsDtoToResponse(OperationsActDetailsResponseDto, String, Map)}
      */
     @Test
-    void testOperationsActDetailsDtoToResponse7() {
+    void testOperationsActDetailsDtoToResponse7 () {
         OperationResponseStatusDto operationResponseStatusDto = mock(OperationResponseStatusDto.class);
         when(operationResponseStatusDto.getCode()).thenReturn(OperationResponseStatusDto.CodeEnum.NUMBER_0);
         when(operationResponseStatusDto.getMessage()).thenReturn("Not all who wander are lost");
@@ -1707,43 +1685,11 @@ class NotificationInquiryConverterTest {
         verify(operationResponseStatusDto, atLeast(1)).getCode();
         verify(operationResponseStatusDto).getMessage();
     }
-
     /**
      * Method under test: {@link NotificationInquiryConverter#operationsActDetailsDtoToResponse(OperationsActDetailsResponseDto, String, Map)}
      */
     @Test
-    void testOperationsActDetailsDtoToResponse8() {
-        OperationResponseStatusDto operationResponseStatusDto = mock(OperationResponseStatusDto.class);
-        when(operationResponseStatusDto.getCode()).thenReturn(OperationResponseStatusDto.CodeEnum.NUMBER_0);
-        when(operationResponseStatusDto.getMessage()).thenReturn("Not all who wander are lost");
-
-        ArrayList<OperationActDetailResponseDto> operationActDetailResponseDtoList = new ArrayList<>();
-        operationActDetailResponseDtoList.add(new OperationActDetailResponseDto());
-        operationActDetailResponseDtoList.add(new OperationActDetailResponseDto());
-        OperationsActDetailsResponseDto operationsActDetailsResponseDto = mock(OperationsActDetailsResponseDto.class);
-        when(operationsActDetailsResponseDto.getStatus()).thenReturn(operationResponseStatusDto);
-        when(operationsActDetailsResponseDto.getResult()).thenReturn(true);
-        when(operationsActDetailsResponseDto.getElements()).thenReturn(operationActDetailResponseDtoList);
-        OperationsActDetailsResponse actualOperationsActDetailsDtoToResponseResult = notificationInquiryConverter
-                .operationsActDetailsDtoToResponse(operationsActDetailsResponseDto, "taxId", Map.of("", ""));
-        assertEquals(2, actualOperationsActDetailsDtoToResponseResult.getElements().size());
-        assertTrue(actualOperationsActDetailsDtoToResponseResult.getResult());
-        OperationResponseStatus status = actualOperationsActDetailsDtoToResponseResult.getStatus();
-        assertEquals("Not all who wander are lost", status.getMessage());
-        assertEquals(OperationResponseStatus.CodeEnum.NUMBER_0, status.getCode());
-        verify(operationsActDetailsResponseDto).getStatus();
-        verify(operationsActDetailsResponseDto).getResult();
-        verify(operationsActDetailsResponseDto, atLeast(1)).getElements();
-        verify(operationResponseStatusDto, atLeast(1)).getCode();
-        verify(operationResponseStatusDto).getMessage();
-    }
-
-
-    /**
-     * Method under test: {@link NotificationInquiryConverter#operationsActDetailsDtoToResponse(OperationsActDetailsResponseDto, String, Map)}
-     */
-    @Test
-    void testOperationsActDetailsDtoToResponse10() {
+    void testOperationsActDetailsDtoToResponse10 () {
         OperationResponseStatusDto operationResponseStatusDto = mock(OperationResponseStatusDto.class);
         when(operationResponseStatusDto.getCode()).thenReturn(OperationResponseStatusDto.CodeEnum.NUMBER_0);
         when(operationResponseStatusDto.getMessage()).thenReturn("Not all who wander are lost");
@@ -1796,12 +1742,181 @@ class NotificationInquiryConverterTest {
         verify(operationActDetailResponseDto, atLeast(1)).getOperationStartDate();
     }
 
+    /**
+     * Method under test: {@link NotificationInquiryConverter#operationsActDetailsDtoToResponse(OperationsActDetailsResponseDto, String, Map)}
+     */
+    @Test
+    void testOperationsActDetailsDtoToResponse11 () {
+        // Arrange
+        OperationsActDetailsResponseDto operationsActDetailsResponseDto = new OperationsActDetailsResponseDto();
+        operationsActDetailsResponseDto.addElementsItem(new OperationActDetailResponseDto());
+
+        // Act
+        OperationsActDetailsResponse actualOperationsActDetailsDtoToResponseResult = notificationInquiryConverter
+                .operationsActDetailsDtoToResponse(operationsActDetailsResponseDto, "42", new HashMap<>());
+
+        // Assert
+        assertEquals(1, actualOperationsActDetailsDtoToResponseResult.getElements().size());
+        assertNull(actualOperationsActDetailsDtoToResponseResult.getResult());
+    }
+
+    /**
+     * Method under test: {@link NotificationInquiryConverter#operationsActDetailsDtoToResponse(OperationsActDetailsResponseDto, String, Map)}
+     */
+    @Test
+    void testOperationsActDetailsDtoToResponse13 () {
+        // Arrange
+        OperationsActDetailsResponseDto operationsActDetailsResponseDto = new OperationsActDetailsResponseDto();
+        operationsActDetailsResponseDto.status(new OperationResponseStatusDto());
+        operationsActDetailsResponseDto.addElementsItem(new OperationActDetailResponseDto());
+
+        // Act
+        OperationsActDetailsResponse actualOperationsActDetailsDtoToResponseResult = notificationInquiryConverter
+                .operationsActDetailsDtoToResponse(operationsActDetailsResponseDto, "42", new HashMap<>());
+
+        // Assert
+        assertEquals(1, actualOperationsActDetailsDtoToResponseResult.getElements().size());
+        assertNull(actualOperationsActDetailsDtoToResponseResult.getResult());
+        assertNull(actualOperationsActDetailsDtoToResponseResult.getStatus().getMessage());
+    }
+
+    /**
+     * Method under test: {@link NotificationInquiryConverter#operationsActDetailsDtoToResponse(OperationsActDetailsResponseDto, String, Map)}
+     */
+    @Test
+    void testOperationsActDetailsDtoToResponse14 () {
+        // Arrange
+        OperationsActDetailsResponseDto operationsActDetailsResponseDto = new OperationsActDetailsResponseDto();
+        ArrayList<OperationActDetailResponseDto> elements = new ArrayList<>();
+        operationsActDetailsResponseDto.elements(elements);
+
+        // Act
+        OperationsActDetailsResponse actualOperationsActDetailsDtoToResponseResult = notificationInquiryConverter
+                .operationsActDetailsDtoToResponse(operationsActDetailsResponseDto, "42", new HashMap<>());
+
+        // Assert
+        assertEquals(elements, actualOperationsActDetailsDtoToResponseResult.getElements());
+        assertNull(actualOperationsActDetailsDtoToResponseResult.getResult());
+    }
+    /**
+     * Method under test: {@link NotificationInquiryConverter#operationsActDetailsDtoToResponse(OperationsActDetailsResponseDto, String, Map)}
+     */
+    @Test
+    void testOperationsActDetailsDtoToResponse16 () {
+        // Arrange
+        OperationActDetailResponseDto elementsItem = new OperationActDetailResponseDto();
+        elementsItem.delegateTaxId("42");
+
+        OperationsActDetailsResponseDto operationsActDetailsResponseDto = new OperationsActDetailsResponseDto();
+        operationsActDetailsResponseDto.addElementsItem(elementsItem);
+
+        // Act
+        OperationsActDetailsResponse actualOperationsActDetailsDtoToResponseResult = notificationInquiryConverter
+                .operationsActDetailsDtoToResponse(operationsActDetailsResponseDto, "42", new HashMap<>());
+
+        // Assert
+        assertEquals(1, actualOperationsActDetailsDtoToResponseResult.getElements().size());
+        assertNull(actualOperationsActDetailsDtoToResponseResult.getResult());
+    }
+
+    /**
+     * Method under test: {@link NotificationInquiryConverter#operationsActDetailsDtoToResponse(OperationsActDetailsResponseDto, String, Map)}
+     */
+    @Test
+    void testOperationsActDetailsDtoToResponse17 () {
+        // Arrange
+        OperationActDetailResponseDto elementsItem = new OperationActDetailResponseDto();
+        elementsItem.operationStartDate(OffsetDateTime.of(LocalDate.of(1970, 1, 1), LocalTime.MIDNIGHT, ZoneOffset.UTC));
+
+        OperationsActDetailsResponseDto operationsActDetailsResponseDto = new OperationsActDetailsResponseDto();
+        operationsActDetailsResponseDto.addElementsItem(elementsItem);
+
+        // Act
+        OperationsActDetailsResponse actualOperationsActDetailsDtoToResponseResult = notificationInquiryConverter
+                .operationsActDetailsDtoToResponse(operationsActDetailsResponseDto, "42", new HashMap<>());
+
+        // Assert
+        assertEquals(1, actualOperationsActDetailsDtoToResponseResult.getElements().size());
+        assertNull(actualOperationsActDetailsDtoToResponseResult.getResult());
+    }
+
+    /**
+     * Method under test: {@link NotificationInquiryConverter#operationsActDetailsDtoToResponse(OperationsActDetailsResponseDto, String, Map)}
+     */
+    @Test
+    void testOperationsActDetailsDtoToResponse18 () {
+        // Arrange
+        OperationActDetailResponseDto elementsItem = new OperationActDetailResponseDto();
+        elementsItem.operationEndDate(OffsetDateTime.of(LocalDate.of(1970, 1, 1), LocalTime.MIDNIGHT, ZoneOffset.UTC));
+
+        OperationsActDetailsResponseDto operationsActDetailsResponseDto = new OperationsActDetailsResponseDto();
+        operationsActDetailsResponseDto.addElementsItem(elementsItem);
+
+        // Act
+        OperationsActDetailsResponse actualOperationsActDetailsDtoToResponseResult = notificationInquiryConverter
+                .operationsActDetailsDtoToResponse(operationsActDetailsResponseDto, "42", new HashMap<>());
+
+        // Assert
+        assertEquals(1, actualOperationsActDetailsDtoToResponseResult.getElements().size());
+        assertNull(actualOperationsActDetailsDtoToResponseResult.getResult());
+    }
+
+    /**
+     * Method under test: {@link NotificationInquiryConverter#operationsActDetailsDtoToResponse(OperationsActDetailsResponseDto, String, Map)}
+     */
+    @Test
+    void testOperationsActDetailsDtoToResponse19 () {
+        // Arrange
+        OperationResponseStatusDto status = new OperationResponseStatusDto();
+        status.code(OperationResponseStatusDto.CodeEnum.NUMBER_0);
+
+        OperationsActDetailsResponseDto operationsActDetailsResponseDto = new OperationsActDetailsResponseDto();
+        operationsActDetailsResponseDto.status(status);
+        operationsActDetailsResponseDto.addElementsItem(new OperationActDetailResponseDto());
+
+        // Act
+        OperationsActDetailsResponse actualOperationsActDetailsDtoToResponseResult = notificationInquiryConverter
+                .operationsActDetailsDtoToResponse(operationsActDetailsResponseDto, "42", new HashMap<>());
+
+        // Assert
+        assertEquals(1, actualOperationsActDetailsDtoToResponseResult.getElements().size());
+        assertNull(actualOperationsActDetailsDtoToResponseResult.getResult());
+        OperationResponseStatus status2 = actualOperationsActDetailsDtoToResponseResult.getStatus();
+        assertNull(status2.getMessage());
+        assertEquals(OperationResponseStatus.CodeEnum.NUMBER_0, status2.getCode());
+    }
+
+    /**
+     * Method under test: {@link NotificationInquiryConverter#operationsActDetailsDtoToResponse(OperationsActDetailsResponseDto, String, Map)}
+     */
+    @Test
+    void testOperationsActDetailsDtoToResponse20 () {
+        // Arrange
+        OperationResponseStatusDto status = new OperationResponseStatusDto();
+        status.setCode(OperationResponseStatusDto.CodeEnum.NUMBER_0);
+
+        OperationsActDetailsResponseDto operationsActDetailsResponseDto = new OperationsActDetailsResponseDto();
+        operationsActDetailsResponseDto.status(status);
+        operationsActDetailsResponseDto.addElementsItem(new OperationActDetailResponseDto());
+
+        // Act
+        OperationsActDetailsResponse actualOperationsActDetailsDtoToResponseResult = notificationInquiryConverter
+                .operationsActDetailsDtoToResponse(operationsActDetailsResponseDto, "42", new HashMap<>());
+
+        // Assert
+        assertEquals(1, actualOperationsActDetailsDtoToResponseResult.getElements().size());
+        assertNull(actualOperationsActDetailsDtoToResponseResult.getResult());
+        OperationResponseStatus status2 = actualOperationsActDetailsDtoToResponseResult.getStatus();
+        assertNull(status2.getMessage());
+        assertEquals(OperationResponseStatus.CodeEnum.NUMBER_0, status2.getCode());
+    }
+
 
     /**
      * Method under test: {@link NotificationInquiryConverter#operationsDtoToResponse(List, Map, Boolean, OperationResponseStatusDto)}
      */
     @Test
-    void testOperationsDtoToResponse() {
+    void testOperationsDtoToResponse () {
         ArrayList<OperationsDetailsResponse> operationsDetailsResponses = new ArrayList<>();
         HashMap<String, String> deanonymizedTaxIds = new HashMap<>();
         OperationsResponse actualOperationsDtoToResponseResult = notificationInquiryConverter.operationsDtoToResponse(
@@ -1815,7 +1930,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#operationsDtoToResponse(List, Map, Boolean, OperationResponseStatusDto)}
      */
     @Test
-    void testOperationsDtoToResponse2() {
+    void testOperationsDtoToResponse2 () {
         ArrayList<OperationsDetailsResponse> operationsDetailsResponses = new ArrayList<>();
         operationsDetailsResponses.add(new OperationsDetailsResponse());
         HashMap<String, String> deanonymizedTaxIds = new HashMap<>();
@@ -1825,28 +1940,11 @@ class NotificationInquiryConverterTest {
         assertTrue(actualOperationsDtoToResponseResult.getResult());
         assertNull(actualOperationsDtoToResponseResult.getStatus().getMessage());
     }
-
     /**
      * Method under test: {@link NotificationInquiryConverter#operationsDtoToResponse(List, Map, Boolean, OperationResponseStatusDto)}
      */
     @Test
-    void testOperationsDtoToResponse3() {
-        ArrayList<OperationsDetailsResponse> operationsDetailsResponses = new ArrayList<>();
-        operationsDetailsResponses.add(new OperationsDetailsResponse());
-        operationsDetailsResponses.add(new OperationsDetailsResponse());
-        HashMap<String, String> deanonymizedTaxIds = new HashMap<>();
-        OperationsResponse actualOperationsDtoToResponseResult = notificationInquiryConverter.operationsDtoToResponse(
-                operationsDetailsResponses, deanonymizedTaxIds, true, new OperationResponseStatusDto());
-        assertEquals(2, actualOperationsDtoToResponseResult.getOperations().size());
-        assertTrue(actualOperationsDtoToResponseResult.getResult());
-        assertNull(actualOperationsDtoToResponseResult.getStatus().getMessage());
-    }
-
-    /**
-     * Method under test: {@link NotificationInquiryConverter#operationsDtoToResponse(List, Map, Boolean, OperationResponseStatusDto)}
-     */
-    @Test
-    void testOperationsDtoToResponse4() {
+    void testOperationsDtoToResponse4 () {
         ArrayList<OperationsDetailsResponse> operationsDetailsResponses = new ArrayList<>();
         OperationsResponse actualOperationsDtoToResponseResult = notificationInquiryConverter
                 .operationsDtoToResponse(operationsDetailsResponses, new HashMap<>(), true, null);
@@ -1858,7 +1956,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#operationsDtoToResponse(List, Map, Boolean, OperationResponseStatusDto)}
      */
     @Test
-    void testOperationsDtoToResponse5() {
+    void testOperationsDtoToResponse5 () {
         ArrayList<OperationsDetailsResponse> operationsDetailsResponses = new ArrayList<>();
         HashMap<String, String> deanonymizedTaxIds = new HashMap<>();
         OperationResponseStatusDto operationResponseStatusDto = mock(OperationResponseStatusDto.class);
@@ -1879,7 +1977,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#operationsDtoToResponse(List, Map, Boolean, OperationResponseStatusDto)}
      */
     @Test
-    void testOperationsDtoToResponse6() {
+    void testOperationsDtoToResponse6 () {
         ArrayList<OperationsDetailsResponse> operationsDetailsResponses = new ArrayList<>();
         HashMap<String, String> deanonymizedTaxIds = new HashMap<>();
         OperationResponseStatusDto operationResponseStatusDto = mock(OperationResponseStatusDto.class);
@@ -1900,7 +1998,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#enrichAorData(OperationAorResponseDto)}
      */
     @Test
-    void testEnrichAorData() {
+    void testEnrichAorData () {
         assertNull(notificationInquiryConverter.enrichAorData(new OperationAorResponseDto()).getIuns());
     }
 
@@ -1908,7 +2006,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#enrichAorData(OperationAorResponseDto)}
      */
     @Test
-    void testEnrichAorData2() {
+    void testEnrichAorData2 () {
         OperationAorResponseDto operationAorResponseDto = new OperationAorResponseDto();
         operationAorResponseDto.element(new OperationAorDetailResponseDto());
         OperationsDetailsResponse actualEnrichAorDataResult = notificationInquiryConverter
@@ -1930,7 +2028,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#enrichAorData(OperationAorResponseDto)}
      */
     @Test
-    void testEnrichAorData4() {
+    void testEnrichAorData4 () {
         OperationAorResponseDto operationAorResponseDto = mock(OperationAorResponseDto.class);
         when(operationAorResponseDto.getElement()).thenReturn(new OperationAorDetailResponseDto());
         OperationsDetailsResponse actualEnrichAorDataResult = notificationInquiryConverter
@@ -1954,7 +2052,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#enrichAorData(OperationAorResponseDto)}
      */
     @Test
-    void testEnrichAorData5() {
+    void testEnrichAorData5 () {
         OperationAorDetailResponseDto operationAorDetailResponseDto = mock(OperationAorDetailResponseDto.class);
         when(operationAorDetailResponseDto.getErrorReason()).thenReturn("An error occurred");
         when(operationAorDetailResponseDto.getFileKey()).thenReturn("File Key");
@@ -2000,7 +2098,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#enrichAorData(OperationAorResponseDto)}
      */
     @Test
-    void testEnrichAorData6() {
+    void testEnrichAorData6 () {
         OperationAorDetailResponseDto operationAorDetailResponseDto = mock(OperationAorDetailResponseDto.class);
         when(operationAorDetailResponseDto.getDelegateTaxId()).thenReturn("42");
         when(operationAorDetailResponseDto.getErrorReason()).thenReturn("An error occurred");
@@ -2052,7 +2150,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#enrichActData(OperationActResponseDto)}
      */
     @Test
-    void testEnrichActData() {
+    void testEnrichActData () {
         assertNull(notificationInquiryConverter.enrichActData(new OperationActResponseDto()).getIuns());
     }
 
@@ -2060,7 +2158,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#enrichActData(OperationActResponseDto)}
      */
     @Test
-    void testEnrichActData3() {
+    void testEnrichActData3 () {
         OperationActResponseDto operationActResponseDto = mock(OperationActResponseDto.class);
         when(operationActResponseDto.getElement()).thenReturn(new OperationActDetailResponseDto());
         OperationsDetailsResponse actualEnrichActDataResult = notificationInquiryConverter
@@ -2083,7 +2181,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#enrichActData(OperationActResponseDto)}
      */
     @Test
-    void testEnrichActData4() {
+    void testEnrichActData4 () {
         OperationActDetailResponseDto operationActDetailResponseDto = mock(OperationActDetailResponseDto.class);
         when(operationActDetailResponseDto.getDelegateTaxId()).thenReturn("42");
         when(operationActDetailResponseDto.getErrorReason()).thenReturn("An error occurred");
@@ -2135,7 +2233,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#noAssociatedOperationFoundResponse(OperationsResponseDto)}
      */
     @Test
-    void testNoAssociatedOperationFoundResponse() {
+    void testNoAssociatedOperationFoundResponse () {
         OperationsResponse actualNoAssociatedOperationFoundResponseResult = notificationInquiryConverter
                 .noAssociatedOperationFoundResponse(new OperationsResponseDto());
         assertTrue(actualNoAssociatedOperationFoundResponseResult.getOperations().isEmpty());
@@ -2146,7 +2244,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#noAssociatedOperationFoundResponse(OperationsResponseDto)}
      */
     @Test
-    public void testNoAssociatedOperationFoundResponse3() {
+    public void testNoAssociatedOperationFoundResponse3 () {
         OperationsResponseDto operationsResponseDto = mock(OperationsResponseDto.class);
         when(operationsResponseDto.getStatus()).thenReturn(new OperationResponseStatusDto());
         when(operationsResponseDto.getResult()).thenReturn(true);
@@ -2162,7 +2260,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#noAssociatedOperationFoundResponse(OperationsResponseDto)}
      */
     @Test
-    public void testNoAssociatedOperationFoundResponse4() {
+    public void testNoAssociatedOperationFoundResponse4 () {
         OperationResponseStatusDto operationResponseStatusDto = mock(OperationResponseStatusDto.class);
         when(operationResponseStatusDto.getMessage()).thenReturn("Not all who wander are lost");
         when(operationResponseStatusDto.getCode()).thenReturn(OperationResponseStatusDto.CodeEnum.NUMBER_0);
@@ -2186,7 +2284,7 @@ class NotificationInquiryConverterTest {
      * Method under test: {@link NotificationInquiryConverter#noAssociatedOperationFoundResponse(OperationsResponseDto)}
      */
     @Test
-    public void testNoAssociatedOperationFoundResponse5() {
+    public void testNoAssociatedOperationFoundResponse5 () {
         OperationResponseStatusDto operationResponseStatusDto = mock(OperationResponseStatusDto.class);
         when(operationResponseStatusDto.getMessage()).thenReturn("Not all who wander are lost");
         when(operationResponseStatusDto.getCode()).thenReturn(OperationResponseStatusDto.CodeEnum.NUMBER_1);

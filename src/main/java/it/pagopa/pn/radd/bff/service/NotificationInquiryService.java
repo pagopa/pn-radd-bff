@@ -133,7 +133,7 @@ public class NotificationInquiryService {
         if (response.getElements() != null && !response.getElements().isEmpty()) {
             response.getElements().forEach(operationAorResponseDto -> {
                 if (operationAorResponseDto.getDelegateTaxId() != null && !operationAorResponseDto.getDelegateTaxId().isEmpty()) {
-                    delegateTaxIdMap.put(operationAorResponseDto.getDelegateTaxId(), operationAorResponseDto.getDelegateTaxId());
+                    delegateTaxIdMap.putIfAbsent(operationAorResponseDto.getDelegateTaxId(), operationAorResponseDto.getDelegateTaxId());
                 }
             });
         }
