@@ -230,6 +230,8 @@ Resources:
               - !Ref PnDocumentReadyTableArn
           - Effect: Allow
             Action:
+              - sqs:DeleteMessage
+              - sqs:DeleteMessageBatch
               - sqs:GetQueueAttributes
               - sqs:GetQueueUrl
               - sqs:ReceiveMessage
